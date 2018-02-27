@@ -1,4 +1,4 @@
-#The Project
+# The Project
 
 Firstly, **CSS Components, is a PURE CSS library for front-end development.**
 
@@ -10,15 +10,15 @@ And ... why not do it?
 
 Initially, it would be a simple copy of major front-end libraries and frameworks, remade with only CSS. But after some redesigns and two years learning more of web programming with pratice, I've decided to go back at the begining and redo the project with the following focuses:
 
-1. **Simplicity**
+1. **Simplicity**:
 It must be easy to use and at the same time make developers job easier;
-2. **Performance**
+2. **Performance**:
 It must be lightweight and use the miniimum ammount of code needed;
-3. **Accessibility**
+3. **Accessibility**:
 It should help to make the web more accessible to everyone;
-4. **Standardization**
+4. **Standardization**:
 It should help to make the websites structure close to common standarts (wich helps with SEO);
-5. **Visual**
+5. **Visual**:
 Of couse, the library must provide a good visual to sites who use it.
 
 Given that big objetives, the project has 3 long term goals:
