@@ -1,11 +1,11 @@
 # Contents
-* [The Project](#The-Project)
-  * [Structure](#Structure)
-  * [Conventions](#Conventions)
-  * [Release](#Release)
-* [Documentation](#Documentation)
+* [The Project](#the-project)
+  * [Structure](#structure)
+  * [Conventions](#conventions)
+  * [Release](#release)
+* [Documentation](#documentation)
 
-# Project
+# The Project
 
 Firstly, **CSS Components, is a PURE CSS library for front-end development.**
 
