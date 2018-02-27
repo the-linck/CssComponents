@@ -53,8 +53,8 @@ The project's file struture is the following:
 
 * **CSS {folder}**  
 Where the magic happens
-...* **pallete {folder}**  
-...The color palettes avaliable on the project
+..* **pallete {folder}**  
+..The color palettes avaliable on the project
 ......* **accent {folder}**  
 ......CSS files that register every pallete of the accent colors variables
 ......* **primary {folder}**  
