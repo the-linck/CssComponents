@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Checkboxes Demos</title>
+    <!-- Importing all components and default primary color palette -->
+    <link href="../css/complete.css" rel="stylesheet"/>
+    <!-- Importing accent color pallete -->
+    <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
+</head>
+<body aria-labelledby="checkbox_demos">
+    <header>
+        <h1>
+            <a href="index.html">Demos</a>
+            &rarr;
+            <strong id="checkbox_demos">Checkbox Component</strong>
+        </h1>
+    </header>
+    
+    <article aria-label="Checkbox Component" itemscope itemtype="http://schema.org/APIReference">
+        <header>
+            <h2>The Checkbox Component</h2>
+        </header>
+        
+        <!-- Table of contents -->
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <h2 data-css-role="heading">Contents</h2>
+            <ol>
+                <li>
+                    <a itemprop="url" href="#plain">
+                        <span itemprop="name">Checkbox</span>
+                    </a>
+
+                    <!-- Subchapters -->
+                    <ol>
+                        <li>
+                            <a itemprop="url" href="#sizes">
+                                <span itemprop="name">Sizes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#states">
+                                <span itemprop="name">States</span>
+                            </a>
+
+                            <!-- Subchapters -->
+                            <ol>
+                                <li>
+                                    <a itemprop="url" href="#buttonstates">
+                                        <span itemprop="name">Button states</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a itemprop="url" href="#selecstates">
+                                        <span itemprop="name">Selection states</span>
+                                    </a>
+                                </li>
+                            </ol>
+                            <!-- /Subchapters -->
+                        </li>
+                    </ol>
+                    <!-- /Subchapters -->                    
+                </li>
+                <li data-css-accent>
+                    <a itemprop="url" href="#accent">
+                        <span itemprop="name">Accent Colors</span>
+                    </a>
+                    
+                    <!-- Subchapters -->
+                    <ol>
+                        <li>
+                            <a itemprop="url" href="#different_colors">
+                                <span itemprop="name">Different Colors</span>
+                            </a>
+                        </li>
+                    </ol>
+                    <!-- /Subchapters -->
+                </li>
+            </ol>
+        </nav>
+        <!-- /Table of contents -->
+
+        <!-- Contents -->
+        <div itemprop="articleBody">
+            <!-- Plain checkbox -->
+            <section aria-labelledby="plain">
+                <header id="plain">
+                    <h3 data-css-role="heading">Checkbox</h3>
+                </header>
+
+                <p>
+                    App settings, multiple items selection or just form input, there's several places to put checkboxes.<br>
+                    To style this important element, there's <strong>Checkbox</strong> Component of course.
+                </p>
+                <p>
+                    <em>
+                        <strong>Notice:</strong>
+                        This component requires a label with the <strong>data-css-mark</strong> attribute after the native checkbox to
+                        make it clickable using only CSS.
+                    </em>
+                </p>
+
+                <!-- Demo -->
+                <div>
+                    <div data-css-role="checkbox" title="A simple checkbox">
+                        <input id="simple" type="checkbox">
+                        <label data-css-mark for="simple">
+                            Toggle me.
+                        </label>
+                    </div>
+                </div>
+                <!-- /Demo -->
+
+                <!-- Demo's source code exibition -->
+                <details open itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" data-css-group="lines" itemprop="text">
+                        <span>
+                            &lt;div <strong data-css-accent>data-css-role=&quot;checkbox&quot;</strong> title=&quot;A simple checkbox&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;input <em>id=&quot;simple&quot;</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple&quot;</em>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;Toggle me.
+                        </span>
+                        <span>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &lt;/div&gt;
+                        </span>
+                    </code>
+                </details>
+                <!-- /Demo's source code exibition -->
+                
+                <p>
+                    You can also use the ARIA attribute <strong>role="checkbox"</strong> instead our custom
+                    <strong>data-css-role="checkbox"</strong>, but you will have to manage the component's check state manually through
+                    the <strong>aria-checked</strong> attribute.<br>
+                    On the other hand, this way you may not need the native checkbox, instead you can use a hidden input:
+                </p>
+                
+                <!-- Demo -->
+                <div>
+                    <div aria-checked="true" role="checkbox">
+                        <input id="aria_on" type="hidden" value="true">
+                        <label data-css-mark>
+                            I'm ON.
+                        </label>
+                    </div>
+                    <div aria-checked="false" role="checkbox">
+                        <input id="aria_off" type="hidden" value="false">
+                        <label data-css-mark>
+                            I'm OFF.
+                        </label>
+                    </div>
+                </div>
+                <!-- /Demo -->
+
+                <!-- Demo's source code exibition -->
+                <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" itemprop="text">
+                        <span data-css-line>
+                            &lt;div <strong>aria-checked=&quot;true&quot;</strong>&nbsp;<em data-css-accent>role=&quot;checkbox&quot;</em>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;input <em>type=&quot;hidden&quot;</em>&nbsp;<strong>value=&quot;true&quot;</strong>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;label data-css-mark&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&emsp;I'm ON.
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;div <strong>aria-checked=&quot;false&quot;</strong>&nbsp;<em data-css-accent>role=&quot;checkbox&quot;</em>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;input <em>type=&quot;hidden&quot;</em>&nbsp;<strong>value=&quot;false&quot;</strong>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;label data-css-mark&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&emsp;I'm OFF.
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                    </code>
+                </details>
+                <!-- /Demo's source code exibition -->
+
+                <!-- Sub-chapters -->
+                <div role="group" data-css-group="chapters">
+                    <section aria-labelledby="sizes">
+                        <header id="sizes">
+                            <h4 data-css-role="heading">Sizes</h4>
+                        </header>
+
+                        <p>
+                            You can use four checkbox sizes, wich can be chosen by our <em>data-css-size</em> attribute:
+                        </p>
+
+                        <!-- Demo -->
+                        <div>
+                            <div data-css-size="small" data-css-role="checkbox">
+                                <input id="small" type="checkbox">
+                                <label data-css-mark for="small">
+                                    small
+                                </label>
+                            </div>
+                            <div data-css-role="checkbox">
+                                <input id="medium" type="checkbox">
+                                <label data-css-mark for="medium">
+                                    medium (default)
+                                </label>
+                            </div>
+                            <div data-css-size="big" data-css-role="checkbox">
+                                <input id="big" type="checkbox">
+                                <label data-css-mark for="big">
+                                    big
+                                </label>
+                            </div>
+                            <div data-css-size="huge" data-css-role="checkbox">
+                                <input id="huge" type="checkbox">
+                                <label data-css-mark for="huge">
+                                    huge
+                                </label>
+                            </div>
+                            <div data-css-size="full" data-css-role="checkbox">
+                                <input id="full" type="checkbox">
+                                <label data-css-mark for="full">
+                                    Full size
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /Demo -->
+                        
+                        <!-- Demo's source code exibition -->
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" itemprop="text">
+                                <!-- Small -->
+                                <span data-css-line>
+                                    &lt;div <strong data-css-accent>data-css-size=&quot;small&quot;</strong> data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;input id=&quot;small&quot; type=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;label data-css-mark for=&quot;small&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;small
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <!-- Medium -->
+                                <span data-css-line>
+                                    &lt;div data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;input id=&quot;medium&quot; type=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;label data-css-mark for=&quot;medium&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;medium (default)
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <!-- Big -->
+                                <span data-css-line>
+                                    &lt;div <strong data-css-accent>data-css-size=&quot;big&quot;</strong> data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;input id=&quot;big&quot; type=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;label data-css-mark for=&quot;big&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;big
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <!-- Huge -->
+                                <span data-css-line>
+                                    &lt;div <strong data-css-accent>data-css-size=&quot;huge&quot;</strong> data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;input id=&quot;huge&quot; type=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;label data-css-mark for=&quot;huge&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;huge
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <!-- Fullsize -->
+                                <span data-css-line>
+                                    &lt;div <strong data-css-accent>data-css-size=&quot;full&quot;</strong> data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;input id=&quot;full&quot; type=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;label data-css-mark for=&quot;full&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;fullsize
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                            </code>
+                        </details>
+                        <!-- Demo's source code exibition -->                        
+                    </section>
+                    <section aria-labelledby="states">
+                        <header id="states">
+                            <h4 data-css-role="heading">States</h4>
+                        </header>
+                        
+                        <p>
+                            There are two types of states you can use with this component:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Button states</strong><br>
+                                The of the button bellow the check mark.
+                            </li>
+                            <li>
+                                <strong>Selection states</strong><br>
+                                The state of the checkbox mark
+                            </li>
+                        </ul>
+                        
+                        <!-- Sub-chapters -->
+                        <div role="group" data-css-group="chapters">
+                            <!-- Button states -->
+                            <section aria-labelledby="buttonstates">
+                                <header id="buttonstates">
+                                    <h4 data-css-role="heading">Button States</h4>
+                                </header>
+
+                                <p>
+                                    You may choose, if you wish, one of the for button states:<br>
+                                </p>
+                                <ul>
+                                    <li>normal</li>
+                                    <li>selected</li>
+                                    <li>pressed</li>
+                                    <li>disabled</li>
+                                </ul>
+                                <p>
+                                    They are automatically chosen from the component current state
+                                    in the page, but can also be forced by our <strong>data-css-state</strong>
+                                    attributes:
+                                </p>
+
+                                
+                                <!-- Demo -->
+                                <div>
+                                    <div data-css-state="normal" data-css-role="checkbox">
+                                        <input id="state_normal" type="checkbox">
+                                        <label data-css-mark for="state_normal">
+                                            normal
+                                        </label>
+                                    </div>
+                                    <div data-css-state="selected" data-css-role="checkbox">
+                                        <input id="state_selected" type="checkbox">
+                                        <label data-css-mark for="state_selected">
+                                            selected
+                                        </label>
+                                    </div>
+                                    <div data-css-state="pressed" data-css-role="checkbox">
+                                        <input id="state_pressed" type="checkbox">
+                                        <label data-css-mark for="state_pressed">
+                                            pressed
+                                        </label>
+                                    </div>
+                                    <div data-css-state="disabled" data-css-role="checkbox">
+                                        <input id="state_disabled" type="checkbox">
+                                        <label data-css-mark for="state_disabled">
+                                            disabled
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- /Demo -->
+                                
+                                <!-- Demo's source code exibition -->
+                                <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <summary>
+                                        <span itemprop="description">Example:</span>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </summary>
+                                    <code class="language-html" data-css-group="lines" itemprop="text">
+                                        <span>
+                                            &emsp;&lt;div data-css-state=&quot;normal&quot; data-css-role=&quot;checkbox&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;normal
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                    </code>
+                                </details>
+                                <!-- /Demo's source code exibition -->
+                            </section>
+                            <!-- /Button states -->
+                            
+                            <!-- Selection states -->
+                            <section aria-labelledby="selectstates">
+                                <header id="selectstates">
+                                    <h4 data-css-role="heading">Selection States</h4>
+                                </header>
+
+                                <p>
+                                    You may use one of the three checkbox selection states:<br>
+                                </p>
+                                <ul>
+                                    <li>unchecked</li>
+                                    <li>checked</li>
+                                    <li>mixed</li>
+                                </ul>
+                                <p>
+                                    For that functionality we provide only ARIA attributes for now.
+                                </p>
+
+                                <!-- Demo -->
+                                <div>
+                                    <div aria-checked="false" role="checkbox">
+                                        <input type="hidden" value="false">
+                                        <label data-css-mark>
+                                            unchecked
+                                        </label>
+                                    </div>
+                                    <div aria-checked="true" role="checkbox">
+                                        <input type="hidden" value="true">
+                                        <label data-css-mark>
+                                            checked
+                                        </label>
+                                    </div>
+                                    <div aria-checked="mixed" role="checkbox">
+                                        <input type="hidden" value="mixed">
+                                        <label data-css-mark>
+                                            mixed
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- /Demo -->
+
+                                <!-- Demo's source code exibition -->
+                                <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <summary>
+                                        <span itemprop="description">Example:</span>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </summary>
+                                    <code class="language-html" data-css-group="lines" itemprop="text">
+                                        <!-- unchecked -->
+                                        <span>
+                                            &lt;div <strong data-css-accent>aria-checked=&quot;false&quot;</strong> role=&quot;checkbox&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;unchecked
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                        <!-- checked -->
+                                        <span>
+                                            &lt;div <strong data-css-accent>aria-checked=&quot;true&quot;</strong> role=&quot;checkbox&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;true&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;checked
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                        <!-- mixed -->
+                                        <span>
+                                            &lt;div <strong data-css-accent>aria-checked=&quot;mixed&quot;</strong> role=&quot;checkbox&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;mixed&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;mixed
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                    </code>
+                                </details>
+                                <!-- /Demo's source code exibition -->
+                            </section>
+                            <!-- /Selection states -->                            
+                        </div>
+                        <!-- /Sub-chapters -->
+                    </section>
+                </div>
+                <!-- /Sub-chapters -->                
+            </section>
+            <!-- /Plain checkbox -->
+            
+            <!-- Accent colors -->
+            <section aria-labelledby="accent" data-css-accent>
+                <header id="accent">
+                    <h3 data-css-role="heading">Accent Colors</h3>
+                </header>
+
+                <p>
+                    You can use accent colors in all checkbox states and sizes.<br>
+                </p>
+                <br/>
+
+                <!-- Demo -->
+                <div>
+                    <div data-css-accent data-css-role="checkbox">
+                        <input type="checkbox" id="accent_normal">
+                        <label data-css-mark for="accent_normal">
+                            Normal
+                        </label>
+                    </div>
+                    <div data-css-accent aria-checked="true" data-css-size="big" role="checkbox">
+                        <input type="hidden" value="true">
+                        <label data-css-mark>
+                            Big checked 
+                        </label>
+                    </div>
+                    <div data-css-accent data-css-size="small" aria-checked="mixed" role="checkbox">
+                        <input type="hidden" value="mixed">
+                        <label data-css-mark>
+                            Small mixed
+                        </label>
+                    </div>
+                </div>
+                <!-- /Demo -->
+
+                <!-- Demo's source code exibition -->
+                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span data-css-primary itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" data-css-group="lines" itemprop="text">
+                        <!-- unchecked -->
+                        <span>
+                            &lt;div <strong data-css-accent>aria-checked=&quot;false&quot;</strong> role=&quot;checkbox&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;input type=&quot;checkbox&quot; id=&quot;accent_normal&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;label data-css-mark for=&quot;accent_normal&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;unchecked
+                        </span>
+                        <span>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &lt;/div&gt;
+                        </span>
+                        <!-- checked -->
+                        <span>
+                            &lt;div <strong data-css-accent>aria-checked=&quot;true&quot;</strong> role=&quot;checkbox&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;true&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;label data-css-mark&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;checked
+                        </span>
+                        <span>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &lt;/div&gt;
+                        </span>
+                        <!-- mixed -->
+                        <span>
+                            &lt;div <strong data-css-accent>aria-checked=&quot;mixed&quot;</strong> role=&quot;checkbox&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;mixed&quot;&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;label data-css-mark&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;mixed
+                        </span>
+                        <span>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &lt;/div&gt;
+                        </span>
+                    </code>
+                </details>
+                <!-- /Demo's source code exibition -->
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Different Colors -->
+                    <section aria-labelledby="different_colors">
+                        <header id="different_colors">
+                            <h4 data-css-role="heading">Differnt Colors</h4>
+                        </header>
+
+                        <p>
+                            You can combine both primary and secondary colors in the same checkboxbutton.
+                        </p>
+
+
+                        <!-- Demo -->
+                        <div>
+                            <div data-css-role="checkbox">
+                                <input name="different" id="different_1" type="checkbox">
+                                <label data-css-accent data-css-mark for="different_1">
+                                    Primary and accent
+                                </label>
+                            </div>
+                            <div data-css-accent data-css-role="checkbox">
+                                <input name="different" id="different_2" type="checkbox">
+                                <label data-css-mark data-css-primary for="different_2">
+                                    Accent and primary
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo's source code exibition -->
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" data-css-group="lines" itemprop="text">
+                                <span>
+                                    &lt;div data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;input name="different" <em>id="different_1"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;label <strong data-css-accent>data-css-accent</strong> data-css-mark&nbsp;<em>for="different_1"</em>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&emsp;Primary and accent
+                                </span>
+                                <span>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span>
+                                    &lt;/div&gt;
+                                </span>
+                                <span>
+                                    &lt;div <strong data-css-accent>data-css-accent</strong> data-css-role=&quot;checkbox&quot;&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;input name="different" <em>id="different_1"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;label <strong data-css-accent>data-css-primary</strong> data-css-mark&nbsp;<em>for="different_1"</em>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&emsp;Accent and primary
+                                </span>
+                                <span>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span>
+                                    &lt;/div&gt;
+                                </span>
+                            </code>
+                        </details>
+                        <!-- /Demo's source code exibition -->
+
+                        <p>
+                            <em>
+                                <strong>Notice:</strong>
+                                As mentioned everywhere, we take primary color as the default, so there's no need to declare that 
+                                the component uses the primary color for the button in the combination "Primary and accent".
+                            </em>
+                        </p>
+                    </section>
+                    <!-- /Different Colors -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Accent colors -->            
+        </div>
+        <!-- /Contents -->
+    </article>
+</body>
+</html>

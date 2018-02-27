@@ -1,0 +1,17 @@
+:root{
+    /* Blue palette */
+    --css-accent-50: #E3F2FD;
+    --css-accent-100: #BBDEFB;
+    --css-accent-200: #90CAF9;
+    --css-accent-300: #64B5F6;
+    --css-accent-400: #42A5F5;
+    --css-accent-500: #2196F3;
+    --css-accent-600: #1E88E5;
+    --css-accent-700: #1976D2;
+    --css-accent-800: #1565C0;
+    --css-accent-900: #0D47A1;
+    --css-accent-A100: #82B1FF;
+    --css-accent-A200: #448AFF;
+    --css-accent-A400: #2979FF;
+    --css-accent-A700: #2962FF;
+}

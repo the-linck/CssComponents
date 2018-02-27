@@ -1,0 +1,393 @@
+/* 
+ * Basic Checkbox Component rules
+ */
+[role="checkbox"],
+[data-css-role="checkbox"]
+{
+    background: none;
+    border: none;
+    display: inline-block;
+    outline:  none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+/* Hiding native checkbox (when used) */
+[data-css-role="checkbox"] > input[type="checkbox"]
+{
+    display: none;
+}
+
+
+
+/* 
+ * Checkbox background "button" basic rules
+ */
+[role="checkbox"] > [data-css-mark]::before,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="checkbox"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::before
+{
+    background: var(--css-primary-500);
+    border: 2px solid var(--css-primary-900);
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    width: 1.5em;
+}
+/* Adding accent color suport */
+[role="checkbox"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="normal"][data-css-accent] > [data-css-mark]::before
+{
+    background-color: var(--css-accent-500);
+    border-color: var(--css-accent-900);
+}
+
+/* Hover state */
+[role="checkbox"] > [data-css-mark]:hover::before,
+[data-css-role="checkbox"] > [data-css-mark]:hover::before
+{
+    background: var(--css-primary-400);
+    border-color: var(--css-primary-700);
+}
+[role="checkbox"][data-css-accent] > [data-css-mark]:hover::before,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]:hover::before
+{
+    background: var(--css-accent-400);
+    border-color: var(--css-accent-700);
+}
+
+/* Pressed/active state */
+[role="checkbox"] > [data-css-mark]:active::before,
+[data-css-role="checkbox"] > [data-css-mark]:active::before
+{
+    background: var(--css-primary-800);
+    border-color: var(--css-primary-900);
+}
+[role="checkbox"][data-css-accent] > [data-css-mark]:active::before,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]:active::before
+{
+    background: var(--css-accent-800);
+    border-color: var(--css-accent-900);
+}
+
+/* Disabled state */
+[data-css-role="checkbox"]> input[type="checkbox"]:disabled+[data-css-mark]::before
+{
+    background: var(--css-primary-50);
+    border-color: var(--css-primary-500);
+}
+[data-css-role="checkbox"][data-css-accent] > input[type="checkbox"]:disabled+[data-css-mark]::before
+[data-css-role="checkbox"] > input[type="checkbox"]:disabled+[data-css-mark][data-css-accent]::before
+{
+    background: var(--css-accent-50);
+    border-color: var(--css-accent-500);
+}
+
+
+
+/*
+ * Checkbox Tick basic rules
+ */
+[role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after
+{
+    content: '\2714';
+    border: 2px solid transparent;
+    font-size: 1.5em;
+    height: 1em;
+    left: 0;
+    line-height: 3.5em;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: 200ms opacity, 200ms line-height;
+    width: 1em;
+}
+
+/* Unchecked state */
+[role="checkbox"][aria-checked="false"] > [data-css-mark]::after
+{
+    line-height: 3.5em;
+}
+
+/* Checked/mixed state */
+[role="checkbox"][aria-checked="true"] > [data-css-mark]::after,
+[role="checkbox"][aria-checked="mixed"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > input[type="checkbox"]:checked+[data-css-mark]::after
+{
+    line-height: 1em;
+    opacity: 1;
+}
+[role="checkbox"][aria-checked="mixed"] > [data-css-mark]::after,
+[role="checkbox"][data-css-size="small"][aria-checked="mixed"] > [data-css-mark]::after
+{
+    content: "\2716";
+}
+/* Support for accent color */
+[role="checkbox"][data-css-accent] > [data-css-mark]::after,
+[role="checkbox"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-accent]::after
+{
+    color: var(--css-accent-800);
+}
+/* Support for primary color inside component with accent color */
+[role="checkbox"] > [data-css-mark]::after,
+[role="checkbox"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-primary]::after
+{
+    color: var(--css-primary-800);
+}
+
+/* Hover state */
+[role="checkbox"][data-css-accent] > [data-css-mark]:hover::after,
+[role="checkbox"] > [data-css-mark][data-css-accent]:hover::after,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]:hover::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-accent]:hover::after
+{
+    color: var(--css-accent-700);
+}
+[role="checkbox"] > [data-css-mark]:hover::after,
+[role="checkbox"] > [data-css-mark][data-css-primary]:hover::after,
+[data-css-role="checkbox"] > [data-css-mark]:hover::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-primary]:hover::after
+{
+    color: var(--css-primary-700);
+}
+
+/* Pressed/active state */
+[role="checkbox"][data-css-accent] > [data-css-mark]:active::after,
+[role="checkbox"] > [data-css-mark][data-css-accent]:active::after,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]:active::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-accent]:active::after
+{
+    color: var(--css-accent-900);
+}
+[role="checkbox"] > [data-css-mark]:active::after,
+[role="checkbox"] > [data-css-mark][data-css-primary]:active::after,
+[data-css-role="checkbox"] > [data-css-mark]:active::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-primary]:active::after
+{
+    color: var(--css-primary-900);
+}
+
+/* Disabled state */
+[data-css-role="checkbox"][data-css-accent] > input[type="checkbox"]:disabled+[data-css-mark]::after,
+[data-css-role="checkbox"] > input[type="checkbox"]:disabled+[data-css-mark][data-css-accent]::after
+{
+    color: var(--css-accent-300);
+}
+[data-css-role="checkbox"] > input[type="checkbox"]:disabled+[data-css-mark]::after,
+[data-css-role="checkbox"] > input[type="checkbox"]:disabled+[data-css-mark][data-css-primary]::after
+{
+    color: var(--css-primary-300);
+}
+
+
+
+/* 
+ * Component's additional sizes
+ */
+/* Small size */
+[role="checkbox"][data-css-size="small"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="small"] > [data-css-mark]::before
+{
+    height: 1em;
+    margin-bottom: 0.05em;
+    width: 1em;
+}
+[role="checkbox"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="small"] > [data-css-mark]::after
+{
+    font-size: 1em;
+}
+
+/* Big size */
+[role="checkbox"][data-css-size="big"],
+[data-css-role="checkbox"][data-css-size="big"]
+{
+    font-size: 1.25em;
+}
+[role="checkbox"][data-css-size="big"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="big"] > [data-css-mark]::before
+{
+    height: 3em;
+    margin-bottom: 0.012em;
+    width: 3em;
+}
+[role="checkbox"][data-css-size="big"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="big"] > [data-css-mark]::after
+{
+    font-size: 3em;
+}
+[role="checkbox"][data-css-size="big"][aria-checked="false"] > [data-css-mark]::after
+{
+    line-height: 3.25em;
+}
+
+/* Huge size */
+[role="checkbox"][data-css-size="huge"],
+[data-css-role="checkbox"][data-css-size="huge"]
+{
+    font-size: 1.5em;
+}
+[role="checkbox"][data-css-size="huge"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="huge"] > [data-css-mark]::before,
+[role="checkbox"][data-css-size="full"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::before
+{
+    height: 4em;
+    margin-right: 0.5em;
+    width: 4em;
+}
+[role="checkbox"][data-css-size="huge"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="huge"] > [data-css-mark]::after
+{
+    font-size: 4em;
+}
+[role="checkbox"][data-css-size="huge"][aria-checked="false"] > [data-css-mark]::after
+{
+    line-height: 3.35em;
+}
+
+/* Full size */
+[role="checkbox"][data-css-size="full"],
+[data-css-role="checkbox"][data-css-size="full"]
+{
+    display: block;
+    font-size: 2em;
+}
+[role="checkbox"][data-css-size="full"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::before
+{
+    height: 3em;
+    width: 3em;
+}
+[role="checkbox"][data-css-size="full"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::after
+{
+    font-size: 3.25em;
+}
+
+
+
+/*
+ * Component's forced states.
+ */
+ /* Normal state */
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::before
+{
+    background: var(--css-primary-500);
+    border-color: var(--css-primary-900);
+}
+[data-css-role="checkbox"][data-css-state="normal"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent]::before
+{
+    background: var(--css-accent-500);
+    border-color: var(--css-accent-900);
+}
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after
+{
+    color: var(--css-accent-900);
+}
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after
+{
+    color: var(--css-primary-800);
+}
+
+/* Selected state */
+[role="checkbox"][aria-selected] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::before
+{
+    background: var(--css-primary-400);
+    border-color: var(--css-primary-700);
+}
+[role="checkbox"][aria-selected][data-css-accent] > [data-css-mark]::before,
+[role="checkbox"][aria-selected] > [data-css-mark][data-css-accent]::before,
+[data-css-role="checkbox"][data-css-state="selected"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent]::before
+{
+    background: var(--css-accent-400);
+    border-color: var(--css-accent-700);
+}
+[role="checkbox"][data-css-accent][aria-selected] > [data-css-mark]::after,
+[role="checkbox"][aria-selected] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-accent][data-css-mark]::after
+{
+    color: var(--css-accent-800);
+}
+[role="checkbox"][aria-selected] > [data-css-mark]::after,
+[role="checkbox"][aria-selected] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after
+{
+    color: var(--css-primary-800);
+}
+
+/* Pressed state */
+[role="checkbox"][aria-pressed] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before
+{
+    background: var(--css-primary-800);
+    border-color: var(--css-primary-900);
+}
+[role="checkbox"][data-css-accent][aria-pressed] > [data-css-mark]::before,
+[role="checkbox"][aria-pressed] > [data-css-mark][data-css-accent]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::before
+{
+    background: var(--css-accent-800);
+    border-color: var(--css-accent-900);
+}
+[role="checkbox"][data-css-accent][aria-pressed] > [data-css-mark]::after,
+[role="checkbox"][aria-pressed] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after
+{
+    color: var(--css-accent-900);
+}
+[role="checkbox"][aria-pressed] > [data-css-mark]::after,
+[role="checkbox"][aria-pressed] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after
+{
+    color: var(--css-primary-900);
+}
+
+/* Disabled state */
+[role="checkbox"][aria-disabled] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before
+{
+    background: var(--css-primary-50);
+    border-color: var(--css-primary-300);
+}
+[role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[role="checkbox"][aria-disabled] > [data-css-mark][data-css-accent]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before
+{
+    background: var(--css-accent-50);
+    border-color: var(--css-accent-300);
+}
+[role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::after,
+[role="checkbox"][aria-disabled] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after
+{
+    color: var(--css-accent-300);
+}
+[role="checkbox"][aria-disabled] > [data-css-mark]::after,
+[role="checkbox"][aria-disabled] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after
+{
+    color: var(--css-primary-300);
+}

@@ -1,0 +1,17 @@
+:root{
+    /* Amber palette */
+    --css-primary-50: #FFF8E1;
+    --css-primary-100: #FFECB3;
+    --css-primary-200: #FFE082;
+    --css-primary-300: #FFD54F;
+    --css-primary-400: #FFCA28;
+    --css-primary-500: #FFC107;
+    --css-primary-600: #FFB300;
+    --css-primary-700: #FFA000;
+    --css-primary-800: #FF8F00;
+    --css-primary-900: #FF6F00;
+    --css-primary-A100: #FFE57F;
+    --css-primary-A200: #FFD740;
+    --css-primary-A400: #FFC400;
+    --css-primary-A700: #FFAB00;
+}

@@ -1,0 +1,13 @@
+:root{
+    /* Grey palette */
+    --css-primary-50: #FAFAFA;
+    --css-primary-100: #F5F5F5;
+    --css-primary-200: #EEEEEE;
+    --css-primary-300: #E0E0E0;
+    --css-primary-400: #BDBDBD;
+    --css-primary-500: #9E9E9E;
+    --css-primary-600: #757575;
+    --css-primary-700: #616161;
+    --css-primary-800: #424242;
+    --css-primary-900: #212121;
+}

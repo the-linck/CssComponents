@@ -1,0 +1,17 @@
+:root{
+    /* Pink palette */
+    --css-accent-50: #FCE4EC;
+    --css-accent-100: #F8BBD0;
+    --css-accent-200: #F48FB1;
+    --css-accent-300: #F06292;
+    --css-accent-400: #EC407A;
+    --css-accent-500: #E91E63;
+    --css-accent-600: #D81B60;
+    --css-accent-700: #C2185B;
+    --css-accent-800: #AD1457;
+    --css-accent-900: #880E4F;
+    --css-accent-A100: #FF80AB;
+    --css-accent-A200: #FF4081;
+    --css-accent-A400: #F50057;
+    --css-accent-A700: #C51162;
+}

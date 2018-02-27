@@ -1,0 +1,17 @@
+:root{
+    /* Cyan palette */
+    --css-accent-50: #E0F7FA;
+    --css-accent-100: #B2EBF2;
+    --css-accent-200: #80DEEA;
+    --css-accent-300: #4DD0E1;
+    --css-accent-400: #26C6DA;
+    --css-accent-500: #00BCD4;
+    --css-accent-600: #00ACC1;
+    --css-accent-700: #0097A7;
+    --css-accent-800: #00838F;
+    --css-accent-900: #006064;
+    --css-accent-A100: #84FFFF;
+    --css-accent-A200: #18FFFF;
+    --css-accent-A400: #00E5FF;
+    --css-accent-A700: #00B8D4;
+}

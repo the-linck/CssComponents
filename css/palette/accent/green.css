@@ -1,0 +1,17 @@
+:root{
+    /* Green palette */
+    --css-accent-50: #E8F5E9;
+    --css-accent-100: #C8E6C9;
+    --css-accent-200: #A5D6A7;
+    --css-accent-300: #81C784;
+    --css-accent-400: #66BB6A;
+    --css-accent-500: #4CAF50;
+    --css-accent-600: #43A047;
+    --css-accent-700: #388E3C;
+    --css-accent-800: #2E7D32;
+    --css-accent-900: #1B5E20;
+    --css-accent-A100: #B9F6CA;
+    --css-accent-A200: #69F0AE;
+    --css-accent-A400: #00E676;
+    --css-accent-A700: #00C853;
+}

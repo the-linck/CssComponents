@@ -1,0 +1,17 @@
+:root{
+    /* Lime palette */
+    --css-accent-50: #F9FBE7;
+    --css-accent-100: #F0F4C3;
+    --css-accent-200: #E6EE9C;
+    --css-accent-300: #DCE775;
+    --css-accent-400: #D4E157;
+    --css-accent-500: #CDDC39;
+    --css-accent-600: #C0CA33;
+    --css-accent-700: #AFB42B;
+    --css-accent-800: #9E9D24;
+    --css-accent-900: #827717;
+    --css-accent-A100: #F4FF81;
+    --css-accent-A200: #EEFF41;
+    --css-accent-A400: #C6FF00;
+    --css-accent-A700: #AEEA00;
+}

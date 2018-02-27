@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dialog Demos</title>
+    <link href="../css/complete.css" rel="stylesheet"/>
+    <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
+</head>
+<body aria-labelledby="dialog_demos">
+    <header>
+        <h1 id="dialog_demos">
+            <a>Demos</a>
+            &rarr;
+            <strong>Dialog Component</strong>
+        </h1>
+    </header>
+    <article itemscope itemtype="http://schema.org/APIReference">
+        <header>
+            <h2>The Dialog Component</h2>
+        </header>
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <header>
+                <h3 data-css-role="heading">Contents</h3>
+            </header>
+            <ol>
+                <li>
+                    <a href="#standart">Standart Dialog</a>
+                    <ol>
+                        <li>
+                            <a href="#modal">Modal</a>
+                        </li>
+                        <li>
+                            <a href="#sizes">Sizes</a>
+                        </li>
+                    </ol>
+                </li>
+                <li data-css-accent>
+                    <a href="#accent">Accent Colors</a>
+                </li>
+            </ol>
+        </nav>
+        <div itemprop="articleBody">
+            <section aria-labelledby="standart">
+                <header id="standart">
+                    <h3 data-css-role="heading">Standart Dialog</h3>
+                </header>
+                <p>
+                    Dialogs are great elements to show messages, confirmations or even just separate content from the page. <br>
+                    Our implementation is quite simple, yet provides what most people will need.<br>
+                </p>
+                <p>
+                    For a simple dialog that will not block user's interaction with the page, you can use the
+                    <strong>Dialog Component</strong> with the <strong>dialog</strong> role.
+                </p>
+                <div>
+                    <a href="#standart-dialog" id="standart-button" role="button" title="Standart Dialog">Open Standart Dialog</a>
+                    <section aria-labelledby="standart-header" id="standart-dialog" role="dialog">
+                        <h4 data-css-role="heading" id="standart-header">
+                            <a href="#standart" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a standart dialog
+                        </h4>
+                        <div>
+                            And i am the dialog's text.
+                        </div>
+                    </section>
+                </div>
+                <details open itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" itemprop="text">
+                        <span data-css-line>
+                            &lt;a&nbsp;<strong>href=&quot;#standart-dialog&quot;</strong>&nbsp;<em>id=&quot;standart-button&quot;</em>&nbsp;role=&quot;button&quot;&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;Open Standart Dialog
+                        </span>
+                        <span data-css-line>
+                            &lt;/a&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;aside&nbsp;<em>aria-labelledby=&quot;standart-header&quot;</em>&nbsp;<strong>id=&quot;standart-dialog&quot; role=&quot;dialog&quot;</strong>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;h5 data-css-role="heading"&nbsp;<em>id=&quot;standart-header&quot;</em>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&emsp;&lt;a&nbsp;<em>href=&quot;#standart&quot;</em>&nbsp;data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&emsp;I'm a standart dialog
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;/h5&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;div&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&emsp;And i am the dalog's text.
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;/aside&gt;
+                        </span>
+                    </code>
+                </details>
+                <p>
+                    Notice several details about the implementation above:
+                </p>
+                <ul>
+                    <li>
+                        <strong>The dialog is openend by a link button, with it's <em>href</em> pointing to the dialog's id.</strong><br>
+                        We show Dialogs by the <em>:target</em> selector, so the element declared as the dialog must be the
+                        current target of the page to show the dialog - wich is easy to do with links and ids.
+                    </li>
+                    <li>
+                        <strong>The dialog is an <em>aside</em> element with <em>role="dialog" and an ID</em></strong><br>
+                        A dialog is made to be apart of the page, so the <em>aside</em> element feels like a natural choice.
+                    </li>
+                    <li>
+                        <strong>A header is present</strong><br>
+                        Accordingo to ARIA, dialogs must be labeled. The simplest way to it is to prive a header to the
+                        dialog, using it's title as a label.
+                    </li>
+                    <li>
+                        <strong>The close button points to the button wich opens the dialog</strong><br>
+                        We recommend to always point the dialog's close button to the element wich opened the dialog or to
+                        the section of the page where it is. With that rule we avoid much unnecessary scroll on the page.
+                    </li>
+                </ul>
+                <div role="group" data-css-group="chapters">
+                    <section aria-labelledby="modal">
+                        <header id="modal">
+                            <h4 data-css-role="heading">Modal</h4>
+                        </header>
+                        <p>
+                            If you must make the user interact only with the contents of the dialog, you can choose the
+                            <strong>alertdialog</strong> role (as alert dialogs are always modal) or add our
+                            <strong>data-css-modal</strong> attribute to the dialog
+                        </p>
+                        <div>
+                            <a href="#modal-dialog" id="modal-button" role="button" title="Modal Dialog">Open Modal Dialog</a>
+                            <section aria-labelledby="modal-header" data-css-modal id="modal-dialog" role="dialog">
+                                <h5 data-css-role="heading" id="modal-header">
+                                    <a href="#modal" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                    I'm a modal dialog
+                                </h5>
+                                <div>
+                                    And i am the dialog's text.
+                                </div>
+                            </section>
+                        </div>
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" itemprop="text">
+                                <span data-css-line>
+                                    &lt;a href=&quot;#modal-dialog&quot; id=&quot;modal-button&quot;&nbsp;role=&quot;button&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;Open Modal Dialog
+                                </span>
+                                <span data-css-line>
+                                    &lt;/a&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;aside&nbsp; aria-labelledby=&quot;modal-header&quot; <strong>data-css-modal</strong> id=&quot;modal-dialog&quot; role=&quot;dialog&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;h5 data-css-role="heading" id=&quot;modal-header&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;&lt;a href=&quot;#modal-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;I'm a modal dialog
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/h5&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&emsp;And i am the dalog's text.
+                                </span>
+                                <span data-css-line>
+                                    &emsp;&lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;/aside&gt;
+                                </span>
+                            </code>
+                        </details>
+                    </section>
+                    <section aria-labelledby="sizes">
+                        <header id="sizes">
+                            <h4 data-css-role="heading">Sizes</h4>
+                        </header>
+                        <p></p>
+                        <div>
+                            <a href="#small-dialog" id="small-button" role="button" title="Modal Dialog">Small</a>
+                            <section aria-labelledby="small-header" data-css-size="small" id="small-dialog" role="dialog">
+                                <h5 data-css-role="heading" id="small-header">
+                                    <a href="#sizes" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                    I'm a small dialog
+                                </h5>
+                                <div>
+                                    Some small message.
+                                </div>
+                            </section>
+                            <a href="#normal-dialog" id="normal-button" role="button" title="Modal Dialog">Normal</a>
+                            <section aria-labelledby="normal-header" id="normal-dialog" role="dialog">
+                                <h5 data-css-role="heading" id="normal-header">
+                                    <a href="#sizes" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                    I'm a normal dialog
+                                </h5>
+                                <div>
+                                    Some normal message.
+                                </div>
+                            </section>
+                            <a href="#big-dialog" id="big-button" role="button" title="Modal Dialog">Big</a>
+                            <section aria-labelledby="big-header" data-css-size="big" id="big-dialog" role="dialog">
+                                <h5 data-css-role="heading" id="big-header">
+                                    <a href="#big-button" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                    I'm a big dialog
+                                </h5>
+                                <div>
+                                    Some big message.
+                                </div>
+                            </section>
+                            <a href="#huge-dialog" id="huge-button" role="button" title="Modal Dialog">Huge</a>
+                            <section aria-labelledby="huge-header" data-css-size="huge" id="huge-dialog" role="dialog">
+                                <h5 data-css-role="heading" id="huge-header">
+                                    <a href="#huge-button" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                    I'm a huge dialog
+                                </h5>
+                                <div>
+                                    Some huge message.
+                                </div>
+                            </section>
+                            <a href="#full-dialog" id="full-button" role="button" title="Modal Dialog">Fullsize</a>
+                            <section aria-labelledby="full-header" data-css-size="full" id="full-dialog" role="dialog">
+                                <h5 data-css-role="heading" id="full-header">
+                                    <a href="#full-button" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                    I'm a fullsize dialog
+                                </h5>
+                                <div>
+                                    Anything you want.
+                                </div>
+                            </section>
+                        </div>
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" itemprop="text">
+                                <span data-css-line>&lt;a href=&quot;#small-dialog&quot; id=&quot;small-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Small&lt;/a&gt;</span>
+                                <span data-css-line>&lt;aside aria-labelledby=&quot;small-header&quot; <strong>data-css-size=&quot;small&quot;</strong> id=&quot;small-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                                <span data-css-line>&emsp;&lt;header id=&quot;small-header&quot; role=&quot;heading&quot;&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#small-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;I'm a small dialog</span>
+                                <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                                <span data-css-line>&emsp;&lt;/header&gt;</span>
+                                <span data-css-line>&emsp;&lt;div&gt;</span>
+                                <span data-css-line>&emsp;&emsp;Some small message.</span>
+                                <span data-css-line>&emsp;&lt;/div&gt;</span>
+                                <span data-css-line>&lt;/aside&gt;</span>
+                                <span data-css-line>&lt;a href=&quot;#normal-dialog&quot; id=&quot;normal-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Normal&lt;/a&gt;</span>
+                                <span data-css-line>&lt;aside aria-labelledby=&quot;normal-header&quot; id=&quot;normal-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                                <span data-css-line>&emsp;&lt;header id=&quot;normal-header&quot; role=&quot;heading&quot;&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#normal-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;I'm a normal dialog</span>
+                                <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                                <span data-css-line>&emsp;&lt;/header&gt;</span>
+                                <span data-css-line>&emsp;&lt;div&gt;</span>
+                                <span data-css-line>&emsp;&emsp;Some normal message.</span>
+                                <span data-css-line>&emsp;&lt;/div&gt;</span>
+                                <span data-css-line>&lt;/aside&gt;</span>
+                                <span data-css-line>&lt;a href=&quot;#big-dialog&quot; id=&quot;big-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Big&lt;/a&gt;</span>
+                                <span data-css-line>&lt;aside aria-labelledby=&quot;big-header&quot; <strong>data-css-size=&quot;big&quot;</strong> id=&quot;big-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                                <span data-css-line>&emsp;&lt;header id=&quot;big-header&quot; role=&quot;heading&quot;&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#big-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;I'm a big dialog</span>
+                                <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                                <span data-css-line>&emsp;&lt;/header&gt;</span>
+                                <span data-css-line>&emsp;&lt;div&gt;</span>
+                                <span data-css-line>&emsp;&emsp;Some big message.</span>
+                                <span data-css-line>&emsp;&lt;/div&gt;</span>
+                                <span data-css-line>&lt;/aside&gt;</span>
+                                <span data-css-line>&lt;a href=&quot;#huge-dialog&quot; id=&quot;huge-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Huge&lt;/a&gt;</span>
+                                <span data-css-line>&lt;aside aria-labelledby=&quot;huge-header&quot; <strong>data-css-size=&quot;huge&quot;</strong> id=&quot;huge-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                                <span data-css-line>&emsp;&lt;header id=&quot;huge-header&quot; role=&quot;heading&quot;&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#huge-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;I'm a huge dialog</span>
+                                <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                                <span data-css-line>&emsp;&lt;/header&gt;</span>
+                                <span data-css-line>&emsp;&lt;div&gt;</span>
+                                <span data-css-line>&emsp;&emsp;Some huge message.</span>
+                                <span data-css-line>&emsp;&lt;/div&gt;</span>
+                                <span data-css-line>&lt;/aside&gt;</span>
+                                <span data-css-line>&lt;a href=&quot;#full-dialog&quot; id=&quot;full-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Fullsize&lt;/a&gt;</span>
+                                <span data-css-line>&lt;aside aria-labelledby=&quot;full-header&quot; <strong>data-css-size=&quot;full&quot;</strong> id=&quot;full-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                                <span data-css-line>&emsp;&lt;header id=&quot;full-header&quot; role=&quot;heading&quot;&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#full-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                                <span data-css-line>&emsp;&emsp;&emsp;I'm a fullsize dialog</span>
+                                <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                                <span data-css-line>&emsp;&lt;/header&gt;</span>
+                                <span data-css-line>&emsp;&lt;div&gt;</span>
+                                <span data-css-line>&emsp;&emsp;Anything you want.</span>
+                                <span data-css-line>&emsp;&lt;/div&gt;</span>
+                                <span data-css-line>&lt;/aside&gt;</span>
+                            </code>
+                        </details>
+                    </section>
+                </div>
+            </section>
+            <section aria-labelledby="accent" data-css-accent>
+                <header id="accent">
+                    <h4 data-css-role="heading">Accent colors</h4>
+                </header>
+                <p></p>
+                <div>
+                    <a data-css-accent href="#small-accent" role="button">Small</a>
+                    <section data-css-accent aria-labelledby="small-accent-header" data-css-size="small" id="small-accent" role="dialog">
+                        <h5 data-css-role="heading" id="small-accent-header">
+                            <a href="#accent" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a small dialog
+                        </h5>
+                        <div>
+                            Some small message.
+                        </div>
+                    </section>
+                    <a data-css-accent href="#normal-accent" role="button">Normal</a>
+                    <section data-css-accent aria-labelledby="normal-accent-header" id="normal-accent" role="dialog">
+                        <h5 data-css-role="heading" id="normal-accent-header">
+                            <a href="#accent" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a normal dialog
+                        </h5>
+                        <div>
+                            Some normal message.
+                        </div>
+                    </section>
+                    <a data-css-accent href="#modal-accent" role="button">Modal</a>
+                    <section data-css-accent data-css-modal aria-labelledby="modal-accent-header" id="modal-accent" role="dialog">
+                        <h5 data-css-role="heading" id="modal-accent-header">
+                            <a href="#accent" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a modal dialog
+                        </h5>
+                        <div>
+                            Some normal message in a modal dialog.
+                        </div>
+                    </section>
+                    <a data-css-accent href="#big-accent" role="button">Big</a>
+                    <section data-css-accent aria-labelledby="big-accent-header" data-css-size="big" id="big-accent" role="dialog">
+                        <h5 data-css-role="heading" id="big-accent-header">
+                            <a href="#accent" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a big dialog
+                        </h5>
+                        <div>
+                            Some big message.
+                        </div>
+                    </section>
+                    <a data-css-accent href="#huge-accent" role="button">Huge</a>
+                    <section aria-labelledby="huge-accent-header" data-css-accent data-css-size="huge" id="huge-accent" role="dialog">
+                        <h5 data-css-role="heading" id="huge-accent-header">
+                            <a href="#accent" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a huge dialog
+                        </h5>
+                        <div>
+                            Some huge message.
+                        </div>
+                    </section>
+                    <a data-css-accent href="#full-accent" role="button">Fullsize</a>
+                    <section aria-labelledby="full-accent-header" data-css-accent data-css-size="full" id="full-accent" role="dialog">
+                        <h5 data-css-role="heading" id="full-accent-header">
+                            <a href="#accent" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                            I'm a fullsize dialog
+                        </h5>
+                        <div>
+                            Anything you want.
+                        </div>
+                    </section>
+                </div>
+                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" itemprop="text">
+                        <span data-css-line>&lt;a href=&quot;#small-dialog&quot; id=&quot;small-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Small&lt;/a&gt;</span>
+                        <span data-css-line>&lt;aside aria-labelledby=&quot;small-header&quot; <strong>data-css-size=&quot;small&quot;</strong> id=&quot;small-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                        <span data-css-line>&emsp;&lt;header id=&quot;small-header&quot; role=&quot;heading&quot;&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#small-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;I'm a small dialog</span>
+                        <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                        <span data-css-line>&emsp;&lt;/header&gt;</span>
+                        <span data-css-line>&emsp;&lt;div&gt;</span>
+                        <span data-css-line>&emsp;&emsp;Some small message.</span>
+                        <span data-css-line>&emsp;&lt;/div&gt;</span>
+                        <span data-css-line>&lt;/aside&gt;</span>
+                        <span data-css-line>&lt;a href=&quot;#normal-dialog&quot; id=&quot;normal-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Normal&lt;/a&gt;</span>
+                        <span data-css-line>&lt;aside aria-labelledby=&quot;normal-header&quot; id=&quot;normal-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                        <span data-css-line>&emsp;&lt;header id=&quot;normal-header&quot; role=&quot;heading&quot;&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#normal-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;I'm a normal dialog</span>
+                        <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                        <span data-css-line>&emsp;&lt;/header&gt;</span>
+                        <span data-css-line>&emsp;&lt;div&gt;</span>
+                        <span data-css-line>&emsp;&emsp;Some normal message.</span>
+                        <span data-css-line>&emsp;&lt;/div&gt;</span>
+                        <span data-css-line>&lt;/aside&gt;</span>
+                        <span data-css-line>&lt;a href=&quot;#big-dialog&quot; id=&quot;big-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Big&lt;/a&gt;</span>
+                        <span data-css-line>&lt;aside aria-labelledby=&quot;big-header&quot; <strong>data-css-size=&quot;big&quot;</strong> id=&quot;big-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                        <span data-css-line>&emsp;&lt;header id=&quot;big-header&quot; role=&quot;heading&quot;&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#big-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;I'm a big dialog</span>
+                        <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                        <span data-css-line>&emsp;&lt;/header&gt;</span>
+                        <span data-css-line>&emsp;&lt;div&gt;</span>
+                        <span data-css-line>&emsp;&emsp;Some big message.</span>
+                        <span data-css-line>&emsp;&lt;/div&gt;</span>
+                        <span data-css-line>&lt;/aside&gt;</span>
+                        <span data-css-line>&lt;a href=&quot;#huge-dialog&quot; id=&quot;huge-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Huge&lt;/a&gt;</span>
+                        <span data-css-line>&lt;aside aria-labelledby=&quot;huge-header&quot; <strong>data-css-size=&quot;huge&quot;</strong> id=&quot;huge-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                        <span data-css-line>&emsp;&lt;header id=&quot;huge-header&quot; role=&quot;heading&quot;&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#huge-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;I'm a huge dialog</span>
+                        <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                        <span data-css-line>&emsp;&lt;/header&gt;</span>
+                        <span data-css-line>&emsp;&lt;div&gt;</span>
+                        <span data-css-line>&emsp;&emsp;Some huge message.</span>
+                        <span data-css-line>&emsp;&lt;/div&gt;</span>
+                        <span data-css-line>&lt;/aside&gt;</span>
+                        <span data-css-line>&lt;a href=&quot;#full-dialog&quot; id=&quot;full-button&quot; role=&quot;button&quot; title=&quot;Modal Dialog&quot;&gt;Fullsize&lt;/a&gt;</span>
+                        <span data-css-line>&lt;aside aria-labelledby=&quot;full-header&quot; <strong>data-css-size=&quot;full&quot;</strong> id=&quot;full-dialog&quot; role=&quot;dialog&quot;&gt;</span>
+                        <span data-css-line>&emsp;&lt;header id=&quot;full-header&quot; role=&quot;heading&quot;&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&lt;h5&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;&lt;a href=&quot;#full-button&quot; data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;</span>
+                        <span data-css-line>&emsp;&emsp;&emsp;I'm a fullsize dialog</span>
+                        <span data-css-line>&emsp;&emsp;&lt;/h5&gt;</span>
+                        <span data-css-line>&emsp;&lt;/header&gt;</span>
+                        <span data-css-line>&emsp;&lt;div&gt;</span>
+                        <span data-css-line>&emsp;&emsp;Anything you want.</span>
+                        <span data-css-line>&emsp;&lt;/div&gt;</span>
+                        <span data-css-line>&lt;/aside&gt;</span>
+                    </code>
+                </details>
+            </section>
+        </div>
+    </article>
+</body>
+</html>

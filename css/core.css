@@ -1,0 +1,139 @@
+/* Variables */
+:root{
+    /* black and white */
+    --css-black: #000;
+    --css-white: #FFF;
+    /* default palette (Grey) */
+    --css-primary-50: #FAFAFA;
+    --css-primary-100: #F5F5F5;
+    --css-primary-200: #EEEEEE;
+    --css-primary-300: #E0E0E0;
+    --css-primary-400: #BDBDBD;
+    --css-primary-500: #9E9E9E;
+    --css-primary-600: #757575;
+    --css-primary-700: #616161;
+    --css-primary-800: #424242;
+    --css-primary-900: #212121;
+}
+
+
+
+/* Basic styles */
+html,
+body
+{
+    display: block;
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    min-width: 100%;
+    z-index: 1;
+}
+body
+{
+    background: var(--css-primary-50);
+    color: var(--css-primary-800);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 14px;
+}
+[role],
+[data-css-role]
+{
+    position: relative;
+}
+
+
+
+/* Colors */
+[data-css-primary]
+{
+    color: var(--css-primary-900);
+}
+[data-css-accent]
+{
+    color: var(--css-accent-900);
+}
+
+
+
+/* Utilitaries */
+[aria-hidden="true"]
+{
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+[data-css-role="heading"]
+[role="heading"]
+{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+[data-css-float="left"]
+{
+    float: left;
+}
+[data-css-float="right"]
+{
+    float: right;
+}
+[data-css-clear="left"]
+{
+    clear: left;
+}
+[data-css-clear="right"]
+{
+    clear: right;
+}
+[data-css-clear="both"]
+{
+    clear: both;
+}
+
+[data-css-position="absolute"]
+{
+    position: absolute;
+}
+[data-css-position="fixed"]
+{
+    position: fixed;
+}
+[data-css-position="relative"]
+{
+    position: relative;
+}
+[data-css-position="static"]
+{
+    position: static;
+}
+[data-css-position="sticky"]
+{
+    position: sticky;
+}
+
+[data-css-bold]
+{
+    font-weight: bold;
+}
+[data-css-italic]
+{
+    font-style: italic;
+}
+[data-css-line-through]
+{
+    text-decoration: line-through;
+}
+[data-css-oblique]
+{
+    font-style: oblique;
+}
+[data-css-overline]
+{
+    text-decoration: overline;
+}
+[data-css-underline]
+{
+    text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+:root{
+    /* Deep Orange palette */
+    --css-accent-50: #FBE9E7;
+    --css-accent-100: #FFCCBC;
+    --css-accent-200: #FFAB91;
+    --css-accent-300: #FF8A65;
+    --css-accent-400: #FF7043;
+    --css-accent-500: #FF5722;
+    --css-accent-600: #F4511E;
+    --css-accent-700: #E64A19;
+    --css-accent-800: #D84315;
+    --css-accent-900: #BF360C;
+    --css-accent-A100: #FF9E80;
+    --css-accent-A200: #FF6E40;
+    --css-accent-A400: #FF3D00;
+    --css-accent-A700: #DD2C00;
+}

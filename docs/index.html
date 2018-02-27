@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>CSS Components Reference</title>
+    <!-- Importing all components and default primary color palette -->
+    <link href="../css/complete.css" rel="stylesheet"/>
+    <!-- Importing accent color pallete -->
+    <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <h1 id="tooltip_demos">
+            <strong>Demos</strong>
+        </h1>
+    </header>
+
+    <article aria-label="Components Index" itemscope itemtype="http://schema.org/APIReference">
+        <h2>CSS Components Index</h2>
+
+        <!-- Table of contents -->
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement" id="contents">
+            <header>
+                <h2 data-css-role="heading">Contents</h2>
+            </header>
+
+            <ol>
+                <!-- Project Itself -->
+                <li data-css-accent>
+                    <a itemprop="url" href="#hello_world">The Project itself</a>
+                    <ol>    
+                        <li>
+                            <a itemprop="url" href="#project_structure">Structure</a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#coventions">Conventions</a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#release">Release model</a>
+                        </li>
+                    </ol>
+                </li>
+                <!-- /Project Itself -->
+                <!-- Widget ARIA Components -->
+                <li>
+                    <a itemprop="url" href="#widgets">
+                        <span itemprop="name">
+                            Widget Components
+                        </span>
+                    </a>
+
+                    <ol>    
+                        <!-- Button Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_button">
+                                <i data-css-accent data-css-bold>&#x2714;</i>
+                                <span itemprop="name">
+                                    Button
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Button Component -->
+                        <!-- Checkbox Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_checkbox">
+                                <i data-css-accent data-css-bold>&#x2714;</i>
+                                <span itemprop="name">
+                                    Checkbox
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Checkbox Component -->
+                        <!-- Combobox Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_combobox">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Combobox
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Combobox Component -->
+                        <!-- Grid Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_grid">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Grid
+                                    <span data-css-italic>
+                                        / gridcell
+                                        / treegrid
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Grid Component -->
+                        <!-- Link Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_link">
+                                <i data-css-accent data-css-bold>&#x2714;</i>
+                                <span itemprop="name">
+                                    Link
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Link Component -->
+                        <!-- Listbox Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_listbox">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Listbox
+                                    <span data-css-italic>
+                                        / option
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Listbox Component -->
+                        <!-- Menu Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_menu">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Menu
+                                    <span data-css-italic>
+                                        / menubar
+                                        / menuitem
+                                        / menuitemcheckbox
+                                        / menuitemradio
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Menu Component -->
+                        <!-- Progressbar Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_progressbar">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Progressbar
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Progressbar Component -->
+                        <!-- Radio Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_radio">
+                                <i data-css-accent data-css-bold>&#x2714;</i>
+                                <span itemprop="name">
+                                    Radio
+                                    <span data-css-italic>
+                                        / radiogroup
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Radio Component -->
+                        <!-- Scrollbar Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_scrollbar">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Scrollbar
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Scrollbar Component -->
+                        <!-- Searchbox Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_searchbox">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Searchbox
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Searchbox Component -->
+                        <!-- Separator Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_separator">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Separator
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Separator Component -->
+                        <!-- Slider Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_slider">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Slider
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Slider Component -->
+                        <!-- Spinbutton Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_spinbutton">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Spinbutton
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Spinbutton Component -->
+                        <!-- Switch Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_switch">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Switch
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /Switch Component -->
+                        <!-- Tabpanel Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_tabpanel">
+                            <i>&#x2716;</i>
+                            <span itemprop="name">
+                                Tabpanel
+                                <span data-css-italic>
+                                    / tablist
+                                    / tab
+                                </span>
+                            </span>
+                            </a>
+                        </li>
+                        <!-- /Tabpanel Component -->
+                        <!-- Textbox Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_textbox">
+                            <i>&#x2716;</i>
+                            <span itemprop="name">
+                                Textbox
+                            </span>
+                            </a>
+                        </li>
+                        <!-- /Textbox Component -->
+                        <!-- Tree Component -->
+                        <li>
+                            <a itemprop="url" href="#widget_tree">
+                            <i>&#x2716;</i>
+                            <span itemprop="name">
+                                Tree
+                                <span data-css-italic>
+                                    / treeitem
+                                </span>
+                            </span>
+                            </a>
+                        </li>
+                        <!-- /Tree Component -->
+                    </ol>
+                </li>
+                <!-- /Widget ARIA Components -->
+                <!-- Document Strucutre ARIA Components -->
+                <li>
+                    <a itemprop="url" href="#structure">
+                        <span itemprop="name">
+                            Document Strucutre Components
+                        </span>
+                    </a>
+                    <ol>
+                        <li>
+                            <a itemprop="url" href="#structure_application">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Application
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_article">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Article
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_cell">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Cell
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_columnheader">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Columnheader
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_definition">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Definition
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_directory">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Directory
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_document">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Document
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_feed">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Feed
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_figure">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Figure
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_group">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Group
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_heading">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Heading
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_img">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Img
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_list">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    List
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_listitem">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Listitem
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_math">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Math
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_none">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    None
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_note">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Note
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_presentation">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Presentation
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_row">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Row
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_rowgroup">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Rowgroup
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_rowheader">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Rowheader
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_separator">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Separator
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_table">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Table
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_term">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Term
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_toolbar">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Toolbar
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#structure_tooltip">
+                                <i data-css-accent data-css-bold>&#x2714;</i>
+                                <span itemprop="name">
+                                    Tooltip
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                </li>
+                <!-- /Document Strucutre ARIA Components -->
+                <!-- Landmark ARIA Components -->
+                <li>
+                    <a itemprop="url" href="#landmark">
+                        <span itemprop="name">
+                            Landmark Components
+                        </span>
+                    </a>
+                    <ol>
+                        <li>
+                            <a itemprop="url" href="#landmark_banner">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Banner
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_complementary">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Complementary
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_contentinfo">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Contentinfo
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_form">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Form
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_main">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Main
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_navigation">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Navigation
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_region">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Region
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#landmark_search">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Search
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                </li>
+                <!-- /Landmark ARIA Components -->                
+                <!-- Live Region type ARIA components -->
+                <li>
+                    <a itemprop="url" href="#live">
+                        <span itemprop="name">
+                            Live Region Components
+                        </span>
+                    </a>
+                    <ol>
+                        <li>
+                            <a itemprop="url" href="#live_alert">
+                                <i>&#x2714;</i>
+                                <span itemprop="name">
+                                    Alert
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#live_log">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Log
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#live_marquee">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Marquee
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#live_status">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Status
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a itemprop="url" href="#live_timer">
+                                <i>&#x2716;</i>
+                                <span itemprop="name">
+                                    Timer
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                </li>
+                <!-- /Live Region type ARIA components -->                
+                <!-- Window type ARIA components -->
+                <li>
+                    <a itemprop="url" href="#window">Window Components</a>
+                    <ol>
+                        <li>
+                            <a itemprop="url" href="#window_dialog">
+                                <i data-css-accent data-css-bold>&#x2714;</i>
+                                <span itemprop="name">
+                                    Dialog
+                                    <span data-css-italic>
+                                        / Alertdialog
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                    </ol>
+                </li>
+                <!-- /Window type ARIA components -->                
+                <!-- Components built atop schemma.org -->
+                <li>
+                    <a itemprop="url" href="#schema">
+                        <span itemprop="name">Schema Components</span>
+                    </a>
+                </li>
+                <!-- /Components built atop schemma.org -->
+            </ol>
+        </nav>
+        <!-- /Table of contents -->
+
+        <div itemprop="articleBody">
+            <!-- Project Itself -->
+            <section aria-labelledby="hello_world" data-css-chapter>
+                <header id="hello_world">
+                    <h3 data-css-role="heading">The Project itself</h3>
+                </header>
+
+                <p>
+                    Firstly, <strong>CSS Components, is a PURE CSS library for front-end development.</strong><br>
+                    The reason this project started was it developer (yeah, me) being tired of seeing how websites are
+                    unnecessarily heavyweight and with slow loading due the use of Javacript and JS libraries on their
+                    apperence - wich leads to poor performance and bad programming pratices.
+                </p>
+                <p>
+                    Thinking on the problem of excessive JS use and the lack of several (normally most) useful things
+                    in existing pure CSS libraries that do exist in JS powered ones, i've got to one simple conclusion:
+                    <em>maybe I sould make my own library, using only CSS</em>. And ... why not do it?
+                </p>
+                <p>
+                    Initially, it would be a simple copy of major front-end libraries and frameworks, remade with only
+                    CSS. But after some redesigns an two years learning more of web programming with pratice, I've
+                    decided to go back at the begining and redo the project with the following focuses:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Simplicity</strong><br>
+                        It must be easy to use and at the same time make developers job easier;
+                    </li>
+                    <li>
+                        <strong>Performance</strong><br>
+                        It must be lightweight and use the miniimum ammount of code needed;
+                    </li>
+                    <li>
+                        <strong>Accessibility</strong><br>
+                        It should help to make the web more accessible to everyone;
+                    </li>
+                    <li>
+                        <strong>Standardization</strong><br>
+                        It should help to make the websites structure close to common standarts (wich helps with SEO);
+                    </li>
+                    <li>
+                        <strong>Visual</strong><br>
+                        Of couse, the library must provide a good visual to sites who use it.
+                    </li>
+                </ul>
+                <p>
+                    Given that big objetives, the project has 3 long term goals:
+                </p>
+                <ol>
+                    <li>Be a really useful library to front-end development</li>
+                    <li>Implement all accessibility (ARIA) rules and standarts</li>
+                    <li>Implement all schema.org standart types</li>
+                </ol>
+                <p>
+                    Of couse that's very, very hard to do. So any help is very welcome. ;)
+                </p>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Structure -->
+                    <section aria-labelledby="project_structure" data-css-chapter>
+                        <header id="project_structure">
+                            <h4 data-css-role="heading">Structure</h4>
+                        </header>
+                        <p>
+                            The design rules applied here are quite simple:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Every file directly in the project's CSS folder act as a module</strong><br>
+                                Except for <strong>complete.css</strong>, that's a shorcut to import all the modules.
+                            </li>
+                            <li>
+                                <strong>The modules are independent from all others (except the core)</strong><br>
+                                The Core Module defines basic rules that all modules will follow and use and some
+                                utilitary CSS styles that can be used everywhere on front-end.<br>
+                                Everething that doesn't fit that criteria must have it's own module.
+                            </li>
+                            <li>
+                                <strong>Modules (other than Core) serve to implement components</strong><br>
+                                Being a button, a dialog or even a whole article (like this), every kind of thing that
+                                can be used in a web page and is supported by the library is treated as a component.<br>
+                                If we use some OOP concepts, a component would be equivalento to a Class: a standart
+                                model of something.
+                            </li>
+                            <li>
+                                <strong>When possible, components must be groupped</strong><br>
+                                If two or more components share most of their functionality (like dialogs and
+                                alertdialogs do), they must be implemented in the same module.<br>
+                                That helps to keep the project simple and lightweight.
+                            </li>
+                            <li>
+                                <strong>
+                                    Material Design color palletes are used for every color on this project, in all
+                                    modules.
+                                </strong><br>
+                                The library's user is free to use them as weel if wish so.<br>
+                                We already define our own primary color palette in Core Module (Grey) using CSS Variables.
+                                To use other pallete as primary, just import it on the page after the library and the
+                                color variables will be overriden.<br>
+                                <em>Remember that we choose no default accent color.</em>
+                            </li>
+                        </ul>
+                        <p>
+                            The project's file struture is the following
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>CSS {folder}</strong><br>
+                                Where the magic happens
+                                <ul>
+                                    <li>
+                                        <strong>pallete {folder}</strong>
+                                        The color palettes avaliable on the project
+                                        <ul>
+                                            <li>
+                                                <strong>accent {folder}</strong><br>
+                                                CSS files that register every pallete on the accent colors variables.
+                                            </li>
+                                            <li>
+                                                <strong>primary {folder}</strong><br>
+                                                CSS files that register every pallete on the primary colors variables.                                                
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>core.css</strong><br>
+                                        Where universal rules and styles are defined.
+                                    </li>
+                                    <li>
+                                        <strong>complete.css</strong><br>
+                                        Shortcut to import all modules at once.
+                                    </li>
+                                    <li>Other modules ".css" files...</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Docs {folder}</strong><br>
+                                Our included documentation (and demos) pages
+                                <ul>
+                                    <li>
+                                        <strong>index.html</strong><br>
+                                        The file you're reading :P
+                                    </li>
+                                    <li>Components documentation files</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- Conventions -->
+                    <section aria-labelledby="conventions" data-css-chapter>
+                        <header id="conventions">
+                            <h4 data-css-role="heading">Conventions</h4>
+                        </header>
+                        <p>
+                            Like said above, everything may be a component. Like a class in OOP, a compoent may
+                            be a link, a standart data document strucuture (like a blog post), a tooltip, almost
+                            anything.<br>
+                            Here are the "ground rules" we use to develop the components:
+                        </p>
+                        <ul>
+                            <li>
+                                A given component, a button for example, will have it's own unique properties, but at the
+                                same time may have properties shared with other components - like buttons and articles may
+                                share the same default font color;
+                            </li>
+                            <li>
+                                The most basic and/or universal properties that can be shared by most (or even all)
+                                components will be declared directly on the Core Module, making them universal.<br>
+                                When components shared most of their properties, they will be both implemented in the same
+                                module for simplicity;
+                            </li>
+                            <li>
+                                Components that group other components (like a radiogroup) follow the previous rule;
+                            </li>
+                            <li>
+                                We use attributes for styling to give a more semantic and declarative syntax on the
+                                HTML.
+                            </li>
+                            <li>
+                                All our custom attributes use the <strong>data-css-</strong> prefix, to avoid name
+                                collision with another libraries and/or your code.
+                            </li>
+                            <li>
+                                By default, all components use the primary colors.<br>
+                                To use the accent pallete on a component (or part of it), you must use the
+                                <strong>data-css-accent</strong> attribute.
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- Release Model -->
+                    <section aria-labelledby="release" data-css-chapter>
+                        <header id="release">
+                            <h4 data-css-role="heading">Release Model</h4>
+                        </header>
+                        <p>
+                            Beign a project currently kept by a single developer, wich works on this in his free time,
+                            its undoable to mantain a stricly regular release scheme. But, I do plan to release updates
+                            in a role releasing model: as soon as its done and tested, it will be released.
+                        </p>
+                    </section>
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Project Itself -->
+            <!-- Widget ARIA Components -->
+            <section aria-labelledby="widgets" data-css-chapter>
+                <header id="widgets">
+                    <h3 data-css-role="heading">Widget Components</h3>
+                </header>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Button Component -->
+                    <section aria-labelledby="widget_button" data-css-chapter>
+                        <header id="widget_button">
+                            <h4 data-css-role="heading">Button Component</h4>
+                        </header>
+
+                        <div data-css-type="info" data-css-icon role="alert">
+                            TODO: Unify Button and Spinbutton in a single Component
+                        </div>
+                        
+                        <div data-css-type="info" data-css-icon role="alert">
+                            TODO: Optimize button group markup
+                        </div>
+
+                        <p>
+                            <strong>Layout:</strong> almost complete (lacks spinbutton)<br>
+                            <strong>Functionality: native</strong><br>
+                            <strong>Settings:</strong> size, color, forced states, actions, groups
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#button_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="button.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialog -->
+                        <section aria-labelledby="button_header" data-css-modal data-css-size="big" id="button_demo" role="dialog">
+                            <!-- Dialog Header -->
+                            <h4 data-css-role="heading" id="button_header">
+                                <a href="#widget_button" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                Button Component Demo
+                            </h4>
+                            <!-- /Dialog Header -->                            
+                            <!-- Dialog Body -->                            
+                            <div>
+                                <p>
+                                    <strong>Component:</strong>
+                                </p>
+
+                                <!-- Demo -->
+                                <div>
+                                    <button data-css-role="button" title="Button²">&lt;button&gt;</button>
+                                    <a href="#widget_button" role="button" title="Link button">&lt;a&gt;</a>
+                                    <input data-css-role="button" title="Input button" type="button" value="&lt;input&gt;"/>
+                                </div>
+                                <!-- /Demo -->
+                
+                                <br>
+                                <!-- Demo's source code exibition -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <strong itemprop="description">
+                                            Source code:
+                                        </strong>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Source -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span data-css-line>
+                                            &lt;button <strong>data-css-role=&quot;button&quot;</strong> title=&quot;Button&sup2;&quot;&gt;&amp;lt;button&amp;gt;&lt;/button&gt;
+                                        </span>
+                                            <span data-css-line>
+                                            &lt;a <strong>role=&quot;button&quot;</strong> title=&quot;Link button&quot;&gt;&amp;lt;a&amp;gt;&lt;/a&gt;
+                                        </span>
+                                            <span data-css-line>
+                                            &lt;input <strong>role=&quot;button&quot;</strong> title=&quot;Input button&quot; type=&quot;button&quot; value=&quot;&amp;lt;input&amp;gt;&quot;/&gt;
+                                        </span>
+                                    </code>
+                                    <!-- /Source -->                                    
+                                </div>
+                                <!-- /Demo's source code exibition -->
+                            </div>
+                            <!-- /Dialog Body -->                            
+                        </section>
+                        <!-- /Demo Dialog -->
+                    </section>
+                    <!-- /Button Component -->
+                    <!-- Checkbox Component -->
+                    <section aria-labelledby="widget_checkbox" data-css-chapter>
+                        <header id="widget_checkbox">
+                            <h4 data-css-role="heading">Checkbox Component</h4>
+                        </header>
+
+                        <div data-css-type="info" data-css-icon role="alert">
+                            TODO: Unify Checkbox, Radio and Switch in a single Component
+                        </div>
+
+                        <p>
+                            <strong>Layout:</strong> complete<br>
+                            <strong>Functionality:</strong> full (with native element)<br>
+                            <strong>Settings:</strong> size, color, forced states
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#checkbox_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="checkbox.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialog -->
+                        <section aria-labelledby="checkbox_header" data-css-modal data-css-size="big" id="checkbox_demo" role="dialog">
+                            <!-- Dialog Header -->
+                            <h4 data-css-role="heading" id="checkbox_header">
+                                <a href="#widget_checkbox" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                Checkbox Component Demo
+                            </h4>
+                            <!-- /Dialog Header -->                            
+                            <!-- Dialog Body -->                            
+                            <div>
+                                <p>
+                                    <strong>Component:</strong>
+                                </p>
+
+                                <!-- Demo -->
+                                <div>
+                                    <div data-css-role="checkbox" title="A simple checkbox">
+                                        <input id="simple" type="checkbox">
+                                        <label data-css-mark for="simple">
+                                            Toggle me.
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- /Demo -->
+                
+                                <br>
+                                <!-- Demo's source code exibition -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <strong itemprop="description">
+                                            Source code:
+                                        </strong>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Source -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span>
+                                            &lt;div <strong data-css-accent>data-css-role=&quot;checkbox&quot;</strong> title=&quot;A simple checkbox&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input <em>id=&quot;simple&quot;</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple&quot;</em>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;Toggle me.
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                    </code>
+                                    <!-- /Source -->                                    
+                                </div>
+                                <!-- /Demo's source code exibition -->
+                            </div>
+                            <!-- /Dialog Body -->                            
+                        </section>
+                        <!-- /Demo Dialog -->
+                    </section>
+                    <!-- /Checkbox Component -->
+                    <!-- Combobox Component -->
+                    <section aria-labelledby="widget_combobox" data-css-chapter>
+                        <header id="widget_combobox">
+                            <h4 data-css-role="heading">Combobox Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Combobox Component -->
+                    <!-- Grid Component -->
+                    <section aria-labelledby="widget_grid" data-css-chapter>
+                        <header id="widget_grid">
+                            <h4 data-css-role="heading">Grid Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Grid Component -->
+                    <!-- Link Component -->
+                    <section aria-labelledby="widget_link" data-css-chapter>
+                        <header id="widget_link">
+                            <h4 data-css-role="heading">Link Component</h4>
+                        </header>
+
+                        <p>
+                            <strong>Layout:</strong> complete<br>
+                            <strong>Functionality:</strong> full (with native element)<br>
+                            <strong>Settings:</strong> color, forced states
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#link_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="link.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialog -->
+                        <section aria-labelledby="link_header" data-css-modal data-css-size="big" id="link_demo" role="dialog">
+                            <!-- Dialog Header -->
+                            <h4 data-css-role="heading" id="link_header">
+                                <a href="#widget_link" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                Link Component Demo
+                            </h4>
+                            <!-- /Dialog Header -->                            
+                            <!-- Dialog Body -->                            
+                            <div>
+                                <p>
+                                    <strong>Component:</strong>
+                                </p>
+
+                                <!-- Demo -->
+                                <div>
+                                    <a data-css-role="link" href="#link_demo">
+                                        I'm a native link.
+                                    </a>
+                                    &emsp;
+                                    <div role="link">
+                                        I'm a custom link.
+                                    </div>
+                                </div>
+                                <!-- /Demo -->
+                
+                                <br>
+                                <!-- Demo's source code exibition -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <strong itemprop="description">
+                                            Source code:
+                                        </strong>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Source -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span>&lt;a <strong data-css-accent>data-css-role=&quot;link&quot;</strong> href=&quot;link_demo&quot;&gt;</span>
+                                        <span>&emsp;I'm a native link.</span>
+                                        <span>&lt;/a&gt;</span>
+                                        <span>&amp;emsp;</span>
+                                        <span>&lt;div <strong data-css-accent>role=&quot;link&quot;</strong>&gt;</span>
+                                        <span>&emsp;I'm a custom link.</span>
+                                        <span>&lt;/div&gt;</span>
+                                    </code>
+                                    <!-- /Source -->                                    
+                                </div>
+                                <!-- /Demo's source code exibition -->
+                            </div>
+                            <!-- /Dialog Body -->                            
+                        </section>
+                        <!-- /Demo Dialog -->
+                    </section>
+                    <!-- /Link Component -->
+                    <!-- Listbox Component -->
+                    <section aria-labelledby="widget_listbox" data-css-chapter>
+                        <header id="widget_listbox">
+                            <h4 data-css-role="heading">Listbox Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Listbox Component -->
+                    <!-- Menu Component -->
+                    <section aria-labelledby="widget_menu" data-css-chapter>
+                        <header id="widget_menu">
+                            <h4 data-css-role="heading">Menu Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Menu Component -->
+                    <!-- Progressbar Component -->
+                    <section aria-labelledby="widget_progressbar" data-css-chapter>
+                        <header id="widget_progressbar">
+                            <h4 data-css-role="heading">Progressbar Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Progressbar Component -->
+                    <!-- Radio Component -->
+                    <section aria-labelledby="widget_radio" data-css-chapter>
+                        <header id="widget_radio">
+                            <h4 data-css-role="heading">Radio Component</h4>
+                        </header>
+
+                        <div data-css-type="info" data-css-icon role="alert">
+                            TODO: Unify Checkbox, Radio and Switch in a single Component
+                        </div>
+
+                        <p>
+                            <strong>Layout:</strong> complete<br>
+                            <strong>Functionality:</strong> amost full (needs to implement radiogroup)<br>
+                            <strong>Settings:</strong> size, color, forced states
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#radio_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="radio.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialog -->
+                        <section aria-labelledby="radio_header" data-css-modal data-css-size="big" id="radio_demo" role="dialog">
+                            <!-- Dialog Header -->
+                            <h4 data-css-role="heading" id="radio_header">
+                                <a href="#widget_radio" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                Radio Component Demo
+                            </h4>
+                            <!-- /Dialog Header -->                            
+                            <!-- Dialog Body -->                            
+                            <div>
+                                <p>
+                                    <strong>Component:</strong>
+                                </p>
+
+                                <!-- Demo -->
+                                <div>
+                                    <div data-css-role="radio">
+                                        <input name="radio_showcase" id="radio_1" type="radio">
+                                        <label data-css-mark for="radio_1">
+                                            Choose me.
+                                        </label>
+                                    </div>
+                                    <div data-css-role="radio">
+                                        <input name="radio_showcase" id="radio_2" type="radio">
+                                        <label data-css-mark for="radio_2">
+                                            Choose you.
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- /Demo -->
+                
+                                <br>
+                                <!-- Demo's source code exibition -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <strong itemprop="description">
+                                            Source code:
+                                        </strong>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Source -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span>
+                                            &lt;div <strong data-css-accent>data-css-role=&quot;radio&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input name="radio_showcase" <em>id="radio_1"</em>&nbsp;<strong>type=&quot;radio&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label <strong data-css-accent>data-css-mark</strong>&nbsp;<em>for="radio_1"</em>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;Choose me.
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                        <span>
+                                            &lt;div <strong data-css-accent>data-css-role=&quot;radio&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input name="radio_showcase" <em>id="radio_2"</em>&nbsp;<strong>type=&quot;radio&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label <strong data-css-accent>data-css-mark</strong>&nbsp;<em>for="radio_2"</em>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;Choose you.
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                    </code>
+                                    <!-- /Source -->                                    
+                                </div>
+                                <!-- /Demo's source code exibition -->
+                            </div>
+                            <!-- /Dialog Body -->                            
+                        </section>
+                        <!-- /Demo Dialog -->
+                    </section>
+                    <!-- /Radio Component -->
+                    <!-- Scrollbar Component -->
+                    <section aria-labelledby="widget_scrollbar" data-css-chapter>
+                        <header id="widget_scrollbar">
+                            <h4 data-css-role="heading">Scrollbar Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Scrollbar Component -->
+                    <!-- Searchbox Component -->
+                    <section aria-labelledby="widget_searchbox" data-css-chapter>
+                        <header id="widget_searchbox">
+                            <h4 data-css-role="heading">Searchbox Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Searchbox Component -->
+                    <!-- Separator Component -->
+                    <section aria-labelledby="widget_separator" data-css-chapter>
+                        <header id="widget_separator">
+                            <h4 data-css-role="heading">Separator Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Separator Component -->
+                    <!-- Slider Component -->
+                    <section aria-labelledby="widget_slider" data-css-chapter>
+                        <header id="widget_slider">
+                            <h4 data-css-role="heading">Slider Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Slider Component -->
+                    <!-- Spinbutton Component -->
+                    <section aria-labelledby="widget_spinbutton" data-css-chapter>
+                        <header id="widget_spinbutton">
+                            <h4 data-css-role="heading">Spinbutton Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                        <div data-css-type="info" data-css-icon role="alert">
+                            TODO: Unify Button and Spinbutton in a single Component
+                        </div>
+                    </section>
+                    <!-- /Spinbutton Component -->
+                    <!-- Switch Component -->
+                    <section aria-labelledby="widget_switch" data-css-chapter>
+                        <header id="widget_switch">
+                            <h4 data-css-role="heading">Switch Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                        <div data-css-type="info" data-css-icon role="alert">
+                            TODO: Unify Checkbox, Radio and Switch in a single Component
+                        </div>
+                    </section>
+                    <!-- /Switch Component -->
+                    <!-- Tabpanel Component -->
+                    <section aria-labelledby="widget_tabpanel" data-css-chapter>
+                        <header id="widget_tabpanel">
+                            <h4 data-css-role="heading">Tabpanel Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Tabpanel Component -->
+                    <!-- Textbox Component -->
+                    <section aria-labelledby="widget_textbox" data-css-chapter>
+                        <header id="widget_textbox">
+                            <h4 data-css-role="heading">Textbox Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Textbox Component -->
+                    <!-- Tree Component -->
+                    <section aria-labelledby="widget_tree" data-css-chapter>
+                        <header id="widget_tree">
+                            <h4 data-css-role="heading">Tree Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Tree Component -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Widget ARIA Components -->
+            <!-- Document Strucutre Components -->
+            <section aria-labelledby="structure" data-css-chapter>
+                <header id="structure">
+                    <h3 data-css-role="heading">Document Strucutre Components</h3>
+                </header>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Application Component -->
+                    <section aria-labelledby="structure_application" data-css-chapter>
+                        <header id="structure_application">
+                            <h4 data-css-role="heading">Application Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Application Component -->
+                    <!-- Article Component -->
+                    <section aria-labelledby="structure_article" data-css-chapter>
+                        <header id="structure_article">
+                            <h4 data-css-role="heading">Article Component</h4>
+                        </header>
+
+                        <div data-css-type="info" data-css-icon role="alert">
+                            Not documented yet
+                        </div>
+
+                        <p>
+                            <strong>Layout:</strong> basic<br>
+                            <strong>Functionality:</strong> basic<br>
+                            <strong>Settings:</strong> table of contents, chapters, color
+                        </p>
+                    </section>
+                    <!-- /Article Component -->
+                    <!-- Cell Component -->
+                    <section aria-labelledby="structure_cell" data-css-chapter>
+                        <header id="structure_cell">
+                            <h4 data-css-role="heading">Cell Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Cell Component -->
+                    <!-- Columnheader Component -->
+                    <section aria-labelledby="structure_columnheader" data-css-chapter>
+                        <header id="structure_columnheader">
+                            <h4 data-css-role="heading">Columnheader Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Columnheader Component -->
+                    <!-- Definition Component -->
+                    <section aria-labelledby="structure_definition" data-css-chapter>
+                        <header id="structure_definition">
+                            <h4 data-css-role="heading">Definition Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Definition Component -->
+                    <!-- Directory Component -->
+                    <section aria-labelledby="structure_directory" data-css-chapter>
+                        <header id="structure_directory">
+                            <h4 data-css-role="heading">Directory Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Directory Component -->
+                    <!-- Document Component -->
+                    <section aria-labelledby="structure_document" data-css-chapter>
+                        <header id="structure_document">
+                            <h4 data-css-role="heading">Document Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Document Component -->
+                    <!-- Feed Component -->
+                    <section aria-labelledby="structure_feed" data-css-chapter>
+                        <header id="structure_feed">
+                            <h4 data-css-role="heading">Feed Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Feed Component -->
+                    <!-- Figure Component -->
+                    <section aria-labelledby="structure_figure" data-css-chapter>
+                        <header id="structure_figure">
+                            <h4 data-css-role="heading">Figure Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Figure Component -->
+                    <!-- Group Component -->
+                    <section aria-labelledby="structure_group" data-css-chapter>
+                        <header id="structure_group">
+                            <h4 data-css-role="heading">Group Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Group Component -->
+                    <!-- Heading Component -->
+                    <section aria-labelledby="structure_heading" data-css-chapter>
+                        <header id="structure_heading">
+                            <h4 data-css-role="heading">Heading Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Heading Component -->
+                    <!-- Img Component -->
+                    <section aria-labelledby="structure_img" data-css-chapter>
+                        <header id="structure_img">
+                            <h4 data-css-role="heading">Img Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Img Component -->
+                    <!-- List Component -->
+                    <section aria-labelledby="structure_list" data-css-chapter>
+                        <header id="structure_list">
+                            <h4 data-css-role="heading">List Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /List Component -->
+                    <!-- Listitem Component -->
+                    <section aria-labelledby="structure_listitem" data-css-chapter>
+                        <header id="structure_listitem">
+                            <h4 data-css-role="heading">Listitem Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Listitem Component -->
+                    <!-- Math Component -->
+                    <section aria-labelledby="structure_math" data-css-chapter>
+                        <header id="structure_math">
+                            <h4 data-css-role="heading">Math Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Math Component -->
+                    <!-- None Component -->
+                    <section aria-labelledby="structure_none" data-css-chapter>
+                        <header id="structure_none">
+                            <h4 data-css-role="heading">None Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /None Component -->
+                    <!-- Note Component -->
+                    <section aria-labelledby="structure_note" data-css-chapter>
+                        <header id="structure_note">
+                            <h4 data-css-role="heading">Note Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Note Component -->
+                    <!-- Presentation Component -->
+                    <section aria-labelledby="structure_presentation" data-css-chapter>
+                        <header id="structure_presentation">
+                            <h4 data-css-role="heading">Presentation Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Presentation Component -->
+                    <!-- Row Component -->
+                    <section aria-labelledby="structure_row" data-css-chapter>
+                        <header id="structure_row">
+                            <h4 data-css-role="heading">Row Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Row Component -->
+                    <!-- Rowgroup Component -->
+                    <section aria-labelledby="structure_rowgroup" data-css-chapter>
+                        <header id="structure_rowgroup">
+                            <h4 data-css-role="heading">Rowgroup Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Rowgroup Component -->
+                    <!-- Rowheader Component -->
+                    <section aria-labelledby="structure_rowheader" data-css-chapter>
+                        <header id="structure_rowheader">
+                            <h4 data-css-role="heading">Rowheader Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Rowheader Component -->
+                    <!-- Separator Component -->
+                    <section aria-labelledby="structure_separator" data-css-chapter>
+                        <header id="structure_separator">
+                            <h4 data-css-role="heading">Separator Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Separator Component -->
+                    <!-- Table Component -->
+                    <section aria-labelledby="structure_table" data-css-chapter>
+                        <header id="structure_table">
+                            <h4 data-css-role="heading">Table Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Table Component -->
+                    <!-- Term Component -->
+                    <section aria-labelledby="structure_term" data-css-chapter>
+                        <header id="structure_term">
+                            <h4 data-css-role="heading">Term Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Term Component -->
+                    <!-- Toolbar Component -->
+                    <section aria-labelledby="structure_toolbar" data-css-chapter>
+                        <header id="structure_toolbar">
+                            <h4 data-css-role="heading">Toolbar Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Toolbar Component -->
+                    <!-- Tooltip Component -->
+                    <section aria-labelledby="structure_tooltip" data-css-chapter>
+                        <header id="structure_tooltip">
+                            <h4 data-css-role="heading">Tooltip Component</h4>
+                        </header>
+
+                        <p>
+                            <strong>Layout:</strong> almost complete (needs some fixes)<br>
+                            <strong>Functionality:</strong> complete<br>
+                            <strong>Settings:</strong> position, color
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#tooltip_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="tooltip.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialog -->
+                        <section aria-labelledby="tooltip_header" data-css-modal data-css-size="big" id="tooltip_demo" role="dialog">
+                            <!-- Dialog Header -->
+                            <h4 data-css-role="heading" id="tooltip_header">
+                                <a href="#widget_tooltip" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                Tooltip Component Demo
+                            </h4>
+                            <!-- /Dialog Header -->                            
+                            <!-- Dialog Body -->                            
+                            <div>
+                                <p>
+                                    <strong>Component:</strong>
+                                </p>
+
+                                <!-- Demo -->
+                                <a data-css-group="tooltip" href="#structure_tooltip" role="button">
+                                    <div data-css-side="right" role="tooltip">
+                                        I am THE tooltip!
+                                    </div>
+                                    I do have a tooltip.
+                                </a>
+                                <!-- /Demo -->
+                
+                                <br>
+                                <!-- Demo's source code exibition -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <strong itemprop="description">
+                                            Source code:
+                                        </strong>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Source -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span>&lt;a <strong>data-css-group=&quot;tooltip&quot;</strong> href=&quot;#structure_tooltip&quot; role=&quot;button&quot;&gt;</span>
+                                        <span>&emsp;&lt;div data-css-side=&quot;right&quot; <strong data-css-accent>role=&quot;tooltip&quot;</strong>&gt;</span>
+                                        <span>&emsp;&emsp;I am THE tooltip!</span>
+                                        <span>&emsp;&lt;/div&gt;</span>
+                                        <span>&emsp;I do have a tooltip.</span>
+                                        <span>&lt;/a&gt;</span>
+                                    </code>
+                                    <!-- /Source -->                                    
+                                </div>
+                                <!-- /Demo's source code exibition -->
+                            </div>
+                            <!-- /Dialog Body -->                            
+                        </section>
+                        <!-- /Demo Dialog -->
+                    </section>
+                    <!-- /Tooltip Component -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Document Strucutre Components -->
+            <!-- Landmark Components -->
+            <section aria-labelledby="landmark" data-css-chapter>
+                <header id="landmark">
+                    <h3 data-css-role="heading">Landmark Components</h3>
+                </header>
+
+                <p>
+                    Those are components to provide specific purpose and/or quick access to the user. <br>
+                </p>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Banner Component -->
+                    <section aria-labelledby="landmark_banner" data-css-chapter>
+                        <header id="landmark_banner">
+                            <h4 data-css-role="heading">Banner Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Banner Component -->
+                    <!-- Complementary Component -->
+                    <section aria-labelledby="landmark_complementary" data-css-chapter>
+                        <header id="landmark_complementary">
+                            <h4 data-css-role="heading">Complementary Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Complementary Component -->
+                    <!-- Contentinfo Component -->
+                    <section aria-labelledby="landmark_contentinfo" data-css-chapter>
+                        <header id="landmark_contentinfo">
+                            <h4 data-css-role="heading">Contentinfo Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Contentinfo Component -->
+                    <!-- Form Component -->
+                    <section aria-labelledby="landmark_form" data-css-chapter>
+                        <header id="landmark_form">
+                            <h4 data-css-role="heading">Form Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Form Component -->
+                    <!-- Main Component -->
+                    <section aria-labelledby="landmark_main" data-css-chapter>
+                        <header id="landmark_main">
+                            <h4 data-css-role="heading">Main Component</h4>
+                        </header>
+                    </section>
+                    <!-- /Main Component -->
+                    <!-- Navigation Component -->
+                    <section aria-labelledby="landmark_navigation" data-css-chapter>
+                        <header id="landmark_navigation">
+                            <h4 data-css-role="heading">Navigation Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Navigation Component -->
+                    <!-- Region Component -->
+                    <section aria-labelledby="landmark_region" data-css-chapter>
+                        <header id="landmark_region">
+                            <h4 data-css-role="heading">Region Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Region Component -->
+                    <!-- Search Component -->
+                    <section aria-labelledby="landmark_search" data-css-chapter>
+                        <header id="landmark_search">
+                            <h4 data-css-role="heading">Search Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Search Component -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Landmark Components -->
+            <!-- Live region Components -->
+            <section aria-labelledby="live" data-css-chapter>
+                <header id="live">
+                    <h3 data-css-role="heading">Live Region Components</h3>
+                </header>
+
+                <p>
+                    Here there are components to display content updated without the need of user interaction. <br>
+                    They will be normally out user focus and updated with external events. <br>
+                    Being a pure CSS library, we provide only standart layout for this components.
+                </p>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Alert Component -->
+                    <section aria-labelledby="live_alert" data-css-chapter>
+                        <header id="live_alert">
+                            <h4 data-css-role="heading">Alert Component</h4>
+                        </header>
+                        
+                        <p>
+                            <strong>Layout:</strong> complete<br>
+                            <strong>Functionality:</strong> display only<br>
+                            <strong>Settings:</strong> type, color, icons
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#alert_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="alert.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialog -->
+                        <section aria-labelledby="alert_header" data-css-modal data-css-size="big" id="alert_demo" role="dialog">
+                            <!-- Dialog Header -->
+                            <h4 data-css-role="heading" id="alert_header">
+                                <a href="#widget_alert" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                Alert Component Demo
+                            </h4>
+                            <!-- /Dialog Header -->                            
+                            <!-- Dialog Body -->                            
+                            <div>
+                                <p>
+                                    <strong>Component:</strong>
+                                </p>
+
+                                <!-- Demo -->
+                                <div>
+                                    <div role="alert">
+                                        This is a standart alert, dude.
+                                    </div>
+                                </div>
+                                <!-- /Demo -->
+                
+                                <br>
+                                <!-- Demo's source code exibition -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <strong itemprop="description">
+                                            Source:
+                                        </strong>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Source -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span data-css-line>
+                                            &lt;div <strong>role=&quot;alert&quot;</strong> title=&quot;A simple alert&quot;&gt;
+                                        </span>
+                                        <span data-css-line>
+                                            &emsp;This is an alert, dude.
+                                        </span>
+                                        <span data-css-line>
+                                            &lt;/div&gt;
+                                        </span>
+                                    </code>
+                                    <!-- /Source -->                                    
+                                </div>
+                                <!-- /Demo's source code exibition -->
+                            </div>
+                            <!-- /Dialog Body -->                            
+                        </section>
+                        <!-- /Demo Dialog -->
+                    </section>
+                    <!-- /Alert Component -->
+                    <!-- Log Component -->
+                    <section aria-labelledby="live_log" data-css-chapter>
+                        <header id="live_log">
+                            <h4 data-css-role="heading">Log Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Log Component -->
+                    <!-- Marquee Component -->
+                    <section aria-labelledby="live_marquee" data-css-chapter>
+                        <header id="live_marquee">
+                            <h4 data-css-role="heading">Marquee Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Marquee Component -->
+                    <!-- Status Component -->
+                    <section aria-labelledby="live_status" data-css-chapter>
+                        <header id="live_status">
+                            <h4 data-css-role="heading">Status Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Status Component -->
+                    <!-- Timer Component -->
+                    <section aria-labelledby="live_timer" data-css-chapter>
+                        <header id="live_timer">
+                            <h4 data-css-role="heading">Timer Component</h4>
+                        </header>
+
+                        <div data-css-type="warning" data-css-icon role="alert">
+                            Not implemented yet
+                        </div>
+                    </section>
+                    <!-- /Timer Component -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Live region Components -->
+            <!-- Window Components -->
+            <section aria-labelledby="window" data-css-chapter>
+                <header id="window">
+                    <h3 data-css-role="heading">Window Components</h3>
+                </header>
+
+                <p>
+                    This components act like a window inside the browser's window. <br>
+                    They are a great power to be used with great responsibility.
+                </p>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Dialog Component -->
+                    <section aria-labelledby="window" data-css-chapter>
+                        <header id="window_dialog">
+                            <h4 data-css-role="heading">Dialog Component</h4>
+                        </header>
+
+                        <p>
+                            <strong>Layout:</strong> partial (footer not implemented)<br>
+                            <strong>Functionality:</strong> full (without native element)<br>
+                            <strong>Settings:</strong> size, color, modality
+                        </p>
+
+                        <!-- Options -->
+                        <div role="group" data-css-group="button">
+                            <a href="#dialog_demo" role="button">
+                                Simple demo
+                            </a>
+                            <a href="#alertdialog_demo" role="button">
+                                Modal demo
+                            </a>
+                            <a href="dialog.html" role="button">
+                                Complete reference
+                            </a>
+                        </div>
+                        <!-- /Options -->
+                        
+                        <!-- Demo Dialogs -->
+                        <section aria-labelledby="dialog_header" data-css-size="big" id="dialog_demo" role="dialog">
+                            <h5 data-css-role="heading" id="dialog_header">
+                                <a href="#window_dialog" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                I'm a standart dialog
+                            </h5>
+                            <div>
+                                And i am the dialog's text.
+                                <!-- Source -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <span itemprop="description">Source:</span>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Code -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span>
+                                            &lt;section&nbsp;<em>aria-labelledby=&quot;dialog_header&quot;</em>
+                                            data-css-size=&quot;big&quot;&nbsp;id=&quot;dialog_demo&quot;
+                                            <strong data-css-accent>role=&quot;dialog&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;h5 data-css-role="heading"&nbsp;<em>id=&quot;dialog_header&quot;</em>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;&lt;a&nbsp;<em>href=&quot;#window_dialog&quot;</em>&nbsp;data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;I'm a standart dialog
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/h5&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;div&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;And i am the dialog's text.
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/div&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/section&gt;
+                                        </span>
+                                    </code>
+                                    <!-- /Code -->
+                                </div>
+                                <!-- /Source -->
+                            </div>
+                        </section>
+                        <section aria-labelledby="alertdialog_header" data-css-size="big" id="alertdialog_demo" role="alertdialog">
+                            <h5 data-css-role="heading" id="alertdialog_header">
+                                <a href="#window_dialog" data-css-close data-css-float="right" title="Close">&#x2716;</a>
+                                I'm an alert dialog
+                            </h5>
+                            <div>
+                                And i am the alert.
+                                <!-- Source -->
+                                <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                                    <!-- Headline -->
+                                    <div>
+                                        <span itemprop="description">Source:</span>
+                                        <span data-css-float="right">
+                                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                            <span itemprop="codeSampleType">inline code</span>
+                                        </span>
+                                    </div>
+                                    <!-- /Headline -->
+                                    <!-- Code -->
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <span>
+                                            &lt;section&nbsp;<em>aria-labelledby=&quot;alertdialog_header&quot;</em>
+                                            data-css-size=&quot;big&quot;&nbsp;id=&quot;alertdialog_demo&quot;
+                                            <strong data-css-accent>role=&quot;alertdialog&quot;</strong>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;h5 data-css-role="heading"&nbsp;<em>id=&quot;alertdialog_header&quot;</em>&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;&lt;a&nbsp;<em>href=&quot;#window_dialog&quot;</em>&nbsp;data-css-close data-css-float=&quot;right&quot; title=&quot;Close&quot;&gt;&amp;#x2716;&lt;/a&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;I'm an alert dialog
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/h5&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;div&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&emsp;And i am the alert.
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/div&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/section&gt;
+                                        </span>
+                                    </code>
+                                    <!-- /Code -->
+                                </div>
+                                <!-- /Source -->
+                            </div>
+                        </section>
+                        <!-- /Demo Dialogs -->
+                    </section>
+                    <!-- /Dialog Component -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Window Components -->
+            <!-- Schema Components -->
+            <section aria-labelledby="schema" data-css-chapter>
+                <header id="schema">
+                    <h3 data-css-role="heading">Schema Components</h3>
+                </header>
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Schema Components -->
+        </div>
+    </article>
+</body>
+</html>

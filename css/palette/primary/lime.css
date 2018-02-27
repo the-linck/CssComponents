@@ -1,0 +1,17 @@
+:root{
+    /* Lime palette */
+    --css-primary-50: #F9FBE7;
+    --css-primary-100: #F0F4C3;
+    --css-primary-200: #E6EE9C;
+    --css-primary-300: #DCE775;
+    --css-primary-400: #D4E157;
+    --css-primary-500: #CDDC39;
+    --css-primary-600: #C0CA33;
+    --css-primary-700: #AFB42B;
+    --css-primary-800: #9E9D24;
+    --css-primary-900: #827717;
+    --css-primary-A100: #F4FF81;
+    --css-primary-A200: #EEFF41;
+    --css-primary-A400: #C6FF00;
+    --css-primary-A700: #AEEA00;
+}

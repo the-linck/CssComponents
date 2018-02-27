@@ -1,0 +1,17 @@
+:root{
+    /* Purple palette */
+    --css-primary-50: #F3E5F5;
+    --css-primary-100: #E1BEE7;
+    --css-primary-200: #CE93D8;
+    --css-primary-300: #BA68C8;
+    --css-primary-400: #AB47BC;
+    --css-primary-500: #9C27B0;
+    --css-primary-600: #8E24AA;
+    --css-primary-700: #7B1FA2;
+    --css-primary-800: #6A1B9A;
+    --css-primary-900: #4A148C;
+    --css-primary-A100: #EA80FC;
+    --css-primary-A200: #E040FB;
+    --css-primary-A400: #D500F9;
+    --css-primary-A700: #AA00FF;
+}

@@ -1,0 +1,17 @@
+:root{
+    /* Light Blue palette */
+    --css-primary-50: #E1F5FE;
+    --css-primary-100: #B3E5FC;
+    --css-primary-200: #81D4FA;
+    --css-primary-300: #4FC3F7;
+    --css-primary-400: #29B6F6;
+    --css-primary-500: #03A9F4;
+    --css-primary-600: #039BE5;
+    --css-primary-700: #0288D1;
+    --css-primary-800: #0277BD;
+    --css-primary-900: #01579B;
+    --css-primary-A100: #80D8FF;
+    --css-primary-A200: #40C4FF;
+    --css-primary-A400: #00B0FF;
+    --css-primary-A700: #0091EA;
+}

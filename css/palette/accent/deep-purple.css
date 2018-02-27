@@ -1,0 +1,17 @@
+:root{
+    /* Deep Purple palette */
+    --css-accent-50: #EDE7F6;
+    --css-accent-100: #D1C4E9;
+    --css-accent-200: #B39DDB;
+    --css-accent-300: #9575CD;
+    --css-accent-400: #7E57C2;
+    --css-accent-500: #673AB7;
+    --css-accent-600: #5E35B1;
+    --css-accent-700: #512DA8;
+    --css-accent-800: #4527A0;
+    --css-accent-900: #311B92;
+    --css-accent-A100: #B388FF;
+    --css-accent-A200: #7C4DFF;
+    --css-accent-A400: #651FFF;
+    --css-accent-A700: #6200EA;
+}

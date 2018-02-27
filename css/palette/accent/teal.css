@@ -1,0 +1,17 @@
+:root{
+    /* Teal palette */
+    --css-accent-50: #E0F2F1;
+    --css-accent-100: #B2DFDB;
+    --css-accent-200: #80CBC4;
+    --css-accent-300: #4DB6AC;
+    --css-accent-400: #26A69A;
+    --css-accent-500: #009688;
+    --css-accent-600: #00897B;
+    --css-accent-700: #00796B;
+    --css-accent-800: #00695C;
+    --css-accent-900: #004D40;
+    --css-accent-A100: #A7FFEB;
+    --css-accent-A200: #64FFDA;
+    --css-accent-A400: #1DE9B6;
+    --css-accent-A700: #00BFA5;
+}

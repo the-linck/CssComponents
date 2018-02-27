@@ -1,0 +1,17 @@
+:root{
+    /* Teal palette */
+    --css-primary-50: #E0F2F1;
+    --css-primary-100: #B2DFDB;
+    --css-primary-200: #80CBC4;
+    --css-primary-300: #4DB6AC;
+    --css-primary-400: #26A69A;
+    --css-primary-500: #009688;
+    --css-primary-600: #00897B;
+    --css-primary-700: #00796B;
+    --css-primary-800: #00695C;
+    --css-primary-900: #004D40;
+    --css-primary-A100: #A7FFEB;
+    --css-primary-A200: #64FFDA;
+    --css-primary-A400: #1DE9B6;
+    --css-primary-A700: #00BFA5;
+}

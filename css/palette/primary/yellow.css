@@ -1,0 +1,17 @@
+:root{
+    /* Yellow palette */
+    --css-primary-50: #FFFDE7;
+    --css-primary-100: #FFF9C4;
+    --css-primary-200: #FFF59D;
+    --css-primary-300: #FFF176;
+    --css-primary-400: #FFEE58;
+    --css-primary-500: #FFEB3B;
+    --css-primary-600: #FDD835;
+    --css-primary-700: #FBC02D;
+    --css-primary-800: #F9A825;
+    --css-primary-900: #F57F17;
+    --css-primary-A100: #FFFF8D;
+    --css-primary-A200: #FFFF00;
+    --css-primary-A400: #FFEA00;
+    --css-primary-A700: #FFD600;
+}

@@ -1,0 +1,17 @@
+:root{
+    /* Light Blue palette */
+    --css-accent-50: #E1F5FE;
+    --css-accent-100: #B3E5FC;
+    --css-accent-200: #81D4FA;
+    --css-accent-300: #4FC3F7;
+    --css-accent-400: #29B6F6;
+    --css-accent-500: #03A9F4;
+    --css-accent-600: #039BE5;
+    --css-accent-700: #0288D1;
+    --css-accent-800: #0277BD;
+    --css-accent-900: #01579B;
+    --css-accent-A100: #80D8FF;
+    --css-accent-A200: #40C4FF;
+    --css-accent-A400: #00B0FF;
+    --css-accent-A700: #0091EA;
+}

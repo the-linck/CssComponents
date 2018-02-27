@@ -1,0 +1,17 @@
+:root{
+    /* Indigo palette */
+    --css-accent-50: #E8EAF6;
+    --css-accent-100: #C5CAE9;
+    --css-accent-200: #9FA8DA;
+    --css-accent-300: #7986CB;
+    --css-accent-400: #5C6BC0;
+    --css-accent-500: #3F51B5;
+    --css-accent-600: #3949AB;
+    --css-accent-700: #303F9F;
+    --css-accent-800: #283593;
+    --css-accent-900: #1A237E;
+    --css-accent-A100: #8C9EFF;
+    --css-accent-A200: #536DFE;
+    --css-accent-A400: #3D5AFE;
+    --css-accent-A700: #304FFE;
+}

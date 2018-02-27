@@ -1,0 +1,17 @@
+:root{
+    /* Deep Orange palette */
+    --css-primary-50: #FBE9E7;
+    --css-primary-100: #FFCCBC;
+    --css-primary-200: #FFAB91;
+    --css-primary-300: #FF8A65;
+    --css-primary-400: #FF7043;
+    --css-primary-500: #FF5722;
+    --css-primary-600: #F4511E;
+    --css-primary-700: #E64A19;
+    --css-primary-800: #D84315;
+    --css-primary-900: #BF360C;
+    --css-primary-A100: #FF9E80;
+    --css-primary-A200: #FF6E40;
+    --css-primary-A400: #FF3D00;
+    --css-primary-A700: #DD2C00;
+}

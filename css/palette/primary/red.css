@@ -1,0 +1,17 @@
+:root{
+    /* Red palette */
+    --css-primary-50: #FFEBEE;
+    --css-primary-100: #FFCDD2;
+    --css-primary-200: #EF9A9A;
+    --css-primary-300: #E57373;
+    --css-primary-400: #EF5350;
+    --css-primary-500: #F44336;
+    --css-primary-600: #E53935;
+    --css-primary-700: #D32F2F;
+    --css-primary-800: #C62828;
+    --css-primary-900: #B71C1C;
+    --css-primary-A100: #FF8A80;
+    --css-primary-A200: #FF5252;
+    --css-primary-A400: #FF1744;
+    --css-primary-A700: #D50000;
+}

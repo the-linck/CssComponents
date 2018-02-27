@@ -1,0 +1,17 @@
+:root{
+    /* Indigo palette */
+    --css-primary-50: #E8EAF6;
+    --css-primary-100: #C5CAE9;
+    --css-primary-200: #9FA8DA;
+    --css-primary-300: #7986CB;
+    --css-primary-400: #5C6BC0;
+    --css-primary-500: #3F51B5;
+    --css-primary-600: #3949AB;
+    --css-primary-700: #303F9F;
+    --css-primary-800: #283593;
+    --css-primary-900: #1A237E;
+    --css-primary-A100: #8C9EFF;
+    --css-primary-A200: #536DFE;
+    --css-primary-A400: #3D5AFE;
+    --css-primary-A700: #304FFE;
+}

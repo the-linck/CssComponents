@@ -1,0 +1,17 @@
+:root{
+    /* Pink palette */
+    --css-primary-50: #FCE4EC;
+    --css-primary-100: #F8BBD0;
+    --css-primary-200: #F48FB1;
+    --css-primary-300: #F06292;
+    --css-primary-400: #EC407A;
+    --css-primary-500: #E91E63;
+    --css-primary-600: #D81B60;
+    --css-primary-700: #C2185B;
+    --css-primary-800: #AD1457;
+    --css-primary-900: #880E4F;
+    --css-primary-A100: #FF80AB;
+    --css-primary-A200: #FF4081;
+    --css-primary-A400: #F50057;
+    --css-primary-A700: #C51162;
+}

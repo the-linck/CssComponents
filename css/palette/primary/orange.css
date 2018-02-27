@@ -1,0 +1,17 @@
+:root{
+    /* Orange palette */
+    --css-primary-50: #FFF3E0;
+    --css-primary-100: #FFE0B2;
+    --css-primary-200: #FFCC80;
+    --css-primary-300: #FFB74D;
+    --css-primary-400: #FFA726;
+    --css-primary-500: #FF9800;
+    --css-primary-600: #FB8C00;
+    --css-primary-700: #F57C00;
+    --css-primary-800: #EF6C00;
+    --css-primary-900: #E65100;
+    --css-primary-A100: #FFD180;
+    --css-primary-A200: #FFAB40;
+    --css-primary-A400: #FF9100;
+    --css-primary-A700: #FF6D00;
+}

@@ -1,0 +1,17 @@
+:root{
+    /* Blue palette */
+    --css-primary-50: #E3F2FD;
+    --css-primary-100: #BBDEFB;
+    --css-primary-200: #90CAF9;
+    --css-primary-300: #64B5F6;
+    --css-primary-400: #42A5F5;
+    --css-primary-500: #2196F3;
+    --css-primary-600: #1E88E5;
+    --css-primary-700: #1976D2;
+    --css-primary-800: #1565C0;
+    --css-primary-900: #0D47A1;
+    --css-primary-A100: #82B1FF;
+    --css-primary-A200: #448AFF;
+    --css-primary-A400: #2979FF;
+    --css-primary-A700: #2962FF;
+}

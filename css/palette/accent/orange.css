@@ -1,0 +1,17 @@
+:root{
+    /* Orange palette */
+    --css-accent-50: #FFF3E0;
+    --css-accent-100: #FFE0B2;
+    --css-accent-200: #FFCC80;
+    --css-accent-300: #FFB74D;
+    --css-accent-400: #FFA726;
+    --css-accent-500: #FF9800;
+    --css-accent-600: #FB8C00;
+    --css-accent-700: #F57C00;
+    --css-accent-800: #EF6C00;
+    --css-accent-900: #E65100;
+    --css-accent-A100: #FFD180;
+    --css-accent-A200: #FFAB40;
+    --css-accent-A400: #FF9100;
+    --css-accent-A700: #FF6D00;
+}

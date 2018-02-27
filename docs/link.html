@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Link Demos</title>
+    <link href="../css/complete.css" rel="stylesheet"/>
+    <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <h1 id="tooltip_demos">
+            <a>Demos</a>
+            &rarr;
+            <strong>Link Component</strong>
+        </h1>
+    </header>
+    <article itemscope itemtype="http://schema.org/APIReference" title="Link Component">
+        <header>
+            <h2>The Link Component</h2>
+        </header>
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement" id="contents">
+            <header>
+                <h3 data-css-role="heading">Contents</h3>
+            </header>
+            <ol>
+                <li>
+                    <a href="#plain">Link</a>
+                    <ol>
+                        <li>
+                            <a href="#states">States</a>
+                        </li>
+                    </ol>
+                </li>
+                <li data-css-accent>
+                    <a href="#accent">Accent Colors</a>
+                </li>
+            </ol>
+        </nav>
+        <div itemprop="articleBody">
+            <section aria-labelledby="plain">
+                <header id="plain">
+                    <h3 data-css-role="heading">Link</h3>
+                </header>
+                <p>
+                    Links are used everywhere on the web, 'couse we couldn't leave a freature like this out of our
+                    library.<br>
+                    To style links, both for the native <strong>a</strong> element and for custom elements acting as
+                    links, you must declare the element as a link, with <strong>data-css-role="link"</strong> or
+                    <strong>role="link"</strong> (non native) attribute.
+                </p>
+                <div>
+                    <a data-css-role="link" href="#plain">
+                        I'm a native link.
+                    </a>
+                    &emsp;
+                    <div role="link">
+                        I'm a custom link.
+                    </div>
+                </div>
+                <details open itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" data-css-group="lines" itemprop="text">
+                        <span>&lt;a <strong data-css-accent>data-css-role=&quot;link&quot;</strong> href=&quot;#plain&quot;&gt;</span>
+                        <span>&emsp;I'm a native link.</span>
+                        <span>&lt;/a&gt;</span>
+                        <span>&amp;emsp;</span>
+                        <span>&lt;div <strong data-css-accent>role=&quot;link&quot;</strong>&gt;</span>
+                        <span>&emsp;I'm a custom link.</span>
+                        <span>&lt;/div&gt;</span>
+                    </code>
+                </details>
+                <p>
+                    There's it, this is the simplest component of the library.<br>
+                    In case you're wondering why there's an <strong>&amp;emsp;</strong> entity on the code, the reason
+                    is quite simple: to separate both links, because as they are inline content, by default they'd be
+                    too close to each other.
+                </p>
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <section aria-labelledby="states">
+                        <header id="states">
+                            <h4 data-css-role="heading">States</h4>
+                        </header>
+                        <p>
+                            As seasoned developers would expect, there' 4 link states supported:
+                        </p>
+                        <ul>
+                            <li>normal (default)</li>
+                            <li>visited</li>
+                            <li>selected (hover / focus / current)</li>
+                            <li>active</li>
+                        </ul>
+                        <p>
+                            You can force one of them by the <strong>data-css-state attribute</strong>:
+                        </p>
+                        <div>
+                            <a data-css-state="normal" data-css-role="link" href="#states">
+                                Normal
+                            </a>
+                            &emsp;
+                            <a data-css-state="visited" data-css-role="link" href="#states">
+                                Visited
+                            </a>
+                            &emsp;
+                            <a data-css-state="selected" data-css-role="link" href="#states">
+                                Selected
+                            </a>
+                            &emsp;
+                            <a data-css-state="active" data-css-role="link" href="#states">
+                                Active
+                            </a>
+                        </div>
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" data-css-group="lines" itemprop="text">
+                                <span>&lt;a <strong data-css-accent>data-css-state=&quot;normal&quot;</strong> data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                                <span>&emsp;Normal</span>
+                                <span>&lt;/a&gt;</span>
+                                <span>&amp;emsp;</span>
+                                <span>&lt;a <strong data-css-accent>data-css-state=&quot;visited&quot;</strong> data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                                <span>&emsp;Visited</span>
+                                <span>&lt;/a&gt;</span>
+                                <span>&amp;emsp;</span>
+                                <span>&lt;a <strong data-css-accent>data-css-state=&quot;selected&quot;</strong> data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                                <span>&emsp;Selected</span>
+                                <span>&lt;/a&gt;</span>
+                                <span>&amp;emsp;</span>
+                                <span>&lt;a <strong data-css-accent>data-css-state=&quot;active&quot;</strong> data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                                <span>&emsp;Active</span>
+                                <span>&lt;/a&gt;</span>
+                            </code>
+                        </details>
+                        <p>
+                            <em>
+                                <strong>Notice:</strong>
+                                It's also possible to force the selected state with the 
+                                <strong>aria-current="true"</strong> attribute, but it's the only link state supported
+                                by ARIA up to now.
+                            </em>
+                        </p>
+                    </section>
+                </div>
+            </section>
+            <section data-css-accent aria-labelledby="accent">
+                <header id="accent">
+                    <h3 data-css-role="heading">Accent Colors</h3>
+                </header>
+                <p>
+                    As any other component, link can be used with your chosen accent color too:
+                </p>
+                <div>
+                    <a data-css-accent data-css-role="link" href="#accent">
+                        No forced state
+                    </a>
+                    &emsp;
+                    <a data-css-accent data-css-state="normal" data-css-role="link" href="#accent">
+                        Normal
+                    </a>
+                    &emsp;
+                    <a data-css-accent data-css-state="visited" data-css-role="link" href="#accent">
+                        Visited
+                    </a>
+                    &emsp;
+                    <a data-css-accent data-css-state="selected" data-css-role="link" href="#accent">
+                        Selected
+                    </a>
+                    &emsp;
+                    <a data-css-accent data-css-state="active" data-css-role="link" href="#accent">
+                        Active
+                    </a>
+                </div>
+                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span data-css-primary itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" data-css-group="lines" itemprop="text">
+                        <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                        <span>&emsp;No forced state</span>
+                        <span>&lt;/a&gt;</span>
+                        <span>&amp;emsp;</span>
+                        <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-state=&quot;normal&quot; data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                        <span>&emsp;Normal</span>
+                        <span>&lt;/a&gt;</span>
+                        <span>&amp;emsp;</span>
+                        <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-state=&quot;visited&quot; data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                        <span>&emsp;Visited</span>
+                        <span>&lt;/a&gt;</span>
+                        <span>&amp;emsp;</span>
+                        <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-state=&quot;selected&quot; data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                        <span>&emsp;Selected</span>
+                        <span>&lt;/a&gt;</span>
+                        <span>&amp;emsp;</span>
+                        <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-state=&quot;active&quot; data-css-role=&quot;link&quot; href=&quot;#&quot;&gt;</span>
+                        <span>&emsp;Active</span>
+                        <span>&lt;/a&gt;</span>
+                    </code>
+                </details>
+            </section>
+        </div>
+    </article>
+</body>
+</html>

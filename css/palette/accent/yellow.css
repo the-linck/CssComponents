@@ -1,0 +1,17 @@
+:root{
+    /* Yellow palette */
+    --css-accent-50: #FFFDE7;
+    --css-accent-100: #FFF9C4;
+    --css-accent-200: #FFF59D;
+    --css-accent-300: #FFF176;
+    --css-accent-400: #FFEE58;
+    --css-accent-500: #FFEB3B;
+    --css-accent-600: #FDD835;
+    --css-accent-700: #FBC02D;
+    --css-accent-800: #F9A825;
+    --css-accent-900: #F57F17;
+    --css-accent-A100: #FFFF8D;
+    --css-accent-A200: #FFFF00;
+    --css-accent-A400: #FFEA00;
+    --css-accent-A700: #FFD600;
+}

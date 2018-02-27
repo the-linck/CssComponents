@@ -1,0 +1,17 @@
+:root{
+    /* Light Green palette */
+    --css-primary-50: #F1F8E9;
+    --css-primary-100: #DCEDC8;
+    --css-primary-200: #C5E1A5;
+    --css-primary-300: #AED581;
+    --css-primary-400: #9CCC65;
+    --css-primary-500: #8BC34A;
+    --css-primary-600: #7CB342;
+    --css-primary-700: #689F38;
+    --css-primary-800: #558B2F;
+    --css-primary-900: #33691E;
+    --css-primary-A100: #CCFF90;
+    --css-primary-A200: #B2FF59;
+    --css-primary-A400: #76FF03;
+    --css-primary-A700: #64DD17;
+}

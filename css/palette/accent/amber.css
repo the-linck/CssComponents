@@ -1,0 +1,17 @@
+:root{
+    /* Amber palette */
+    --css-accent-50: #FFF8E1;
+    --css-accent-100: #FFECB3;
+    --css-accent-200: #FFE082;
+    --css-accent-300: #FFD54F;
+    --css-accent-400: #FFCA28;
+    --css-accent-500: #FFC107;
+    --css-accent-600: #FFB300;
+    --css-accent-700: #FFA000;
+    --css-accent-800: #FF8F00;
+    --css-accent-900: #FF6F00;
+    --css-accent-A100: #FFE57F;
+    --css-accent-A200: #FFD740;
+    --css-accent-A400: #FFC400;
+    --css-accent-A700: #FFAB00;
+}

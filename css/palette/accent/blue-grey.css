@@ -1,0 +1,13 @@
+:root{
+    /* Grey palette */
+    --css-accent-50: #ECEFF1;
+    --css-accent-100: #CFD8DC;
+    --css-accent-200: #B0BEC5;
+    --css-accent-300: #90A4AE;
+    --css-accent-400: #78909C;
+    --css-accent-500: #607D8B;
+    --css-accent-600: #546E7A;
+    --css-accent-700: #455A64;
+    --css-accent-800: #37474F;
+    --css-accent-900: #263238;
+}

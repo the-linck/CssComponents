@@ -1,0 +1,17 @@
+:root{
+    /* Cyan palette */
+    --css-primary-50: #E0F7FA;
+    --css-primary-100: #B2EBF2;
+    --css-primary-200: #80DEEA;
+    --css-primary-300: #4DD0E1;
+    --css-primary-400: #26C6DA;
+    --css-primary-500: #00BCD4;
+    --css-primary-600: #00ACC1;
+    --css-primary-700: #0097A7;
+    --css-primary-800: #00838F;
+    --css-primary-900: #006064;
+    --css-primary-A100: #84FFFF;
+    --css-primary-A200: #18FFFF;
+    --css-primary-A400: #00E5FF;
+    --css-primary-A700: #00B8D4;
+}
