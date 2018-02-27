@@ -1,4 +1,11 @@
-# The Project
+# Contents
+* [The Project](#The-Project)
+  * [Structure](#Structure)
+  * [Conventions](#Conventions)
+  * [Release](#Release)
+* [Documentation](#Documentation)
+
+# Project
 
 Firstly, **CSS Components, is a PURE CSS library for front-end development.**
 
@@ -6,7 +13,7 @@ The reason this project started was it developer (yeah, me) being tired of seein
 
 Thinking on the problem of excessive JS use and the lack of several (normally most) useful things in existing pure CSS libraries that do exist in JS powered ones, i've got to one simple conclusion:
 *maybe I sould make my own library, using only CSS*.
-And ... why not do it?
+And   . why not do it?
 
 Initially, it would be a simple copy of major front-end libraries and frameworks, remade with only CSS. But after some redesigns and two years learning more of web programming with pratice, I've decided to go back at the begining and redo the project with the following focuses:
 
@@ -28,6 +35,7 @@ Given that big objetives, the project has 3 long term goals:
 3. Implement all schema.org standart types
 
 Of couse that's very, very hard to do. So any help is very welcome. ;)
+
 
 ## Structure
 
@@ -53,15 +61,44 @@ The project's file struture is the following:
 
 * **CSS {folder}**  
 Where the magic happens
-..* **pallete {folder}**  
-..The color palettes avaliable on the project
-......* **accent {folder}**  
-......CSS files that register every pallete of the accent colors variables
-......* **primary {folder}**  
-......CSS files that register every pallete of the primary colors variables
-...* **core.css {file}**  
-...Where universal rules and styles are defined
-...* **compllete.css {file}**  
-...Shortcut to import all modules at once
-...* Other modules ".css" files...
+  * **pallete {folder}**  
+  The color palettes avaliable on the project
+      * **accent {folder}**  
+      CSS files that register every pallete of the accent colors variables
+      * **primary {folder}**  
+      CSS files that register every pallete of the primary colors variables
+  * **core.css {file}**  
+  Where universal rules and styles are defined
+  * **compllete.css {file}**  
+  Shortcut to import all modules at once
+  * Other modules ".css" files  .
 
+
+## Conventions
+
+Like said above, everything may be a component. Like a class in OOP, a compoent may be a link, a standart data document strucuture (like a blog post), a tooltip, almost anything.
+Here are the "ground rules" we use to develop the components:
+
+* A given component, a button for example, will have it's own unique properties, but at the same time may have properties shared with other components - like buttons and articles may share the same default font color;
+* The most basic and/or universal properties that can be shared by most (or even all) components will be declared directly on the Core Module, making them universal.  
+When components shared most of their properties, they will be both implemented in the same
+module for simplicity;
+* Components that group other components (like a radiogroup) follow the previous rule;
+* We use attributes for styling to give a more semantic and declarative syntax on the HTML;
+* All our custom attributes use the **data-css-** prefix, to avoid name collision with another libraries and/or your code.
+* By default, all components use the primary colors.  
+To use the accent pallete on a component (or part of it), you must use the **data-css-accent** attribute.
+
+
+## Release
+
+Beign a project currently kept by a single developer, wich works on this in his free time, its undoable to mantain a stricly regular release scheme.
+But, I do plan to release updates in a role releasing like model: as soon as its done and tested, it will be released.
+
+# Documentation
+
+This project is made through it's documentaion, in other words: everything in the project is used to make the documentation.
+At the same time it's difficult to have a component not documented, and our documentation is made using the same project it explains.
+Check it out:
+
+[CSS Components documentation](http://the-linck.github.io/CssComponents/)
