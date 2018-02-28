@@ -1,0 +1,196 @@
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
+{
+    /* Component basic rules */
+    background: var(--css-primary-900);
+    border: 1px solid var(--css-primary-700);
+    border-radius: 0.5em;
+    display: block;
+    margin: 1em 0 0 0;
+
+
+    // Programming Language
+    [itemprop="programmingLanguage"]
+    {
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+
+    // Children
+    >*,
+    >[itemprop="text"]
+    {
+        /* All direct children must de block elements */        
+        display: block;
+        padding: 0.5em;
+    }
+
+
+    // Content
+    >[itemprop="text"]
+    {
+        box-sizing: border-box;
+        counter-reset: code-lines;
+        display: table;
+        font-family: monospace;
+        line-height: 1.25em;
+        padding: 0 0.5em;
+
+        // Line counter activation
+        &[data-css-group="lines"][role=group]
+        {
+            // All lines number
+            *::before
+            {
+                color: var(--css-primary-600);
+                content: counters(code-lines, ".", decimal-leading-zero);
+                counter-increment: code-lines;
+                display: table-cell;
+                height: 100%;
+                padding-right: 1em;
+            }
+            // First line number
+            :first-child::before
+            {
+                padding-top:  0.5em;
+            }
+
+            // Last line
+            :last-child
+            {
+                align-items: stretch;
+                flex-wrap:  wrap;
+
+                // Number padding
+                &::before
+                {
+                    padding-bottom: 0.5em;
+                }
+
+                // Extra space for padding
+                &::after
+                {
+                    content: ' ';
+                    display: block;
+                    line-height: 0.5em;
+                    width: 100%;
+                }
+            }
+        }
+
+        // Lines
+        > *
+        {
+            display: table-row;
+            width: 100%;
+
+            em,
+            strong,
+            var
+            {
+                font-size: 1.125em;    
+            }
+        }
+
+        // Planned attibute based identation
+        & [data-css-tabs]
+        {
+            text-indent: attr(data-css-tabs em, 0);
+        }
+    }
+    
+
+    // Primary color
+    &,
+    &[data-css-primary],
+    & [data-css-primary]
+    {
+        color: var(--css-primary-200);
+    }
+
+
+    // Accent color
+    &[data-css-accent]
+    {
+        /* Support for accent color */
+        background-color: var(--css-accent-900);
+        border-color: var(--css-accent-700);
+    }
+    &[data-css-accent],
+    & [data-css-accent]
+    {
+        color: var(--css-accent-200);
+    }
+}
+
+
+// Specific rules for <details> and <summary> elements
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
+{
+    // Summary element
+    > summary:first-child
+    {
+        background: var(--css-primary-900);
+        border-radius: 0.5em;
+        transition: background 0.3s;
+    }
+
+    // Primary color when opened
+    &[open] > summary:first-child,
+    &[open] > summary:first-child[data-css-primary],
+    &[open] > summary:first-child [data-css-primary]
+    {
+        color: var(--css-primary-50);
+    }
+    // Accent color when opened
+    &[open][data-css-accent] > summary:first-child,
+    &[open] > summary:first-child[data-css-accent],
+    &[open] > summary:first-child [data-css-accent]
+    {
+        color: var(--css-accent-50);
+    }
+    
+
+    // Hover/selected state summary
+    > summary:first-child:hover,
+    &[open] > summary:first-child
+    {
+        background: var(--css-primary-700);
+    }
+
+    // Removing summary outline
+    > summary:first-child:active,
+    > summary:first-child:focus,
+    &[open] > summary:first-child
+    {
+        outline: none;
+    }
+
+    // Opened summary custom borders
+    &[open] > summary:first-child
+    {
+        border-bottom: 1px solid var(--css-primary-700);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    // Accent color
+    &[data-css-accent]
+    {
+        > summary:first-child:hover,
+        &[open] > summary:first-child
+        {
+            background: var(--css-accent-700);
+        }
+
+        > summary:first-child
+        {
+            background: var(--css-accent-900);
+        }
+
+        &[open]
+        {
+            border-bottom-color: var(--css-accent-700);
+        }
+    }
+}

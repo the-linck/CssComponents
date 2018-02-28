@@ -1,403 +1,420 @@
-[role="button"],
-[data-css-role="button"]
-{
-    border: 1px solid;
-    border-radius: 0.25em;
-    display: inline-block;
-    font-size: 1.5em;
-    padding: 0.5em;
-    margin: 0.125em;
-    text-transform: uppercase;
+[role="group"][data-css-group="button"],
+[data-css-role="group"][data-css-group="button"] {
+  border: 0.125em solid var(--css-primary-400);
+  border-radius: 0.5em;
+  display: inline-flex;
+  white-space: nowrap;
 }
 
-/* Sizes */
-[role="button"][data-css-size="small"],
-[data-css-role="button"][data-css-size="small"]
-{
-    border-radius: 0.5em;
-    font-size: 1em;
-    padding: 0.25em;
-}
-[role="button"][data-css-size="big"],
-[data-css-role="button"][data-css-size="big"]
-{
-    border-radius: 0.25em;
-    font-size: 2em;
-    padding: 0.75em;
-}
-[role="button"][data-css-size="huge"],
-[data-css-role="button"][data-css-size="huge"]
-{
-    border-radius: 0.20em;
-    font-size: 3em;
-    padding: 1em;
-}
-[role="button"][data-css-size="full"],
-[data-css-role="button"][data-css-size="full"]
-{
-    border-radius: 0.20em;
-    display: block;
-    font-size: 3em;
-    margin-left:  0;
-    margin-right: 0;
-    padding: 1em;
-    width: 100%;
+button[data-css-role],
+[role="button"],
+[data-css-role="button"] {
+  /* Basic component rules */
+  background: var(--css-primary-200);
+  border-color: var(--css-primary-200);
+  border: 1px solid;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  color: var(--css-primary-800);
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0.125em;
+  outline: none;
+  padding: 0.5em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s color, 0.25s background, 0.25s border-color;
 }
 
-/* States */
-[role="button"]:disabled,
-[data-css-role="button"]:disabled,
-[role="button"][aria-disabled],
-[data-css-role="button"][aria-disabled]
-{
-    background: var(--css-primary-50);
-    border-color: transparent;
-    color: var(--css-primary-500);
-    outline: none;
-}
-[role="button"],
-[data-css-role="button"]
-{
-    background: var(--css-primary-200);
-    border-color: var(--css-primary-200);
-    box-sizing: border-box;
-    color: var(--css-primary-800);
-    text-align: center;
-    text-decoration:  none;
-    transition: 0.25s color, 0.25s background, 0.25s border-color;
-    outline: none;
-}
+button[data-css-role][data-css-accent],
 [role="button"][data-css-accent],
-[data-css-role="button"][data-css-accent]
-{
-    background: var(--css-accent-200);
-    border-color: var(--css-accent-200);
-    color: var(--css-accent-800);
+[data-css-role="button"][data-css-accent] {
+  background: var(--css-accent-200);
+  border-color: var(--css-accent-200);
+  color: var(--css-black);
 }
 
+button[data-css-role][data-css-size="small"],
+[role="button"][data-css-size="small"],
+[data-css-role="button"][data-css-size="small"] {
+  /* Small button */
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.25em;
+}
+
+button[data-css-role][data-css-size="big"],
+[role="button"][data-css-size="big"],
+[data-css-role="button"][data-css-size="big"] {
+  /* Big button */
+  border-radius: 0.25em;
+  font-size: 2em;
+  padding: 0.75em;
+}
+
+button[data-css-role][data-css-size="huge"],
+[role="button"][data-css-size="huge"],
+[data-css-role="button"][data-css-size="huge"] {
+  /* Huge button */
+  border-radius: 0.20em;
+  font-size: 3em;
+  padding: 1em;
+}
+
+button[data-css-role][data-css-size="full"],
+[role="button"][data-css-size="full"],
+[data-css-role="button"][data-css-size="full"] {
+  /* Fullsize button */
+  border-radius: 0.20em;
+  display: block;
+  font-size: 3em;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1em;
+  width: 100%;
+}
+
+button[data-css-role]:hover, button[data-css-role]:focus, button[data-css-role][aria-current]:not([aria-current="false"]),
 [role="button"]:hover,
-[data-css-role="button"]:hover,
 [role="button"]:focus,
+[role="button"][aria-current]:not([aria-current="false"]),
+[data-css-role="button"]:hover,
 [data-css-role="button"]:focus,
-[role="button"][aria-current],
-[data-css-role="button"][aria-current]
-{
-    background: var(--css-primary-100);
-    border-color: var(--css-primary-700);
-    color: var(--css-primary-700);
-    outline: none;
-}
-[role="button"][data-css-accent]:hover,
-[data-css-role="button"][data-css-accent]:hover,
-[role="button"][data-css-accent]:focus,
-[data-css-role="button"][data-css-accent]:focus,
-[role="button"][data-css-accent][aria-current],
-[data-css-role="button"][data-css-accent][aria-current]
-{
-    background: var(--css-accent-100);
-    border-color: var(--css-accent-700);
-    color: var(--css-accent-700);
+[data-css-role="button"][aria-current]:not([aria-current="false"]) {
+  /* Selected button */
+  background: var(--css-primary-100);
+  border-color: var(--css-primary-700);
+  color: var(--css-primary-900);
+  outline: none;
 }
 
+button[data-css-role]:hover[data-css-accent], button[data-css-role]:focus[data-css-accent], button[data-css-role][aria-current]:not([aria-current="false"])[data-css-accent],
+[role="button"]:hover[data-css-accent],
+[role="button"]:focus[data-css-accent],
+[role="button"][aria-current]:not([aria-current="false"])[data-css-accent],
+[data-css-role="button"]:hover[data-css-accent],
+[data-css-role="button"]:focus[data-css-accent],
+[data-css-role="button"][aria-current]:not([aria-current="false"])[data-css-accent] {
+  background: var(--css-accent-100);
+  border-color: var(--css-accent-700);
+  color: var(--css-accent-900);
+}
+
+button[data-css-role]:active, button[data-css-role][aria-pressed="true"],
 [role="button"]:active,
+[role="button"][aria-pressed="true"],
 [data-css-role="button"]:active,
-[role="button"][aria-pressed="true"],
-[data-css-role="button"][aria-pressed="true"]
-{
-    background: var(--css-primary-400);
-    border-color: var(--css-primary-900);
-    color: var(--css-primary-900);
-    outline: none;
-}
-[role="button"][data-css-accent]:active,
-[data-css-role="button"][data-css-accent]:active,
-[role="button"][data-css-accent][aria-pressed="true"],
-[data-css-role="button"][data-css-accent][aria-pressed="true"]
-{
-    background: var(--css-accent-400);
-    border-color: var(--css-accent-900);
-    color: var(--css-accent-900);
+[data-css-role="button"][aria-pressed="true"] {
+  /* Pressed button */
+  background: var(--css-primary-400);
+  border-color: var(--css-primary-900);
+  color: var(--css-black);
+  outline: none;
 }
 
-/* Repeating rules to override specificity */
-[role="button"][aria-disabled],
-[data-css-role="button"][aria-disabled],
-[role="button"]:disabled,
-[data-css-role="button"]:disabled
-{
-    background: var(--css-primary-50);
-    border-color: transparent;
-    color: var(--css-primary-500);
-}
-[role="button"][data-css-accent][aria-disabled],
-[data-css-role="button"][data-css-accent][aria-disabled],
-[role="button"][data-css-accent]:disabled,
-[data-css-role="button"][data-css-accent]:disabled
-{
-    background: var(--css-accent-50);
-    border-color: transparent;
-    color: var(--css-accent-500);
+button[data-css-role]:active[data-css-accent], button[data-css-role][aria-pressed="true"][data-css-accent],
+[role="button"]:active[data-css-accent],
+[role="button"][aria-pressed="true"][data-css-accent],
+[data-css-role="button"]:active[data-css-accent],
+[data-css-role="button"][aria-pressed="true"][data-css-accent] {
+  background: var(--css-accent-400);
+  border-color: var(--css-accent-900);
+  color: var(--css-black);
 }
 
-[role="button"][aria-current],
-[data-css-role="button"][aria-current]
-{
-    background: var(--css-primary-100);
-    border-color: var(--css-primary-700);
-    color: var(--css-primary-700);
-}
-[role="button"][data-css-accent][aria-current],
-[data-css-role="button"][data-css-accent][aria-current]
-{
-    background: var(--css-accent-100);
-    border-color: var(--css-accent-700);
-    color: var(--css-accent-700);
-}
-
-[role="button"][aria-pressed="true"],
-[data-css-role="button"][aria-pressed="true"]
-{
-    background: var(--css-primary-400);
-    border-color: var(--css-primary-900);
-    color: var(--css-primary-900);
-}
-[role="button"][data-css-accent][aria-pressed="true"],
-[data-css-role="button"][data-css-accent][aria-pressed="true"]
-{
-    background: var(--css-accent-400);
-    border-color: var(--css-accent-900);
-    color: var(--css-accent-900);
-}
-
-/* Actions */
+button[data-css-role][data-css-action="primary"],
 [role="button"][data-css-action="primary"],
-[data-css-role="button"][data-css-action="primary"]
-{
-    background: var(--css-primary-900);
-    border-color: var(--css-primary-900);
-    color: var(--css-primary-300);
+[data-css-role="button"][data-css-action="primary"] {
+  /* Primary action */
+  background: var(--css-primary-900);
+  border-color: var(--css-primary-900);
+  color: var(--css-primary-100);
 }
-[role="button"][data-css-accent][data-css-action="primary"],
-[data-css-role="button"][data-css-accent][data-css-action="primary"]
-{
-    background: var(--css-accent-900);
-    border-color: var(--css-accent-900);
-    color: var(--css-accent-300);
+
+button[data-css-role][data-css-action="primary"][data-css-accent],
+[role="button"][data-css-action="primary"][data-css-accent],
+[data-css-role="button"][data-css-action="primary"][data-css-accent] {
+  background: var(--css-accent-900);
+  border-color: var(--css-accent-900);
+  color: var(--css-accent-100);
 }
+
+button[data-css-role][data-css-action="primary"]:hover, button[data-css-role][data-css-action="primary"]:focus, button[data-css-role][data-css-action="primary"][aria-current]:not([aria-current="false"]),
 [role="button"][data-css-action="primary"]:hover,
+[role="button"][data-css-action="primary"]:focus,
+[role="button"][data-css-action="primary"][aria-current]:not([aria-current="false"]),
 [data-css-role="button"][data-css-action="primary"]:hover,
-[role="button"][data-css-action="primary"][aria-current],
-[data-css-role="button"][data-css-action="primary"][aria-current]
-{
-    background: var(--css-primary-700);
-    border-color: var(--css-primary-900);
-    color: var(--css-primary-400);
+[data-css-role="button"][data-css-action="primary"]:focus,
+[data-css-role="button"][data-css-action="primary"][aria-current]:not([aria-current="false"]) {
+  background: var(--css-primary-700);
+  border-color: var(--css-primary-900);
+  color: var(--css-primary-50);
 }
-[role="button"][data-css-accent][data-css-action="primary"]:hover,
-[data-css-role="button"][data-css-accent][data-css-action="primary"]:hover,
-[role="button"][data-css-accent][data-css-action="primary"][aria-current],
-[data-css-role="button"][data-css-accent][data-css-action="primary"][aria-current]
-{
-    background: var(--css-accent-700);
-    border-color: var(--css-accent-900);
-    color: var(--css-accent-400);
+
+button[data-css-role][data-css-action="primary"]:hover[data-css-accent], button[data-css-role][data-css-action="primary"]:focus[data-css-accent], button[data-css-role][data-css-action="primary"][aria-current]:not([aria-current="false"])[data-css-accent],
+[role="button"][data-css-action="primary"]:hover[data-css-accent],
+[role="button"][data-css-action="primary"]:focus[data-css-accent],
+[role="button"][data-css-action="primary"][aria-current]:not([aria-current="false"])[data-css-accent],
+[data-css-role="button"][data-css-action="primary"]:hover[data-css-accent],
+[data-css-role="button"][data-css-action="primary"]:focus[data-css-accent],
+[data-css-role="button"][data-css-action="primary"][aria-current]:not([aria-current="false"])[data-css-accent] {
+  background: var(--css-accent-700);
+  border-color: var(--css-accent-900);
+  color: var(--css-accent-50);
 }
+
+button[data-css-role][data-css-action="primary"]:active,
+button[data-css-role][data-css-action="primary"] [aria-pressed="true"],
 [role="button"][data-css-action="primary"]:active,
+[role="button"][data-css-action="primary"] [aria-pressed="true"],
 [data-css-role="button"][data-css-action="primary"]:active,
-[role="button"][data-css-action="primary"][aria-pressed="true"],
-[data-css-role="button"][data-css-action="primary"][aria-pressed="true"]
-{
-    background: var(--css-primary-900);
-    border-color: var(--css-primary-900);
-    color: var(--css-primary-500);
-}
-[role="button"][data-css-accent][data-css-action="primary"]:active,
-[data-css-role="button"][data-css-accent][data-css-action="primary"]:active,
-[role="button"][data-css-accent][data-css-action="primary"][aria-pressed="true"],
-[data-css-role="button"][data-css-accent][data-css-action="primary"][aria-pressed="true"]
-{
-    background: var(--css-accent-900);
-    border-color: var(--css-accent-900);
-    color: var(--css-accent-500);
+[data-css-role="button"][data-css-action="primary"] [aria-pressed="true"] {
+  background: var(--css-primary-900);
+  border-color: var(--css-primary-900);
+  color: var(--css-white);
 }
 
+button[data-css-role][data-css-action="primary"]:active[data-css-accent],
+button[data-css-role][data-css-action="primary"] [aria-pressed="true"][data-css-accent],
+[role="button"][data-css-action="primary"]:active[data-css-accent],
+[role="button"][data-css-action="primary"] [aria-pressed="true"][data-css-accent],
+[data-css-role="button"][data-css-action="primary"]:active[data-css-accent],
+[data-css-role="button"][data-css-action="primary"] [aria-pressed="true"][data-css-accent] {
+  background: var(--css-accent-900);
+  border-color: var(--css-accent-900);
+}
+
+button[data-css-role][data-css-action="secondary"],
 [role="button"][data-css-action="secondary"],
-[data-css-role="button"][data-css-action="secondary"]
-{
-    background: var(--css-primary-800);
-    border-color: var(--css-primary-800);
-    color: var(--css-primary-400);
+[data-css-role="button"][data-css-action="secondary"] {
+  /* Secondary action */
+  background: var(--css-primary-800);
+  border-color: var(--css-primary-800);
+  color: var(--css-white);
 }
-[role="button"][data-css-accent][data-css-action="secondary"],
-[data-css-role="button"][data-css-accent][data-css-action="secondary"]
-{
-    background: var(--css-accent-800);
-    border-color: var(--css-accent-800);
-    color: var(--css-accent-400);
+
+button[data-css-role][data-css-action="secondary"][data-css-accent],
+[role="button"][data-css-action="secondary"][data-css-accent],
+[data-css-role="button"][data-css-action="secondary"][data-css-accent] {
+  background: var(--css-accent-800);
+  border-color: var(--css-accent-800);
 }
+
+button[data-css-role][data-css-action="secondary"]:hover, button[data-css-role][data-css-action="secondary"]:focus, button[data-css-role][data-css-action="secondary"][aria-current]:not([aria-current="false"]),
 [role="button"][data-css-action="secondary"]:hover,
+[role="button"][data-css-action="secondary"]:focus,
+[role="button"][data-css-action="secondary"][aria-current]:not([aria-current="false"]),
 [data-css-role="button"][data-css-action="secondary"]:hover,
-[role="button"][data-css-action="secondary"][aria-current],
-[data-css-role="button"][data-css-action="secondary"][aria-current]
-{
-    background: var(--css-primary-600);
-    border-color: var(--css-primary-800);
-    color: var(--css-primary-300);
+[data-css-role="button"][data-css-action="secondary"]:focus,
+[data-css-role="button"][data-css-action="secondary"][aria-current]:not([aria-current="false"]) {
+  background: var(--css-primary-600);
+  border-color: var(--css-primary-800);
+  color: var(--css-white);
 }
-[role="button"][data-css-accent][data-css-action="secondary"]:hover,
-[data-css-role="button"][data-css-accent][data-css-action="secondary"]:hover,
-[role="button"][data-css-accent][data-css-action="secondary"][aria-current],
-[data-css-role="button"][data-css-accent][data-css-action="secondary"][aria-current]
-{
-    background: var(--css-accent-600);
-    border-color: var(--css-accent-800);
-    color: var(--css-accent-300);
+
+button[data-css-role][data-css-action="secondary"]:hover[data-css-accent], button[data-css-role][data-css-action="secondary"]:focus[data-css-accent], button[data-css-role][data-css-action="secondary"][aria-current]:not([aria-current="false"])[data-css-accent],
+[role="button"][data-css-action="secondary"]:hover[data-css-accent],
+[role="button"][data-css-action="secondary"]:focus[data-css-accent],
+[role="button"][data-css-action="secondary"][aria-current]:not([aria-current="false"])[data-css-accent],
+[data-css-role="button"][data-css-action="secondary"]:hover[data-css-accent],
+[data-css-role="button"][data-css-action="secondary"]:focus[data-css-accent],
+[data-css-role="button"][data-css-action="secondary"][aria-current]:not([aria-current="false"])[data-css-accent] {
+  background: var(--css-accent-600);
+  border-color: var(--css-accent-800);
 }
+
+button[data-css-role][data-css-action="secondary"]:active,
+button[data-css-role][data-css-action="secondary"] [aria-pressed="true"],
 [role="button"][data-css-action="secondary"]:active,
+[role="button"][data-css-action="secondary"] [aria-pressed="true"],
 [data-css-role="button"][data-css-action="secondary"]:active,
-[role="button"][data-css-action="secondary"][aria-pressed="true"],
-[data-css-role="button"][data-css-action="secondary"][aria-pressed="true"]
-{
-    background: var(--css-primary-900);
-    border-color: var(--css-primary-900);
-    color: var(--css-primary-600);
-}
-[role="button"][data-css-accent][data-css-action="secondary"]:active,
-[data-css-role="button"][data-css-accent][data-css-action="secondary"]:active,
-[role="button"][data-css-accent][data-css-action="secondary"][aria-pressed="true"],
-[data-css-role="button"][data-css-accent][data-css-action="secondary"][aria-pressed="true"]
-{
-    background: var(--css-accent-900);
-    border-color: var(--css-accent-900);
-    color: var(--css-accent-600);
+[data-css-role="button"][data-css-action="secondary"] [aria-pressed="true"] {
+  background: var(--css-primary-900);
+  border-color: var(--css-primary-900);
+  color: var(--css-primary-50);
 }
 
+button[data-css-role][data-css-action="secondary"]:active[data-css-accent],
+button[data-css-role][data-css-action="secondary"] [aria-pressed="true"][data-css-accent],
+[role="button"][data-css-action="secondary"]:active[data-css-accent],
+[role="button"][data-css-action="secondary"] [aria-pressed="true"][data-css-accent],
+[data-css-role="button"][data-css-action="secondary"]:active[data-css-accent],
+[data-css-role="button"][data-css-action="secondary"] [aria-pressed="true"][data-css-accent] {
+  background: var(--css-accent-900);
+  border-color: var(--css-accent-900);
+  color: var(--css-accent-50);
+}
+
+button[data-css-role][data-css-action="tertiary"],
 [role="button"][data-css-action="tertiary"],
-[data-css-role="button"][data-css-action="tertiary"]
-{
-    background: var(--css-primary-400);
-    border-color: var(--css-primary-400);
-    color: var(--css-primary-800);
+[data-css-role="button"][data-css-action="tertiary"] {
+  /* Tertiary action */
+  background: var(--css-primary-400);
+  border-color: var(--css-primary-400);
+  color: var(--css-black);
 }
-[role="button"][data-css-accent][data-css-action="tertiary"],
-[data-css-role="button"][data-css-accent][data-css-action="tertiary"]
-{
-    background: var(--css-accent-400);
-    border-color: var(--css-accent-400);
-    color: var(--css-accent-800);
+
+button[data-css-role][data-css-action="tertiary"][data-css-accent],
+[role="button"][data-css-action="tertiary"][data-css-accent],
+[data-css-role="button"][data-css-action="tertiary"][data-css-accent] {
+  background: var(--css-accent-400);
+  border-color: var(--css-accent-400);
 }
+
+button[data-css-role][data-css-action="tertiary"]:hover, button[data-css-role][data-css-action="tertiary"]:focus, button[data-css-role][data-css-action="tertiary"][aria-current]:not([aria-current="false"]),
 [role="button"][data-css-action="tertiary"]:hover,
+[role="button"][data-css-action="tertiary"]:focus,
+[role="button"][data-css-action="tertiary"][aria-current]:not([aria-current="false"]),
 [data-css-role="button"][data-css-action="tertiary"]:hover,
-[role="button"][data-css-action="tertiary"][aria-current],
-[data-css-role="button"][data-css-action="tertiary"][aria-current]
-{
-    background: var(--css-primary-300);
-    border-color: var(--css-primary-600);
-    color: var(--css-primary-600);
+[data-css-role="button"][data-css-action="tertiary"]:focus,
+[data-css-role="button"][data-css-action="tertiary"][aria-current]:not([aria-current="false"]) {
+  background: var(--css-primary-300);
+  border-color: var(--css-primary-600);
+  color: var(--css-black);
 }
-[role="button"][data-css-accent][data-css-action="tertiary"]:hover,
-[data-css-role="button"][data-css-accent][data-css-action="tertiary"]:hover,
-[role="button"][data-css-accent][data-css-action="tertiary"][aria-current],
-[data-css-role="button"][data-css-accent][data-css-action="tertiary"][aria-current]
-{
-    background: var(--css-accent-300);
-    border-color: var(--css-accent-600);
-    color: var(--css-accent-600);
+
+button[data-css-role][data-css-action="tertiary"]:hover[data-css-accent], button[data-css-role][data-css-action="tertiary"]:focus[data-css-accent], button[data-css-role][data-css-action="tertiary"][aria-current]:not([aria-current="false"])[data-css-accent],
+[role="button"][data-css-action="tertiary"]:hover[data-css-accent],
+[role="button"][data-css-action="tertiary"]:focus[data-css-accent],
+[role="button"][data-css-action="tertiary"][aria-current]:not([aria-current="false"])[data-css-accent],
+[data-css-role="button"][data-css-action="tertiary"]:hover[data-css-accent],
+[data-css-role="button"][data-css-action="tertiary"]:focus[data-css-accent],
+[data-css-role="button"][data-css-action="tertiary"][aria-current]:not([aria-current="false"])[data-css-accent] {
+  background: var(--css-accent-300);
+  border-color: var(--css-accent-600);
 }
+
+button[data-css-role][data-css-action="tertiary"]:active,
+button[data-css-role][data-css-action="tertiary"] [aria-pressed="true"],
 [role="button"][data-css-action="tertiary"]:active,
+[role="button"][data-css-action="tertiary"] [aria-pressed="true"],
 [data-css-role="button"][data-css-action="tertiary"]:active,
-[role="button"][data-css-action="tertiary"][aria-pressed="true"],
-[data-css-role="button"][data-css-action="tertiary"][aria-pressed="true"]
-{
-    background: var(--css-primary-500);
-    border-color: var(--css-primary-800);
-    color: var(--css-primary-800);
-}
-[role="button"][data-css-accent][data-css-action="tertiary"]:active,
-[data-css-role="button"][data-css-accent][data-css-action="tertiary"]:active,
-[role="button"][data-css-accent][data-css-action="tertiary"][aria-pressed="true"],
-[data-css-role="button"][data-css-accent][data-css-action="tertiary"][aria-pressed="true"]
-{
-    background: var(--css-accent-500);
-    border-color: var(--css-accent-800);
-    color: var(--css-accent-800);
+[data-css-role="button"][data-css-action="tertiary"] [aria-pressed="true"] {
+  background: var(--css-primary-500);
+  border-color: var(--css-primary-800);
+  color: var(--css-black);
 }
 
+button[data-css-role][data-css-action="tertiary"]:active[data-css-accent],
+button[data-css-role][data-css-action="tertiary"] [aria-pressed="true"][data-css-accent],
+[role="button"][data-css-action="tertiary"]:active[data-css-accent],
+[role="button"][data-css-action="tertiary"] [aria-pressed="true"][data-css-accent],
+[data-css-role="button"][data-css-action="tertiary"]:active[data-css-accent],
+[data-css-role="button"][data-css-action="tertiary"] [aria-pressed="true"][data-css-accent] {
+  background: var(--css-accent-500);
+  border-color: var(--css-accent-800);
+}
+
+button[data-css-role][data-css-action="special"],
 [role="button"][data-css-action="special"],
-[data-css-role="button"][data-css-action="special"]
-{
-    background: var(--css-primary-50);
-    border-color: var(--css-primary-100);
-    color: var(--css-primary-900);
-}
-[role="button"][data-css-accent][data-css-action="special"],
-[data-css-role="button"][data-css-accent][data-css-action="special"]
-{
-    background: var(--css-accent-50);
-    border-color: var(--css-accent-100);
-    color: var(--css-accent-900);
-}
-[role="button"][data-css-action="special"]:hover,
-[data-css-role="button"][data-css-action="special"]:hover,
-[role="button"][data-css-action="special"][aria-current],
-[data-css-role="button"][data-css-action="special"][aria-current]
-{
-    background: var(--css-white);
-    border-color: var(--css-primary-100);
-}
-[role="button"][data-css-accent][data-css-action="special"]:hover,
-[data-css-role="button"][data-css-accent][data-css-action="special"]:hover,
-[role="button"][data-css-accent][data-css-action="special"][aria-current],
-[data-css-role="button"][data-css-accent][data-css-action="special"][aria-current]
-{
-    background: var(--css-white);
-    border-color: var(--css-accent-100);
-}
-[role="button"][data-css-action="special"]:active,
-[data-css-role="button"][data-css-action="special"]:active,
-[role="button"][data-css-action="special"][aria-pressed="true"],
-[data-css-role="button"][data-css-action="special"][aria-pressed="true"]
-{
-    background: var(--css-primary-200);
-    border-color: var(--css-primary-300);
-}
-[role="button"][data-css-accent][data-css-action="special"]:active,
-[data-css-role="button"][data-css-accent][data-css-action="special"]:active,
-[role="button"][data-css-accent][data-css-action="special"][aria-pressed="true"],
-[data-css-role="button"][data-css-accent][data-css-action="special"][aria-pressed="true"]
-{
-    background: var(--css-accent-200);
-    border-color: var(--css-accent-300);
+[data-css-role="button"][data-css-action="special"] {
+  /* Special action */
+  background: var(--css-primary-50);
+  border-color: var(--css-primary-100);
+  color: var(--css-primary-900);
 }
 
-/* Split button */
-[role="group"][data-css-group="button"]
-{
-    border: 0.125em solid var(--css-primary-400);
-    border-radius: 0.5em;
-    display: inline-flex;
-    white-space: nowrap;
+button[data-css-role][data-css-action="special"][data-css-accent],
+[role="button"][data-css-action="special"][data-css-accent],
+[data-css-role="button"][data-css-action="special"][data-css-accent] {
+  background: var(--css-accent-50);
+  border-color: var(--css-accent-100);
+  color: var(--css-accent-900);
 }
-[role="group"][data-css-group="button"] > [role="button"],
-[role="group"][data-css-group="button"] > [data-css-role="button"]
-{
-    border-left-color: var(--css-primary-400);
-    border-bottom: none;
-    border-radius: 0;
-    border-right: none;
-    border-top: none;
-    margin: 0;
+
+button[data-css-role][data-css-action="special"]:hover, button[data-css-role][data-css-action="special"]:focus, button[data-css-role][data-css-action="special"][aria-current]:not([aria-current="false"]),
+[role="button"][data-css-action="special"]:hover,
+[role="button"][data-css-action="special"]:focus,
+[role="button"][data-css-action="special"][aria-current]:not([aria-current="false"]),
+[data-css-role="button"][data-css-action="special"]:hover,
+[data-css-role="button"][data-css-action="special"]:focus,
+[data-css-role="button"][data-css-action="special"][aria-current]:not([aria-current="false"]) {
+  background: var(--css-white);
+  border-color: var(--css-primary-100);
 }
-[role="group"][data-css-group="button"] > [role="button"]:first-child,
-[role="group"][data-css-group="button"] > [data-css-role="button"]:first-child
-{
-    border-left: none;
-    border-bottom-left-radius:  0.25em;
-    border-top-left-radius:  0.25em;
+
+button[data-css-role][data-css-action="special"]:hover[data-css-accent], button[data-css-role][data-css-action="special"]:focus[data-css-accent], button[data-css-role][data-css-action="special"][aria-current]:not([aria-current="false"])[data-css-accent],
+[role="button"][data-css-action="special"]:hover[data-css-accent],
+[role="button"][data-css-action="special"]:focus[data-css-accent],
+[role="button"][data-css-action="special"][aria-current]:not([aria-current="false"])[data-css-accent],
+[data-css-role="button"][data-css-action="special"]:hover[data-css-accent],
+[data-css-role="button"][data-css-action="special"]:focus[data-css-accent],
+[data-css-role="button"][data-css-action="special"][aria-current]:not([aria-current="false"])[data-css-accent] {
+  background: var(--css-white);
+  border-color: var(--css-accent-100);
 }
-[role="group"][data-css-group="button"] > [role="button"]:last-child,
-[role="group"][data-css-group="button"] > [data-css-role="button"]:last-child
-{
-    border-bottom-right-radius:  0.25em;
-    border-top-right-radius:  0.25em;
+
+button[data-css-role][data-css-action="special"]:active,
+button[data-css-role][data-css-action="special"] [aria-pressed="true"],
+[role="button"][data-css-action="special"]:active,
+[role="button"][data-css-action="special"] [aria-pressed="true"],
+[data-css-role="button"][data-css-action="special"]:active,
+[data-css-role="button"][data-css-action="special"] [aria-pressed="true"] {
+  background: var(--css-primary-200);
+  border-color: var(--css-primary-300);
 }
+
+button[data-css-role][data-css-action="special"]:active[data-css-accent],
+button[data-css-role][data-css-action="special"] [aria-pressed="true"][data-css-accent],
+[role="button"][data-css-action="special"]:active[data-css-accent],
+[role="button"][data-css-action="special"] [aria-pressed="true"][data-css-accent],
+[data-css-role="button"][data-css-action="special"]:active[data-css-accent],
+[data-css-role="button"][data-css-action="special"] [aria-pressed="true"][data-css-accent] {
+  background: var(--css-accent-200);
+  border-color: var(--css-accent-300);
+}
+
+button[data-css-role]:disabled, button[data-css-role][aria-disabled],
+[role="button"]:disabled,
+[role="button"][aria-disabled],
+[data-css-role="button"]:disabled,
+[data-css-role="button"][aria-disabled] {
+  /* Disabled button */
+  background: var(--css-primary-50);
+  border-color: transparent;
+  color: var(--css-primary-500);
+  outline: none;
+}
+
+[role="group"][data-css-group="button"] > button[data-css-role],
+[data-css-role="group"][data-css-group="button"] > button[data-css-role], [role="group"][data-css-group="button"] >
+[role="button"],
+[data-css-role="group"][data-css-group="button"] >
+[role="button"], [role="group"][data-css-group="button"] >
+[data-css-role="button"],
+[data-css-role="group"][data-css-group="button"] >
+[data-css-role="button"] {
+  border-left-color: var(--css-primary-400);
+  border-bottom: none;
+  border-radius: 0;
+  border-right: none;
+  border-top: none;
+  margin: 0;
+}
+
+[role="group"][data-css-group="button"] > button[data-css-role]:first-child,
+[data-css-role="group"][data-css-group="button"] > button[data-css-role]:first-child, [role="group"][data-css-group="button"] >
+[role="button"]:first-child,
+[data-css-role="group"][data-css-group="button"] >
+[role="button"]:first-child, [role="group"][data-css-group="button"] >
+[data-css-role="button"]:first-child,
+[data-css-role="group"][data-css-group="button"] >
+[data-css-role="button"]:first-child {
+  border-left: none;
+  border-bottom-left-radius: 0.25em;
+  border-top-left-radius: 0.25em;
+}
+
+[role="group"][data-css-group="button"] > button[data-css-role]:last-child,
+[data-css-role="group"][data-css-group="button"] > button[data-css-role]:last-child, [role="group"][data-css-group="button"] >
+[role="button"]:last-child,
+[data-css-role="group"][data-css-group="button"] >
+[role="button"]:last-child, [role="group"][data-css-group="button"] >
+[data-css-role="button"]:last-child,
+[data-css-role="group"][data-css-group="button"] >
+[data-css-role="button"]:last-child {
+  border-bottom-right-radius: 0.25em;
+  border-top-right-radius: 0.25em;
+}
+/*# sourceMappingURL=button.css.map */

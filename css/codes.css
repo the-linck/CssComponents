@@ -1,187 +1,138 @@
-/* 
- * Code component basic rules
- */
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
-{
-    background: var(--css-primary-900);
-    border: 1px solid var(--css-primary-700);
-    border-radius: 0.5em;
-    color: var(--css-primary-200);
-    display: block;
-    margin: 1em 0 0 0;
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] {
+  /* Component basic rules */
+  background: var(--css-primary-900);
+  border: 1px solid var(--css-primary-700);
+  border-radius: 0.5em;
+  display: block;
+  margin: 1em 0 0 0;
 }
-/* Support for accent color */
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent]
-{
-    background-color: var(--css-accent-900);
-    border-color: var(--css-accent-700);
-    color: var(--css-accent-100);
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [itemprop="programmingLanguage"] {
+  font-weight: bold;
+  transition: color 0.3s;
 }
-/* All direct children must de block elements */
+
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > *,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"]
-{
-    display: block;
-    padding: 0.5em;
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] {
+  /* All direct children must de block elements */
+  display: block;
+  padding: 0.5em;
 }
 
-
-
-/* 
- * Specific rules for <details> and <summary> elements
- */
-/* Normal state */
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child
-{
-    background: var(--css-primary-900);
-    border-radius: 0.5em;
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] {
+  box-sizing: border-box;
+  counter-reset: code-lines;
+  display: table;
+  font-family: monospace;
+  line-height: 1.25em;
+  padding: 0 0.5em;
 }
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] > summary:first-child
-{
-    background: var(--css-accent-900);
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] *::before {
+  color: var(--css-primary-600);
+  content: counters(code-lines, ".", decimal-leading-zero);
+  counter-increment: code-lines;
+  display: table-cell;
+  height: 100%;
+  padding-right: 1em;
 }
-/* Hover/selected state */
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] :first-child::before {
+  padding-top: 0.5em;
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] :last-child {
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] :last-child::before {
+  padding-bottom: 0.5em;
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] :last-child::after {
+  content: ' ';
+  display: block;
+  line-height: 0.5em;
+  width: 100%;
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] > * {
+  display: table-row;
+  width: 100%;
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] > * em,
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] > * strong,
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] > * var {
+  font-size: 1.125em;
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] [data-css-tabs] {
+  text-indent: attr(data-css-tabs em, 0);
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"], [itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-primary],
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-primary] {
+  color: var(--css-primary-100);
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] {
+  /* Support for accent color */
+  background-color: var(--css-accent-900);
+  border-color: var(--css-accent-700);
+}
+
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent],
+[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-accent] {
+  color: var(--css-accent-100);
+}
+
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child {
+  background: var(--css-primary-900);
+  border-radius: 0.5em;
+  transition: background 0.3s;
+}
+
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child,
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child[data-css-primary],
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child [data-css-primary] {
+  color: var(--css-primary-50);
+}
+
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open][data-css-accent] > summary:first-child,
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child[data-css-accent],
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child [data-css-accent] {
+  color: var(--css-accent-50);
+}
+
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child:hover,
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child
-{
-    background: var(--css-primary-700);
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child {
+  background: var(--css-primary-700);
 }
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] > summary:first-child:hover,
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent][open] > summary:first-child
-{
-    background: var(--css-accent-700);
-}
-/* Removing active/hover state's outline */
+
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child:active,
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child:focus,
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child
-{
-    outline: none;
-}
-/* Fixing borders when opened */
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child
-{
-    border-bottom: 1px solid var(--css-primary-700);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent][open] > summary:first-child
-{
-    border-bottom-color: var(--css-accent-700);
-}
-/* Primary color text */
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child [data-css-primary]
-{
-    color: var(--css-primary-200);
-}
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child [data-css-primary]
-{
-    color: var(--css-primary-50);
-}
-/* Accent color text */
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child [data-css-accent]
-{
-    color: var(--css-accent-200);
-}
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child [data-css-accent]
-{
-    color: var(--css-accent-50);
-}
-/* Code's programming langugage */
-details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child [itemprop="programmingLanguage"]
-{
-    font-weight: bold;
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child {
+  outline: none;
 }
 
-
-
-/* 
- * Rules for text container and it's content
- */
-/* Text container */
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"]
-{
-    box-sizing: border-box;
-    counter-reset: code-lines;
-    display: table;
-    font-family: monospace;
-    line-height: 1.25em;
-    padding: 0 0.5em;
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summary:first-child {
+  border-bottom: 1px solid var(--css-primary-700);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-/* Text-lines (as children) */
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] > *
-{
-    display: table-row;
-    width: 100%;
-}
-/* Lines in accent color */
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > * [data-css-accent]
-{
-    color: var(--css-accent-200);
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] > summary:first-child:hover,
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent][open] > summary:first-child {
+  background: var(--css-accent-700);
 }
 
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line]::before
-{
-    color: var(--css-primary-600);
-    content: counters(code-lines, ".", decimal-leading-zero);
-    counter-increment: code-lines;
-    display: table-cell;
-    height: 100%;
-    padding-right: 1em;
-}
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-primary] [data-css-group="lines"] > *::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-primary] [data-css-line]::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *[data-css-primary]::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line][data-css-primary]::before
-{
-    color: var(--css-primary-600);
-}
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] [data-css-group="lines"] > *::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] [data-css-line]::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *[data-css-accent]::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line][data-css-accent]::before
-{
-    color: var(--css-accent-600);
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] > summary:first-child {
+  background: var(--css-accent-900);
 }
 
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *:first-child::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line]:first-child::before,
-{
-    padding-top:  0.5em;
+details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent][open] {
+  border-bottom-color: var(--css-accent-700);
 }
-
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *:last-child,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line]:last-child
-{
-    align-items: stretch;
-    flex-wrap:  wrap;
-}
-
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *:last-child::before,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line]:last-child::before
-{
-    padding-bottom: 0.5em;
-}
-
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-group="lines"] > *:last-child::after,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line]:last-child::after
-{
-    content: ' ';
-    display: block;
-    line-height: 0.5em;
-    width: 100%;
-}
-
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line] strong,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line] em,
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-line] var
-{
-    font-size: 1.125em;
-}
-
-/* Planned (doesn't work on major browsers) */
-[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] [data-css-tabs] {
-    text-indent: attr(data-css-tabs em, 0);
-}
+/*# sourceMappingURL=codes.css.map */

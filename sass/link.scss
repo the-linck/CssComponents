@@ -1,0 +1,54 @@
+[role="link"],
+[data-css-role="link"],
+a:not([role]):not([data-css-role])
+{
+    /* Basic Component rules */
+    color: var(--css-primary-600);
+    cursor: pointer;
+    display: inline;
+    font-size: 1.125em;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s;
+
+    &:visited
+    {
+        color: var(--css-primary-900);    
+    }
+
+    &:focus,
+    &:hover
+    {
+        color: var(--css-primary-500);
+    }
+
+    &:active
+    {
+        color: var(--css-primary-400);
+    }
+
+
+    // Accent color
+    &[data-css-accent],
+    [data-css-accent] &
+    {
+        /* Accent color */
+        color: var(--css-accent-600);
+        
+        &:visited
+        {
+            color: var(--css-accent-900);    
+        }
+
+        &:focus,
+        &:hover
+        {
+            color: var(--css-accent-500);
+        }
+
+        &:active
+        {
+            color: var(--css-accent-400);
+        }
+    }
+}

@@ -1,239 +1,296 @@
-/* Basic wrapper rules */
-[data-css-group="tooltip"]
-{
-    position: relative;
-    transform-style: preserve-3d;
+[data-css-group="tooltip"],
+[data-css-group="tooltip"] {
+  /* Basic group rules */
+  position: relative;
 }
 
+[data-css-group="tooltip"] > [role="tooltip"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"],
+[data-css-group="tooltip"] > [role="tooltip"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"] {
+  /* Basic Component rules */
+  border: 1px solid;
+  border-radius: 0.5em;
+  display: block;
+  left: 50%;
+  height: fit-content;
+  opacity: 0;
+  padding: 0.5em;
+  position: absolute;
+  top: 0;
+  text-transform: none;
+  transition: opacity 0.5s, transform 0.5s, top 0.5s;
+  transform: translateY(0%) translateX(-50%);
+  width: fit-content;
+  z-index: 1;
+}
 
-
-/* Basic Component rules */
-[role="tooltip"],
-[data-css-role="tooltip"]
-{
-    border: 1px solid;
-    border-radius: 0.5em;
-    display: block;
-    left: 50%;
-    min-width: 100%;
-    opacity: 0;
-    padding: 0.5em;
-    position: absolute;
-    top: 0;
-    text-transform: none;
-    transition: opacity 0.5s, transform 0.5s, top 0.5s;
-    transform: translateY(0%) translateX(-50%);
-    z-index: 1;
-}
-[role="tooltip"],
-[data-css-role="tooltip"]
-{
-    background: var(--css-primary-50);
-    border-color: var(--css-primary-300);
-    color: var(--css-primary-900);
-}
-[role="tooltip"][data-css-accent],
-[data-css-role="tooltip"][data-css-accent]
-{
-    background: var(--css-accent-50);
-    border-color: var(--css-accent-400);
-    color: var(--css-accent-900);
-}
-[data-css-group="tooltip"]:hover > [role="tooltip"],
-[data-css-group="tooltip"]:focus > [role="tooltip"],
-[data-css-group="tooltip"]:hover > [data-css-role="tooltip"],
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]
-{
-    opacity: 1;
-    transform: translateY(-100%) translateX(-50%) translateZ(10em);
-    top: -1em;
-}
-[data-css-group="tooltip"] > [role="tooltip"]::before,
 [data-css-group="tooltip"] > [role="tooltip"]::before,
 [data-css-group="tooltip"] > [data-css-role="tooltip"]::before,
-[data-css-group="tooltip"] > [data-css-role="tooltip"]::before
-{
-	border: 1px solid;
-	bottom: -1em;
-	bottom: calc(-1em + 2px);
-	content: "";
-	display: none;
-	height: 1em;
-	left: 50%;
-	position: absolute;
-	transform: rotate(45deg) translateX(-50%);
-	width: 1em;
+[data-css-group="tooltip"] > [role="tooltip"]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"]::before {
+  /* Arrow */
+  border: 1px solid;
+  bottom: -1em;
+  bottom: calc(-1em + 2px);
+  content: "";
+  display: none;
+  height: 1em;
+  left: 50%;
+  position: absolute;
+  transform: rotate(45deg) translateX(-50%);
+  width: 1em;
 }
-[data-css-group="tooltip"] > [role="tooltip"][data-css-accent]::before,
-[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-accent]::before
-{
-	background-color: var(--css-accent-50);
-	border-color: var(--css-accent-300);
+
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-side])::before, [data-css-group="tooltip"] > [role="tooltip"][data-css-side="top"]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-side])::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="top"]::before,
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-side])::before,
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="top"]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-side])::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="top"]::before {
+  /* Top position Arrow */
+  border-top: none;
+  border-left: none;
 }
+
+[data-css-group="tooltip"] > [role="tooltip"]::after,
+[data-css-group="tooltip"] > [data-css-role="tooltip"]::after,
+[data-css-group="tooltip"] > [role="tooltip"]::after,
+[data-css-group="tooltip"] > [data-css-role="tooltip"]::after {
+  /* Transparent hoverable area */
+  background: transparent;
+  display: none;
+  bottom: -1em;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="right"] {
+  /* Right side tooltip */
+  left: 0;
+  top: 50%;
+  bottom: initial;
+  transform: translateY(-50%) translateX(0);
+}
+
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="bottom"] {
+  /* Bottom side tooltip */
+  bottom: 0;
+  top: 0;
+  transform: translateY(0%) translateX(-50%);
+}
+
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"] > [role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-side="left"] {
+  /* Left side tooltip */
+  left: inherit;
+  right: 0;
+  top: 50%;
+  bottom: initial;
+  transform: translateY(-50%) translateX(0);
+}
+
+[data-css-group="tooltip"] > [role="tooltip"], [data-css-group="tooltip"] > [role="tooltip"][data-css-primary],
+[data-css-group="tooltip"] > [data-css-role="tooltip"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-primary],
+[data-css-group="tooltip"] > [role="tooltip"],
+[data-css-group="tooltip"] > [role="tooltip"][data-css-primary],
+[data-css-group="tooltip"] > [data-css-role="tooltip"],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-primary] {
+  background: var(--css-primary-50);
+  border-color: var(--css-primary-300);
+  color: var(--css-primary-900);
+}
+
+[data-css-group="tooltip"] > [role="tooltip"]::before, [data-css-group="tooltip"] > [role="tooltip"][data-css-primary]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-primary]::before,
 [data-css-group="tooltip"] > [role="tooltip"]::before,
 [data-css-group="tooltip"] > [role="tooltip"][data-css-primary]::before,
 [data-css-group="tooltip"] > [data-css-role="tooltip"]::before,
-[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-primary]::before
-{
-	background-color: var(--css-primary-50);
-	border-color: var(--css-primary-300);
-}
-[data-css-group="tooltip"]:hover > [role="tooltip"]::before,
-[data-css-group="tooltip"]:focus > [role="tooltip"]::before,
-[data-css-group="tooltip"]:hover > [data-css-role="tooltip"]::before,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]::before
-{
-	display: block;
-}
-[data-css-group="tooltip"]:hover > [role="tooltip"]:not([data-css-side])::before,
-[data-css-group="tooltip"]:focus > [role="tooltip"]:not([data-css-side])::before,
-[data-css-group="tooltip"]:hover > [data-css-role="tooltip"]:not([data-css-side])::before,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]:not([data-css-side])::before
-{
-	border-top: none;
-	border-left: none;
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-primary]::before {
+  /* Primary Arrow */
+  background-color: var(--css-primary-50);
+  border-color: var(--css-primary-300);
 }
 
-[data-css-group="tooltip"] > [role="tooltip"]::after,
-[data-css-group="tooltip"] > [role="tooltip"]::after,
-[data-css-group="tooltip"] > [data-css-role="tooltip"]::after,
-[data-css-group="tooltip"] > [data-css-role="tooltip"]::after
-{
-    background: transparent;
-    display: none;
-    bottom: -1em;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
+[data-css-group="tooltip"] > [role="tooltip"][data-css-accent],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-accent],
+[data-css-group="tooltip"] > [role="tooltip"][data-css-accent],
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-accent] {
+  background: var(--css-accent-50);
+  border-color: var(--css-accent-300);
+  color: var(--css-accent-900);
 }
-[data-css-group="tooltip"]:hover > [role="tooltip"]::after,
-[data-css-group="tooltip"]:focus > [role="tooltip"]::after,
+
+[data-css-group="tooltip"] > [role="tooltip"][data-css-accent]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-accent]::before,
+[data-css-group="tooltip"] > [role="tooltip"][data-css-accent]::before,
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-accent]::before {
+  /* Accent Arrow */
+  background-color: var(--css-accent-50);
+  border-color: var(--css-accent-300);
+}
+
+[data-css-group="tooltip"]:hover > [role="tooltip"],
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"], [data-css-group="tooltip"]:focus > [role="tooltip"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"],
+[data-css-group="tooltip"]:hover > [role="tooltip"],
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"],
+[data-css-group="tooltip"]:focus > [role="tooltip"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"] {
+  opacity: 1;
+  transform: translateY(-100%) translateX(-50%) translateZ(10em);
+  top: -0.75em;
+}
+
+[data-css-group="tooltip"]:hover > [role="tooltip"]::after, [data-css-group="tooltip"]:hover > [role="tooltip"]::before,
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"]::after,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]::after
-{
-    display: block;
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"]::before, [data-css-group="tooltip"]:focus > [role="tooltip"]::after, [data-css-group="tooltip"]:focus > [role="tooltip"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]::before,
+[data-css-group="tooltip"]:hover > [role="tooltip"]::after,
+[data-css-group="tooltip"]:hover > [role="tooltip"]::before,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"]::after,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"]::before,
+[data-css-group="tooltip"]:focus > [role="tooltip"]::after,
+[data-css-group="tooltip"]:focus > [role="tooltip"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"]::before {
+  /* Visible Arrow and transparent hoverable area */
+  display: block;
 }
 
-
-
-/* Sides */
-[role="tooltip"][data-css-side="right"],
-[data-css-role="tooltip"][data-css-side="right"]
-{
-    left: 0;
-    top: 50%;
-    bottom: initial;
-    transform: translateY(-50%) translateX(0);
-}
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"],
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="right"], [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"],
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="right"],
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]
-{
-    bottom: initial;
-    left: -3px;
-    top: 50%;
-    transform: translateY(-50%) translateX(100%) translateZ(10em);
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"] {
+  bottom: initial;
+  left: initial;
+  right: -0.75em;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%) translateZ(10em);
 }
+
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"]::before,
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"]::before,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="right"]::before, [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]::before,
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"]::before,
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="right"]::before,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]::before
-{
-	border-top: none;
-	border-right: none;
-	top: 50%;
-	top: calc(50%  - 2px);
-	left: -0.25em;
-	left: calc(-0.25em + 2px);
-	transform: rotate(45deg) translateX(-50%);
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]::before {
+  border-top: none;
+  border-right: none;
+  top: 50%;
+  top: calc(50%  - 2px);
+  left: -0.25em;
+  left: calc(-0.25em + 2px);
+  transform: rotate(45deg) translateX(-50%);
 }
+
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"]::after,
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"]::after,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="right"]::after, [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]::after,
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"]::after,
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="right"]::after,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]::after
-{
-    bottom: 0;
-    top: 0;
-    left: -1em;
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="right"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="right"]::after {
+  bottom: 0;
+  top: 0;
+  left: -1em;
 }
 
-[role="tooltip"][data-css-side="bottom"],
-[data-css-role="tooltip"][data-css-side="bottom"]
-{
-    bottom: 0;
-    top: 0;
-    transform: translateY(0%) translateX(-50%);
-}
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"],
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"], [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"],
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"],
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]
-{
-    bottom: -1em;
-    top: 0;
-    transform: translateY(100%) translateX(-50%) translateZ(10em);
-}
-[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::before,
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"]::before,
-[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"]::before,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]::before
-{
-	border-bottom: none;
-	border-right: none;
-	top: -0.25em;
-	top: calc(-0.25em + 2px);
-	transform: rotate(45deg) translateX(-50%);
-}
-[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::after,
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"]::after,
-[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"]::after,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]::after
-{
-    bottom: 0;
-    top: -1em;
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"] {
+  bottom: -1em;
+  top: 0;
+  transform: translateY(100%) translateX(-50%) translateZ(10em);
 }
 
-[role="tooltip"][data-css-side="left"],
-[data-css-role="tooltip"][data-css-side="left"]
-{
-    left: inherit;
-    right: 0;
-    top: 50%;
-    bottom: initial;
-    transform: translateY(-50%) translateX(0);
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::before,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"]::before, [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]::before,
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::before,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"]::before,
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]::before {
+  border-bottom: none;
+  border-right: none;
+  top: -0.25em;
+  top: calc(-0.25em + 2px);
+  transform: rotate(45deg) translateX(-50%);
 }
+
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::after,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"]::after, [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]::after,
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::after,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="bottom"]::after,
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="bottom"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"]::after {
+  bottom: 0;
+  top: -1em;
+}
+
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"],
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="left"], [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"],
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="left"],
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]
-{
-    bottom: initial;
-    right: -3px;
-    top: 50%;
-    transform: translateY(-50%)  translateX(-100%);
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"],
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"] {
+  bottom: initial;
+  left: -0.75em;
+  right: initial;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%);
 }
+
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"]::before,
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"]::before,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="left"]::before, [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]::before,
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"]::before,
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="left"]::before,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]::before
-{
-	border-bottom: none;
-	border-left: none;
-	top: 50%;
-	right: -1em;
-	right: calc(-1em + 1px);
-	transform: rotate(45deg) translateX(-50%);
-	left: initial;
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"]::before,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]::before {
+  border-bottom: none;
+  border-left: none;
+  top: 50%;
+  right: -1em;
+  right: calc(-1em + 1px);
+  transform: rotate(45deg) translateX(-50%);
+  left: initial;
 }
+
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"]::after,
-[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"]::after,
+[data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="left"]::after, [data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]::after,
+[data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"]::after,
 [data-css-group="tooltip"]:hover > [data-css-role="tooltip"][data-css-side="left"]::after,
-[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]::after
-{
-    bottom: 0;
-    top: 0;
-    right: -1em;
+[data-css-group="tooltip"]:focus > [role="tooltip"][data-css-side="left"]::after,
+[data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="left"]::after {
+  bottom: 0;
+  top: 0;
+  right: -1em;
 }
+/*# sourceMappingURL=tooltip.css.map */

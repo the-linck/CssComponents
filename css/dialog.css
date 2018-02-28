@@ -1,232 +1,241 @@
+[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close],
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close],
+[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close],
+[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close], [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close],
+[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close],
+[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close],
+[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close], [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent],
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent],
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent],
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent] {
+  color: var(--css-accent-700);
+}
+
+[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:hover,
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:hover,
+[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:hover,
+[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:hover, [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:hover,
+[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:hover,
+[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:hover,
+[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:hover, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:hover,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:hover,
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:hover,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:hover, [role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:focus,
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:focus,
+[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:focus,
+[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:focus, [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:focus,
+[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:focus,
+[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:focus,
+[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:focus, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:focus,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:focus,
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:focus,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:focus {
+  color: var(--css-accent-500);
+}
+
+[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:active,
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:active,
+[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:active,
+[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:active, [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:active,
+[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:active,
+[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:active,
+[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:active, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:active,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:active,
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:active,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:active {
+  color: var(--css-accent-900);
+}
+
+[role="alertdialog"][id] > [role="heading"][data-css-accent],
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent],
+[role="dialog"][id] > [role="heading"][data-css-accent],
+[role="dialog"][id] > [data-css-role="heading"][data-css-accent], [role="alertdialog"][id][data-css-accent] > [role="heading"],
+[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"],
+[role="dialog"][id][data-css-accent] > [role="heading"],
+[role="dialog"][id][data-css-accent] > [data-css-role="heading"] {
+  background: var(--css-accent-300);
+  border-bottom: 1px solid var(--css-accent-400);
+}
+
 [role="alertdialog"][id],
-[role="dialog"][id]
-{
-    background: var(--css-primary-50);
-    border: 1px solid var(--css-primary-400);
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 18em;
-    position: fixed;
-    left: 50%;
-    max-height:  calc(50% - 2em);
-    max-width: calc(50% - 2em);
-    min-height: 9em;
-    min-width: 16em;
-    overflow: visible;
-    transform: translate(-50%, -50%);
-    top: 100vh;
-    opacity: 0;
-    transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
-    visibility: hidden;
-    width: 32em;
-}
-[role="alertdialog"][id][data-css-accent],
-[role="dialog"][id][data-css-accent]
-{
-    background-color: var(--css-accent-50);
-    border-color: var(--css-accent-400);
+[role="dialog"][id] {
+  background: var(--css-primary-50);
+  border: 1px solid var(--css-primary-400);
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 18em;
+  position: fixed;
+  left: 50%;
+  max-height: calc(50% - 2em);
+  max-width: calc(50% - 2em);
+  min-height: 9em;
+  min-width: 16em;
+  overflow: visible;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 100vh;
+  transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
+  visibility: hidden;
+  width: 32em;
 }
 
-[role="alertdialog"][id][data-css-size="small"],
-[role="dialog"][id][data-css-size="small"]
-{
-    height: 9em;
-    max-height: calc(33% - 2em);
-    max-width: calc(33% - 2em);
-    width: 16em;
-}
-
-[role="alertdialog"][id][data-css-size="big"],
-[role="dialog"][id][data-css-size="big"]
-{
-    height: 27em;
-    max-height: calc(75% - 2em);
-    max-width: calc(75% - 2em);
-    width: 48em;
-}
-
-[role="alertdialog"][id][data-css-size="huge"],
-[role="dialog"][id][data-css-size="huge"]
-{
-    height: 36em;
-    max-height: calc(100% - 2em);
-    max-width: calc(100% - 2em);
-    width: 64em;
-}
-
-[role="alertdialog"][id][data-css-size="full"],
-[role="dialog"][id][data-css-size="full"]
-{
-    height: calc(100% - 2em);
-    max-height: calc(100% - 2em);
-    max-width: calc(100% - 2em);
-    width: calc(100% - 2em);
-}
-
-[role="alertdialog"][id]:target,
-[role="dialog"][id]:target
-{
-    opacity: 1;
-    top: 50%;
-    transition: opacity 0.3s, top 0.3s;
-    visibility: visible;
-    z-index: 10;
-}
-/* Making modal dialogs background */
 [role="alertdialog"][id]::before,
-[role="dialog"][id][data-css-modal]::before
-{
-    background: var(--css-primary-900);
-    bottom: -50vh;
-    content: ' ';
-    display: none;
-    left: -50vw;
-    opacity: 0.5;
-    position: fixed;
-    right: -50vw;
-    top: -50vh;
-}
-
-[role="alertdialog"][id][data-css-accent]::before,
-[role="dialog"][id][data-css-modal][data-css-accent]::before
-{
-    background-color: var(--css-accent-900);
-}
-[role="alertdialog"][id]:target::before,
-[role="dialog"][id][data-css-modal]:target::before
-{
-    display: flex;
+[role="dialog"][id]::before {
+  background: var(--css-primary-900);
+  bottom: -50vh;
+  content: ' ';
+  display: none;
+  left: -50vw;
+  opacity: 0.5;
+  position: fixed;
+  right: -50vw;
+  top: -50vh;
 }
 
 [role="alertdialog"][id] > *,
-[role="dialog"][id] > *
-{
-    background: var(--css-primary-50);
-    box-sizing: border-box;
-    flex-grow: 1;
-    flex-shrink: 1;
-    padding: 0.5em;
-    position: relative;
-    z-index: 10;
+[role="dialog"][id] > * {
+  background: var(--css-primary-50);
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.5em;
+  position: relative;
+  z-index: 10;
 }
-[role="alertdialog"][id][data-css-accent] > *,
-[role="dialog"][id][data-css-accent] > *,
-[role="alertdialog"][id] > [data-css-accent],
-[role="dialog"][id] > [data-css-accent]
-{
-    background-color: var(--css-accent-50);
+
+[role="alertdialog"][id] > *[data-css-accent],
+[role="dialog"][id] > *[data-css-accent] {
+  background-color: var(--css-accent-50);
 }
 
 [role="alertdialog"][id] > [role="heading"],
 [role="alertdialog"][id] > [data-css-role="heading"],
 [role="dialog"][id] > [role="heading"],
-[role="dialog"][id] > [data-css-role="heading"]
-{
-    background: var(--css-primary-300);
-    border-bottom: 1px solid var(--css-primary-400);
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    flex-grow: 0;
-    margin: 0;
-}
-[role="alertdialog"][id][data-css-accent] > [role="heading"],
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"],
-[role="dialog"][id][data-css-accent] > [role="heading"],
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"],
-[role="alertdialog"][id] > [role="heading"][data-css-accent],
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent],
-[role="dialog"][id] > [role="heading"][data-css-accent],
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent]
-{
-    background: var(--css-accent-300);
-    border-bottom: 1px solid var(--css-accent-400);
+[role="dialog"][id] > [data-css-role="heading"] {
+  background: var(--css-primary-300);
+  border-bottom: 1px solid var(--css-primary-400);
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  flex-grow: 0;
+  margin: 0;
 }
 
 [role="alertdialog"][id] > [role="heading"]::before,
 [role="alertdialog"][id] > [data-css-role="heading"]::before,
 [role="dialog"][id] > [role="heading"]::before,
-[role="dialog"][id] > [data-css-role="heading"]::before
-{
-    content: none;
-    counter-increment: none;
+[role="dialog"][id] > [data-css-role="heading"]::before {
+  content: none;
+  counter-increment: none;
 }
 
 [role="alertdialog"][id] > [role="heading"] [data-css-close],
 [role="alertdialog"][id] > [data-css-role="heading"] [data-css-close],
 [role="dialog"][id] > [role="heading"] [data-css-close],
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close]
-{
-    color: var(--css-primary-700);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-[role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close],
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close],
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close],
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close],
-[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close],
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close],
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close],
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close],
-[role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent],
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent],
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent],
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]
-{
-    color: var(--css-accent-700);
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close] {
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-[role="alertdialog"][id] > [role="heading"] [data-css-close]:hover,
+[role="alertdialog"][id] > [role="heading"] [data-css-close], [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary],
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close],
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary],
+[role="dialog"][id] > [role="heading"] [data-css-close],
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary],
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close],
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary] {
+  color: var(--css-primary-700);
+}
+
+[role="alertdialog"][id] > [role="heading"] [data-css-close]:hover, [role="alertdialog"][id] > [role="heading"] [data-css-close]:focus, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary]:hover, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary]:focus,
 [role="alertdialog"][id] > [data-css-role="heading"] [data-css-close]:hover,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close]:focus,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:hover,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:focus,
 [role="dialog"][id] > [role="heading"] [data-css-close]:hover,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:hover
-{
-    color: var(--css-primary-500);
-}
-[role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:hover,
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:hover,
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:hover,
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:hover,
-[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:hover,
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:hover,
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:hover,
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:hover,
-[role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:hover,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:hover,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:hover,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:hover
-{
-    color: var(--css-accent-500);
+[role="dialog"][id] > [role="heading"] [data-css-close]:focus,
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary]:hover,
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary]:focus,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:hover,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:focus,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:hover,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:focus {
+  color: var(--css-primary-500);
 }
 
-[role="alertdialog"][id] > [role="heading"] [data-css-close]:active,
+[role="alertdialog"][id] > [role="heading"] [data-css-close]:active, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary]:active,
 [role="alertdialog"][id] > [data-css-role="heading"] [data-css-close]:active,
+[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:active,
 [role="dialog"][id] > [role="heading"] [data-css-close]:active,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:active
-{
-    color: var(--css-primary-900);
-}
-[role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:active,
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:active,
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:active,
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:active,
-[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:active,
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:active,
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:active,
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:active,
-[role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:active,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:active,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:active,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:active
-{
-    color: var(--css-accent-900);
+[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary]:active,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:active,
+[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:active {
+  color: var(--css-primary-900);
 }
 
-[role="alertdialog"][id] > [role="heading"]+*, [role="dialog"][id] > [role="heading"]+*,
-[role="alertdialog"][id] > [role="heading"]+*, [role="dialog"][id] > [data-css-role="heading"]+*
-{
-    overflow: auto;
+[role="alertdialog"][id] > [role="heading"] + *,
+[role="alertdialog"][id] > [data-css-role="heading"] + *,
+[role="dialog"][id] > [role="heading"] + *,
+[role="dialog"][id] > [data-css-role="heading"] + * {
+  overflow: auto;
 }
+
+[role="alertdialog"][id]:target,
+[role="dialog"][id]:target {
+  opacity: 1;
+  top: 50%;
+  transition: opacity 0.3s, top 0.3s;
+  visibility: visible;
+  z-index: 10;
+}
+
+[role="alertdialog"][id]:target::before,
+[role="dialog"][id]:target::before {
+  display: flex;
+}
+
+[role="alertdialog"][id][data-css-size="small"],
+[role="dialog"][id][data-css-size="small"] {
+  height: 9em;
+  max-height: calc(33% - 2em);
+  max-width: calc(33% - 2em);
+  width: 16em;
+}
+
+[role="alertdialog"][id][data-css-size="big"],
+[role="dialog"][id][data-css-size="big"] {
+  height: 27em;
+  max-height: calc(75% - 2em);
+  max-width: calc(75% - 2em);
+  width: 48em;
+}
+
+[role="alertdialog"][id][data-css-size="huge"],
+[role="dialog"][id][data-css-size="huge"] {
+  height: 36em;
+  max-height: calc(100% - 2em);
+  max-width: calc(100% - 2em);
+  width: 64em;
+}
+
+[role="alertdialog"][id][data-css-size="full"],
+[role="dialog"][id][data-css-size="full"] {
+  height: calc(100% - 2em);
+  max-height: calc(100% - 2em);
+  max-width: calc(100% - 2em);
+  width: calc(100% - 2em);
+}
+
+[role="alertdialog"][id][data-css-accent],
+[role="dialog"][id][data-css-accent] {
+  background-color: var(--css-accent-50);
+  border-color: var(--css-accent-400);
+}
+
+[role="alertdialog"][id][data-css-accent]::before,
+[role="dialog"][id][data-css-accent]::before {
+  background-color: var(--css-accent-900);
+}
+/*# sourceMappingURL=dialog.css.map */

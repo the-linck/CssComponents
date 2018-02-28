@@ -1,0 +1,217 @@
+
+%dialog-accent-close
+{
+    color: var(--css-accent-700);
+
+    &:hover,
+    &:focus
+    {
+        color: var(--css-accent-500);
+    }
+
+    &:active
+    {
+        color: var(--css-accent-900);
+    }
+}
+%dialog-accent-header
+{
+    background: var(--css-accent-300);
+    border-bottom: 1px solid var(--css-accent-400);
+
+    [data-css-close]
+    {
+        @extend %dialog-accent-close;
+    }    
+}
+
+// Dialogs must have and ID, it's basic for their functionality
+[role="alertdialog"][id],
+[role="dialog"][id]
+{
+    background: var(--css-primary-50);
+    border: 1px solid var(--css-primary-400);
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 18em;
+    position: fixed;
+    left: 50%;
+    max-height:  calc(50% - 2em);
+    max-width: calc(50% - 2em);
+    min-height: 9em;
+    min-width: 16em;
+    overflow: visible;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    top: 100vh;
+    transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
+    visibility: hidden;
+    width: 32em;
+
+
+    // Background
+    &::before
+    {
+        background: var(--css-primary-900);
+        bottom: -50vh;
+        content: ' ';
+        display: none;
+        left: -50vw;
+        opacity: 0.5;
+        position: fixed;
+        right: -50vw;
+        top: -50vh;
+    }
+
+
+    // Children
+    > *
+    {
+        background: var(--css-primary-50);
+        box-sizing: border-box;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.5em;
+        position: relative;
+        z-index: 10;
+
+        &[data-css-accent]
+        {
+            background-color: var(--css-accent-50);
+        }
+    }
+
+
+    // Heading
+    > [role="heading"],
+    > [data-css-role="heading"]
+    {
+        background: var(--css-primary-300);
+        border-bottom: 1px solid var(--css-primary-400);
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        flex-grow: 0;
+        margin: 0;
+
+
+        &[data-css-accent]
+        {
+            @extend %dialog-accent-header;
+        }
+
+        // Avoiding interference int counters
+        &::before
+        {
+            content: none;
+            counter-increment: none;
+        }
+
+        // Close button
+        [data-css-close]
+        {
+            text-decoration: none;
+            transition: color 0.3s;
+
+            // Primary color
+            &,
+            &[data-css-primary]
+            {
+                color: var(--css-primary-700);
+            
+                &:hover,
+                &:focus
+                {
+                    color: var(--css-primary-500);
+                }
+            
+                &:active
+                {
+                    color: var(--css-primary-900);
+                }
+            }
+            
+            // Accent color
+            &[data-css-accent]
+            {
+                @extend %dialog-accent-close;
+            }
+        }
+
+        // Letting subsequent elements have scroll
+        &+*
+        {
+            overflow: auto;
+        }
+    }
+
+
+    // Active
+    &:target
+    {
+        opacity: 1;
+        top: 50%;
+        transition: opacity 0.3s, top 0.3s;
+        visibility: visible;
+        z-index: 10;
+
+        &::before
+        {
+            display: flex;
+        }
+    }
+
+
+    // Sizes
+    &[data-css-size="small"]
+    {
+        height: 9em;
+        max-height: calc(33% - 2em);
+        max-width: calc(33% - 2em);
+        width: 16em;
+    }
+    &[data-css-size="big"]
+    {
+        height: 27em;
+        max-height: calc(75% - 2em);
+        max-width: calc(75% - 2em);
+        width: 48em;
+    }
+    &[data-css-size="huge"]
+    {
+        height: 36em;
+        max-height: calc(100% - 2em);
+        max-width: calc(100% - 2em);
+        width: 64em;
+    }
+    &[data-css-size="full"]
+    {
+        height: calc(100% - 2em);
+        max-height: calc(100% - 2em);
+        max-width: calc(100% - 2em);
+        width: calc(100% - 2em);
+    }
+
+
+    // Accent color
+    &[data-css-accent]
+    {
+        background-color: var(--css-accent-50);
+        border-color: var(--css-accent-400);
+
+        // Modal background
+        &::before
+        {
+            background-color: var(--css-accent-900);
+        }
+
+        // Heading
+        > [role="heading"],
+        > [data-css-role="heading"]
+        {
+            @extend %dialog-accent-header;
+        }
+    }
+}

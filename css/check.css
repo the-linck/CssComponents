@@ -1,0 +1,528 @@
+[role="checkbox"],
+[data-css-role="checkbox"],
+[role="radio"],
+[data-css-role="radio"] {
+  background: none;
+  border: none;
+  display: inline-block;
+  margin: .5em 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+[role="checkbox"] > input[type="checkbox"],
+[role="checkbox"] > input[type="radio"],
+[data-css-role="checkbox"] > input[type="checkbox"],
+[data-css-role="checkbox"] > input[type="radio"],
+[role="radio"] > input[type="checkbox"],
+[role="radio"] > input[type="radio"],
+[data-css-role="radio"] > input[type="checkbox"],
+[data-css-role="radio"] > input[type="radio"] {
+  /* Hiding native checkbox/radio (when used) */
+  display: none;
+}
+
+[role="checkbox"] > [data-css-mark],
+[data-css-role="checkbox"] > [data-css-mark],
+[role="radio"] > [data-css-mark],
+[data-css-role="radio"] > [data-css-mark] {
+  display: inline-block;
+  font-size: 1em;
+  position: relative;
+}
+
+[role="checkbox"] > [data-css-mark]::before,
+[data-css-role="checkbox"] > [data-css-mark]::before,
+[role="radio"] > [data-css-mark]::before,
+[data-css-role="radio"] > [data-css-mark]::before {
+  border: 2px solid;
+  content: '';
+  display: inline-block;
+  height: 1em;
+  text-align: center;
+  vertical-align: middle;
+  width: 1em;
+}
+
+[role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after,
+[role="radio"] > [data-css-mark]::after,
+[data-css-role="radio"] > [data-css-mark]::after {
+  content: '\2714';
+  border: 2px solid transparent;
+  height: 1em;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: 200ms opacity, 200ms line-height;
+  width: 1em;
+}
+
+[role="checkbox"][aria-checked="false"] > [data-css-mark]::after,
+[role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"][aria-checked="false"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after,
+[role="radio"][aria-checked="false"] > [data-css-mark]::after,
+[role="radio"] > [data-css-mark]::after,
+[data-css-role="radio"][aria-checked="false"] > [data-css-mark]::after,
+[data-css-role="radio"] > [data-css-mark]::after {
+  line-height: 4em;
+}
+
+[role="checkbox"][aria-checked="true"] > [data-css-mark]::after,
+[role="checkbox"] > input:checked + [data-css-mark]::after,
+[data-css-role="checkbox"][aria-checked="true"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > input:checked + [data-css-mark]::after,
+[role="radio"][aria-checked="true"] > [data-css-mark]::after,
+[role="radio"] > input:checked + [data-css-mark]::after,
+[data-css-role="radio"][aria-checked="true"] > [data-css-mark]::after,
+[data-css-role="radio"] > input:checked + [data-css-mark]::after {
+  line-height: 1em;
+  opacity: 1;
+}
+
+[role="checkbox"][data-css-accent]:hover > [data-css-mark]::before,
+[role="checkbox"][data-css-accent]:focus > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:hover > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:focus > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:hover > [data-css-mark]::before,
+[role="radio"][data-css-accent]:focus > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:hover > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:focus > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before {
+  background: var(--css-accent-400);
+  border-color: var(--css-accent-700);
+}
+
+[role="checkbox"][data-css-accent]:active > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:active > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:active > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:active > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before {
+  background: var(--css-accent-400);
+  border-color: var(--css-accent-700);
+}
+
+[role="checkbox"][data-css-accent] > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
+[role="radio"][data-css-accent] > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before {
+  background-color: var(--css-accent-500);
+  border-color: var(--css-accent-900);
+}
+
+[role="checkbox"][data-css-accent]:disabled > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:disabled > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
+[role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before {
+  background-color: var(--css-accent-50);
+  border-color: var(--css-accent-500);
+}
+
+[role="checkbox"][data-css-accent]:hover > [data-css-mark]::after,
+[role="checkbox"][data-css-accent]:focus > [data-css-mark]::after,
+[role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:hover > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:focus > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
+[role="radio"][data-css-accent]:hover > [data-css-mark]::after,
+[role="radio"][data-css-accent]:focus > [data-css-mark]::after,
+[role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:hover > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:focus > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after {
+  color: var(--css-accent-700);
+}
+
+[role="checkbox"][data-css-accent]:active > [data-css-mark]::after,
+[role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:active > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
+[role="radio"][data-css-accent]:active > [data-css-mark]::after,
+[role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:active > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after {
+  color: var(--css-accent-900);
+}
+
+[role="checkbox"][data-css-accent] > [data-css-mark]::after,
+[role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after,
+[role="radio"][data-css-accent] > [data-css-mark]::after,
+[role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after {
+  color: var(--css-accent-900);
+}
+
+[role="checkbox"][data-css-accent]:disabled > [data-css-mark]::after,
+[role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::after,
+[role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:disabled > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::after,
+[role="radio"][data-css-accent]:disabled > [data-css-mark]::after,
+[role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::after,
+[role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:disabled > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::after {
+  color: var(--css-accent-400);
+}
+
+[role="checkbox"]:hover > [data-css-mark]::before,
+[role="checkbox"]:focus > [data-css-mark]::before,
+[role="checkbox"][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:hover > [data-css-mark]::before,
+[data-css-role="checkbox"]:focus > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::before,
+[role="radio"]:hover > [data-css-mark]::before,
+[role="radio"]:focus > [data-css-mark]::before,
+[role="radio"][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="radio"]:hover > [data-css-mark]::before,
+[data-css-role="radio"]:focus > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="selected"] > [data-css-mark]::before {
+  background: var(--css-primary-400);
+  border-color: var(--css-primary-700);
+}
+
+[role="checkbox"]:active > [data-css-mark]::before,
+[role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:active > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before,
+[role="radio"]:active > [data-css-mark]::before,
+[role="radio"][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="radio"]:active > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark]::before {
+  background: var(--css-primary-400);
+  border-color: var(--css-primary-700);
+}
+
+[role="checkbox"] > [data-css-mark]::before,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="checkbox"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
+[role="radio"] > [data-css-mark]::before,
+[role="radio"][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="radio"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="normal"] > [data-css-mark]::before {
+  background-color: var(--css-primary-500);
+  border-color: var(--css-primary-900);
+}
+
+[role="checkbox"]:disabled > [data-css-mark]::before,
+[role="checkbox"][aria-disabled] > [data-css-mark]::before,
+[role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:disabled > [data-css-mark]::before,
+[data-css-role="checkbox"][aria-disabled] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before,
+[role="radio"]:disabled > [data-css-mark]::before,
+[role="radio"][aria-disabled] > [data-css-mark]::before,
+[role="radio"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="radio"]:disabled > [data-css-mark]::before,
+[data-css-role="radio"][aria-disabled] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark]::before {
+  background-color: var(--css-primary-50);
+  border-color: var(--css-primary-500);
+}
+
+[role="checkbox"]:hover > [data-css-mark]::after, [role="checkbox"]:hover > [data-css-mark][data-css-primary]::after,
+[role="checkbox"]:focus > [data-css-mark]::after,
+[role="checkbox"]:focus > [data-css-mark][data-css-primary]::after,
+[role="checkbox"][data-css-state="selected"] > [data-css-mark]::after,
+[role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:hover > [data-css-mark]::after,
+[data-css-role="checkbox"]:hover > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:focus > [data-css-mark]::after,
+[data-css-role="checkbox"]:focus > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
+[role="radio"]:hover > [data-css-mark]::after,
+[role="radio"]:hover > [data-css-mark][data-css-primary]::after,
+[role="radio"]:focus > [data-css-mark]::after,
+[role="radio"]:focus > [data-css-mark][data-css-primary]::after,
+[role="radio"][data-css-state="selected"] > [data-css-mark]::after,
+[role="radio"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:hover > [data-css-mark]::after,
+[data-css-role="radio"]:hover > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:focus > [data-css-mark]::after,
+[data-css-role="radio"]:focus > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after {
+  color: var(--css-primary-700);
+}
+
+[role="checkbox"]:hover > [data-css-mark][data-css-accent]::after, [role="checkbox"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"]:focus > [data-css-mark][data-css-accent]::after,
+[role="checkbox"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
+[role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:hover > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:focus > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:hover > [data-css-mark][data-css-accent]::after,
+[role="radio"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:focus > [data-css-mark][data-css-accent]::after,
+[role="radio"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
+[role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:hover > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:focus > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after {
+  color: var(--css-accent-700);
+}
+
+[role="checkbox"]:active > [data-css-mark]::after, [role="checkbox"]:active > [data-css-mark][data-css-primary]::after,
+[role="checkbox"][data-css-state="pressed"] > [data-css-mark]::after,
+[role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:active > [data-css-mark]::after,
+[data-css-role="checkbox"]:active > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
+[role="radio"]:active > [data-css-mark]::after,
+[role="radio"]:active > [data-css-mark][data-css-primary]::after,
+[role="radio"][data-css-state="pressed"] > [data-css-mark]::after,
+[role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:active > [data-css-mark]::after,
+[data-css-role="radio"]:active > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after {
+  color: var(--css-primary-900);
+}
+
+[role="checkbox"]:active > [data-css-mark][data-css-accent]::after, [role="checkbox"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
+[role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:active > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:active > [data-css-mark][data-css-accent]::after,
+[role="radio"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
+[role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:active > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after {
+  color: var(--css-accent-900);
+}
+
+[role="checkbox"] > [data-css-mark]::after, [role="checkbox"] > [data-css-mark][data-css-primary]::after,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark]::after,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
+[role="radio"] > [data-css-mark]::after,
+[role="radio"] > [data-css-mark][data-css-primary]::after,
+[role="radio"][data-css-state="normal"] > [data-css-mark]::after,
+[role="radio"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"] > [data-css-mark]::after,
+[data-css-role="radio"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="normal"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after {
+  color: var(--css-primary-900);
+}
+
+[role="checkbox"] > [data-css-mark][data-css-accent]::after, [role="checkbox"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"] > [data-css-mark][data-css-accent]::after,
+[role="radio"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
+[role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after {
+  color: var(--css-accent-900);
+}
+
+[role="checkbox"]:disabled > [data-css-mark]::after, [role="checkbox"]:disabled > [data-css-mark][data-css-primary]::after,
+[role="checkbox"][aria-disabled] > [data-css-mark]::after,
+[role="checkbox"][aria-disabled] > [data-css-mark][data-css-primary]::after,
+[role="checkbox"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:disabled > [data-css-mark]::after,
+[data-css-role="checkbox"]:disabled > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][aria-disabled] > [data-css-mark]::after,
+[data-css-role="checkbox"][aria-disabled] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[role="radio"]:disabled > [data-css-mark]::after,
+[role="radio"]:disabled > [data-css-mark][data-css-primary]::after,
+[role="radio"][aria-disabled] > [data-css-mark]::after,
+[role="radio"][aria-disabled] > [data-css-mark][data-css-primary]::after,
+[role="radio"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="radio"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:disabled > [data-css-mark]::after,
+[data-css-role="radio"]:disabled > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"][aria-disabled] > [data-css-mark]::after,
+[data-css-role="radio"][aria-disabled] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after {
+  color: var(--css-primary-400);
+}
+
+[role="checkbox"]:disabled > [data-css-mark][data-css-accent]::after, [role="checkbox"]:disabled > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"][aria-disabled] > [data-css-mark][data-css-accent]::after,
+[role="checkbox"][aria-disabled] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:disabled > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:disabled > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"][aria-disabled] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][aria-disabled] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:disabled > [data-css-mark][data-css-accent]::after,
+[role="radio"]:disabled > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"][aria-disabled] > [data-css-mark][data-css-accent]::after,
+[role="radio"][aria-disabled] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[role="radio"][data-css-state="disabled"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:disabled > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:disabled > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"][aria-disabled] > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"][aria-disabled] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark][data-css-accent][data-css-primary]::after {
+  color: var(--css-accent-400);
+}
+
+[role="checkbox"][data-css-size="small"] > [data-css-mark]::before, [role="checkbox"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="small"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="small"] > [data-css-mark]::after,
+[role="radio"][data-css-size="small"] > [data-css-mark]::before,
+[role="radio"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="small"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-size="small"] > [data-css-mark]::after {
+  font-size: .75em;
+}
+
+[role="checkbox"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="small"] > [data-css-mark]::after,
+[role="radio"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="small"] > [data-css-mark]::after {
+  top: .25em;
+}
+
+[role="checkbox"]:not([data-css-size]) > [data-css-mark]::before, [role="checkbox"]:not([data-css-size]) > [data-css-mark]::after,
+[role="checkbox"][data-css-size="medium"] > [data-css-mark]::before,
+[role="checkbox"][data-css-size="medium"] > [data-css-mark]::after,
+[data-css-role="checkbox"]:not([data-css-size]) > [data-css-mark]::before,
+[data-css-role="checkbox"]:not([data-css-size]) > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="medium"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="medium"] > [data-css-mark]::after,
+[role="radio"]:not([data-css-size]) > [data-css-mark]::before,
+[role="radio"]:not([data-css-size]) > [data-css-mark]::after,
+[role="radio"][data-css-size="medium"] > [data-css-mark]::before,
+[role="radio"][data-css-size="medium"] > [data-css-mark]::after,
+[data-css-role="radio"]:not([data-css-size]) > [data-css-mark]::before,
+[data-css-role="radio"]:not([data-css-size]) > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="medium"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-size="medium"] > [data-css-mark]::after {
+  font-size: 1.25em;
+}
+
+[role="checkbox"][data-css-size="big"] > [data-css-mark]::before, [role="checkbox"][data-css-size="big"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="big"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="big"] > [data-css-mark]::after,
+[role="radio"][data-css-size="big"] > [data-css-mark]::before,
+[role="radio"][data-css-size="big"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="big"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-size="big"] > [data-css-mark]::after {
+  font-size: 4em;
+}
+
+[role="checkbox"][data-css-size="huge"] > [data-css-mark]::before, [role="checkbox"][data-css-size="huge"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="huge"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="huge"] > [data-css-mark]::after,
+[role="radio"][data-css-size="huge"] > [data-css-mark]::before,
+[role="radio"][data-css-size="huge"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="huge"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-size="huge"] > [data-css-mark]::after {
+  font-size: 6em;
+}
+
+[role="checkbox"][data-css-size="full"],
+[data-css-role="checkbox"][data-css-size="full"],
+[role="radio"][data-css-size="full"],
+[data-css-role="radio"][data-css-size="full"] {
+  display: block;
+}
+
+[role="checkbox"][data-css-size="full"] > [data-css-mark]::before, [role="checkbox"][data-css-size="full"] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::after,
+[role="radio"][data-css-size="full"] > [data-css-mark]::before,
+[role="radio"][data-css-size="full"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="full"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-size="full"] > [data-css-mark]::after {
+  font-size: 7em;
+}
+
+[role="checkbox"][aria-checked="mixed"] > [data-css-mark]::after,
+[data-css-role="checkbox"][aria-checked="mixed"] > [data-css-mark]::after {
+  content: '\2716';
+  line-height: 1em;
+  opacity: 1;
+}
+
+[role="radio"] > [data-css-mark]::before,
+[data-css-role="radio"] > [data-css-mark]::before {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+[role="radio"] > [data-css-mark]::after,
+[data-css-role="radio"] > [data-css-mark]::after {
+  content: '\2b24';
+}
+
+[role="radio"]:not([data-css-size]) > [data-css-mark]::after,
+[data-css-role="radio"]:not([data-css-size]) > [data-css-mark]::after {
+  top: 0.05em;
+}
+
+[role="radio"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-size="small"] > [data-css-mark]::after {
+  font-size: .5em;
+  left: 0.25em;
+  top: 0.575em;
+}
+/*# sourceMappingURL=check.css.map */

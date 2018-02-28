@@ -1,0 +1,249 @@
+// Group rules
+[data-css-group="tooltip"],
+[data-css-group="tooltip"]
+{
+    /* Basic group rules */
+    position: relative;
+
+
+    // Component base Rules
+    > [role="tooltip"],
+    > [data-css-role="tooltip"]
+    {
+        /* Basic Component rules */
+        border: 1px solid;
+        border-radius: 0.5em;
+        display: block;
+        left: 50%;
+        height: fit-content;
+        opacity: 0;
+        padding: 0.5em;
+        position: absolute;
+        top: 0;
+        text-transform: none;
+        transition: opacity 0.5s, transform 0.5s, top 0.5s;
+        transform: translateY(0%) translateX(-50%);
+        width: fit-content;
+        z-index: 1;
+        
+
+        // Arrow
+        &::before
+        {
+            /* Arrow */
+            border: 1px solid;
+            bottom: -1em;
+            bottom: calc(-1em + 2px);
+            content: "";
+            display: none;
+            height: 1em;
+            left: 50%;
+            position: absolute;
+            transform: rotate(45deg) translateX(-50%);
+            width: 1em;
+        }
+
+
+        // Top positioning on arrow
+        &:not([data-css-side])::before,
+        &[data-css-side="top"]::before
+        {
+            /* Top position Arrow */
+            border-top: none;
+            border-left: none;
+        }
+        
+
+        // Transparent hoverable area
+        &::after
+        {
+            /* Transparent hoverable area */
+            background: transparent;
+            display: none;
+            bottom: -1em;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+
+        // Right side tooltip
+        &[data-css-side="right"]
+        {
+            /* Right side tooltip */
+            left: 0;
+            top: 50%;
+            bottom: initial;
+            transform: translateY(-50%) translateX(0);
+        }
+
+
+        // Bottom side tooltip
+        &[data-css-side="bottom"]
+        {
+            /* Bottom side tooltip */
+            bottom: 0;
+            top: 0;
+            transform: translateY(0%) translateX(-50%);
+        }
+
+
+        // Left side tooltip
+        &[data-css-side="left"]
+        {
+            /* Left side tooltip */
+            left: inherit;
+            right: 0;
+            top: 50%;
+            bottom: initial;
+            transform: translateY(-50%) translateX(0);
+        }
+
+
+        // Primary color
+        &,
+        &[data-css-primary]
+        {
+            background: var(--css-primary-50);
+            border-color: var(--css-primary-300);
+            color: var(--css-primary-900);
+            
+            // Arrow
+            &::before
+            {
+                /* Primary Arrow */
+                background-color: var(--css-primary-50);
+	            border-color: var(--css-primary-300);
+            }
+        }
+
+
+        // Accent color
+        &[data-css-accent]
+        {
+            background: var(--css-accent-50);
+            border-color: var(--css-accent-300);
+            color: var(--css-accent-900);
+
+            // Arrow
+            &::before
+            {
+                /* Accent Arrow */
+                background-color: var(--css-accent-50);
+	            border-color: var(--css-accent-300);
+            }
+        }
+    }
+
+    // Group selected state rules
+    &:hover,
+    &:focus
+    {
+        // Group component base Rules
+        > [role="tooltip"],
+        > [data-css-role="tooltip"]
+        {
+            opacity: 1;
+            transform: translateY(-100%) translateX(-50%) translateZ(10em);
+            top: -0.75em;
+
+            // Visible Arrow and transparent hoverable area
+            &::after,
+            &::before
+            {
+                /* Visible Arrow and transparent hoverable area */
+                display: block;
+            }
+
+
+            // Right side tooltip
+            &[data-css-side="right"]
+            {
+                bottom: initial;
+                left: initial;
+                right: -0.75em;
+                top: 50%;
+                transform: translateY(-50%) translateX(100%) translateZ(10em);
+                
+                // Arrow
+                &::before
+                {
+                    border-top: none;
+                    border-right: none;
+                    top: 50%;
+                    top: calc(50%  - 2px);
+                    left: -0.25em;
+                    left: calc(-0.25em + 2px);
+                    transform: rotate(45deg) translateX(-50%);
+                }
+                
+                // Transparent hoverable area
+                &::after
+                {
+                    bottom: 0;
+                    top: 0;
+                    left: -1em;
+                }
+            }
+
+
+            // Bottom side tooltip
+            &[data-css-side="bottom"]
+            {
+                bottom: -1em;
+                top: 0;
+                transform: translateY(100%) translateX(-50%) translateZ(10em);
+                
+                // Arrow
+                &::before
+                {
+                    border-bottom: none;
+                    border-right: none;
+                    top: -0.25em;
+                    top: calc(-0.25em + 2px);
+                    transform: rotate(45deg) translateX(-50%);
+                }
+                
+                // Transparent hoverable area
+                &::after
+                {
+                    bottom: 0;
+                    top: -1em;
+                }
+            }
+
+
+            // Bottom side tooltip
+            &[data-css-side="left"]
+            {
+                bottom: initial;
+                left: -0.75em;
+                right: initial;
+                top: 50%;
+                transform: translateY(-50%)  translateX(-100%);
+                
+                // Arrow
+                &::before
+                {
+                    border-bottom: none;
+                    border-left: none;
+                    top: 50%;
+                    right: -1em;
+                    right: calc(-1em + 1px);
+                    transform: rotate(45deg) translateX(-50%);
+                    left: initial;
+                }
+                
+                // Transparent hoverable area
+                &::after
+                {
+                    bottom: 0;
+                    top: 0;
+                    right: -1em;
+                }
+            }
+        }
+    }
+}
