@@ -1,98 +1,50 @@
-/* Basic Component rules */
 [role="link"],
-[data-css-role="link"]
-{
-    color: var(--css-primary-600);
-    cursor: pointer;
-    display: inline;
-    font-size: 1.125em;
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s;
-}
-[role="link"][data-css-accent],
-[data-css-role="link"][data-css-accent]
-{
-    color: var(--css-accent-600);
+[data-css-role="link"] {
+  /* Basic Component rules */
+  color: var(--css-primary-600);
+  cursor: pointer;
+  display: inline;
+  font-size: 1.125em;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
-
-
-/* States */
 [role="link"]:visited,
-[data-css-role="link"]:visited
-{
-    color: var(--css-primary-900);
-}
-[role="link"][data-css-accent]:visited,
-[data-css-role="link"][data-css-accent]:visited
-{
-    color: var(--css-accent-900);
+[data-css-role="link"]:visited {
+  color: var(--css-primary-900);
 }
 
-[role="link"]:hover,
-[role="link"]:focus,
-[data-css-role="link"]:hover,
-[data-css-role="link"]:focus
-{
-    color: var(--css-primary-500);
-}
-[role="link"][data-css-accent]:hover,
-[role="link"][data-css-accent]:focus,
-[data-css-role="link"][data-css-accent]:hover,
-[data-css-role="link"][data-css-accent]:focus
-{
-    color: var(--css-accent-500);
+[role="link"]:focus, [role="link"]:hover,
+[data-css-role="link"]:focus,
+[data-css-role="link"]:hover {
+  color: var(--css-primary-500);
 }
 
 [role="link"]:active,
-[data-css-role="link"]:active
-{
-    color: var(--css-primary-400);
+[data-css-role="link"]:active {
+  color: var(--css-primary-400);
 }
+
+[role="link"][data-css-accent],
+[data-css-role="link"][data-css-accent] {
+  /* Accent color */
+  color: var(--css-accent-600);
+}
+
+[role="link"][data-css-accent]:visited,
+[data-css-role="link"][data-css-accent]:visited {
+  color: var(--css-accent-900);
+}
+
+[role="link"][data-css-accent]:focus, [role="link"][data-css-accent]:hover,
+[data-css-role="link"][data-css-accent]:focus,
+[data-css-role="link"][data-css-accent]:hover {
+  color: var(--css-accent-500);
+}
+
 [role="link"][data-css-accent]:active,
-[data-css-role="link"][data-css-accent]:active
-{
-    color: var(--css-accent-400);
+[data-css-role="link"][data-css-accent]:active {
+  color: var(--css-accent-400);
 }
-
-
-
-/* Forced states */
-[data-css-role="link"][data-css-state="normal"]
-{
-    color: var(--css-primary-600);
-}
-[data-css-role="link"][data-css-state="normal"][data-css-accent]
-{
-    color: var(--css-accent-600);
-}
-
-[data-css-role="link"][data-css-state="visited"]
-{
-    color: var(--css-primary-900);
-}
-[data-css-role="link"][data-css-state="visited"][data-css-accent]
-{
-    color: var(--css-accent-900);
-}
-
-[role="link"][aria-current="true"],
-[data-css-role="link"][data-css-state="selected"]
-{
-    color: var(--css-primary-500);
-}
-[role="link"][aria-current="true"][data-css-accent],
-[data-css-role="link"][data-css-state="selected"][data-css-accent]
-{
-    color: var(--css-accent-500);
-}
-
-[data-css-role="link"][data-css-state="active"]
-{
-    color: var(--css-primary-400);
-}
-[data-css-role="link"][data-css-state="active"][data-css-accent]
-{
-    color: var(--css-accent-400);
-}
+/*# sourceMappingURL=link.css.map */
