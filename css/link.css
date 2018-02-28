@@ -1,5 +1,6 @@
 [role="link"],
-[data-css-role="link"] {
+[data-css-role="link"],
+a:not([role]):not([data-css-role]) {
   /* Basic Component rules */
   color: var(--css-primary-600);
   cursor: pointer;
@@ -11,40 +12,49 @@
 }
 
 [role="link"]:visited,
-[data-css-role="link"]:visited {
+[data-css-role="link"]:visited,
+a:not([role]):not([data-css-role]):visited {
   color: var(--css-primary-900);
 }
 
 [role="link"]:focus, [role="link"]:hover,
 [data-css-role="link"]:focus,
-[data-css-role="link"]:hover {
+[data-css-role="link"]:hover,
+a:not([role]):not([data-css-role]):focus,
+a:not([role]):not([data-css-role]):hover {
   color: var(--css-primary-500);
 }
 
 [role="link"]:active,
-[data-css-role="link"]:active {
+[data-css-role="link"]:active,
+a:not([role]):not([data-css-role]):active {
   color: var(--css-primary-400);
 }
 
 [role="link"][data-css-accent],
-[data-css-role="link"][data-css-accent] {
+[data-css-role="link"][data-css-accent],
+a:not([role]):not([data-css-role])[data-css-accent] {
   /* Accent color */
   color: var(--css-accent-600);
 }
 
 [role="link"][data-css-accent]:visited,
-[data-css-role="link"][data-css-accent]:visited {
+[data-css-role="link"][data-css-accent]:visited,
+a:not([role]):not([data-css-role])[data-css-accent]:visited {
   color: var(--css-accent-900);
 }
 
 [role="link"][data-css-accent]:focus, [role="link"][data-css-accent]:hover,
 [data-css-role="link"][data-css-accent]:focus,
-[data-css-role="link"][data-css-accent]:hover {
+[data-css-role="link"][data-css-accent]:hover,
+a:not([role]):not([data-css-role])[data-css-accent]:focus,
+a:not([role]):not([data-css-role])[data-css-accent]:hover {
   color: var(--css-accent-500);
 }
 
 [role="link"][data-css-accent]:active,
-[data-css-role="link"][data-css-accent]:active {
+[data-css-role="link"][data-css-accent]:active,
+a:not([role]):not([data-css-role])[data-css-accent]:active {
   color: var(--css-accent-400);
 }
 /*# sourceMappingURL=link.css.map */

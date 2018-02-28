@@ -1,0 +1,197 @@
+// Selectors base
+[role="article"],
+[data-css-role="article"],
+article
+{
+    // 100% specific selectors
+    // &[itemscope][itemtype="http://schema.org/Article"],
+    // &[itemscope][itemtype="http://schema.org/NewsArticle"],
+    // &[itemscope][itemtype="http://schema.org/Report"],
+    // &[itemscope][itemtype="http://schema.org/ScholarlyArticle"],
+    // &[itemscope][itemtype="http://schema.org/SocialMediaPosting"],
+    // &[itemscope][itemtype="http://schema.org/BlogPosting"],
+    // &[itemscope][itemtype="http://schema.org/LiveBlogPosting"],
+    // &[itemscope][itemtype="http://schema.org/DiscussionForumPosting"],
+    // &[itemscope][itemtype="http://schema.org/TechArticle"],
+    // &[itemscope][itemtype="http://schema.org/APIReference"]
+    // Shortened selectors:
+    // &[itemtype^="http://schema.org/"][itemtype$="Article"],
+    // &[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"],
+    // &[itemtype="http://schema.org/Report"],
+    // &[itemtype="http://schema.org/APIReference"] 
+
+    // Using shortened selectors
+    &[itemtype^="http://schema.org/"][itemtype$="Article"],
+    &[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"],
+    &[itemtype="http://schema.org/Report"],
+    &[itemtype="http://schema.org/APIReference"] 
+    {
+        /* Article itself */
+        background: var(--css-white);
+        border: 1px solid var(--css-primary-400);
+        color: var(--css-primary-900);
+        display: block;
+        margin: 0.5em;
+        padding: 0.5em;
+
+
+        // Article table of contents
+        >[itemtype="http://schema.org/SiteNavigationElement"]
+        {
+            /* Article table of contents */
+            display: block;
+            background: var(--css-primary-50);
+            border: 1px solid var(--css-primary-200);
+            color: var(--css-primary-900);
+
+            // Table heading
+            [data-css-role="heading"]
+            {
+                font-size: 1.25em;
+                margin: 0.5em 0;
+                padding-left: 1em;
+            }
+
+            // Content lists
+            ol,
+            ul
+            {
+                counter-reset: article-index;
+                list-style-position: inside;
+                margin: 0;
+                padding: 0;
+
+                // Content items
+                li
+                {
+                    display: block;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0 1em;
+                    padding-right: 0;
+
+                    // Item link
+                    >a
+                    {
+                        display: block;
+                        font-weight: normal;
+                        margin: -0.5em -1em;
+                        padding: 0.5em 1em;
+
+                        &::before
+                        {
+                            content: counters(article-index, ".") ". ";
+                            counter-increment: article-index;
+                        }
+                    }
+
+                    // Subitem
+                    li
+                    {
+                        &:last-child>a
+                        {
+                            padding-bottom: 0.5em;
+                        }
+                        // Subitem link
+                        a {
+                            padding: 0.25em 1em;    
+                        }
+                    }
+                }
+            }
+            // Unsorted list corrections
+            ul
+            {
+                counter-reset: none;
+
+                >li>a::before
+                {
+                    content: "\2022";
+                    counter-increment: none;
+                }
+            }
+            // Direct child padding correction
+            >ol,
+            >ul
+            {
+                padding-bottom: 1em;
+            }
+
+            &[data-css-accent]
+            {
+                background-color: var(--css-accent-50);
+                border-color: var(--css-accent-200);
+                color: var(--css-primary-900);
+            }
+        }
+
+        // Article Body
+        [itemprop="articleBody"]
+        {
+            /* Article Body */
+            counter-reset: article-chapters;
+
+            // Article chapters
+            [data-css-chapter]
+            {
+                // Chapter heading
+                [role="heading"]::before,
+                [data-css-role="heading"]::before
+                {
+                    /* Chapter heading */
+                    content: counters(article-chapters, ".") ". ";
+                    counter-increment: article-chapters;
+                }
+
+                // Article chapters bottom border
+                &:not(:last-child)
+                {
+                    /* Article chapters bottom border */
+                    border-bottom: 2px solid var(--css-primary-300);
+                    margin-bottom: 4em;
+                    padding-bottom: 1em;
+    
+                    &[data-css-accent]
+                    {
+                        border-bottom-color: var(--css-accent-300);
+                    }
+                }
+            }
+
+            // Chapter group
+            [role="group"][data-css-group="chapters"]
+            {
+                /* Chapter group */
+                counter-reset: article-chapters;    
+
+                // Chapter in group
+                >[data-css-chapter]
+                {
+                    // First chapter in group
+                    &:first-child
+                    {
+                        /* First chapter in group */
+                        border-top: 1px solid var(--css-primary-200);
+                        margin-top: 1em;
+                    }
+
+                    // All chapters in group except the last
+                    &:not(:last-child)
+                    {
+                        /* All chapters in group except the last */
+                        border-bottom: 1px solid var(--css-primary-200);
+                        margin-bottom: 1em;   
+                    }
+                }
+            }
+        }
+
+
+        // Accent color 
+        &[data-css-accent]
+        {
+            border-color: var(--css-accent-300);
+            color: var(--css-accent-900);
+        }
+    }
+}

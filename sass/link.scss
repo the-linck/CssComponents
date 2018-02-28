@@ -1,5 +1,6 @@
 [role="link"],
-[data-css-role="link"]
+[data-css-role="link"],
+a:not([role]):not([data-css-role])
 {
     /* Basic Component rules */
     color: var(--css-primary-600);
