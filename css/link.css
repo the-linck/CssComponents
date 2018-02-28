@@ -32,29 +32,54 @@ a:not([role]):not([data-css-role]):active {
 }
 
 [role="link"][data-css-accent],
+[data-css-accent] [role="link"],
 [data-css-role="link"][data-css-accent],
-a:not([role]):not([data-css-role])[data-css-accent] {
+[data-css-accent]
+[data-css-role="link"],
+a:not([role]):not([data-css-role])[data-css-accent],
+[data-css-accent]
+a:not([role]):not([data-css-role]) {
   /* Accent color */
   color: var(--css-accent-600);
 }
 
 [role="link"][data-css-accent]:visited,
+[data-css-accent] [role="link"]:visited,
 [data-css-role="link"][data-css-accent]:visited,
-a:not([role]):not([data-css-role])[data-css-accent]:visited {
+[data-css-accent]
+[data-css-role="link"]:visited,
+a:not([role]):not([data-css-role])[data-css-accent]:visited,
+[data-css-accent]
+a:not([role]):not([data-css-role]):visited {
   color: var(--css-accent-900);
 }
 
 [role="link"][data-css-accent]:focus, [role="link"][data-css-accent]:hover,
+[data-css-accent] [role="link"]:focus,
+[data-css-accent] [role="link"]:hover,
 [data-css-role="link"][data-css-accent]:focus,
 [data-css-role="link"][data-css-accent]:hover,
+[data-css-accent]
+[data-css-role="link"]:focus,
+[data-css-accent]
+[data-css-role="link"]:hover,
 a:not([role]):not([data-css-role])[data-css-accent]:focus,
-a:not([role]):not([data-css-role])[data-css-accent]:hover {
+a:not([role]):not([data-css-role])[data-css-accent]:hover,
+[data-css-accent]
+a:not([role]):not([data-css-role]):focus,
+[data-css-accent]
+a:not([role]):not([data-css-role]):hover {
   color: var(--css-accent-500);
 }
 
 [role="link"][data-css-accent]:active,
+[data-css-accent] [role="link"]:active,
 [data-css-role="link"][data-css-accent]:active,
-a:not([role]):not([data-css-role])[data-css-accent]:active {
+[data-css-accent]
+[data-css-role="link"]:active,
+a:not([role]):not([data-css-role])[data-css-accent]:active,
+[data-css-accent]
+a:not([role]):not([data-css-role]):active {
   color: var(--css-accent-400);
 }
 /*# sourceMappingURL=link.css.map */

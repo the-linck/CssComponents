@@ -29,7 +29,8 @@ a:not([role]):not([data-css-role])
 
 
     // Accent color
-    &[data-css-accent]
+    &[data-css-accent],
+    [data-css-accent] &
     {
         /* Accent color */
         color: var(--css-accent-600);
