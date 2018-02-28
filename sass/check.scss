@@ -1,0 +1,329 @@
+// Rules shared by all module's components
+[role="checkbox"],
+[data-css-role="checkbox"],
+[role="radio"],
+[data-css-role="radio"]
+{
+    background: none;
+    border: none;
+    display: inline-block;
+    margin: .5em 0;
+    outline:  none;
+    overflow: hidden;
+    padding: 0;
+
+    > input[type="checkbox"],
+    > input[type="radio"]
+    {
+        /* Hiding native checkbox/radio (when used) */
+        display: none;
+    }
+
+    // Component active part container
+    > [data-css-mark]
+    {
+        display: inline-block;
+        font-size: 1em;
+        position: relative;
+
+        // Background button
+        &::before
+        {
+            border: 2px solid;
+            content: '';
+            display: inline-block;
+            height: 1em;
+            text-align: center;
+            vertical-align: middle;
+            width: 1em;
+        }
+        // Tick (checkbox)/Bullet (radio)/ Toggle (switch)
+        &::after
+        {
+            content: '\2714';
+            border: 2px solid transparent;
+            height: 1em;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            transition: 200ms opacity, 200ms line-height;
+            width: 1em;
+        }
+    }
+
+    // Unchecked
+    &[aria-checked="false"] > [data-css-mark]::after,
+    > [data-css-mark]::after
+    {
+        line-height: 4em;
+    }
+
+    // Checked
+    &[aria-checked="true"] > [data-css-mark]::after,
+    > input:checked + [data-css-mark]::after
+    {
+        line-height: 1em;
+        opacity: 1;
+    }
+
+    // Accent color
+    &[data-css-accent]
+    {
+        // Component states in button
+        &:hover > [data-css-mark]::before,
+        &:focus > [data-css-mark]::before,
+        &[data-css-state="selected"] > [data-css-mark]::before
+        {
+            background: var(--css-accent-400);
+            border-color: var(--css-accent-700);
+        }
+        &:active > [data-css-mark]::before,
+        &[data-css-state="pressed"] > [data-css-mark]::before
+        {
+            background: var(--css-accent-400);
+            border-color: var(--css-accent-700);
+        }
+        & > [data-css-mark]::before, //After hover and active to override specificity
+        &[data-css-state="normal"] > [data-css-mark]::before
+        {
+            background-color: var(--css-accent-500);
+            border-color: var(--css-accent-900);
+        }
+        &:disabled > [data-css-mark]::before,
+        &[aria-disabled] > [data-css-mark]::before,
+        &[data-css-state="disabled"] > [data-css-mark]::before
+        {
+            background-color: var(--css-accent-50);
+            border-color: var(--css-accent-500);
+        }
+
+        
+        // Component states in tick/bullet/toggle
+        &:hover > [data-css-mark]::after,
+        &:focus > [data-css-mark]::after,
+        &[data-css-state="selected"] > [data-css-mark]::after
+        {
+            color: var(--css-accent-700);
+        }
+        &:active > [data-css-mark]::after,
+        &[data-css-state="pressed"] > [data-css-mark]::after
+        {
+            color: var(--css-accent-900);
+        }
+        & > [data-css-mark]::after, //After hover and active to override specificity
+        &[data-css-state="normal"] > [data-css-mark]::after
+        {
+            color: var(--css-accent-900);
+        }
+        &:disabled > [data-css-mark]::after,
+        &[aria-disabled] > [data-css-mark]::after,
+        &[data-css-state="disabled"] > [data-css-mark]::after
+        {
+            color: var(--css-accent-400);
+        }
+    }
+
+    // Component states in button
+    &:hover > [data-css-mark]::before,
+    &:focus > [data-css-mark]::before,
+    &[data-css-state="selected"] > [data-css-mark]::before
+    {
+        background: var(--css-primary-400);
+        border-color: var(--css-primary-700);
+    }
+    &:active > [data-css-mark]::before,
+    &[data-css-state="pressed"] > [data-css-mark]::before
+    {
+        background: var(--css-primary-400);
+        border-color: var(--css-primary-700);
+    }
+    & > [data-css-mark]::before, //After hover and active to override specificity
+    &[data-css-state="normal"] > [data-css-mark]::before
+    {
+        background-color: var(--css-primary-500);
+        border-color: var(--css-primary-900);
+    }
+    &:disabled > [data-css-mark]::before,
+    &[aria-disabled] > [data-css-mark]::before,
+    &[data-css-state="disabled"] > [data-css-mark]::before
+    {
+        background-color: var(--css-primary-50);
+        border-color: var(--css-primary-500);
+    }
+    
+    // Component states in tick/bullet/toggle
+    &:hover > [data-css-mark],
+    &:focus > [data-css-mark],
+    &[data-css-state="selected"] > [data-css-mark]
+    {
+        &::after,
+        &[data-css-primary]::after
+        {
+            color: var(--css-primary-700);
+        }
+
+        &[data-css-accent]
+        {
+            &::after,
+            &[data-css-primary]::after
+            {
+                color: var(--css-accent-700);
+            }
+        }
+    }
+    &:active > [data-css-mark],
+    &[data-css-state="pressed"] > [data-css-mark]
+    {
+        &::after,
+        &[data-css-primary]::after
+        {
+            color: var(--css-primary-900);
+        }
+
+        &[data-css-accent]
+        {
+            &::after,
+            &[data-css-primary]::after
+            {
+                color: var(--css-accent-900);
+            }
+        }
+    }
+    & > [data-css-mark], //After hover and active to override specificity
+    &[data-css-state="normal"] > [data-css-mark]
+    {
+        &::after,
+        &[data-css-primary]::after
+        {
+            color: var(--css-primary-900);
+        }
+        
+        &[data-css-accent]
+        {
+            &::after,
+            &[data-css-primary]::after
+            {
+                color: var(--css-accent-900);
+            }
+        }
+    }
+    &:disabled > [data-css-mark],
+    &[aria-disabled] > [data-css-mark],
+    &[data-css-state="disabled"] > [data-css-mark]
+    {
+        &::after,
+        &[data-css-primary]::after
+        {
+            color: var(--css-primary-400);
+        }
+        
+        &[data-css-accent]
+        {
+            &::after,
+            &[data-css-primary]::after
+            {
+                color: var(--css-accent-400);
+            }
+        }
+    }
+
+
+    // Sizes
+    &[data-css-size="small"] > [data-css-mark]
+    {
+        &::before,
+        &::after
+        {
+            font-size: .75em;
+        }
+        // Tick/bullet/toggle
+        &::after
+        {
+            top: .25em;
+        }
+    }
+    &:not([data-css-size]) > [data-css-mark],
+    &[data-css-size="medium"] > [data-css-mark]
+    {
+        &::before,
+        &::after
+        {
+            font-size: 1.25em;
+        }
+    }
+    &[data-css-size="big"] > [data-css-mark]
+    {
+        &::before,
+        &::after
+        {
+            font-size: 4em;
+        }
+    }
+    &[data-css-size="huge"] > [data-css-mark]
+    {
+        &::before,
+        &::after
+        {
+            font-size: 6em;
+        }
+    }
+    &[data-css-size="full"]
+    {
+        display: block;
+
+        >[data-css-mark]
+        {
+           &::before,
+           &::after
+           {
+               font-size: 7em;
+           }
+       }
+    }
+}
+
+// Specific checkbox rules
+[role="checkbox"],
+[data-css-role="checkbox"]
+{
+    &[aria-checked="mixed"] > [data-css-mark]::after
+    {
+        content: '\2716';
+        line-height: 1em;
+        opacity: 1;
+    }
+}
+
+// Specific radio rules
+[role="radio"],
+[data-css-role="radio"]
+{
+    > [data-css-mark]
+    {
+        // Background button
+        &::before
+        {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        // Bullet (radio)
+        &::after
+        {
+            content: '\2b24';
+        }
+    }
+
+    // Size specific corrections
+    &:not([data-css-size]) > [data-css-mark]::after
+    {
+        top: 0.05em;
+    }
+    &[data-css-size="small"] > [data-css-mark]::after
+    {
+        font-size: .5em;
+        left: 0.25em;
+        top: 0.575em;
+    }
+}
