@@ -1,15 +1,78 @@
+// Absolutely positioned pseudo-elements
+%check-absolute-pseudo
+{
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+// Pseudo element for interactive element
+%check-interactive-pseudo
+{
+    border: 2px solid;
+    content: '';
+    display: inline-block;
+}
+
+// Accent colors
+%check-base-button-accent
+{
+    background-color: var(--css-accent-500);
+    border-color: var(--css-accent-900);
+}
+%check-selected-button-accent
+{
+    background-color: var(--css-accent-400);
+    border-color: var(--css-accent-700);
+}
+%check-pressed-button-accent
+{
+    background-color: var(--css-accent-600);
+    border-color: var(--css-accent-800);
+}
+%check-disabled-button-accent
+{
+    background-color: var(--css-accent-50);
+    border-color: var(--css-accent-500);
+}
+
+
+// Primary colors
+%check-base-button-primary
+{
+    background-color: var(--css-primary-500);
+    border-color: var(--css-primary-900);
+}
+%check-selected-button-primary
+{
+    background-color: var(--css-primary-400);
+    border-color: var(--css-primary-700);
+}
+%check-pressed-button-primary
+{
+    background-color: var(--css-primary-600);
+    border-color: var(--css-primary-800);
+}
+%check-disabled-button-primary
+{
+    background-color: var(--css-primary-50);
+    border-color: var(--css-primary-500);
+}
+
+
 // Rules shared by all module's components
 [role="checkbox"],
 [data-css-role="checkbox"],
 [role="radio"],
-[data-css-role="radio"]
+[data-css-role="radio"],
+[role="switch"],
+[data-css-role="switch"]
 {
     background: none;
     border: none;
     display: inline-block;
     margin: .5em 0;
     outline:  none;
-    overflow: hidden;
     padding: 0;
 
     > input[type="checkbox"],
@@ -26,30 +89,56 @@
         font-size: 1em;
         position: relative;
 
-        // Background button
+        // Background
         &::before
         {
-            border: 2px solid;
-            content: '';
-            display: inline-block;
             height: 1em;
-            text-align: center;
-            vertical-align: middle;
             width: 1em;
+
+            @extend %check-interactive-pseudo;
         }
+
         // Tick (checkbox)/Bullet (radio)/ Toggle (switch)
         &::after
         {
-            content: '\2714';
             border: 2px solid transparent;
             height: 1em;
-            left: 0;
-            opacity: 0;
-            position: absolute;
-            text-align: center;
-            top: 0;
-            transition: 200ms opacity, 200ms line-height;
             width: 1em;
+
+            @extend %check-absolute-pseudo;
+        }
+    }
+
+    // Sizes
+    &[data-css-size="full"]
+    {
+        display: block;
+    }
+}
+
+// Rules only for checkbox and radio
+[role="checkbox"],
+[data-css-role="checkbox"],
+[role="radio"],
+[data-css-role="radio"]
+{
+    overflow: hidden;
+
+    > [data-css-mark]
+    {
+        // Background
+        &::before
+        {
+            text-align: center;
+            vertical-align: middle;
+        }
+        // Tick (checkbox)/Bullet (radio)
+        &::after
+        {
+            content: '\2714';
+            opacity: 0;
+            text-align: center;
+            transition: 200ms opacity, 200ms line-height;
         }
     }
 
@@ -72,47 +161,43 @@
     &[data-css-accent]
     {
         // Component states in button
-        &:hover > [data-css-mark]::before,
-        &:focus > [data-css-mark]::before,
+        &:hover:not([data-css-state]) > [data-css-mark]::before,
+        &:focus:not([data-css-state]) > [data-css-mark]::before,
         &[data-css-state="selected"] > [data-css-mark]::before
         {
-            background: var(--css-accent-400);
-            border-color: var(--css-accent-700);
+            @extend %check-selected-button-accent;
         }
-        &:active > [data-css-mark]::before,
+        &:active:not([data-css-state]) > [data-css-mark]::before,
         &[data-css-state="pressed"] > [data-css-mark]::before
         {
-            background: var(--css-accent-400);
-            border-color: var(--css-accent-700);
+            @extend %check-pressed-button-accent;
         }
-        & > [data-css-mark]::before, //After hover and active to override specificity
+        &:not([data-css-state]) > [data-css-mark]::before, //After hover and active to override specificity
         &[data-css-state="normal"] > [data-css-mark]::before
         {
-            background-color: var(--css-accent-500);
-            border-color: var(--css-accent-900);
+            @extend %check-base-button-accent;
         }
         &:disabled > [data-css-mark]::before,
         &[aria-disabled] > [data-css-mark]::before,
         &[data-css-state="disabled"] > [data-css-mark]::before
         {
-            background-color: var(--css-accent-50);
-            border-color: var(--css-accent-500);
+            @extend %check-disabled-button-accent;
         }
 
         
         // Component states in tick/bullet/toggle
-        &:hover > [data-css-mark]::after,
-        &:focus > [data-css-mark]::after,
+        &:hover:not([data-css-state]) > [data-css-mark]::after,
+        &:focus:not([data-css-state]) > [data-css-mark]::after,
         &[data-css-state="selected"] > [data-css-mark]::after
         {
             color: var(--css-accent-700);
         }
-        &:active > [data-css-mark]::after,
+        &:active:not([data-css-state]) > [data-css-mark]::after,
         &[data-css-state="pressed"] > [data-css-mark]::after
         {
             color: var(--css-accent-900);
         }
-        & > [data-css-mark]::after, //After hover and active to override specificity
+        &:not([data-css-state]) > [data-css-mark]::after, //After hover and active to override specificity
         &[data-css-state="normal"] > [data-css-mark]::after
         {
             color: var(--css-accent-900);
@@ -126,36 +211,32 @@
     }
 
     // Component states in button
-    &:hover > [data-css-mark]::before,
-    &:focus > [data-css-mark]::before,
+    &:hover:not([data-css-state]) > [data-css-mark]::before,
+    &:focus:not([data-css-state]) > [data-css-mark]::before,
     &[data-css-state="selected"] > [data-css-mark]::before
     {
-        background: var(--css-primary-400);
-        border-color: var(--css-primary-700);
+        @extend %check-selected-button-primary;
     }
-    &:active > [data-css-mark]::before,
+    &:active:not([data-css-state]) > [data-css-mark]::before,
     &[data-css-state="pressed"] > [data-css-mark]::before
     {
-        background: var(--css-primary-400);
-        border-color: var(--css-primary-700);
+        @extend %check-pressed-button-primary;
     }
-    & > [data-css-mark]::before, //After hover and active to override specificity
+    &:not([data-css-state]) > [data-css-mark]::before, //After hover and active to override specificity
     &[data-css-state="normal"] > [data-css-mark]::before
     {
-        background-color: var(--css-primary-500);
-        border-color: var(--css-primary-900);
+        @extend %check-base-button-primary;
     }
     &:disabled > [data-css-mark]::before,
     &[aria-disabled] > [data-css-mark]::before,
     &[data-css-state="disabled"] > [data-css-mark]::before
     {
-        background-color: var(--css-primary-50);
-        border-color: var(--css-primary-500);
+        @extend %check-disabled-button-primary;
     }
     
     // Component states in tick/bullet/toggle
-    &:hover > [data-css-mark],
-    &:focus > [data-css-mark],
+    &:hover:not([data-css-state]) > [data-css-mark],
+    &:focus:not([data-css-state]) > [data-css-mark],
     &[data-css-state="selected"] > [data-css-mark]
     {
         &::after,
@@ -173,7 +254,7 @@
             }
         }
     }
-    &:active > [data-css-mark],
+    &:active:not([data-css-state]) > [data-css-mark],
     &[data-css-state="pressed"] > [data-css-mark]
     {
         &::after,
@@ -191,7 +272,7 @@
             }
         }
     }
-    & > [data-css-mark], //After hover and active to override specificity
+    &:not([data-css-state]) > [data-css-mark], //After hover and active to override specificity
     &[data-css-state="normal"] > [data-css-mark]
     {
         &::after,
@@ -269,18 +350,13 @@
             font-size: 6em;
         }
     }
-    &[data-css-size="full"]
+    &[data-css-size="full"] > [data-css-mark]
     {
-        display: block;
-
-        >[data-css-mark]
+        &::before,
+        &::after
         {
-           &::before,
-           &::after
-           {
-               font-size: 7em;
-           }
-       }
+            font-size: 7em;
+        }
     }
 }
 
@@ -325,5 +401,297 @@
         font-size: .5em;
         left: 0.25em;
         top: 0.575em;
+    }
+}
+
+// Switch only styles
+[role="switch"],
+[data-css-role="switch"]
+{
+    // Disabled background bar
+    &::before
+    {
+        border-radius: 1em;
+        height: 1em;
+        width: 3em;
+
+        @extend %check-absolute-pseudo;
+        @extend %check-interactive-pseudo;
+    }
+
+    // States
+    &:hover:not([data-css-state]),
+    &:focus:not([data-css-state]),
+    &[data-css-state="selected"]
+    {
+        // Accent color
+        &[data-css-accent]::before
+        {
+            @extend %check-selected-button-accent;
+        }
+
+        &[data-css-accent] > [data-css-mark],
+        > [data-css-mark][data-css-accent]
+        {
+            &::before
+            {
+                @extend %check-base-button-accent;
+            }
+            &::after
+            {
+                background-color: var(--css-accent-100);
+                border-color: var(--css-accent-400);   
+            }
+        }
+
+        // Primary color
+        &::before
+        {
+            @extend %check-selected-button-primary;
+        }
+
+        > [data-css-mark],
+        > [data-css-mark][data-css-primary]
+        {
+            &::before
+            {
+                @extend %check-base-button-primary;
+            }
+            &::after
+            {
+                background-color: var(--css-primary-100);
+                border-color: var(--css-primary-400);   
+            }
+        }
+    }
+    &:active:not([data-css-state]),
+    &[data-css-state="pressed"]
+    {
+        // Accent color
+        &[data-css-accent]::before
+        {
+            @extend %check-pressed-button-accent;
+        }
+        
+        &[data-css-accent] > [data-css-mark],
+        > [data-css-mark][data-css-accent]
+        {
+            &::before
+            {
+                @extend %check-pressed-button-accent;
+            }
+            &::after
+            {
+                background-color: var(--css-accent-700);
+                border-color: var(--css-accent-900);   
+            }
+        }
+
+        // Primary color
+        &::before
+        {
+            @extend %check-pressed-button-primary;
+        }
+
+        > [data-css-mark],
+        > [data-css-mark][data-css-primary]
+        {
+            &::before
+            {
+                @extend %check-pressed-button-primary;
+            }
+    
+            &::after
+            {
+                background-color: var(--css-primary-700);
+                border-color: var(--css-primary-900);   
+            }
+        }
+    }
+    &:not([data-css-state]), // Overiding specificity
+    &[data-css-state="normal"]
+    {
+        // Accent color
+        &[data-css-accent]::before
+        {
+            @extend %check-base-button-accent;
+        }
+        
+        &[data-css-accent] > [data-css-mark],
+        > [data-css-mark][data-css-accent]
+        {
+            &::before
+            {
+                @extend %check-selected-button-accent;
+            }
+            &::after
+            {
+                background-color: var(--css-accent-200);
+                border-color: var(--css-accent-500);
+            }
+        }
+
+        // Primary color
+        &::before
+        {
+            @extend %check-base-button-primary;
+        }
+
+        > [data-css-mark],
+        > [data-css-mark][data-css-primary]
+        {
+            &::before
+            {
+                @extend %check-selected-button-primary;
+            }
+            &::after
+            {
+                background-color: var(--css-primary-200);
+                border-color: var(--css-primary-500);   
+            }
+        }
+    }
+    &[disabled]
+    &[aria-disabled]
+    &[data-css-state="disabled"]
+    {
+        // Accent color
+        &[data-css-accent]::before
+        {
+            @extend %check-disabled-button-accent;
+        }
+
+        &[data-css-accent] > [data-css-mark],
+        > [data-css-mark][data-css-accent]
+        {
+            &::before,
+            &::after
+            {
+                @extend %check-disabled-button-accent;
+            }
+        }
+
+        // Primary color
+        &::before
+        {
+            @extend %check-disabled-button-primary;
+        }
+
+        > [data-css-mark],
+        > [data-css-mark][data-css-primary]
+        {
+            &::before,
+            &::after
+            {
+                @extend %check-disabled-button-primary;
+            }
+        }
+    }
+
+    // Inner container, selection bar and toggle
+    > [data-css-mark]
+    {
+        padding-left: 4.5em;
+        min-height: 1.75em;
+
+        // Selected bar
+        &::before
+        {
+            border-radius: 1em;
+            opacity: 0;
+            transition: width 0.3s, opacity 0.2s 0.05s;
+            width: 0em;
+
+            @extend %check-absolute-pseudo;
+        }
+        // Toggle
+        &::after
+        {
+            border-radius: 1em;
+            line-height: 1em;
+            height: 1em;
+            left: 0;
+            opacity: 1;
+            transition: left 0.3s;
+            width: 1em;
+    
+            @extend %check-interactive-pseudo;
+        }
+    }
+
+    // Functionality
+    > input:checked + [data-css-mark],
+    &[aria-checked="true"] > [data-css-mark]
+    {
+        &::before
+        {
+            opacity: 1;
+            width: 3em;
+        }
+        &::after
+        {
+            left: 2em;
+        }
+    }
+
+    // Sizes
+    &[data-css-size="small"]
+    {
+        > [data-css-mark]
+        {
+            padding-left: 3em;
+        }
+
+        &::before,
+        > [data-css-mark]::before,
+        > [data-css-mark]::after
+        {
+            font-size: .75em;
+        }
+    }
+    &[data-css-size="big"]
+    {
+        > [data-css-mark]
+        {
+            padding-left: 7em;
+            line-height: 2.25em;
+            min-height: 2.5em;
+        }
+        &::before,
+        > [data-css-mark]::before,
+        > [data-css-mark]::after
+        {
+            font-size: 2em;
+        }
+    }
+    &[data-css-size="huge"]
+    {
+        > [data-css-mark]
+        {
+            padding-left: 13em;
+            line-height: 4.25em;
+            min-height: 4.5em;
+        }
+        &::before,
+        > [data-css-mark]::before,
+        > [data-css-mark]::after
+        {
+            font-size: 4em;
+        }
+    }
+    &[data-css-size="full"]
+    {
+        > [data-css-mark]
+        {
+            padding-left: 16em;
+            line-height: 5.25em;
+            min-height: 5.5em;
+        }
+        &::before,
+        > [data-css-mark]::before,
+        > [data-css-mark]::after
+        {
+            font-size: 5em;
+        }
     }
 }

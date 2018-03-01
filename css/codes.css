@@ -74,7 +74,7 @@
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"], [itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-primary],
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-primary] {
-  color: var(--css-primary-100);
+  color: var(--css-primary-200);
 }
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] {
@@ -85,7 +85,7 @@
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent],
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [data-css-accent] {
-  color: var(--css-accent-100);
+  color: var(--css-accent-200);
 }
 
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child {
