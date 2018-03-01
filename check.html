@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Checkboxes Demos</title>
+    <title>Check Demos</title>
     <!-- Importing all components and default primary color palette -->
     <link href="css/complete.css" rel="stylesheet"/>
     <!-- Importing accent color pallete -->
     <link href="css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
-<body aria-labelledby="checkbox_demos">
+<body aria-labelledby="check_demos">
     <header>
         <h1>
             <a href="index.html">Demos</a>
             &rarr;
-            <strong id="checkbox_demos">Checkbox Component</strong>
+            <strong id="check_demos">Check Module</strong>
         </h1>
     </header>
+
     
     <article aria-label="Checkbox Component" itemscope itemtype="http://schema.org/APIReference">
         <header>
@@ -32,7 +33,7 @@
             <ol>
                 <li>
                     <a itemprop="url" href="#plain">
-                        <span itemprop="name">Checkbox</span>
+                        <span itemprop="name">Check Module</span>
                     </a>
 
                     <!-- Subchapters -->
@@ -44,7 +45,7 @@
                         </li>
                         <li>
                             <a href="#states">
-                                <span itemprop="name">States</span>
+                                <span itemprop="name">Forced states</span>
                             </a>
 
                             <!-- Subchapters -->
@@ -87,29 +88,59 @@
         <!-- Contents -->
         <div itemprop="articleBody">
             <!-- Plain checkbox -->
-            <section aria-labelledby="plain">
+            <section aria-labelledby="plain" data-css-chapter>
                 <header id="plain">
-                    <h3 data-css-role="heading">Checkbox</h3>
+                    <h3 data-css-role="heading">Check Module</h3>
                 </header>
 
                 <p>
-                    App settings, multiple items selection or just form input, there's several places to put checkboxes.<br>
-                    To style this important element, there's <strong>Checkbox</strong> Component of course.
+                    App settings, multiple items selection or just form input, there's several places to put
+                    checkboxes, radios and switches.<br>
+                    This module bring's the three of them at the same time, because they share the same base properties
+                    internally.
                 </p>
                 <p>
                     <em>
                         <strong>Notice:</strong>
-                        This component requires a label with the <strong>data-css-mark</strong> attribute after the native checkbox to
-                        make it clickable using only CSS.
+                        This components requires a label with the <strong>data-css-mark</strong> attribute after a
+                        native checkbox/radio to make it clickable using only CSS.
                     </em>
                 </p>
 
                 <!-- Demo -->
                 <div>
-                    <div data-css-role="checkbox" title="A simple checkbox">
-                        <input id="simple" type="checkbox">
-                        <label data-css-mark for="simple">
-                            Toggle me.
+                    <h4>Checkbox</h4>
+
+                    <div data-css-role="checkbox">
+                        <input id="simple_check" type="checkbox">
+                        <label data-css-mark for="simple_check">
+                            Toggle me
+                        </label>
+                    </div>
+
+                    <h4>Radio</h4>
+
+                    <div role="radiogroup">
+                        <div data-css-role="radio">
+                            <input id="simple_radio1" name="simple_radios" type="radio">
+                            <label data-css-mark for="simple_radio1">
+                                Go in
+                            </label>
+                        </div>
+                        <div data-css-role="radio">
+                            <input id="simple_radio2" name="simple_radios" type="radio">
+                            <label data-css-mark for="simple_radio2">
+                                Go out
+                            </label>
+                        </div>
+                    </div>
+
+                    <h4>Switch</h4>
+
+                    <div data-css-role="switch">
+                        <input id="simple_switch" type="checkbox">
+                        <label data-css-mark for="simple_switch">
+                            Enable it?
                         </label>
                     </div>
                 </div>
@@ -124,18 +155,91 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" data-css-group="lines" itemprop="text">
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <!-- Checkbox -->
                         <span>
-                            &lt;div <strong data-css-accent>data-css-role=&quot;checkbox&quot;</strong> title=&quot;A simple checkbox&quot;&gt;
+                            &lt;h5&gt;Checkbox&lt;/h5&gt;
+                        </span>
+                        <span></span>
+                        <span>
+                            &lt;div <strong data-css-accent>data-css-role=&quot;checkbox&quot;</strong>&gt;
                         </span>
                         <span>
-                            &emsp;&lt;input <em>id=&quot;simple&quot;</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                            &emsp;&lt;input <em>id=&quot;simple_check&quot;</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
                         </span>
                         <span>
-                            &emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple&quot;</em>&gt;
+                            &emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple_check&quot;</em>&gt;
                         </span>
                         <span>
-                            &emsp;&emsp;Toggle me.
+                            &emsp;&emsp;Toggle me
+                        </span>
+                        <span>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &lt;/div&gt;
+                        </span>
+                        <span></span>
+
+                        <!-- Switch -->
+                        <span>
+                            &lt;h5&gt;radio&lt;/h5&gt;
+                        </span>
+                        <span>&lt;div role="radiogroup"&gt;</span>
+                        <span>
+                            &emsp;&lt;div <strong data-css-accent>data-css-role=&quot;radio&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;&lt;input <em>id=&quot;simple_radio1&quot;</em> name="simple_radios"&nbsp;<strong>type=&quot;radio&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple_radio1&quot;</em>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;&emsp;Go in
+                        </span>
+                        <span>
+                            &emsp;&emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;/div&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;div <strong data-css-accent>data-css-role=&quot;radio&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;&lt;input <em>id=&quot;simple_radio2&quot;</em> name="simple_radios"&nbsp;<strong>type=&quot;radio&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple_radio2&quot;</em>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;&emsp;Go out
+                        </span>
+                        <span>
+                            &emsp;&emsp;&lt;/label&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;/div&gt;
+                        </span>
+                        <span>&lt;/div&gt;</span>
+                        <span></span>
+
+                        <!-- Switch -->
+                        <span>
+                            &lt;h5&gt;Switch&lt;/h5&gt;
+                        </span>
+                        <span>
+                            &lt;div <strong data-css-accent>data-css-role=&quot;switch&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;input <em>id=&quot;simple_switch&quot;</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                        </span>
+                        <span>
+                            &emsp;&lt;label <strong>data-css-mark</strong>&nbsp;<em>for=&quot;simple_switch&quot;</em>&gt;
+                        </span>
+                        <span>
+                            &emsp;&emsp;Enable it?
                         </span>
                         <span>
                             &emsp;&lt;/label&gt;
@@ -148,24 +252,38 @@
                 <!-- /Demo's source code exibition -->
                 
                 <p>
-                    You can also use the ARIA attribute <strong>role="checkbox"</strong> instead our custom
-                    <strong>data-css-role="checkbox"</strong>, but you will have to manage the component's check state manually through
-                    the <strong>aria-checked</strong> attribute.<br>
-                    On the other hand, this way you may not need the native checkbox, instead you can use a hidden input:
+                    <em>
+                        <strong>Notice:</strong>
+                        We recommend wrapping multiple radios with the same <strong>name</strong> attribute in a
+                        <strong>role="radiogroup"</strong> container.
+                    </em>
+                </p>
+
+                <p>
+                    You can also use the ARIA attribute <strong>role</strong> instead our custom
+                    <strong>data-css-role</strong>, but you will have to manage the component's check state manually
+                    through the <strong>aria-checked</strong> attribute.<br>
+                    On the other hand, this way you may not need the native element, instead you can use a hidden input:
                 </p>
                 
                 <!-- Demo -->
                 <div>
-                    <div aria-checked="true" role="checkbox">
-                        <input id="aria_on" type="hidden" value="true">
+                    <div aria-checked="mixed" role="checkbox">
+                        <input id="aria_mixed" type="hidden" value="true">
                         <label data-css-mark>
-                            I'm ON.
+                            I'm confused
                         </label>
                     </div>
-                    <div aria-checked="false" role="checkbox">
+                    <div aria-checked="false" role="radio">
                         <input id="aria_off" type="hidden" value="false">
                         <label data-css-mark>
-                            I'm OFF.
+                            I'm OFF
+                        </label>
+                    </div>
+                    <div aria-checked="true" role="switch">
+                        <input id="aria_on" type="hidden" value="true">
+                        <label data-css-mark>
+                            I'm ON
                         </label>
                     </div>
                 </div>
@@ -180,18 +298,19 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" itemprop="text">
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <!-- Mixed checkbox -->
                         <span data-css-line>
-                            &lt;div <strong>aria-checked=&quot;true&quot;</strong>&nbsp;<em data-css-accent>role=&quot;checkbox&quot;</em>&gt;
+                            &lt;div <strong>aria-checked=&quot;mixed&quot;</strong>&nbsp;<em data-css-accent>role=&quot;checkbox&quot;</em>&gt;
                         </span>
                         <span data-css-line>
-                            &emsp;&lt;input <em>type=&quot;hidden&quot;</em>&nbsp;<strong>value=&quot;true&quot;</strong>&gt;
+                            &emsp;&lt;input id="aria_mixed" <em>type=&quot;hidden&quot;</em>&nbsp;<strong>value=&quot;true&quot;</strong>&gt;
                         </span>
                         <span data-css-line>
                             &emsp;&lt;label data-css-mark&gt;
                         </span>
                         <span data-css-line>
-                            &emsp;&emsp;I'm ON.
+                            &emsp;&emsp;I'm confused
                         </span>
                         <span data-css-line>
                             &emsp;&lt;/label&gt;
@@ -199,8 +318,9 @@
                         <span data-css-line>
                             &lt;/div&gt;
                         </span>
+                        <!-- Unchecked radio -->
                         <span data-css-line>
-                            &lt;div <strong>aria-checked=&quot;false&quot;</strong>&nbsp;<em data-css-accent>role=&quot;checkbox&quot;</em>&gt;
+                            &lt;div <strong>aria-checked=&quot;false&quot;</strong>&nbsp;<em data-css-accent>role=&quot;radio&quot;</em>&gt;
                         </span>
                         <span data-css-line>
                             &emsp;&lt;input <em>type=&quot;hidden&quot;</em>&nbsp;<strong>value=&quot;false&quot;</strong>&gt;
@@ -209,7 +329,25 @@
                             &emsp;&lt;label data-css-mark&gt;
                         </span>
                         <span data-css-line>
-                            &emsp;&emsp;I'm OFF.
+                            &emsp;&emsp;I'm off
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;/label&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;div <strong>aria-checked=&quot;true&quot;</strong>&nbsp;<em data-css-accent>role=&quot;switch&quot;</em>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;input <em>type=&quot;hidden&quot;</em>&nbsp;<strong>value=&quot;true&quot;</strong>&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&lt;label data-css-mark&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;&emsp;I'm ON
                         </span>
                         <span data-css-line>
                             &emsp;&lt;/label&gt;
@@ -229,7 +367,9 @@
                         </header>
 
                         <p>
-                            You can use four checkbox sizes, wich can be chosen by our <em>data-css-size</em> attribute:
+                            You can use four sizes, wich can be chosen by our <em>data-css-size</em> attribute.<br>
+                            This setting applies to the three components, but for simplicity we show only checkboxes
+                            bellow.
                         </p>
 
                         <!-- Demo -->
@@ -276,7 +416,7 @@
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                                 <!-- Small -->
                                 <span data-css-line>
                                     &lt;div <strong data-css-accent>data-css-size=&quot;small&quot;</strong> data-css-role=&quot;checkbox&quot;&gt;
@@ -378,20 +518,20 @@
                     </section>
                     <section aria-labelledby="states">
                         <header id="states">
-                            <h4 data-css-role="heading">States</h4>
+                            <h4 data-css-role="heading">Forced states</h4>
                         </header>
                         
                         <p>
-                            There are two types of states you can use with this component:
+                            There are two types of states you can use with this components:
                         </p>
                         <ul>
                             <li>
                                 <strong>Button states</strong><br>
-                                The of the button bellow the check mark.
+                                The of the button on background
                             </li>
                             <li>
                                 <strong>Selection states</strong><br>
-                                The state of the checkbox mark
+                                The state of the active part
                             </li>
                         </ul>
                         
@@ -415,31 +555,33 @@
                                 <p>
                                     They are automatically chosen from the component current state
                                     in the page, but can also be forced by our <strong>data-css-state</strong>
-                                    attributes:
+                                    attributes.<br>
+                                    Again, the setting applies to the three components, but for simplicity we show only
+                                    switches bellow.
                                 </p>
 
                                 
                                 <!-- Demo -->
                                 <div>
-                                    <div data-css-state="normal" data-css-role="checkbox">
+                                    <div data-css-state="normal" data-css-role="switch">
                                         <input id="state_normal" type="checkbox">
                                         <label data-css-mark for="state_normal">
                                             normal
                                         </label>
                                     </div>
-                                    <div data-css-state="selected" data-css-role="checkbox">
+                                    <div data-css-state="selected" data-css-role="switch">
                                         <input id="state_selected" type="checkbox">
                                         <label data-css-mark for="state_selected">
                                             selected
                                         </label>
                                     </div>
-                                    <div data-css-state="pressed" data-css-role="checkbox">
+                                    <div data-css-state="pressed" data-css-role="switch">
                                         <input id="state_pressed" type="checkbox">
                                         <label data-css-mark for="state_pressed">
                                             pressed
                                         </label>
                                     </div>
-                                    <div data-css-state="disabled" data-css-role="checkbox">
+                                    <div data-css-state="disabled" data-css-role="switch">
                                         <input id="state_disabled" type="checkbox">
                                         <label data-css-mark for="state_disabled">
                                             disabled
@@ -457,9 +599,10 @@
                                             <span itemprop="codeSampleType">inline code</span>
                                         </span>
                                     </summary>
-                                    <code class="language-html" data-css-group="lines" itemprop="text">
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                        <!-- Normal -->
                                         <span>
-                                            &emsp;&lt;div data-css-state=&quot;normal&quot; data-css-role=&quot;checkbox&quot;&gt;
+                                            &emsp;&lt;div data-css-state=&quot;normal&quot; data-css-role=&quot;switch&quot;&gt;
                                         </span>
                                         <span>
                                             &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
@@ -469,6 +612,63 @@
                                         </span>
                                         <span>
                                             &emsp;normal
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                        <!-- Selected -->
+                                        <span>
+                                            &emsp;&lt;div data-css-state=&quot;selected&quot; data-css-role=&quot;switch&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;selected
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                        <!-- Pressed -->
+                                        <span>
+                                            &emsp;&lt;div data-css-state=&quot;pressed&quot; data-css-role=&quot;switch&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;pressed
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;/label&gt;
+                                        </span>
+                                        <span>
+                                            &lt;/div&gt;
+                                        </span>
+                                        <!-- Disabled -->
+                                        <span>
+                                            &emsp;&lt;div data-css-state=&quot;disabled&quot; data-css-role=&quot;switch&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;&lt;label data-css-mark&gt;
+                                        </span>
+                                        <span>
+                                            &emsp;disabled
                                         </span>
                                         <span>
                                             &emsp;&lt;/label&gt;
@@ -489,12 +689,12 @@
                                 </header>
 
                                 <p>
-                                    You may use one of the three checkbox selection states:<br>
+                                    You may use one of the three selection states:<br>
                                 </p>
                                 <ul>
                                     <li>unchecked</li>
                                     <li>checked</li>
-                                    <li>mixed</li>
+                                    <li>mixed (checkbox only)</li>
                                 </ul>
                                 <p>
                                     For that functionality we provide only ARIA attributes for now.
@@ -502,13 +702,13 @@
 
                                 <!-- Demo -->
                                 <div>
-                                    <div aria-checked="false" role="checkbox">
+                                    <div aria-checked="false" role="radio">
                                         <input type="hidden" value="false">
                                         <label data-css-mark>
                                             unchecked
                                         </label>
                                     </div>
-                                    <div aria-checked="true" role="checkbox">
+                                    <div aria-checked="true" role="switch">
                                         <input type="hidden" value="true">
                                         <label data-css-mark>
                                             checked
@@ -517,7 +717,7 @@
                                     <div aria-checked="mixed" role="checkbox">
                                         <input type="hidden" value="mixed">
                                         <label data-css-mark>
-                                            mixed
+                                            mixed (checkbox only)
                                         </label>
                                     </div>
                                 </div>
@@ -532,10 +732,10 @@
                                             <span itemprop="codeSampleType">inline code</span>
                                         </span>
                                     </summary>
-                                    <code class="language-html" data-css-group="lines" itemprop="text">
+                                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                                         <!-- unchecked -->
                                         <span>
-                                            &lt;div <strong data-css-accent>aria-checked=&quot;false&quot;</strong> role=&quot;checkbox&quot;&gt;
+                                            &lt;div <strong data-css-accent>aria-checked=&quot;false&quot;</strong> role=&quot;radio&quot;&gt;
                                         </span>
                                         <span>
                                             &emsp;&lt;input type=&quot;hidden&quot; value=&quot;false&quot;&gt;
@@ -554,7 +754,7 @@
                                         </span>
                                         <!-- checked -->
                                         <span>
-                                            &lt;div <strong data-css-accent>aria-checked=&quot;true&quot;</strong> role=&quot;checkbox&quot;&gt;
+                                            &lt;div <strong data-css-accent>aria-checked=&quot;true&quot;</strong> role=&quot;switch&quot;&gt;
                                         </span>
                                         <span>
                                             &emsp;&lt;input type=&quot;hidden&quot; value=&quot;true&quot;&gt;
@@ -582,7 +782,7 @@
                                             &emsp;&lt;label data-css-mark&gt;
                                         </span>
                                         <span>
-                                            &emsp;&emsp;mixed
+                                            &emsp;&emsp;mixed (checkbox only)
                                         </span>
                                         <span>
                                             &emsp;&lt;/label&gt;
@@ -604,25 +804,25 @@
             <!-- /Plain checkbox -->
             
             <!-- Accent colors -->
-            <section aria-labelledby="accent" data-css-accent>
+            <section aria-labelledby="accent" data-css-accent data-css-chapter="">
                 <header id="accent">
                     <h3 data-css-role="heading">Accent Colors</h3>
                 </header>
 
                 <p>
-                    You can use accent colors in all checkbox states and sizes.<br>
+                    You can use accent colors in all states and sizes.<br>
                 </p>
                 <br/>
 
                 <!-- Demo -->
                 <div>
-                    <div data-css-accent data-css-role="checkbox">
+                    <div data-css-accent data-css-role="switch">
                         <input type="checkbox" id="accent_normal">
                         <label data-css-mark for="accent_normal">
                             Normal
                         </label>
                     </div>
-                    <div data-css-accent aria-checked="true" data-css-size="big" role="checkbox">
+                    <div data-css-accent aria-checked="true" data-css-size="big" role="radio">
                         <input type="hidden" value="true">
                         <label data-css-mark>
                             Big checked 
@@ -646,10 +846,10 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" data-css-group="lines" itemprop="text">
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                         <!-- unchecked -->
                         <span>
-                            &lt;div <strong data-css-accent>aria-checked=&quot;false&quot;</strong> role=&quot;checkbox&quot;&gt;
+                            &lt;div <strong data-css-primary>aria-checked=&quot;false&quot;</strong> role=&quot;switch&quot;&gt;
                         </span>
                         <span>
                             &emsp;&lt;input type=&quot;checkbox&quot; id=&quot;accent_normal&quot;&gt;
@@ -668,7 +868,7 @@
                         </span>
                         <!-- checked -->
                         <span>
-                            &lt;div <strong data-css-accent>aria-checked=&quot;true&quot;</strong> role=&quot;checkbox&quot;&gt;
+                            &lt;div <strong data-css-primary>aria-checked=&quot;true&quot;</strong> role=&quot;radio&quot;&gt;
                         </span>
                         <span>
                             &emsp;&lt;input type=&quot;hidden&quot; value=&quot;true&quot;&gt;
@@ -687,7 +887,7 @@
                         </span>
                         <!-- mixed -->
                         <span>
-                            &lt;div <strong data-css-accent>aria-checked=&quot;mixed&quot;</strong> role=&quot;checkbox&quot;&gt;
+                            &lt;div <strong data-css-primary>aria-checked=&quot;mixed&quot;</strong> role=&quot;checkbox&quot;&gt;
                         </span>
                         <span>
                             &emsp;&lt;input type=&quot;hidden&quot; value=&quot;mixed&quot;&gt;
@@ -717,21 +917,50 @@
                         </header>
 
                         <p>
-                            You can combine both primary and secondary colors in the same checkboxbutton.
+                            You can combine both primary and secondary colors in the same component.
                         </p>
 
 
                         <!-- Demo -->
                         <div>
+                            <h5>Checkbox</h5>
                             <div data-css-role="checkbox">
-                                <input name="different" id="different_1" type="checkbox">
-                                <label data-css-accent data-css-mark for="different_1">
+                                <input id="different_c1" type="checkbox">
+                                <label data-css-accent data-css-mark for="different_c1">
                                     Primary and accent
                                 </label>
                             </div>
                             <div data-css-accent data-css-role="checkbox">
-                                <input name="different" id="different_2" type="checkbox">
-                                <label data-css-mark data-css-primary for="different_2">
+                                <input id="different_c2" type="checkbox">
+                                <label data-css-mark data-css-primary for="different_c2">
+                                    Accent and primary
+                                </label>
+                            </div>
+                            
+                            <h5>Radio</h5>
+                            <div data-css-role="radio">
+                                <input name="different_r" id="different_r1" type="radio">
+                                <label data-css-accent data-css-mark for="different_r1">
+                                    Primary and accent
+                                </label>
+                            </div>
+                            <div data-css-accent data-css-role="radio">
+                                <input name="different_r" id="different_r2" type="radio">
+                                <label data-css-mark data-css-primary for="different_r2">
+                                    Accent and primary
+                                </label>
+                            </div>
+                            
+                            <h5>Switch</h5>
+                            <div data-css-role="switch">
+                                <input id="different_s1" type="checkbox">
+                                <label data-css-accent data-css-mark for="different_s1">
+                                    Primary and accent
+                                </label>
+                            </div>
+                            <div data-css-accent data-css-role="switch">
+                                <input id="different_s2" type="checkbox">
+                                <label data-css-mark data-css-primary for="different_s2">
                                     Accent and primary
                                 </label>
                             </div>
@@ -739,23 +968,27 @@
                         <!-- /Demo -->
 
                         <!-- Demo's source code exibition -->
-                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                        <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-primary itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" data-css-group="lines" itemprop="text">
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                <!-- Checkbox -->
+                                <span>
+                                    &lt;h5&gt;Checkbox&lt;/h5&gt;
+                                </span>
                                 <span>
                                     &lt;div data-css-role=&quot;checkbox&quot;&gt;
                                 </span>
                                 <span>
-                                    &emsp;&lt;input name="different" <em>id="different_1"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                    &emsp;&lt;input <em>id="different_c1"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
                                 </span>
                                 <span>
-                                    &emsp;&lt;label <strong data-css-accent>data-css-accent</strong> data-css-mark&nbsp;<em>for="different_1"</em>&gt;
+                                    &emsp;&lt;label <strong data-css-primary>data-css-accent</strong> data-css-mark&nbsp;<em>for="different_c1"</em>&gt;
                                 </span>
                                 <span>
                                     &emsp;&emsp;Primary and accent
@@ -767,13 +1000,95 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div <strong data-css-accent>data-css-accent</strong> data-css-role=&quot;checkbox&quot;&gt;
+                                    &lt;div <strong data-css-primary>data-css-accent</strong> data-css-role=&quot;checkbox&quot;&gt;
                                 </span>
                                 <span>
-                                    &emsp;&lt;input name="different" <em>id="different_1"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                    &emsp;&lt;input <em>id="different_c2"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
                                 </span>
                                 <span>
-                                    &emsp;&lt;label <strong data-css-accent>data-css-primary</strong> data-css-mark&nbsp;<em>for="different_1"</em>&gt;
+                                    &emsp;&lt;label <strong data-css-primary>data-css-primary</strong> data-css-mark&nbsp;<em>for="different_c2"</em>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&emsp;Accent and primary
+                                </span>
+                                <span>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span>
+                                    &lt;/div&gt;
+                                </span>
+                                <span></span>
+                                <!-- Radio -->
+                                <span>
+                                    &lt;h5&gt;Radio&lt;/h5&gt;
+                                </span>
+                                <span>
+                                    &lt;div data-css-role=&quot;radio&quot;&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;input name="different_r" <em>id="different_r1"</em>&nbsp;<strong>type=&quot;radio&quot;</strong>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;label <strong data-css-primary>data-css-accent</strong> data-css-mark&nbsp;<em>for="different_r1"</em>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&emsp;Primary and accent
+                                </span>
+                                <span>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span>
+                                    &lt;/div&gt;
+                                </span>
+                                <span>
+                                    &lt;div <strong data-css-primary>data-css-accent</strong> data-css-role=&quot;radio&quot;&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;input name="different" <em>id="different_r2"</em>&nbsp;<strong>type=&quot;radio&quot;</strong>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;label <strong data-css-primary>data-css-primary</strong> data-css-mark&nbsp;<em>for="different_r2"</em>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&emsp;Accent and primary
+                                </span>
+                                <span>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span>
+                                    &lt;/div&gt;
+                                </span>
+                                <span></span>
+                                <!-- Switch -->
+                                <span>
+                                    &lt;h5&gt;Switch&lt;/h5&gt;
+                                </span>
+                                <span>
+                                    &lt;div data-css-role=&quot;switch&quot;&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;input <em>id="different_s1"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;label <strong data-css-primary>data-css-accent</strong> data-css-mark&nbsp;<em>for="different_s1"</em>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&emsp;Primary and accent
+                                </span>
+                                <span>
+                                    &emsp;&lt;/label&gt;
+                                </span>
+                                <span>
+                                    &lt;/div&gt;
+                                </span>
+                                <span>
+                                    &lt;div <strong data-css-primary>data-css-accent</strong> data-css-role=&quot;switch&quot;&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;input <em>id="different_s2"</em>&nbsp;<strong>type=&quot;checkbox&quot;</strong>&gt;
+                                </span>
+                                <span>
+                                    &emsp;&lt;label <strong data-css-primary>data-css-primary</strong> data-css-mark&nbsp;<em>for="different_s2"</em>&gt;
                                 </span>
                                 <span>
                                     &emsp;&emsp;Accent and primary
@@ -787,14 +1102,6 @@
                             </code>
                         </details>
                         <!-- /Demo's source code exibition -->
-
-                        <p>
-                            <em>
-                                <strong>Notice:</strong>
-                                As mentioned everywhere, we take primary color as the default, so there's no need to declare that 
-                                the component uses the primary color for the button in the combination "Primary and accent".
-                            </em>
-                        </p>
                     </section>
                     <!-- /Different Colors -->
                 </div>
@@ -805,4 +1112,3 @@
         <!-- /Contents -->
     </article>
 </body>
-</html>

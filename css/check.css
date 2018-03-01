@@ -103,70 +103,27 @@
 [role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
 [data-css-role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
 [data-css-role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after, [role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled][data-css-accent]::before, [role="switch"][aria-disabled][data-css-accent]::before, [role="switch"][data-css-state="disabled"][data-css-accent]::before,
+[data-css-role="switch"][disabled][data-css-accent]::before,
+[data-css-role="switch"][aria-disabled][data-css-accent]::before,
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled][data-css-accent] > [data-css-mark]::after,
+[role="switch"][disabled] > [data-css-mark][data-css-accent]::before,
+[role="switch"][disabled] > [data-css-mark][data-css-accent]::after, [role="switch"][aria-disabled][data-css-accent] > [data-css-mark]::before, [role="switch"][aria-disabled][data-css-accent] > [data-css-mark]::after,
+[role="switch"][aria-disabled] > [data-css-mark][data-css-accent]::before,
+[role="switch"][aria-disabled] > [data-css-mark][data-css-accent]::after, [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][disabled][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][disabled][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][disabled] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][disabled] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][aria-disabled][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][aria-disabled][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][aria-disabled] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][aria-disabled] > [data-css-mark][data-css-accent]::after,
 [data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
 [data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
 [data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
 [data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after {
   background-color: var(--css-accent-50);
   border-color: var(--css-accent-500);
@@ -251,70 +208,27 @@
 [role="radio"][data-css-state="disabled"] > [data-css-mark]::before,
 [data-css-role="radio"]:disabled > [data-css-mark]::before,
 [data-css-role="radio"][aria-disabled] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after, [role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled]::before, [role="switch"][aria-disabled]::before, [role="switch"][data-css-state="disabled"]::before,
+[data-css-role="switch"][disabled]::before,
+[data-css-role="switch"][aria-disabled]::before,
+[data-css-role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled] > [data-css-mark]::before, [role="switch"][disabled] > [data-css-mark]::after,
+[role="switch"][disabled] > [data-css-mark][data-css-primary]::before,
+[role="switch"][disabled] > [data-css-mark][data-css-primary]::after, [role="switch"][aria-disabled] > [data-css-mark]::before, [role="switch"][aria-disabled] > [data-css-mark]::after,
+[role="switch"][aria-disabled] > [data-css-mark][data-css-primary]::before,
+[role="switch"][aria-disabled] > [data-css-mark][data-css-primary]::after, [role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][disabled] > [data-css-mark]::before,
+[data-css-role="switch"][disabled] > [data-css-mark]::after,
+[data-css-role="switch"][disabled] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][disabled] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][aria-disabled] > [data-css-mark]::before,
+[data-css-role="switch"][aria-disabled] > [data-css-mark]::after,
+[data-css-role="switch"][aria-disabled] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][aria-disabled] > [data-css-mark][data-css-primary]::after,
 [data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
 [data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
 [data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
-[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
-[data-css-role="switch"][disabled]
-[data-css-role="switch"][aria-disabled]
 [data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after {
   background-color: var(--css-primary-50);
   border-color: var(--css-primary-500);
@@ -332,6 +246,7 @@
   margin: .5em 0;
   outline: none;
   padding: 0;
+  vertical-align: middle;
 }
 
 [role="checkbox"] > input[type="checkbox"],
@@ -359,6 +274,7 @@
   display: inline-block;
   font-size: 1em;
   position: relative;
+  vertical-align: middle;
 }
 
 [role="checkbox"] > [data-css-mark]::before,
@@ -762,10 +678,16 @@
   top: 0.575em;
 }
 
+[role="switch"],
+[data-css-role="switch"] {
+  padding-top: .25em;
+}
+
 [role="switch"]::before,
 [data-css-role="switch"]::before {
   border-radius: 1em;
   height: 1em;
+  margin-top: .25em;
   width: 3em;
 }
 

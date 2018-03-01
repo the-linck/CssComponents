@@ -105,7 +105,7 @@
     &[data-css-primary],
     & [data-css-primary]
     {
-        color: var(--css-primary-200);
+        color: var(--css-primary-100);
     }
 
 
@@ -115,11 +115,16 @@
         /* Support for accent color */
         background-color: var(--css-accent-900);
         border-color: var(--css-accent-700);
+
+        > [itemprop="text"][data-css-group="lines"][role=group] >*::before
+        {
+            color: var(--css-accent-600);
+        }
     }
     &[data-css-accent],
     & [data-css-accent]
     {
-        color: var(--css-accent-200);
+        color: var(--css-accent-100);
     }
 }
 
