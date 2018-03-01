@@ -1,13 +1,336 @@
+[role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after,
+[role="radio"] > [data-css-mark]::after,
+[data-css-role="radio"] > [data-css-mark]::after,
+[role="switch"] > [data-css-mark]::after,
+[data-css-role="switch"] > [data-css-mark]::after, [role="switch"]::before,
+[data-css-role="switch"]::before, [role="switch"] > [data-css-mark]::before,
+[data-css-role="switch"] > [data-css-mark]::before {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+[role="checkbox"] > [data-css-mark]::before,
+[data-css-role="checkbox"] > [data-css-mark]::before,
+[role="radio"] > [data-css-mark]::before,
+[data-css-role="radio"] > [data-css-mark]::before, [role="switch"] > [data-css-mark]::before,
+[data-css-role="switch"] > [data-css-mark]::before, [role="switch"]::before,
+[data-css-role="switch"]::before,
+[role="switch"] > [data-css-mark]::after,
+[data-css-role="switch"] > [data-css-mark]::after {
+  border: 2px solid;
+  content: '';
+  display: inline-block;
+}
+
+[role="checkbox"][data-css-accent]:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before, [role="switch"]:hover:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::before, [role="switch"]:focus:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::before, [role="switch"][data-css-state="selected"][data-css-accent] > [data-css-mark]::before,
+[role="switch"][data-css-state="selected"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"]:hover:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"]:focus:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][data-css-state="selected"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-state="selected"] > [data-css-mark][data-css-accent]::before, [role="switch"][data-css-accent]:not([data-css-state])::before, [role="switch"][data-css-state="normal"][data-css-accent]::before,
+[data-css-role="switch"][data-css-accent]:not([data-css-state])::before,
+[data-css-role="switch"][data-css-state="normal"][data-css-accent]::before {
+  background-color: var(--css-accent-500);
+  border-color: var(--css-accent-900);
+}
+
+[role="checkbox"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before, [role="switch"][data-css-accent]:hover:not([data-css-state])::before, [role="switch"][data-css-accent]:focus:not([data-css-state])::before, [role="switch"][data-css-state="selected"][data-css-accent]::before,
+[data-css-role="switch"][data-css-accent]:hover:not([data-css-state])::before,
+[data-css-role="switch"][data-css-accent]:focus:not([data-css-state])::before,
+[data-css-role="switch"][data-css-state="selected"][data-css-accent]::before, [role="switch"]:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[role="switch"]:not([data-css-state]) > [data-css-mark][data-css-accent]::before, [role="switch"][data-css-state="normal"][data-css-accent] > [data-css-mark]::before,
+[role="switch"][data-css-state="normal"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"]:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"]:not([data-css-state]) > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][data-css-state="normal"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-state="normal"] > [data-css-mark][data-css-accent]::before {
+  background-color: var(--css-accent-400);
+  border-color: var(--css-accent-700);
+}
+
+[role="checkbox"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before, [role="switch"][data-css-accent]:active:not([data-css-state])::before, [role="switch"][data-css-state="pressed"][data-css-accent]::before,
+[data-css-role="switch"][data-css-accent]:active:not([data-css-state])::before,
+[data-css-role="switch"][data-css-state="pressed"][data-css-accent]::before, [role="switch"]:active:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::before, [role="switch"][data-css-state="pressed"][data-css-accent] > [data-css-mark]::before,
+[role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"]:active:not([data-css-state])[data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][data-css-state="pressed"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::before {
+  background-color: var(--css-accent-600);
+  border-color: var(--css-accent-800);
+}
+
+[role="checkbox"][data-css-accent]:disabled > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent]:disabled > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
+[role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"][data-css-accent]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after, [role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-accent]::after {
+  background-color: var(--css-accent-50);
+  border-color: var(--css-accent-500);
+}
+
+[role="checkbox"]:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
+[role="radio"]:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="radio"]:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="normal"] > [data-css-mark]::before, [role="switch"]:hover:not([data-css-state]) > [data-css-mark]::before,
+[role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::before, [role="switch"]:focus:not([data-css-state]) > [data-css-mark]::before,
+[role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::before, [role="switch"][data-css-state="selected"] > [data-css-mark]::before,
+[role="switch"][data-css-state="selected"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"]:hover:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"]:focus:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-state="selected"] > [data-css-mark][data-css-primary]::before, [role="switch"]:not([data-css-state])::before, [role="switch"][data-css-state="normal"]::before,
+[data-css-role="switch"]:not([data-css-state])::before,
+[data-css-role="switch"][data-css-state="normal"]::before {
+  background-color: var(--css-primary-500);
+  border-color: var(--css-primary-900);
+}
+
+[role="checkbox"]:hover:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"]:focus:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:hover:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"]:focus:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::before,
+[role="radio"]:hover:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"]:focus:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-state="selected"] > [data-css-mark]::before,
+[data-css-role="radio"]:hover:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"]:focus:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="selected"] > [data-css-mark]::before, [role="switch"]:hover:not([data-css-state])::before, [role="switch"]:focus:not([data-css-state])::before, [role="switch"][data-css-state="selected"]::before,
+[data-css-role="switch"]:hover:not([data-css-state])::before,
+[data-css-role="switch"]:focus:not([data-css-state])::before,
+[data-css-role="switch"][data-css-state="selected"]::before, [role="switch"]:not([data-css-state]) > [data-css-mark]::before,
+[role="switch"]:not([data-css-state]) > [data-css-mark][data-css-primary]::before, [role="switch"][data-css-state="normal"] > [data-css-mark]::before,
+[role="switch"][data-css-state="normal"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"]:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="switch"]:not([data-css-state]) > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][data-css-state="normal"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-state="normal"] > [data-css-mark][data-css-primary]::before {
+  background-color: var(--css-primary-400);
+  border-color: var(--css-primary-700);
+}
+
+[role="checkbox"]:active:not([data-css-state]) > [data-css-mark]::before,
+[role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:active:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before,
+[role="radio"]:active:not([data-css-state]) > [data-css-mark]::before,
+[role="radio"][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="radio"]:active:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark]::before, [role="switch"]:active:not([data-css-state])::before, [role="switch"][data-css-state="pressed"]::before,
+[data-css-role="switch"]:active:not([data-css-state])::before,
+[data-css-role="switch"][data-css-state="pressed"]::before, [role="switch"]:active:not([data-css-state]) > [data-css-mark]::before,
+[role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::before, [role="switch"][data-css-state="pressed"] > [data-css-mark]::before,
+[role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"]:active:not([data-css-state]) > [data-css-mark]::before,
+[data-css-role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][data-css-state="pressed"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::before {
+  background-color: var(--css-primary-600);
+  border-color: var(--css-primary-800);
+}
+
+[role="checkbox"]:disabled > [data-css-mark]::before,
+[role="checkbox"][aria-disabled] > [data-css-mark]::before,
+[role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="checkbox"]:disabled > [data-css-mark]::before,
+[data-css-role="checkbox"][aria-disabled] > [data-css-mark]::before,
+[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before,
+[role="radio"]:disabled > [data-css-mark]::before,
+[role="radio"][aria-disabled] > [data-css-mark]::before,
+[role="radio"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="radio"]:disabled > [data-css-mark]::before,
+[data-css-role="radio"][aria-disabled] > [data-css-mark]::before,
+[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [data-css-role="switch"][data-css-state="disabled"]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled] [role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after, [role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][disabled] [role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before, [role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark]::after,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::before,
+[data-css-role="switch"][disabled]
+[data-css-role="switch"][aria-disabled]
+[data-css-role="switch"][data-css-state="disabled"] > [data-css-mark][data-css-primary]::after {
+  background-color: var(--css-primary-50);
+  border-color: var(--css-primary-500);
+}
+
 [role="checkbox"],
 [data-css-role="checkbox"],
 [role="radio"],
-[data-css-role="radio"] {
+[data-css-role="radio"],
+[role="switch"],
+[data-css-role="switch"] {
   background: none;
   border: none;
   display: inline-block;
   margin: .5em 0;
   outline: none;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -18,7 +341,11 @@
 [role="radio"] > input[type="checkbox"],
 [role="radio"] > input[type="radio"],
 [data-css-role="radio"] > input[type="checkbox"],
-[data-css-role="radio"] > input[type="radio"] {
+[data-css-role="radio"] > input[type="radio"],
+[role="switch"] > input[type="checkbox"],
+[role="switch"] > input[type="radio"],
+[data-css-role="switch"] > input[type="checkbox"],
+[data-css-role="switch"] > input[type="radio"] {
   /* Hiding native checkbox/radio (when used) */
   display: none;
 }
@@ -26,7 +353,9 @@
 [role="checkbox"] > [data-css-mark],
 [data-css-role="checkbox"] > [data-css-mark],
 [role="radio"] > [data-css-mark],
-[data-css-role="radio"] > [data-css-mark] {
+[data-css-role="radio"] > [data-css-mark],
+[role="switch"] > [data-css-mark],
+[data-css-role="switch"] > [data-css-mark] {
   display: inline-block;
   font-size: 1em;
   position: relative;
@@ -35,14 +364,46 @@
 [role="checkbox"] > [data-css-mark]::before,
 [data-css-role="checkbox"] > [data-css-mark]::before,
 [role="radio"] > [data-css-mark]::before,
-[data-css-role="radio"] > [data-css-mark]::before {
-  border: 2px solid;
-  content: '';
-  display: inline-block;
+[data-css-role="radio"] > [data-css-mark]::before,
+[role="switch"] > [data-css-mark]::before,
+[data-css-role="switch"] > [data-css-mark]::before {
   height: 1em;
+  width: 1em;
+}
+
+[role="checkbox"] > [data-css-mark]::after,
+[data-css-role="checkbox"] > [data-css-mark]::after,
+[role="radio"] > [data-css-mark]::after,
+[data-css-role="radio"] > [data-css-mark]::after,
+[role="switch"] > [data-css-mark]::after,
+[data-css-role="switch"] > [data-css-mark]::after {
+  border: 2px solid transparent;
+  height: 1em;
+  width: 1em;
+}
+
+[role="checkbox"][data-css-size="full"],
+[data-css-role="checkbox"][data-css-size="full"],
+[role="radio"][data-css-size="full"],
+[data-css-role="radio"][data-css-size="full"],
+[role="switch"][data-css-size="full"],
+[data-css-role="switch"][data-css-size="full"] {
+  display: block;
+}
+
+[role="checkbox"],
+[data-css-role="checkbox"],
+[role="radio"],
+[data-css-role="radio"] {
+  overflow: hidden;
+}
+
+[role="checkbox"] > [data-css-mark]::before,
+[data-css-role="checkbox"] > [data-css-mark]::before,
+[role="radio"] > [data-css-mark]::before,
+[data-css-role="radio"] > [data-css-mark]::before {
   text-align: center;
   vertical-align: middle;
-  width: 1em;
 }
 
 [role="checkbox"] > [data-css-mark]::after,
@@ -50,15 +411,9 @@
 [role="radio"] > [data-css-mark]::after,
 [data-css-role="radio"] > [data-css-mark]::after {
   content: '\2714';
-  border: 2px solid transparent;
-  height: 1em;
-  left: 0;
   opacity: 0;
-  position: absolute;
   text-align: center;
-  top: 0;
   transition: 200ms opacity, 200ms line-height;
-  width: 1em;
 }
 
 [role="checkbox"][aria-checked="false"] > [data-css-mark]::after,
@@ -84,95 +439,39 @@
   opacity: 1;
 }
 
-[role="checkbox"][data-css-accent]:hover > [data-css-mark]::before,
-[role="checkbox"][data-css-accent]:focus > [data-css-mark]::before,
-[role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent]:hover > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent]:focus > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
-[role="radio"][data-css-accent]:hover > [data-css-mark]::before,
-[role="radio"][data-css-accent]:focus > [data-css-mark]::before,
-[role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent]:hover > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent]:focus > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::before {
-  background: var(--css-accent-400);
-  border-color: var(--css-accent-700);
-}
-
-[role="checkbox"][data-css-accent]:active > [data-css-mark]::before,
-[role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent]:active > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
-[role="radio"][data-css-accent]:active > [data-css-mark]::before,
-[role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent]:active > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::before {
-  background: var(--css-accent-400);
-  border-color: var(--css-accent-700);
-}
-
-[role="checkbox"][data-css-accent] > [data-css-mark]::before,
-[role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
-[role="radio"][data-css-accent] > [data-css-mark]::before,
-[role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::before {
-  background-color: var(--css-accent-500);
-  border-color: var(--css-accent-900);
-}
-
-[role="checkbox"][data-css-accent]:disabled > [data-css-mark]::before,
-[role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
-[role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent]:disabled > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent][aria-disabled] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
-[role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
-[role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
-[role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent]:disabled > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent][aria-disabled] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-accent][data-css-state="disabled"] > [data-css-mark]::before {
-  background-color: var(--css-accent-50);
-  border-color: var(--css-accent-500);
-}
-
-[role="checkbox"][data-css-accent]:hover > [data-css-mark]::after,
-[role="checkbox"][data-css-accent]:focus > [data-css-mark]::after,
+[role="checkbox"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::after,
+[role="checkbox"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::after,
 [role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
-[data-css-role="checkbox"][data-css-accent]:hover > [data-css-mark]::after,
-[data-css-role="checkbox"][data-css-accent]:focus > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
-[role="radio"][data-css-accent]:hover > [data-css-mark]::after,
-[role="radio"][data-css-accent]:focus > [data-css-mark]::after,
+[role="radio"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::after,
+[role="radio"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::after,
 [role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after,
-[data-css-role="radio"][data-css-accent]:hover > [data-css-mark]::after,
-[data-css-role="radio"][data-css-accent]:focus > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:hover:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:focus:not([data-css-state]) > [data-css-mark]::after,
 [data-css-role="radio"][data-css-accent][data-css-state="selected"] > [data-css-mark]::after {
   color: var(--css-accent-700);
 }
 
-[role="checkbox"][data-css-accent]:active > [data-css-mark]::after,
+[role="checkbox"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::after,
 [role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
-[data-css-role="checkbox"][data-css-accent]:active > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
-[role="radio"][data-css-accent]:active > [data-css-mark]::after,
+[role="radio"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::after,
 [role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after,
-[data-css-role="radio"][data-css-accent]:active > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:active:not([data-css-state]) > [data-css-mark]::after,
 [data-css-role="radio"][data-css-accent][data-css-state="pressed"] > [data-css-mark]::after {
   color: var(--css-accent-900);
 }
 
-[role="checkbox"][data-css-accent] > [data-css-mark]::after,
+[role="checkbox"][data-css-accent]:not([data-css-state]) > [data-css-mark]::after,
 [role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after,
-[data-css-role="checkbox"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="checkbox"][data-css-accent]:not([data-css-state]) > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after,
-[role="radio"][data-css-accent] > [data-css-mark]::after,
+[role="radio"][data-css-accent]:not([data-css-state]) > [data-css-mark]::after,
 [role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after,
-[data-css-role="radio"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="radio"][data-css-accent]:not([data-css-state]) > [data-css-mark]::after,
 [data-css-role="radio"][data-css-accent][data-css-state="normal"] > [data-css-mark]::after {
   color: var(--css-accent-900);
 }
@@ -192,181 +491,125 @@
   color: var(--css-accent-400);
 }
 
-[role="checkbox"]:hover > [data-css-mark]::before,
-[role="checkbox"]:focus > [data-css-mark]::before,
-[role="checkbox"][data-css-state="selected"] > [data-css-mark]::before,
-[data-css-role="checkbox"]:hover > [data-css-mark]::before,
-[data-css-role="checkbox"]:focus > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::before,
-[role="radio"]:hover > [data-css-mark]::before,
-[role="radio"]:focus > [data-css-mark]::before,
-[role="radio"][data-css-state="selected"] > [data-css-mark]::before,
-[data-css-role="radio"]:hover > [data-css-mark]::before,
-[data-css-role="radio"]:focus > [data-css-mark]::before,
-[data-css-role="radio"][data-css-state="selected"] > [data-css-mark]::before {
-  background: var(--css-primary-400);
-  border-color: var(--css-primary-700);
-}
-
-[role="checkbox"]:active > [data-css-mark]::before,
-[role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before,
-[data-css-role="checkbox"]:active > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::before,
-[role="radio"]:active > [data-css-mark]::before,
-[role="radio"][data-css-state="pressed"] > [data-css-mark]::before,
-[data-css-role="radio"]:active > [data-css-mark]::before,
-[data-css-role="radio"][data-css-state="pressed"] > [data-css-mark]::before {
-  background: var(--css-primary-400);
-  border-color: var(--css-primary-700);
-}
-
-[role="checkbox"] > [data-css-mark]::before,
-[role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
-[data-css-role="checkbox"] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::before,
-[role="radio"] > [data-css-mark]::before,
-[role="radio"][data-css-state="normal"] > [data-css-mark]::before,
-[data-css-role="radio"] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-state="normal"] > [data-css-mark]::before {
-  background-color: var(--css-primary-500);
-  border-color: var(--css-primary-900);
-}
-
-[role="checkbox"]:disabled > [data-css-mark]::before,
-[role="checkbox"][aria-disabled] > [data-css-mark]::before,
-[role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="checkbox"]:disabled > [data-css-mark]::before,
-[data-css-role="checkbox"][aria-disabled] > [data-css-mark]::before,
-[data-css-role="checkbox"][data-css-state="disabled"] > [data-css-mark]::before,
-[role="radio"]:disabled > [data-css-mark]::before,
-[role="radio"][aria-disabled] > [data-css-mark]::before,
-[role="radio"][data-css-state="disabled"] > [data-css-mark]::before,
-[data-css-role="radio"]:disabled > [data-css-mark]::before,
-[data-css-role="radio"][aria-disabled] > [data-css-mark]::before,
-[data-css-role="radio"][data-css-state="disabled"] > [data-css-mark]::before {
-  background-color: var(--css-primary-50);
-  border-color: var(--css-primary-500);
-}
-
-[role="checkbox"]:hover > [data-css-mark]::after, [role="checkbox"]:hover > [data-css-mark][data-css-primary]::after,
-[role="checkbox"]:focus > [data-css-mark]::after,
-[role="checkbox"]:focus > [data-css-mark][data-css-primary]::after,
+[role="checkbox"]:hover:not([data-css-state]) > [data-css-mark]::after, [role="checkbox"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[role="checkbox"]:focus:not([data-css-state]) > [data-css-mark]::after,
+[role="checkbox"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [role="checkbox"][data-css-state="selected"] > [data-css-mark]::after,
 [role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="checkbox"]:hover > [data-css-mark]::after,
-[data-css-role="checkbox"]:hover > [data-css-mark][data-css-primary]::after,
-[data-css-role="checkbox"]:focus > [data-css-mark]::after,
-[data-css-role="checkbox"]:focus > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:hover:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="checkbox"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:focus:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="checkbox"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
-[role="radio"]:hover > [data-css-mark]::after,
-[role="radio"]:hover > [data-css-mark][data-css-primary]::after,
-[role="radio"]:focus > [data-css-mark]::after,
-[role="radio"]:focus > [data-css-mark][data-css-primary]::after,
+[role="radio"]:hover:not([data-css-state]) > [data-css-mark]::after,
+[role="radio"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[role="radio"]:focus:not([data-css-state]) > [data-css-mark]::after,
+[role="radio"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [role="radio"][data-css-state="selected"] > [data-css-mark]::after,
 [role="radio"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="radio"]:hover > [data-css-mark]::after,
-[data-css-role="radio"]:hover > [data-css-mark][data-css-primary]::after,
-[data-css-role="radio"]:focus > [data-css-mark]::after,
-[data-css-role="radio"]:focus > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:hover:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="radio"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:focus:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="radio"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [data-css-role="radio"][data-css-state="selected"] > [data-css-mark]::after,
 [data-css-role="radio"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after {
   color: var(--css-primary-700);
 }
 
-[role="checkbox"]:hover > [data-css-mark][data-css-accent]::after, [role="checkbox"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
-[role="checkbox"]:focus > [data-css-mark][data-css-accent]::after,
-[role="checkbox"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="checkbox"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[role="checkbox"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
 [role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="checkbox"]:hover > [data-css-mark][data-css-accent]::after,
-[data-css-role="checkbox"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="checkbox"]:focus > [data-css-mark][data-css-accent]::after,
-[data-css-role="checkbox"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
 [data-css-role="checkbox"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[role="radio"]:hover > [data-css-mark][data-css-accent]::after,
-[role="radio"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
-[role="radio"]:focus > [data-css-mark][data-css-accent]::after,
-[role="radio"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[role="radio"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[role="radio"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
 [role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="radio"]:hover > [data-css-mark][data-css-accent]::after,
-[data-css-role="radio"]:hover > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="radio"]:focus > [data-css-mark][data-css-accent]::after,
-[data-css-role="radio"]:focus > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [data-css-role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
 [data-css-role="radio"][data-css-state="selected"] > [data-css-mark][data-css-accent][data-css-primary]::after {
   color: var(--css-accent-700);
 }
 
-[role="checkbox"]:active > [data-css-mark]::after, [role="checkbox"]:active > [data-css-mark][data-css-primary]::after,
+[role="checkbox"]:active:not([data-css-state]) > [data-css-mark]::after, [role="checkbox"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [role="checkbox"][data-css-state="pressed"] > [data-css-mark]::after,
 [role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="checkbox"]:active > [data-css-mark]::after,
-[data-css-role="checkbox"]:active > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:active:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="checkbox"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
-[role="radio"]:active > [data-css-mark]::after,
-[role="radio"]:active > [data-css-mark][data-css-primary]::after,
+[role="radio"]:active:not([data-css-state]) > [data-css-mark]::after,
+[role="radio"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [role="radio"][data-css-state="pressed"] > [data-css-mark]::after,
 [role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="radio"]:active > [data-css-mark]::after,
-[data-css-role="radio"]:active > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:active:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="radio"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [data-css-role="radio"][data-css-state="pressed"] > [data-css-mark]::after,
 [data-css-role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after {
   color: var(--css-primary-900);
 }
 
-[role="checkbox"]:active > [data-css-mark][data-css-accent]::after, [role="checkbox"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="checkbox"]:active:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
 [role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="checkbox"]:active > [data-css-mark][data-css-accent]::after,
-[data-css-role="checkbox"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:active:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
 [data-css-role="checkbox"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[role="radio"]:active > [data-css-mark][data-css-accent]::after,
-[role="radio"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[role="radio"]:active:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
 [role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="radio"]:active > [data-css-mark][data-css-accent]::after,
-[data-css-role="radio"]:active > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:active:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [data-css-role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
 [data-css-role="radio"][data-css-state="pressed"] > [data-css-mark][data-css-accent][data-css-primary]::after {
   color: var(--css-accent-900);
 }
 
-[role="checkbox"] > [data-css-mark]::after, [role="checkbox"] > [data-css-mark][data-css-primary]::after,
+[role="checkbox"]:not([data-css-state]) > [data-css-mark]::after, [role="checkbox"]:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [role="checkbox"][data-css-state="normal"] > [data-css-mark]::after,
 [role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="checkbox"] > [data-css-mark]::after,
-[data-css-role="checkbox"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="checkbox"]:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="checkbox"]:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
-[role="radio"] > [data-css-mark]::after,
-[role="radio"] > [data-css-mark][data-css-primary]::after,
+[role="radio"]:not([data-css-state]) > [data-css-mark]::after,
+[role="radio"]:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [role="radio"][data-css-state="normal"] > [data-css-mark]::after,
 [role="radio"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
-[data-css-role="radio"] > [data-css-mark]::after,
-[data-css-role="radio"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="radio"]:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="radio"]:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
 [data-css-role="radio"][data-css-state="normal"] > [data-css-mark]::after,
 [data-css-role="radio"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after {
   color: var(--css-primary-900);
 }
 
-[role="checkbox"] > [data-css-mark][data-css-accent]::after, [role="checkbox"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="checkbox"]:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="checkbox"]:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
 [role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="checkbox"] > [data-css-mark][data-css-accent]::after,
-[data-css-role="checkbox"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="checkbox"]:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="checkbox"]:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
 [data-css-role="checkbox"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[role="radio"] > [data-css-mark][data-css-accent]::after,
-[role="radio"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[role="radio"]:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[role="radio"]:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
 [role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after,
-[data-css-role="radio"] > [data-css-mark][data-css-accent]::after,
-[data-css-role="radio"] > [data-css-mark][data-css-accent][data-css-primary]::after,
+[data-css-role="radio"]:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="radio"]:not([data-css-state]) > [data-css-mark][data-css-accent][data-css-primary]::after,
 [data-css-role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
 [data-css-role="radio"][data-css-state="normal"] > [data-css-mark][data-css-accent][data-css-primary]::after {
   color: var(--css-accent-900);
@@ -479,13 +722,6 @@
   font-size: 6em;
 }
 
-[role="checkbox"][data-css-size="full"],
-[data-css-role="checkbox"][data-css-size="full"],
-[role="radio"][data-css-size="full"],
-[data-css-role="radio"][data-css-size="full"] {
-  display: block;
-}
-
 [role="checkbox"][data-css-size="full"] > [data-css-mark]::before, [role="checkbox"][data-css-size="full"] > [data-css-mark]::after,
 [data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::before,
 [data-css-role="checkbox"][data-css-size="full"] > [data-css-mark]::after,
@@ -524,5 +760,186 @@
   font-size: .5em;
   left: 0.25em;
   top: 0.575em;
+}
+
+[role="switch"]::before,
+[data-css-role="switch"]::before {
+  border-radius: 1em;
+  height: 1em;
+  width: 3em;
+}
+
+[role="switch"]:hover:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="switch"]:focus:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="switch"][data-css-state="selected"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"]:hover:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"]:focus:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][data-css-state="selected"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-state="selected"] > [data-css-mark][data-css-accent]::after {
+  background-color: var(--css-accent-100);
+  border-color: var(--css-accent-400);
+}
+
+[role="switch"]:hover:not([data-css-state]) > [data-css-mark]::after,
+[role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::after, [role="switch"]:focus:not([data-css-state]) > [data-css-mark]::after,
+[role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::after, [role="switch"][data-css-state="selected"] > [data-css-mark]::after,
+[role="switch"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"]:hover:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="switch"]:hover:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"]:focus:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="switch"]:focus:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][data-css-state="selected"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-state="selected"] > [data-css-mark][data-css-primary]::after {
+  background-color: var(--css-primary-100);
+  border-color: var(--css-primary-400);
+}
+
+[role="switch"]:active:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="switch"][data-css-state="pressed"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"]:active:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][data-css-state="pressed"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-accent]::after {
+  background-color: var(--css-accent-700);
+  border-color: var(--css-accent-900);
+}
+
+[role="switch"]:active:not([data-css-state]) > [data-css-mark]::after,
+[role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::after, [role="switch"][data-css-state="pressed"] > [data-css-mark]::after,
+[role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"]:active:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="switch"]:active:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][data-css-state="pressed"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-state="pressed"] > [data-css-mark][data-css-primary]::after {
+  background-color: var(--css-primary-700);
+  border-color: var(--css-primary-900);
+}
+
+[role="switch"]:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[role="switch"]:not([data-css-state]) > [data-css-mark][data-css-accent]::after, [role="switch"][data-css-state="normal"][data-css-accent] > [data-css-mark]::after,
+[role="switch"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"]:not([data-css-state])[data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"]:not([data-css-state]) > [data-css-mark][data-css-accent]::after,
+[data-css-role="switch"][data-css-state="normal"][data-css-accent] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-state="normal"] > [data-css-mark][data-css-accent]::after {
+  background-color: var(--css-accent-200);
+  border-color: var(--css-accent-500);
+}
+
+[role="switch"]:not([data-css-state]) > [data-css-mark]::after,
+[role="switch"]:not([data-css-state]) > [data-css-mark][data-css-primary]::after, [role="switch"][data-css-state="normal"] > [data-css-mark]::after,
+[role="switch"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"]:not([data-css-state]) > [data-css-mark]::after,
+[data-css-role="switch"]:not([data-css-state]) > [data-css-mark][data-css-primary]::after,
+[data-css-role="switch"][data-css-state="normal"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-state="normal"] > [data-css-mark][data-css-primary]::after {
+  background-color: var(--css-primary-200);
+  border-color: var(--css-primary-500);
+}
+
+[role="switch"] > [data-css-mark],
+[data-css-role="switch"] > [data-css-mark] {
+  padding-left: 4.5em;
+  min-height: 1.75em;
+}
+
+[role="switch"] > [data-css-mark]::before,
+[data-css-role="switch"] > [data-css-mark]::before {
+  border-radius: 1em;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.2s 0.05s;
+  width: 0em;
+}
+
+[role="switch"] > [data-css-mark]::after,
+[data-css-role="switch"] > [data-css-mark]::after {
+  border-radius: 1em;
+  line-height: 1em;
+  height: 1em;
+  left: 0;
+  opacity: 1;
+  transition: left 0.3s;
+  width: 1em;
+}
+
+[role="switch"] > input:checked + [data-css-mark]::before,
+[role="switch"][aria-checked="true"] > [data-css-mark]::before,
+[data-css-role="switch"] > input:checked + [data-css-mark]::before,
+[data-css-role="switch"][aria-checked="true"] > [data-css-mark]::before {
+  opacity: 1;
+  width: 3em;
+}
+
+[role="switch"] > input:checked + [data-css-mark]::after,
+[role="switch"][aria-checked="true"] > [data-css-mark]::after,
+[data-css-role="switch"] > input:checked + [data-css-mark]::after,
+[data-css-role="switch"][aria-checked="true"] > [data-css-mark]::after {
+  left: 2em;
+}
+
+[role="switch"][data-css-size="small"] > [data-css-mark],
+[data-css-role="switch"][data-css-size="small"] > [data-css-mark] {
+  padding-left: 3em;
+}
+
+[role="switch"][data-css-size="small"]::before,
+[role="switch"][data-css-size="small"] > [data-css-mark]::before,
+[role="switch"][data-css-size="small"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-size="small"]::before,
+[data-css-role="switch"][data-css-size="small"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-size="small"] > [data-css-mark]::after {
+  font-size: .75em;
+}
+
+[role="switch"][data-css-size="big"] > [data-css-mark],
+[data-css-role="switch"][data-css-size="big"] > [data-css-mark] {
+  padding-left: 7em;
+  line-height: 2.25em;
+  min-height: 2.5em;
+}
+
+[role="switch"][data-css-size="big"]::before,
+[role="switch"][data-css-size="big"] > [data-css-mark]::before,
+[role="switch"][data-css-size="big"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-size="big"]::before,
+[data-css-role="switch"][data-css-size="big"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-size="big"] > [data-css-mark]::after {
+  font-size: 2em;
+}
+
+[role="switch"][data-css-size="huge"] > [data-css-mark],
+[data-css-role="switch"][data-css-size="huge"] > [data-css-mark] {
+  padding-left: 13em;
+  line-height: 4.25em;
+  min-height: 4.5em;
+}
+
+[role="switch"][data-css-size="huge"]::before,
+[role="switch"][data-css-size="huge"] > [data-css-mark]::before,
+[role="switch"][data-css-size="huge"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-size="huge"]::before,
+[data-css-role="switch"][data-css-size="huge"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-size="huge"] > [data-css-mark]::after {
+  font-size: 4em;
+}
+
+[role="switch"][data-css-size="full"] > [data-css-mark],
+[data-css-role="switch"][data-css-size="full"] > [data-css-mark] {
+  padding-left: 16em;
+  line-height: 5.25em;
+  min-height: 5.5em;
+}
+
+[role="switch"][data-css-size="full"]::before,
+[role="switch"][data-css-size="full"] > [data-css-mark]::before,
+[role="switch"][data-css-size="full"] > [data-css-mark]::after,
+[data-css-role="switch"][data-css-size="full"]::before,
+[data-css-role="switch"][data-css-size="full"] > [data-css-mark]::before,
+[data-css-role="switch"][data-css-size="full"] > [data-css-mark]::after {
+  font-size: 5em;
 }
 /*# sourceMappingURL=check.css.map */
