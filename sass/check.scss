@@ -74,6 +74,7 @@
     margin: .5em 0;
     outline:  none;
     padding: 0;
+    vertical-align: middle;
 
     > input[type="checkbox"],
     > input[type="radio"]
@@ -88,6 +89,7 @@
         display: inline-block;
         font-size: 1em;
         position: relative;
+        vertical-align: middle;
 
         // Background
         &::before
@@ -408,11 +410,14 @@
 [role="switch"],
 [data-css-role="switch"]
 {
+    padding-top: .25em;
+    
     // Disabled background bar
     &::before
     {
         border-radius: 1em;
         height: 1em;
+        margin-top: .25em;
         width: 3em;
 
         @extend %check-absolute-pseudo;
@@ -551,8 +556,8 @@
             }
         }
     }
-    &[disabled]
-    &[aria-disabled]
+    &[disabled],
+    &[aria-disabled],
     &[data-css-state="disabled"]
     {
         // Accent color

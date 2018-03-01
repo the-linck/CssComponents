@@ -2,7 +2,7 @@
 [data-css-role="link"],
 a:not([role]):not([data-css-role]) {
   /* Basic Component rules */
-  color: var(--css-primary-600);
+  color: var(--css-primary-800);
   cursor: pointer;
   display: inline;
   font-size: 1.125em;
@@ -40,7 +40,7 @@ a:not([role]):not([data-css-role])[data-css-accent],
 [data-css-accent]
 a:not([role]):not([data-css-role]) {
   /* Accent color */
-  color: var(--css-accent-600);
+  color: var(--css-accent-800);
 }
 
 [role="link"][data-css-accent]:visited,

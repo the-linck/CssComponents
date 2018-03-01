@@ -40,7 +40,7 @@
         &[data-css-group="lines"][role=group]
         {
             // All lines number
-            *::before
+            >*::before
             {
                 color: var(--css-primary-600);
                 content: counters(code-lines, ".", decimal-leading-zero);
@@ -50,13 +50,13 @@
                 padding-right: 1em;
             }
             // First line number
-            :first-child::before
+            >:first-child::before
             {
                 padding-top:  0.5em;
             }
 
             // Last line
-            :last-child
+            >:last-child
             {
                 align-items: stretch;
                 flex-wrap:  wrap;
@@ -105,7 +105,7 @@
     &[data-css-primary],
     & [data-css-primary]
     {
-        color: var(--css-primary-200);
+        color: var(--css-primary-100);
     }
 
 
@@ -115,11 +115,16 @@
         /* Support for accent color */
         background-color: var(--css-accent-900);
         border-color: var(--css-accent-700);
+
+        > [itemprop="text"][data-css-group="lines"][role=group] >*::before
+        {
+            color: var(--css-accent-600);
+        }
     }
     &[data-css-accent],
     & [data-css-accent]
     {
-        color: var(--css-accent-200);
+        color: var(--css-accent-100);
     }
 }
 
