@@ -1,65 +1,3 @@
-// Absolutely positioned pseudo-elements
-%check-absolute-pseudo
-{
-    left: 0;
-    position: absolute;
-    top: 0;
-}
-
-// Pseudo element for interactive element
-%check-interactive-pseudo
-{
-    border: 2px solid;
-    content: '';
-    display: inline-block;
-}
-
-// Accent colors
-%check-base-button-accent
-{
-    background-color: var(--css-accent-500);
-    border-color: var(--css-accent-900);
-}
-%check-selected-button-accent
-{
-    background-color: var(--css-accent-400);
-    border-color: var(--css-accent-700);
-}
-%check-pressed-button-accent
-{
-    background-color: var(--css-accent-600);
-    border-color: var(--css-accent-800);
-}
-%check-disabled-button-accent
-{
-    background-color: var(--css-accent-50);
-    border-color: var(--css-accent-500);
-}
-
-
-// Primary colors
-%check-base-button-primary
-{
-    background-color: var(--css-primary-500);
-    border-color: var(--css-primary-900);
-}
-%check-selected-button-primary
-{
-    background-color: var(--css-primary-400);
-    border-color: var(--css-primary-700);
-}
-%check-pressed-button-primary
-{
-    background-color: var(--css-primary-600);
-    border-color: var(--css-primary-800);
-}
-%check-disabled-button-primary
-{
-    background-color: var(--css-primary-50);
-    border-color: var(--css-primary-500);
-}
-
-
 // Rules shared by all module's components
 [role="checkbox"],
 [data-css-role="checkbox"],
@@ -699,4 +637,66 @@
             font-size: 5em;
         }
     }
+}
+
+
+
+// Absolutely positioned pseudo-elements
+%check-absolute-pseudo
+{
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+// Pseudo element for interactive element
+%check-interactive-pseudo
+{
+    border: 2px solid;
+    content: '';
+    display: inline-block;
+}
+// Accent colors
+%check-base-button-accent
+{
+    background-color: var(--css-accent-500);
+    border-color: var(--css-accent-900);
+}
+%check-selected-button-accent
+{
+    background-color: var(--css-accent-400);
+    border-color: var(--css-accent-700);
+}
+%check-pressed-button-accent
+{
+    background-color: var(--css-accent-600);
+    border-color: var(--css-accent-800);
+}
+%check-disabled-button-accent
+{
+    background-color: var(--css-accent-50);
+    border-color: var(--css-accent-500);
+}
+
+
+
+// Primary colors
+%check-base-button-primary
+{
+    background-color: var(--css-primary-500);
+    border-color: var(--css-primary-900);
+}
+%check-selected-button-primary
+{
+    background-color: var(--css-primary-400);
+    border-color: var(--css-primary-700);
+}
+%check-pressed-button-primary
+{
+    background-color: var(--css-primary-600);
+    border-color: var(--css-primary-800);
+}
+%check-disabled-button-primary
+{
+    background-color: var(--css-primary-50);
+    border-color: var(--css-primary-500);
 }

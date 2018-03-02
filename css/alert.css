@@ -24,7 +24,7 @@
 [role="alert"][data-css-type="info"],
 [data-css-role="alert"][data-css-type="info"] {
   /* Information alert */
-  background-color: var(--css-primary-50);
+  background-color: var(--css-white);
   border-color: var(--css-primary-100);
   color: var(--css-primary-800);
 }
@@ -46,7 +46,6 @@
 [role="alert"][data-css-type="info"][data-css-accent],
 [data-css-role="alert"][data-css-type="info"][data-css-accent] {
   /* Information alert in accent color */
-  background-color: var(--css-accent-50);
   border-color: var(--css-accent-100);
   color: var(--css-accent-800);
 }

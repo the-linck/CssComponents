@@ -57,9 +57,68 @@ body {
 h1, h2, h3, h4, h5, h6,
 [data-css-role="heading"]
 [role="heading"] {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 1.875rem;
   text-decoration: none;
+}
+
+h1[data-css-accent],
+[data-css-accent] h1, h2[data-css-accent],
+[data-css-accent] h2, h3[data-css-accent],
+[data-css-accent] h3, h4[data-css-accent],
+[data-css-accent] h4, h5[data-css-accent],
+[data-css-accent] h5, h6[data-css-accent],
+[data-css-accent] h6,
+[data-css-role="heading"]
+[role="heading"][data-css-accent],
+[data-css-accent]
+[data-css-role="heading"]
+[role="heading"] {
+  color: var(--css-accent-600);
+}
+
+h1, h1[data-css-primary],
+[data-css-primary] h1, h2, h2[data-css-primary],
+[data-css-primary] h2, h3, h3[data-css-primary],
+[data-css-primary] h3, h4, h4[data-css-primary],
+[data-css-primary] h4, h5, h5[data-css-primary],
+[data-css-primary] h5, h6, h6[data-css-primary],
+[data-css-primary] h6,
+[data-css-role="heading"]
+[role="heading"],
+[data-css-role="heading"]
+[role="heading"][data-css-primary],
+[data-css-primary]
+[data-css-role="heading"]
+[role="heading"] {
+  color: var(--css-primary-600);
+}
+
+h1 {
+  font-size: 2.125rem;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: .875rem;
+}
+
+h6 {
+  font-size: .75rem;
 }
 
 /* Floats and clears */

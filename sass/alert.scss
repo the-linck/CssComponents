@@ -28,7 +28,7 @@
     &[data-css-type="info"]
     {
         /* Information alert */
-        background-color: var(--css-primary-50);
+        background-color: var(--css-white);
         border-color: var(--css-primary-100);
         color: var(--css-primary-800);
 
@@ -51,7 +51,6 @@
         &[data-css-accent]
         {
             /* Information alert in accent color */
-            background-color: var(--css-accent-50);
             border-color: var(--css-accent-100);
             color: var(--css-accent-800);
 

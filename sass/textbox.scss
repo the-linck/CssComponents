@@ -1,3 +1,132 @@
-[data-css-role="textbox"] {
-    display: block;
+%text-margin-adjust
+{
+    margin: 0 .5em;
+    max-width: 100%;
+    max-width: calc(100% - 1em);
+}
+
+// Textbox in wrapper (to label and other functionalities)
+[data-css-group="textbox"]
+{
+    display: inline-flex;
+    flex-direction: column-reverse;
+    @extend %text-margin-adjust;
+
+    > label {
+        color: var(--css-primary-700);
+        font-size: .75rem;
+        order: 0;
+        transition: color .3s;
+    }
+}
+
+// Styling all text components
+[role="textbox"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="url"],
+input[type="week"],
+textarea
+{
+    background: var(--css-primary-100);
+    border: 0.1rem solid var(--css-primary-600);
+    box-shadow: 0 0 transparent;
+    color: var(--css-primary-900);
+    cursor: text;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75rem;
+    min-width: 10em;
+    outline: none;
+    padding: .75rem .25em .5rem .25em;
+    transition: border-color .3s, box-shadow .3s, color .3s, background .3s;
+    vertical-align: bottom;
+
+    &::placeholder,
+    &::-webkit-input-placeholder
+    {
+        color: var(--css-primary-600);
+        transition: color .25s;
+    }
+
+    // With wrapper
+    [data-css-group="textbox"] > &
+    {
+        display: block;
+        order: 0;
+        margin: 0;
+        padding-top: .5rem;
+    }
+
+    // States
+    &,
+    [data-css-group="textbox"] > &
+    {
+        &:hover,
+        &:focus
+        {
+            background-color: var(--css-primary-50);
+            color: var(--css-black);
+            border-color: var(--css-primary-400);
+            box-shadow: 0 0.1rem var(--css-primary-400);
+
+            &::placeholder,
+            &::-webkit-input-placeholder
+            {
+                color: var(--css-primary-600);
+            }
+
+            + label {
+                color: var(--css-primary-500);
+            }
+        }
+    }
+}
+
+// Only textbox components
+[role="textbox"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="url"],
+input[type="week"]
+{
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    @extend %text-margin-adjust;
+}
+
+// Only textarea components
+[role="textbox"][aria-multiline="true"],
+textarea
+{
+    margin: 0;
+    max-width: 100%;
+    padding: .75rem;
+}
+
+
+// Only non native text component
+[role="textbox"]:not([aria-multiline="true"])
+{
+    height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

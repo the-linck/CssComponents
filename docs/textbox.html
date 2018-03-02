@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Textbox Demos</title>
+    <!-- Importing all components and default primary color palette -->
+    <link href="../css/complete.css" rel="stylesheet"/>
+    <!-- Importing accent color pallete -->
+    <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
+</head>
+<body>
+    <header role="toolbar">
+        <div data-css-role="heading">
+            <a href="index.html">Demos</a>
+            &rarr;
+            <strong id="texbox_demos">Textbox Component</strong>
+        </div>
+    </header>
+
+    <article aria-label="Button Component" itemscope itemtype="http://schema.org/APIReference">
+        <header>
+            <h1>The Textbox Component</h1>
+        </header>
+
+        <!-- Table of contents -->        
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement" id="contents">
+            <header>
+                <h3 data-css-role="heading">Contents</h3>
+            </header>
+
+            <ol>
+                <li>
+                    <a itemprop="url" href="#plain">
+                        <span itemprop="name">Textbox</span>
+                    </a>
+                </li>
+                <li data-css-accent>
+                    <a itemprop="url" href="#accent">
+                        <span itemprop="name">Accent Colors</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+        <!-- /Table of contents -->
+
+        <!-- Contents -->
+        <div itemprop="articleBody">
+            <!-- Plain alert -->
+            <section aria-labelledby="plain" data-css-chapter>
+                <header id="plain">
+                    <h2 data-css-role="heading">Textbox</h2>
+                </header>
+
+                <p>
+                </p>
+
+                <!-- Demo -->
+                <div>
+                    <div data-css-group="textbox">
+                        <input id="plain_label_single" type="text">
+                        <label for="plain_label_single">Native texbox</label>
+                    </div>
+
+                    <div data-css-group="textbox">
+                        <div contenteditable="true" id="plain_label_multi" placeholder="Non native" role="textbox"></div>
+                        <label for="plain_label_multi">Non native</label>
+                    </div>
+                </div>
+                <!-- /Demo -->
+
+                <!-- Demo's source code exibition -->
+                <details open itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <span>&lt;div <strong>data-css-group="textbox"</strong>&gt;</span>
+                        <span>&emsp;&lt;input id="plain_label_single" <strong data-css-accent>type="text"</strong>&gt;</span>
+                        <span>&emsp;&lt;label for="plain_label_single"&gt;Native texbox&lt;/label&gt;</span>
+                        <span>&lt;/div&gt;</span>
+                        <span></span>
+                        <span>&lt;div <strong>data-css-group="textbox"</strong>&gt;</span>
+                        <span>&emsp;&lt;div contenteditable="true" id="plain_label_multi" placeholder="Non native" <strong data-css-accent>role="textbox"</strong>&gt;</span>
+                        <span>&lt;/div&gt;</span>
+                        <span>&emsp;&lt;label for="plain_label_multi"&gt;Non native&lt;/label&gt;</span>
+                        <span>&lt;/div&gt;</span>
+                    </code>
+                </details>
+                <!-- /Demo's source code exibition -->
+
+                <!-- Subchapters -->
+                <div role="group" data-css-group="chapters">
+                    <!-- Alert types -->
+                    <section aria-labelledby="types" data-css-chapter>
+                        <header id="types">
+                            <h3 data-css-role="heading">Specific Types</h3>
+                        </header>
+
+                        <p>
+                            We also provide four specialized types of alerts for using in specific cases in you application.<br>
+                            They are all chosen from the <strong>data-css-type</strong> attribute values:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>info</strong><br>
+                                Just some information that may be useful to the user, like a hint.
+                            </li>
+                            <li>
+                                <strong>success</strong><br>
+                                Some operation finished with no problem. 
+                            </li>
+                            <li>
+                                <strong>warning</strong><br>
+                                There mith be a problem
+                            </li>
+                            <li>
+                                <strong>error</strong><br>
+                                Something gone wrong
+                            </li>
+                        </ul>
+
+                        <!-- Demo -->
+                        <div>
+                            <div data-css-type="info" role="alert">
+                                Just to let you know.
+                            </div>
+                            <div data-css-type="success" role="alert">
+                                It's all right.
+                            </div>
+                            <div data-css-type="warning" role="alert">
+                                But that may be dangerous.
+                            </div>
+                            <div data-css-type="error" role="alert">
+                                OH MY! WHAT happened here?
+                            </div>
+                        </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo's source code exibition -->
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" itemprop="text">
+                                <span data-css-line>
+                                    &lt;div <strong>data-css-type=&quot;info&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;Just to let you know.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;div <strong>data-css-type=&quot;success&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;It's all right.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;div <strong>data-css-type=&quot;warning&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;But that may be dangerous.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;div <strong>data-css-type=&quot;error&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;OH MY! WHAT happened here?
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                            </code>
+                        </details>
+                        <!-- /Demo's source code exibition -->
+                    </section>
+                    <!-- /Alert types -->
+
+                    <!-- Alert icons -->
+                    <section aria-labelledby="icons">
+                        <header id="icons">
+                            <h3 data-css-role="heading">Icons</h3>
+                        </header>
+
+                        <p>
+                            The <strong>data-css-icon</strong> allows to use some default icons for the specialized alert types:
+                        </p>
+
+                        <!-- Demo -->
+                        <div>
+                            <div data-css-type="info" data-css-icon role="alert">
+                                Just one attribute.
+                            </div>
+                            <div data-css-type="success" data-css-icon role="alert">
+                                Nothing wrong 'til now.
+                            </div>
+                            <div data-css-type="warning" data-css-icon role="alert">
+                                Are you certain?
+                            </div>
+                            <div data-css-type="error" data-css-icon role="alert">
+                                Somehing bad just happened.
+                            </div>
+                        </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo's source code exibition -->
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" itemprop="text">
+                                <span data-css-line>
+                                    &lt;div data-css-type=&quot;info&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;Just to let you know.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;div data-css-type=&quot;success&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;It's all right.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;div data-css-type=&quot;warning&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;But that may be dangerous.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                                <span data-css-line>
+                                    &lt;div data-css-type=&quot;error&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                </span>
+                                <span data-css-line>
+                                    &emsp;OH MY! SH1T happened here.
+                                </span>
+                                <span data-css-line>
+                                    &lt;/div&gt;
+                                </span>
+                            </code>
+                        </details>
+                        <!-- /Demo's source code exibition -->
+                    </section>
+                    <!-- /Alert icons -->
+                </div>
+                <!-- /Subchapters -->
+            </section>
+            <!-- /Plain alert -->
+
+            <!-- Accent colors -->
+            <section data-css-accent data-css-chapter aria-labelledby="accent">
+                <header id="accent">
+                    <h3 data-css-role="heading">Accent Colors</h3>
+                </header>
+
+                <p>
+                    The <strong>data-css-accent</strong> attribute allows to use your chosen accent color for all alert types:
+                </p>
+                
+                <!-- Demo -->
+                <div>
+                    <div data-css-accent role="alert">
+                        Common
+                    </div>
+                    <div data-css-accent data-css-type="info" data-css-icon role="alert">
+                        Info
+                    </div>
+                    <div data-css-accent data-css-type="success" data-css-icon role="alert">
+                        Success
+                    </div>
+                    <div data-css-accent data-css-type="warning" data-css-icon role="alert">
+                        Warning
+                    </div>
+                    <div data-css-accent data-css-type="error" data-css-icon role="alert">
+                        Error
+                    </div>
+                </div>
+                <!-- /Demo -->
+
+                <!-- Demo's source code exibition -->
+                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                    <summary>
+                        <span itemprop="description">Example:</span>
+                        <span data-css-float="right">
+                            <span itemprop="programmingLanguage">HTML</span>
+                            <span itemprop="codeSampleType">inline code</span>
+                        </span>
+                    </summary>
+                    <code class="language-html" itemprop="text">
+                        <span data-css-line>
+                            &lt;div data-css-accent role=&quot;alert&quot;&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;Common
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;info&quot; data-css-icon role=&quot;alert&quot;&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;Info
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;success&quot; data-css-icon role=&quot;alert&quot;&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;Success
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;warning&quot; data-css-icon role=&quot;alert&quot;&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;Warning
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                        <span data-css-line>
+                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;error&quot; data-css-icon role=&quot;alert&quot;&gt;
+                        </span>
+                        <span data-css-line>
+                            &emsp;Error
+                        </span>
+                        <span data-css-line>
+                            &lt;/div&gt;
+                        </span>
+                    </code>
+                </details>
+                <!-- /Demo's source code exibition -->
+            </section>
+            <!-- /Accent colors -->
+        </div>
+        <!-- /Contents -->
+    </article>
+</body>
+</html>
