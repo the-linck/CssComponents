@@ -201,6 +201,7 @@
   left: -0.25em;
   left: calc(-0.25em + 2px);
   transform: rotate(45deg) translateX(-50%);
+  z-index: -10;
 }
 
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"]::after,

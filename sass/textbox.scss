@@ -10,6 +10,7 @@
 {
     display: inline-flex;
     flex-direction: column-reverse;
+    vertical-align: bottom;
     @extend %text-margin-adjust;
 
     > label {

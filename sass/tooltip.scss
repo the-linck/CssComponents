@@ -177,6 +177,7 @@
                     left: -0.25em;
                     left: calc(-0.25em + 2px);
                     transform: rotate(45deg) translateX(-50%);
+                    z-index: -10;
                 }
                 
                 // Transparent hoverable area

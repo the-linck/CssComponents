@@ -19,6 +19,7 @@ input[type="week"] {
 [data-css-group="textbox"] {
   display: inline-flex;
   flex-direction: column-reverse;
+  vertical-align: bottom;
 }
 
 [data-css-group="textbox"] > label {
