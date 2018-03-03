@@ -43,10 +43,8 @@ input[type="text"],
 input[type="url"],
 input[type="week"],
 textarea {
-  background: var(--css-primary-100);
-  border: 0.1rem solid var(--css-primary-600);
+  border: 0.1rem solid;
   box-shadow: 0 0 transparent;
-  color: var(--css-primary-900);
   cursor: text;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
@@ -56,6 +54,9 @@ textarea {
   padding: .75rem .25em .5rem .25em;
   transition: border-color .3s, box-shadow .3s, color .3s, background .3s;
   vertical-align: bottom;
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
 }
 
 [role="textbox"]::placeholder, [role="textbox"]::-webkit-input-placeholder,

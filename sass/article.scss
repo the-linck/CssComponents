@@ -85,17 +85,9 @@ article
                         }
                     }
 
-                    // Subitem
-                    li
-                    {
-                        &:last-child>a
-                        {
-                            padding-bottom: 0.5em;
-                        }
-                        // Subitem link
-                        a {
-                            padding: 0.25em 1em;    
-                        }
+                    // Subitem link
+                    li > a {
+                        padding: 0.5em 1em 0 1em;    
                     }
                 }
             }
@@ -128,7 +120,7 @@ article
                 [data-css-role="heading"]::before
                 {
                     /* Chapter heading */
-                    content: counters(article-chapters, ".") ". ";
+                    content: counters(article-chapters, ".") " ";
                     counter-increment: article-chapters;
                 }
 

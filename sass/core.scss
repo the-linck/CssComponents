@@ -17,6 +17,63 @@
     --css-primary-900: #212121;
 }
 
+// Colors for components
+[role],
+[data-css-role],
+[data-css-group]
+{
+    &[data-css-accent],
+    & [data-css-accent],
+    [data-css-accent] &
+    {
+        /* Normal state */
+        --css-normal-background: var(--css-accent-100);
+        --css-normal-border: var(--css-accent-500);
+        --css-normal-text: var(--css-accent-800);
+
+        /* Selected state */
+        --css-selected-background: var(--css-accent-300);
+        --css-selected-border: var(--css-accent-700);
+        --css-selected-text: var(--css-accent-900);
+
+        /* Pressed state */
+        --css-pressed-background: var(--css-accent-400);
+        --css-pressed-border: var(--css-accent-900);
+        --css-pressed-text: var(--css-accent-900);
+
+        /* Disabled state */
+        --css-disabled-background: var(--css-accent-50);
+        --css-disabled-border: var(--css-accent-300);
+        --css-disabled-text: var(--css-accent-700);
+    }
+
+    &,
+    & [data-css-primary],
+    &[data-css-primary],
+    [data-css-primary] &
+    {
+        /* Normal state */
+        --css-normal-background: var(--css-primary-100);
+        --css-normal-border: var(--css-primary-500);
+        --css-normal-text: var(--css-primary-800);
+
+        /* Selected state */
+        --css-selected-background: var(--css-primary-300);
+        --css-selected-border: var(--css-primary-700);
+        --css-selected-text: var(--css-primary-900);
+
+        /* Pressed state */
+        --css-pressed-background: var(--css-primary-400);
+        --css-pressed-border: var(--css-primary-900);
+        --css-pressed-text: var(--css-primary-900);
+
+        /* Disabled state */
+        --css-disabled-background: var(--css-primary-50);
+        --css-disabled-border: var(--css-primary-300);
+        --css-disabled-text: var(--css-primary-700);
+    }
+}
+
 
 
 /* Basic styles */
@@ -71,7 +128,7 @@ h1, h2, h3, h4, h5, h6,
 [role="heading"]
 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 1.875rem;
@@ -93,27 +150,23 @@ h1, h2, h3, h4, h5, h6,
 
 h1
 {
-    font-size: 2.125rem;
+    font-size: 2.617rem;
 }
 h2
 {
-    font-size: 1.5em;
+    font-size: 2.292rem;
 }
 h3
 {
-    font-size: 1.25em;
+    font-size: 1.969em;
 }
 h4
 {
-    font-size: 1rem;
+    font-size: 1.646em;
 }
 h5
 {
-    font-size: .875rem;
-}
-h6
-{
-    font-size: .75rem;
+    font-size: 1.323em;
 }
 
 

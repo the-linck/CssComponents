@@ -1,0 +1,44 @@
+// Standart background color
+@mixin component-background-color($state)
+{
+    background-color: var(--css-#{$state}-background);
+}
+// Standart border color
+@mixin component-border-color($state)
+{
+    border-color: var(--css-#{$state}-border);
+}
+// Standart text color
+@mixin component-text-color($state)
+{
+    color: var(--css-#{$state}-text);
+}
+
+// Standart background and border color
+@mixin component-background-border-colors($state)
+{
+    @include component-background-color($state);
+    @include component-border-color($state);
+}
+
+// Standart background and text color
+@mixin component-background-text-colors($state)
+{
+    @include component-background-color($state);
+    @include component-text-color($state);
+}
+
+// Standart border and text color
+@mixin component-border-text-colors($state)
+{
+    @include component-border-color($state);
+    @include component-text-color($state);
+}
+
+// Standart colors
+@mixin component-colors($state)
+{
+    @include component-background-color($state);
+    @include component-border-color($state);
+    @include component-text-color($state);
+}
