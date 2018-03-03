@@ -13,12 +13,12 @@
     <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1>
-            <a>Demos</a>
+    <header role="toolbar">
+        <div data-css-role="heading">
+            <a href="index.html">Demos</a>
             &rarr;
             <strong id="alert_demos">Alert Component</strong>
-        </h1>
+        </div>
     </header>
 
     <article aria-label="Button Component" itemscope itemtype="http://schema.org/APIReference">
@@ -65,7 +65,7 @@
         <!-- Contents -->
         <div itemprop="articleBody">
             <!-- Plain alert -->
-            <section aria-labelledby="plain">
+            <section aria-labelledby="plain" data-css-chapter>
                 <header id="plain">
                     <h3 data-css-role="heading">Alert</h3>
                 </header>
@@ -113,7 +113,7 @@
                 <!-- Subchapters -->
                 <div role="group" data-css-group="chapters">
                     <!-- Alert types -->
-                    <section aria-labelledby="types">
+                    <section aria-labelledby="types" data-css-chapter>
                         <header id="types">
                             <h3 data-css-role="heading">Specific Types</h3>
                         </header>
@@ -211,7 +211,7 @@
                     <!-- /Alert types -->
 
                     <!-- Alert icons -->
-                    <section aria-labelledby="icons">
+                    <section aria-labelledby="icons" data-css-chapter>
                         <header id="icons">
                             <h3 data-css-role="heading">Icons</h3>
                         </header>
@@ -294,7 +294,7 @@
             <!-- /Plain alert -->
 
             <!-- Accent colors -->
-            <section data-css-accent aria-labelledby="accent">
+            <section data-css-accent aria-labelledby="accent" data-css-chapter>
                 <header id="accent">
                     <h3 data-css-role="heading">Accent Colors</h3>
                 </header>
@@ -324,7 +324,7 @@
                 <!-- /Demo -->
 
                 <!-- Demo's source code exibition -->
-                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
