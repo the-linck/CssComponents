@@ -17,62 +17,207 @@
     --css-primary-900: #212121;
 }
 
-// Colors for components
-[role],
-[data-css-role],
-[data-css-group]
+// Defines a set of colors (background, border, text) for a named group in a palette
+@mixin pallete-color-group($palette, $group, $background, $border, $text)
 {
-    &[data-css-accent],
-    & [data-css-accent],
-    [data-css-accent] &
+    // Background
+    @if ($background == white or $background == black)
     {
-        /* Normal state */
-        --css-normal-background: var(--css-accent-100);
-        --css-normal-border: var(--css-accent-500);
-        --css-normal-text: var(--css-accent-800);
-
-        /* Selected state */
-        --css-selected-background: var(--css-accent-300);
-        --css-selected-border: var(--css-accent-700);
-        --css-selected-text: var(--css-accent-900);
-
-        /* Pressed state */
-        --css-pressed-background: var(--css-accent-400);
-        --css-pressed-border: var(--css-accent-900);
-        --css-pressed-text: var(--css-accent-900);
-
-        /* Disabled state */
-        --css-disabled-background: var(--css-accent-50);
-        --css-disabled-border: var(--css-accent-300);
-        --css-disabled-text: var(--css-accent-700);
+        --css-#{$group}-background: var(--css-#{$background});
+    }
+    @else
+    {
+        --css-#{$group}-background: var(--css-#{$palette}-#{$background});
+    }
+    
+    // Border
+    @if ($border == white or $border == black)
+    {
+        --css-#{$group}-border: var(--css-#{$border});
+    }
+    @else
+    {
+        --css-#{$group}-border: var(--css-#{$palette}-#{$border});
     }
 
-    &,
-    & [data-css-primary],
-    &[data-css-primary],
-    [data-css-primary] &
+    // Text
+    @if ($text == white or $text == black)
     {
-        /* Normal state */
-        --css-normal-background: var(--css-primary-100);
-        --css-normal-border: var(--css-primary-500);
-        --css-normal-text: var(--css-primary-800);
-
-        /* Selected state */
-        --css-selected-background: var(--css-primary-300);
-        --css-selected-border: var(--css-primary-700);
-        --css-selected-text: var(--css-primary-900);
-
-        /* Pressed state */
-        --css-pressed-background: var(--css-primary-400);
-        --css-pressed-border: var(--css-primary-900);
-        --css-pressed-text: var(--css-primary-900);
-
-        /* Disabled state */
-        --css-disabled-background: var(--css-primary-50);
-        --css-disabled-border: var(--css-primary-300);
-        --css-disabled-text: var(--css-primary-700);
+        --css-#{$group}-text: var(--css-#{$text});
+    }
+    @else
+    {
+        --css-#{$group}-text: var(--css-#{$palette}-#{$text});
     }
 }
+
+// Light theme colors
+body:not(data-css-theme),
+body[data-css-theme="light"]
+{
+    &
+    {
+        background: var(--css-primary-50);
+        color: var(--css-primary-800);
+    }
+    
+    * {
+        &[data-css-accent],
+        & [data-css-accent],
+        [data-css-accent] &
+        {
+            // Normal state
+            @include pallete-color-group(accent, normal, 100, 500, 800);
+            // Selected state
+            @include pallete-color-group(accent, selected, 300, 700, 900);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 400, 900, 900);
+            // Disabled state
+            @include pallete-color-group(accent, disabled, 50, 300, 700);
+        }
+    
+        &,
+        & [data-css-primary],
+        &[data-css-primary],
+        [data-css-primary] &
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, 100, 500, 800);
+            // Selected state
+            @include pallete-color-group(primary, selected, 300, 700, 900);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 400, 900, 900);
+            // Disabled state
+            @include pallete-color-group(primary, disabled, 50, 300, 700);
+
+        }
+
+        // Info type
+        &[data-css-type="info"]
+        {
+            &[data-css-accent],
+            & [data-css-accent],
+            [data-css-accent] &
+            {
+                // Normal state
+                @include pallete-color-group(accent, normal, white, 100, 800);
+            }
+
+            &,
+            & [data-css-primary],
+            &[data-css-primary],
+            {
+                // Normal state
+                @include pallete-color-group(primary, normal, white, 100, 800);            
+            }
+        }
+        
+        // Success type
+        &[data-css-type="success"]
+        {
+            
+            &[data-css-accent],
+            & [data-css-accent],
+            [data-css-accent] &
+            {
+                // Normal state
+                @include pallete-color-group(accent, normal, 200, 300, 800);
+            }
+
+            &,
+            & [data-css-primary],
+            &[data-css-primary],
+            {
+                // Normal state
+                @include pallete-color-group(primary, normal, 200, 300, 800);            
+            }
+        }
+
+        // Warning type
+        &[data-css-type="warning"]
+        {
+            
+            &[data-css-accent],
+            & [data-css-accent],
+            [data-css-accent] &
+            {
+                // Normal state
+                @include pallete-color-group(accent, normal, 500, 600, black);
+            }
+
+            &,
+            & [data-css-primary],
+            &[data-css-primary],
+            {
+                // Normal state
+                @include pallete-color-group(primary, normal, 500, 600, black);
+            }
+        }
+
+        // Error type
+        &[data-css-type="error"]
+        {
+            
+            &[data-css-accent],
+            & [data-css-accent],
+            [data-css-accent] &
+            {
+                // Normal state
+                @include pallete-color-group(accent, normal, 700, 800, white);
+            }
+
+            &,
+            & [data-css-primary],
+            &[data-css-primary],
+            {
+                // Normal state
+                @include pallete-color-group(primary, normal, 700, 800, white);
+            }
+        }
+    }
+}
+
+// Components dark theme colors
+// body[data-css-theme="dark"]
+// {
+//     &
+//     {
+//         background: var(--css-primary-900);
+//         color: var(--css-primary-100);
+//     }
+    
+//     * {
+//         &[data-css-accent],
+//         & [data-css-accent],
+//         [data-css-accent] &
+//         {
+//             // Normal state
+//             @include pallete-color-group(accent, normal, 800, 500, 100);
+//             // Selected state
+//             @include pallete-color-group(accent, selected, 600, 300, 200);
+//             // Pressed state
+//             @include pallete-color-group(accent, pressed, 500, 200, 200);
+//             // Disabled state
+//             @include pallete-color-group(accent, disabled, 900, 700, 200);
+//         }
+    
+//         &,
+//         & [data-css-primary],
+//         &[data-css-primary],
+//         [data-css-primary] &
+//         {
+//             // Normal state
+//             @include pallete-color-group(primary, normal, 800, 500, 100);
+//             // Selected state
+//             @include pallete-color-group(primary, selected, 600, 300, 200);
+//             // Pressed state
+//             @include pallete-color-group(primary, pressed, 500, 200, 200);
+//             // Disabled state
+//             @include pallete-color-group(primary, disabled, 900, 700, 200);
+//         }
+//     }
+// }
+
 
 
 
@@ -89,8 +234,6 @@ body
 }
 body
 {
-    background: var(--css-primary-50);
-    color: var(--css-primary-800);
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 14px;
 }

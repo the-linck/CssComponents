@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic page metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Buttons Demos</title>
+    <!-- Importing all components and default primary color palette -->
     <link href="../css/complete.css" rel="stylesheet"/>
+    <!-- Importing accent color pallete -->
     <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
 <body aria-labelledby="button_demos">
-    <header>
-        <h1 id="button_demos">
-            <a>Demos</a>
+    <header role="toolbar">
+        <div data-css-role="heading">
+            <a href="index.html">Demos</a>
             &rarr;
             <strong>Button Component</strong>
-        </h1>
+        </div>
     </header>
-    <article itemscope itemtype="http://schema.org/APIReference" title="Button Component">
+
+    <article aria-label="Button Component" itemscope itemtype="http://schema.org/APIReference">
         <header>
-            <h2>The Button Component</h2>
+            <h1>The Button Component</h1>
         </header>
+        
+        <!-- Table of contents -->
         <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <h2 data-css-role="heading">Contents</h2>
+            <h1 data-css-role="heading">Contents</h1>
             <ol>
                 <li>
                     <a href="#plain">Plain Button</a>
@@ -55,11 +61,16 @@
                 </li>
             </ol>
         </nav>
+        <!-- /Table of contents -->
+        
+        <!-- Contents -->
         <div itemprop="articleBody">
-            <section aria-labelledby="plain">
+            <!-- Plain button -->
+            <section aria-labelledby="plain" data-css-chapter>
                 <header id="plain">
-                    <h3 data-css-role="heading">Plain Button</h3>
+                    <h2 data-css-role="heading">Plain Button</h2>
                 </header>
+
                 <p>
                     Every app or website will eventually need buttons, isn't true?<br>
                     To supply this need there's the <strong>Button Component</strong>,
@@ -70,39 +81,51 @@
                     A simple button may be created with any HTML element, but it's a good pratice to use
                     only elements that interect natively with click/touch events, like:
                 </p>
+
+                <!-- Demo -->
                 <div>
-                    <button data-css-role="button" title="Button²">&lt;button&gt;</button>
+                    <button data-css-role="button" title="Button^2">&lt;button&gt;</button>
                     <a role="button" title="Link button">&lt;a&gt;</a>
-                    <input data-css-role="button" title="Input button" type="button" value="&lt;input&gt;"/>
+                    <input title="Input button" type="button" value="&lt;input&gt;"/>
                 </div>
+                <!-- /Demo -->
+                
+                <!-- Demo source -->
                 <details open itemscope itemtype="http://schema.org/SoftwareSourceCode">
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
-                            <span itemprop="programmingLanguage">HTML</span>
+                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" itemprop="text">
-                        <span data-css-line>
-                            &lt;button <strong>data-css-role=&quot;button&quot;</strong> title=&quot;Button&sup2;&quot;&gt;&amp;lt;button&amp;gt;&lt;/button&gt;
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <span>
+                            &lt;button <strong data-css-accent>data-css-role=&quot;button&quot;</strong> title=&quot;Button^2&quot;&gt;&amp;lt;button&amp;gt;&lt;/button&gt;
                         </span>
-                         <span data-css-line>
-                            &lt;a <strong>role=&quot;button&quot;</strong> title=&quot;Link button&quot;&gt;&amp;lt;a&amp;gt;&lt;/a&gt;
+                         <span>
+                            &lt;a <strong data-css-accent>role=&quot;button&quot;</strong> title=&quot;Link button&quot;&gt;&amp;lt;a&amp;gt;&lt;/a&gt;
                         </span>
-                         <span data-css-line>
-                            &lt;input <strong>role=&quot;button&quot;</strong> title=&quot;Input button&quot; type=&quot;button&quot; value=&quot;&amp;lt;input&amp;gt;&quot;/&gt;
+                         <span>
+                            &lt;input title=&quot;Input button&quot; <strong data-css-accent>type=&quot;button&quot;</strong> value=&quot;&amp;lt;input&amp;gt;&quot;/&gt;
                         </span>
                     </code>
                 </details>
+                <!-- /Demo source -->
+
+                <!-- Subchapters -->
                 <div role="group" data-css-group="chapters">
-                    <section aria-labelledby="sizes">
+                    <!-- Sizes -->
+                    <section aria-labelledby="sizes" data-css-chapter>
                         <header id="sizes">
-                            <h4 data-css-role="heading">Sizes</h4>
+                            <h3 data-css-role="heading">Sizes</h3>
                         </header>
+
                         <p>
                             We offer five button sizes, wich can be chosen by our <em>data-css-size</em> attribute:
                         </p>
+
+                        <!-- Demo -->
                         <div>
                             <button data-css-role="button" data-css-size="small">small</button>
                             <button data-css-role="button">standart (medium)</button>
@@ -110,85 +133,136 @@
                             <button data-css-role="button" data-css-size="huge">huge</button>
                             <button data-css-role="button" data-css-size="full">fullsize</button>
                         </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo source -->
                         <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                 <span data-css-line>
-                                    &lt;button <strong>data-css-size=&quot;small&quot;</strong> role=&quot;button&quot;&gt;small&lt;/button&gt;
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                 <span>
+                                    &lt;button <strong data-css-accent>data-css-size=&quot;small&quot;</strong> role=&quot;button&quot;&gt;small&lt;/button&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &lt;button role=&quot;button&quot;&gt;standart (medium)&lt;/button&gt;
                                 </span>
-                                 <span data-css-line>
-                                    &lt;button <strong>data-css-size=&quot;big&quot;</strong> role=&quot;button&quot;&gt;big&lt;/button&gt;
+                                 <span>
+                                    &lt;button <strong data-css-accent>data-css-size=&quot;big&quot;</strong> role=&quot;button&quot;&gt;big&lt;/button&gt;
                                 </span>
-                                 <span data-css-line>
-                                    &lt;button <strong>data-css-size=&quot;huge&quot;</strong> role=&quot;button&quot;&gt;huge&lt;/button
+                                 <span>
+                                    &lt;button <strong data-css-accent>data-css-size=&quot;huge&quot;</strong> role=&quot;button&quot;&gt;huge&lt;/button
                                 </span>
-                                 <span data-css-line>
-                                    &lt;button <strong>data-css-size=&quot;full&quot;</strong> role=&quot;button&quot;&gt;fullsize&lt;/button
+                                 <span>
+                                    &lt;button <strong data-css-accent>data-css-size=&quot;full&quot;</strong> role=&quot;button&quot;&gt;fullsize&lt;/button
                                 </span>
                             </code>
                         </details>
+                        <!-- /Demo source -->
                     </section>
-                    <section aria-labelledby="states">
+                    <!-- /Sizes -->
+                    <!-- States -->
+                    <section aria-labelledby="states" data-css-chapter>
                         <header id="states">
-                            <h4 data-css-role="heading">States</h4>
+                            <h3 data-css-role="heading">States</h3>
                         </header>
+
                         <p>
                             We provide four button states:<br>
                         </p>
+
                         <ul>
                             <li>normal</li>
                             <li>current (selected)</li>
                             <li>pressed</li>
                             <li>disabled</li>
                         </ul>
+
                         <p>
                             They are automatically chosen from the button current state in the page, but can also be forced by attributes.<br>
                             You can use the ARIA attributes to force a button state.
                         </p>
-                        <strong>Using ARIA states:</strong>
-                        <br/>
+
+                        <!-- Demo -->
                         <div>
                             <button data-css-role="button">no state</button>
                             <button data-css-role="button" aria-current="true">selected</button>
                             <button data-css-role="button" aria-pressed="true">pressed</button>
                             <button data-css-role="button" aria-disabled="true">disabled</button>
                         </div>
+                        <!-- /Demo -->
+                        
+                        <!-- Demo source -->
                         <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                 <span data-css-line>&lt;button data-css-role=&quot;button&quot; &gt;no state&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role=&quot;button&quot; <strong>aria-selected=&quot;true&quot;</strong>&gt;selected&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role=&quot;button&quot; <strong>aria-pressed=&quot;true&quot;</strong>&gt;pressed&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role=&quot;button&quot; <strong>aria-disabled="true"</strong>&gt;disabled&lt;/button&gt;</span>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                <span>&lt;button data-css-role=&quot;button&quot;&gt;no state&lt;/button&gt;</span>
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>aria-selected=&quot;true&quot;</strong>&gt;selected&lt;/button&gt;</span>
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>aria-pressed=&quot;true&quot;</strong>&gt;pressed&lt;/button&gt;</span>
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>aria-disabled="true"</strong>&gt;disabled&lt;/button&gt;</span>
                             </code>
                         </details>
+                        <!-- /Demo source -->
+
+                        
+                        <p>
+                            There's also our custom <strong>data-css-state</strong> attribute:
+                        </p>
+
+                        <!-- Demo -->
+                        <div>
+                            <button data-css-role="button" data-css-state="normal">normal</button>
+                            <button data-css-role="button" data-css-state="selected">selected</button>
+                            <button data-css-role="button" data-css-state="pressed">pressed</button>
+                            <button data-css-role="button" data-css-state="disabled">disabled</button>
+                        </div>
+                        <!-- /Demo -->
+                        
+                        <!-- Demo source -->
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                            <summary>
+                                <span itemprop="description">Example:</span>
+                                <span data-css-float="right">
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
+                                    <span itemprop="codeSampleType">inline code</span>
+                                </span>
+                            </summary>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>data-css-state="normal"</strong>&gt;normal&lt;/button&gt;</span>
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>data-css-state="selected"</strong>&gt;selected&lt;/button&gt;</span>
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>data-css-state="pressed"</strong>&gt;pressed&lt;/button&gt;</span>
+                                <span>&lt;button data-css-role=&quot;button&quot; <strong data-css-accent>data-css-state="disabled"</strong>&gt;disabled&lt;/button&gt;</span>
+                            </code>
+                        </details>
+                        <!-- /Demo source -->
+
                         <p>
                             <strong>Notice:</strong>
                             You can also use the native <em>disabled</em> attribute to disable a button, of course.
                         </p>
                     </section>
-                    <section aria-labelledby="actions">
+                    <!-- /States -->
+                    <!-- Actions -->
+                    <section aria-labelledby="actions" data-css-chapter>
                         <header id="actions">
-                            <h4 data-css-role="heading">Actions</h4>
+                            <h3 data-css-role="heading">Actions</h3>
                         </header>
+
                         <p>
                             Sometimes you need to highlight actions on your page, for that porpuse we provide the following types:
                         </p>
+
+                        <!-- Demo -->
                         <div>
                             <button data-css-role="button" data-css-action="primary">primary</button>
                             <button data-css-role="button" data-css-action="secondary">secondary</button>
@@ -196,178 +270,228 @@
                             <button data-css-role="button">common</button>
                             <button data-css-role="button" data-css-action="special">special</button>
                         </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo source -->
                         <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                 <span data-css-line>&lt;button data-css-role="button" <strong>data-css-action=&quot;primary&quot;</strong>&gt;primary&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role="button" <strong>data-css-action=&quot;secondary&quot;</strong>&gt;secondary&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role="button" <strong>data-css-action=&quot;tertiary&quot;</strong>&gt;tertiary&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role="button"&gt;common&lt;/button&gt;</span>
-                                 <span data-css-line>&lt;button data-css-role="button" <strong>data-css-action=&quot;special&quot;</strong>&gt;special&lt;/button&gt;</span>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                 <span>&lt;button data-css-role="button" <strong data-css-accent>data-css-action=&quot;primary&quot;</strong>&gt;primary&lt;/button&gt;</span>
+                                 <span>&lt;button data-css-role="button" <strong data-css-accent>data-css-action=&quot;secondary&quot;</strong>&gt;secondary&lt;/button&gt;</span>
+                                 <span>&lt;button data-css-role="button" <strong data-css-accent>data-css-action=&quot;tertiary&quot;</strong>&gt;tertiary&lt;/button&gt;</span>
+                                 <span>&lt;button data-css-role="button"&gt;common&lt;/button&gt;</span>
+                                 <span>&lt;button data-css-role="button" <strong data-css-accent>data-css-action=&quot;special&quot;</strong>&gt;special&lt;/button&gt;</span>
                             </code>
                         </details>
+                        <!-- /Demo source -->
                     </section>
+                    <!-- /Actions -->
                 </div>
+                <!-- /Subchapters -->
             </section>
-            <section aria-labelledby="groupped">
+            <!-- /Plain button -->
+            <!-- Button Group -->
+            <section aria-labelledby="groupped" data-css-chapter>
                 <header id="groupped">
-                    <h3 data-css-role="heading">Groupped Buttons</h3>
+                    <h2 data-css-role="heading">Groupped Buttons</h2>
                 </header>
+
                 <p>
                     Buttons alone can be very useful, but groupped they may be even more.<br>
                     There's a lot of room for groupped buttons in today's apps, but little
                     creativity in this article's author to make examples, so let's do a simple button group:
                 </p>
+
+                <!-- Demo -->
                 <div role="group" data-css-group="button">
                     <a data-css-role="button" href="https://en.wikipedia.org/wiki/Spit_Out_the_Bone">Sp<sub>l</sub>it</a>
                     <a data-css-role="button" href="https://en.wikipedia.org/wiki/Spit_Out_the_Bone">out</a>
                     <a data-css-role="button" href="https://en.wikipedia.org/wiki/Spit_Out_the_Bone">the</a>
                     <a data-css-role="button" href="https://en.wikipedia.org/wiki/Spit_Out_the_Bone">bone</a>
                 </div>
+                <!-- /Demo -->
+                
+                <!-- Demo source -->
                 <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
-                            <span itemprop="programmingLanguage">HTML</span>
+                            <span data-css-accent itemprop="programmingLanguage">HTML</span>
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" itemprop="text">
-                         <span data-css-line>
-                            &lt;div role=&quot;group&quot; data-css-group=&quot;button&quot;&gt;
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                         <span>
+                            &lt;div role=&quot;group&quot; <strong data-css-accent>data-css-group=&quot;button&quot;</strong>&gt;
                         </span>
-                         <span data-css-line>
+                         <span>
                             &emsp;&lt;button role=&quot;button&quot;&gt;Sp&lt;sub&gt;l&lt;/sub&gt;it&lt;/button&gt;
                         </span>
-                         <span data-css-line>
+                         <span>
                             &emsp;&lt;button role=&quot;button&quot;&gt;out&lt;/button&gt;
                         </span>
-                         <span data-css-line>
+                         <span>
                             &emsp;&lt;button role=&quot;button&quot;&gt;the&lt;/button&gt;
                         </span>
-                         <span data-css-line>
+                         <span>
                             &emsp;&lt;button role=&quot;button&quot;&gt;bone&lt;/button&gt;
                         </span>
-                         <span data-css-line>
+                         <span>
                             &lt;/div&gt;
                         </span>
                     </code>
                 </details>
+                <!-- Demo source -->
+
+                <!-- Subchapters -->
                 <div role="group" data-css-group="chapters">
-                    <section aria-labelledby="double">
+                    <!-- Double button -->
+                    <section aria-labelledby="double" data-css-chapter>
                         <header id="double">
-                            <h4 data-css-role="heading">Double Button</h4>
+                            <h3 data-css-role="heading">Double Button</h3>
                         </header>
+
                         <p>
                             It's very common to have a group of two buttons, one with text and another wit an icon.<br>
                             That's easy to achieve:
                         </p>
-                        <div role="group" data-css-group="button">
-                            <button data-css-role="button">We're twins</button>
-                            <button data-css-role="button">&dtrif;</button>
+
+                        <!-- Demo -->
+                        <div>
+                            <div role="group" data-css-group="button">
+                                <button data-css-role="button">We're twins</button>
+                                <button data-css-role="button">&dtrif;</button>
+                            </div>
                         </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo source -->
                         <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                 <span data-css-line>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                 <span>
                                     &lt;div role=&quot;group&quot; data-css-group=&quot;button&quot;&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;button role=&quot;button&quot;&gt;We're twins&lt;/button&gt;<br>
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;button role=&quot;button&quot;&gt;&amp;dtrif;&lt;/button&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &lt;/div&gt;
                                 </span>
                             </code>
                         </details>
+                        <!-- /Demo source -->
                     </section>
-                    <section aria-labelledby="pagination">
+                    <!-- /Double button -->
+                    <!-- Pagination -->
+                    <section aria-labelledby="pagination" data-css-chapter>
                         <header id="pagination">
-                            <h4 data-css-role="heading">Pagination</h4>
+                            <h3 data-css-role="heading">Pagination</h3>
                         </header>
+
                         <p>
                             One of the best uses for groupped buttons is result paginations, of course.
                             Like the previous examples, it's quite easy:
                         </p>
-                        <div role="group" data-css-group="button">
-                            <a role="button">&ltrif;</a>
-                            <a role="button">1</a>
-                            <a aria-current="true" role="button">2</a>
-                            <a role="button">3</a>
-                            <a role="button">4</a>
-                            <a role="button">5</a>
-                            <a role="button">&rtrif;</a>
+
+                        <!-- Demo -->
+                        <div>
+                            <div role="group" data-css-group="button">
+                                <a role="button">&ltrif;</a>
+                                <a role="button">1</a>
+                                <a aria-current="true" role="button">2</a>
+                                <a role="button">3</a>
+                                <a role="button">4</a>
+                                <a role="button">5</a>
+                                <a role="button">&rtrif;</a>
+                            </div>
                         </div>
+                        <!-- /Demo -->
+                        
+                        <!-- Demo source -->
                         <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-accent itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                 <span data-css-line>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                 <span>
                                     &lt;div role=&quot;group&quot; data-css-group=&quot;button&quot;&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a role=&quot;button&quot;&gt;&amp;ltrif;&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a role=&quot;button&quot;&gt;1&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a aria-current="true" role=&quot;button&quot;&gt;2&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a role=&quot;button&quot;&gt;3&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a role=&quot;button&quot;&gt;4&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a role=&quot;button&quot;&gt;5&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &emsp;&lt;a role=&quot;button&quot;&gt;&amp;rtrif;&lt;/a&gt;
                                 </span>
-                                 <span data-css-line>
+                                 <span>
                                     &lt;/div&gt;
                                 </span>
                             </code>
                         </details>
+                        <!-- Demo source -->
                     </section>
+                    <!-- /Pagination -->
                 </div>
+                <!-- /Subchapters -->
             </section>
-            <section aria-labelledby="accent">
-                <header data-css-accent id="accent">
-                    <h3 data-css-role="heading">Accent Colors</h3>
+            <!-- /Button Group -->
+            <!-- Accent color -->
+            <section aria-labelledby="accent" data-css-accent data-css-chapter>
+                <header id="accent">
+                    <h2 data-css-role="heading">Accent Colors</h2>
                 </header>
-                <p></p>
+
+                <p>
+                    As any othe component, buttons also support accent color.
+                </p>
+
+                <!-- Demo -->
                 <div>
-                    <a href="#accent" data-css-accent data-css-role="button" data-css-action="primary">primary</a>
-                    <a href="#accent" data-css-accent data-css-role="button" data-css-action="secondary">secondary</a>
-                    <a href="#accent" data-css-accent data-css-role="button" data-css-action="tertiary">tertiary</a>
-                    <a href="#accent" data-css-accent role="button">Common</a>
-                    <a href="#accent" data-css-accent data-css-role="button" data-css-action="special">special</a>
-                    <a aria-disabled="true" href="#accent" data-css-accent data-css-role="button">disabled</a>
+                    <a href="#accent" role="button">Common</a>
+                    <a href="#accent" data-css-role="button" data-css-action="primary">primary</a>
+                    <a href="#accent" data-css-role="button" data-css-action="secondary">secondary</a>
+                    <a href="#accent" data-css-role="button" data-css-action="tertiary">tertiary</a>
+                    <a href="#accent" data-css-role="button" data-css-action="special">special</a>
+                    <a aria-disabled="true" href="#accent" data-css-role="button">disabled</a>
                 </div>
-                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                <!-- /Demo -->
+
+                <!-- Demo source -->
+                <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
@@ -375,16 +499,18 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" data-css-group="lines" itemprop="text">
-                         <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;primary&quot;&gt;primary&lt;/button&gt;</span>
-                         <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;secondary&quot;&gt;secondary&lt;/button&gt;</span>
-                         <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;tertiary&quot;&gt;tertiary&lt;/button&gt;</span>
-                         <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button"&gt;common&lt;/button&gt;</span>
-                         <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;special&quot;&gt;special&lt;/button&gt;</span>
-                         <span>&lt;a aria-disabled href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button"&gt;special&lt;/button&gt;</span>
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button"&gt;common&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;primary&quot;&gt;primary&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;secondary&quot;&gt;secondary&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;tertiary&quot;&gt;tertiary&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;special&quot;&gt;special&lt;/button&gt;</span>
+                        <span>&lt;a aria-disabled href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button"&gt;special&lt;/button&gt;</span>
                     </code>
                 </details>
+                <!-- Demo source -->
             </section>
+            <!-- /Accent color -->
         </div>
     </article>
 </body>
