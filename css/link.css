@@ -1,7 +1,6 @@
 [role="link"],
-a:not([role]):not([data-css-role]) {
+a:not([role]) {
   /* Basic Component rules */
-  color: var(--css-primary-800);
   cursor: pointer;
   display: inline;
   font-size: 1.125em;
@@ -10,56 +9,51 @@ a:not([role]):not([data-css-role]) {
   transition: color 0.3s;
 }
 
-[role="link"]:visited,
-a:not([role]):not([data-css-role]):visited {
-  color: var(--css-primary-900);
+[role="link"], [role="link"][data-css-state="normal"],
+a:not([role]),
+a:not([role])[data-css-state="normal"] {
+  color: var(--css-normal-text);
 }
 
-[role="link"]:focus, [role="link"]:hover,
-a:not([role]):not([data-css-role]):focus,
-a:not([role]):not([data-css-role]):hover {
-  color: var(--css-primary-500);
+[role="link"]:visited, [role="link"][data-css-state="visited"],
+a:not([role]):visited,
+a:not([role])[data-css-state="visited"] {
+  color: var(--css-visited-text);
 }
 
-[role="link"]:active,
-a:not([role]):not([data-css-role]):active {
-  color: var(--css-primary-400);
+[role="link"]:focus, [role="link"]:hover, [role="link"][data-css-state="selected"],
+a:not([role]):focus,
+a:not([role]):hover,
+a:not([role])[data-css-state="selected"] {
+  color: var(--css-selected-text);
+}
+
+[role="link"]:active, [role="link"][data-css-state="pressed"],
+a:not([role]):active,
+a:not([role])[data-css-state="pressed"] {
+  color: var(--css-pressed-text);
+}
+
+[role="link"]:not([data-css-accent]), [role="link"][data-css-primary],
+[data-css-primary] [role="link"],
+a:not([role]):not([data-css-accent]),
+a:not([role])[data-css-primary],
+[data-css-primary]
+a:not([role]) {
+  --css-normal-text: var(--css-primary-700);
+  --css-visited-text: var(--css-primary-900);
+  --css-selected-text: var(--css-primary-500);
+  --css-pressed-text: var(--css-primary-600);
 }
 
 [role="link"][data-css-accent],
 [data-css-accent] [role="link"],
-a:not([role]):not([data-css-role])[data-css-accent],
+a:not([role])[data-css-accent],
 [data-css-accent]
-a:not([role]):not([data-css-role]) {
-  /* Accent color */
-  color: var(--css-accent-800);
-}
-
-[role="link"][data-css-accent]:visited,
-[data-css-accent] [role="link"]:visited,
-a:not([role]):not([data-css-role])[data-css-accent]:visited,
-[data-css-accent]
-a:not([role]):not([data-css-role]):visited {
-  color: var(--css-accent-900);
-}
-
-[role="link"][data-css-accent]:focus, [role="link"][data-css-accent]:hover,
-[data-css-accent] [role="link"]:focus,
-[data-css-accent] [role="link"]:hover,
-a:not([role]):not([data-css-role])[data-css-accent]:focus,
-a:not([role]):not([data-css-role])[data-css-accent]:hover,
-[data-css-accent]
-a:not([role]):not([data-css-role]):focus,
-[data-css-accent]
-a:not([role]):not([data-css-role]):hover {
-  color: var(--css-accent-500);
-}
-
-[role="link"][data-css-accent]:active,
-[data-css-accent] [role="link"]:active,
-a:not([role]):not([data-css-role])[data-css-accent]:active,
-[data-css-accent]
-a:not([role]):not([data-css-role]):active {
-  color: var(--css-accent-400);
+a:not([role]) {
+  --css-normal-text: var(--css-accent-700);
+  --css-visited-text: var(--css-accent-900);
+  --css-selected-text: var(--css-accent-500);
+  --css-pressed-text: var(--css-accent-600);
 }
 /*# sourceMappingURL=link.css.map */
