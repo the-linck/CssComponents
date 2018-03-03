@@ -152,7 +152,7 @@ article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/Site
 article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li > a::before,
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li > a::before,
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li > a::before {
-  content: counters(article-index, ".") ". ";
+  content: counters(article-index, ".") " ";
   counter-increment: article-index;
 }
 

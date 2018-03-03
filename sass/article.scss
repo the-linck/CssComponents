@@ -86,7 +86,7 @@ article
 
                         &::before
                         {
-                            content: counters(article-index, ".") ". ";
+                            content: counters(article-index, ".") " ";
                             counter-increment: article-index;
                         }
                     }

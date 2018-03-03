@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic page metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Tooltip Demos</title>
+    <!-- Importing all components and default primary color palette -->
     <link href="../css/complete.css" rel="stylesheet"/>
+    <!-- Importing accent color pallete -->
     <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <h1 id="tooltip_demos">
-            <a>Demos</a>
+    <header role="toolbar">
+        <div data-css-role="heading">
+            <a href="index.html">Demos</a>
             &rarr;
             <strong>Tooltip Component</strong>
-        </h1>
+        </div>
     </header>
-    <article itemscope itemtype="http://schema.org/APIReference" title="Tooltip Component">
+
+    <article aria-label="Tooltip Component" itemscope itemtype="http://schema.org/APIReference">
         <header>
-            <h2>The Tooltip Component</h2>
+            <h1>The Tooltip Component</h1>
         </header>
+
+        <!-- Table of contents -->
         <nav itemscope itemtype="http://schema.org/SiteNavigationElement" id="contents">
             <header>
-                <h3 data-css-role="heading">Contents</h3>
+                <h2 data-css-role="heading">Contents</h2>
             </header>
+
             <ol>
                 <li>
                     <a href="#plain">Tooltip</a>
@@ -43,15 +51,22 @@
                 </li>
             </ol>
         </nav>
+        <!-- /Table of contents -->
+
+        <!-- Contents -->
         <div itemprop="articleBody">
-            <section aria-labelledby="plain">
+            <!-- Plain -->
+            <section aria-labelledby="plain" data-css-chapter>
                 <header id="plain">
-                    <h3 data-css-role="heading">Tooltip</h3>
+                    <h2 data-css-role="heading">Tooltip</h2>
                 </header>
+
                 <p>
                     Sometimes you need to show a simple description for an element on the page.
                     For that, you can use the <strong>Tooltip Component</strong>:
                 </p>
+
+                <!-- Demo -->
                 <div>
                     <a data-css-group="tooltip" href="#plain" role="button">
                         <div role="tooltip">
@@ -60,6 +75,9 @@
                         I do have a tooltip.
                     </a>
                 </div>
+                <!-- /Demo -->
+
+                <!-- Demo source -->
                 <details open itemscope itemtype="http://schema.org/SoftwareSourceCode">
                     <summary>
                         <span itemprop="description">Example:</span>
@@ -68,7 +86,7 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" data-css-group="lines" itemprop="text">
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                         <span>&lt;a <strong>data-css-group=&quot;tooltip&quot;</strong> role=&quot;button&quot;&gt;</span>
                         <span>&emsp;&lt;div <strong data-css-accent>role=&quot;tooltip&quot;</strong>&gt;</span>
                         <span>&emsp;&emsp;I am THE tooltip!</span>
@@ -77,17 +95,21 @@
                         <span>&lt;/a&gt;</span>
                     </code>
                 </details>
+                <!-- /Demo source -->
+
                 <p>
                     As you can see, we just use some element - in that case a button component - with our custom
                     <strong>data-css-group</strong> to give the tooltip a wrapper and, in that
                     example, the ARIA <strong>role="tooltip"</strong> attribute for the tooltip.<br>
                     The <strong>data-css-group=&quot;tooltip&quot;</strong> is mandatory, to simplify the CSS.
                 </p>
+
                 <p>
                     Being a HTML element, the tooltip accepts any content, but you should avoid to put a lot of
                     thing inside this component, for it's made to be a simple way to provide quick extra information
                     to the user.
                 </p>
+
                 <p>
                     <em>
                         <strong>Notice:</strong>
@@ -96,22 +118,28 @@
                         be done.
                     </em>
                 </p>
+
                 <!-- Subchapters -->
                 <div role="group" data-css-group="chapters">
-                    <section aria-labelledby="sides">
+                    <!-- Sides -->
+                    <section aria-labelledby="sides" data-css-chapter>
                         <header id="sides">
-                            <h4 data-css-role="heading">Sides</h4>
+                            <h3 data-css-role="heading">Sides</h3>
                         </header>
+
                         <p>
                             You can choose the position of the tooltip with the <strong>data-css-side</strong>
                             attribute on the tooltip. There are four directions to choose:
                         </p>
+
                         <ul>
                             <li>top (default)</li>
                             <li>right</li>
                             <li>bottom</li>
                             <li>left</li>
                         </ul>
+
+                        <!-- Demo -->
                         <div>
                             <a data-css-group="tooltip" role="button">
                                 <div role="tooltip">
@@ -138,6 +166,9 @@
                                 On left
                             </a>
                         </div>
+                        <!-- /Demo -->
+
+                        <!-- Demo source -->
                         <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
@@ -146,7 +177,7 @@
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" data-css-group="lines" itemprop="text">
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                                 <span>&lt;a data-css-group=&quot;tooltip&quot; role=&quot;button&quot;&gt;</span>
                                 <span>&emsp;&lt;div role=&quot;tooltip&quot;&gt;</span>
                                 <span>&emsp;&emsp;I am on top</span>
@@ -173,20 +204,28 @@
                                 <span>&lt;/a&gt;</span>
                             </code>
                         </details>
+                        <!-- /Demo source -->
+
                         <p>
                             As the top position is the default, it's the only one that doesn't use the
                             <strong>data-css-side</strong> attribute.
                         </p>
                     </section>
+                    <!-- /Sides -->
                 </div>
             </section>
-            <section data-css-accent aria-labelledby="accent">
+            <!-- /Plain -->
+            <!-- Accent -->
+            <section data-css-accent aria-labelledby="accent" data-css-chapter>
                 <header id="accent">
-                    <h3 data-css-role="heading">Accent Colors</h3>
+                    <h2 data-css-role="heading">Accent Colors</h2>
                 </header>
+
                 <p>
                     Like any other of our components, tooltips can also be used with your chosen accent color:
                 </p>
+
+                <!-- Demo -->
                 <div>
                     <a data-css-accent data-css-group="tooltip" role="button">
                         <div data-css-accent role="tooltip">
@@ -201,7 +240,10 @@
                         On right
                     </a>
                 </div>
-                <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                <!-- /Demo -->
+
+                <!-- Demo source -->
+                <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
@@ -209,7 +251,7 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" data-css-group="lines" itemprop="text">
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                         <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-group=&quot;tooltip&quot; role=&quot;button&quot;&gt;</span>
                         <span>&emsp;&lt;div <strong data-css-primary>data-css-accent</strong> role=&quot;tooltip&quot;&gt;</span>
                         <span>&emsp;&emsp;I am on top</span>
@@ -224,34 +266,39 @@
                         <span>&lt;/a&gt;</span>
                     </code>
                 </details>
+                <!-- Demo source -->
+
                 <!-- Subchapters -->
                 <div role="group" data-css-group="chapters">
-                    <section aria-labelledby="different">
+                    <!-- Different colors -->
+                    <section aria-labelledby="different" data-css-chapter>
                         <header id="different">
-                            <h4 data-css-role="heading">Different Colors</h4>
+                            <h3 data-css-role="heading">Different Colors</h3>
                         </header>
+
                         <p>
-                            A tooltip may use a different color pallete from its wrapper element, but remeber our convention:
-                            <em>
-                                if the component doesn' state that it will use the accent color (by the 
-                                <strong>data-css-accent</strong> attribute), the primary color will be used.
-                            </em>
+                            A tooltip may use a different color pallete from its wrapper element.
                         </p>
+
+                        <!-- Demo -->
                         <div>
-                            <a data-css-group="tooltip" role="button">
+                            <a data-css-group="tooltip" data-css-primary role="button">
                                 <div data-css-accent role="tooltip">
                                     I'm on accent color
                                 </div>
                                 I'm on primary color
                             </a>
                             <a data-css-accent data-css-group="tooltip" role="button">
-                                <div role="tooltip">
+                                <div data-css-primary role="tooltip">
                                     I do use primary color
                                 </div>
                                 I do use accent color
                             </a>
                         </div>
-                        <details data-css-accent itemscope itemtype="http://schema.org/SoftwareSourceCode">
+                        <!-- /Demo -->
+
+                        <!-- Demo source -->
+                        <details itemscope itemtype="http://schema.org/SoftwareSourceCode">
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
@@ -259,25 +306,28 @@
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" data-css-group="lines" itemprop="text">
-                                <span>&lt;a data-css-group=&quot;tooltip&quot; role=&quot;button&quot;&gt;</span>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                <span>&lt;a data-css-group=&quot;tooltip&quot; <strong data-css-primary>data-css-primary</strong> role=&quot;button&quot;&gt;</span>
                                 <span>&emsp;&lt;div <strong data-css-primary>data-css-accent</strong> role=&quot;tooltip&quot;&gt;</span>
                                 <span>&emsp;&emsp;I'm on accent color</span>
                                 <span>&emsp;&lt;/div&gt;</span>
                                 <span>&emsp;I'm on primary color</span>
                                 <span>&lt;/a&gt;</span>
                                 <span>&lt;a <strong data-css-primary>data-css-accent</strong> data-css-group=&quot;tooltip&quot; role=&quot;button&quot;&gt;</span>
-                                <span>&emsp;&lt;div role=&quot;tooltip&quot;&gt;</span>
+                                <span>&emsp;&lt;div <strong data-css-primary>data-css-primary</strong> role=&quot;tooltip&quot;&gt;</span>
                                 <span>&emsp;&emsp;I do use primary color</span>
                                 <span>&emsp;&lt;/div&gt;</span>
                                 <span>&emsp;I do use accent color</span>
                                 <span>&lt;/a&gt;</span>
                             </code>
                         </details>
+                        <!-- Demo source -->
                     </section>
+                    <!-- /Different colors -->
                 </div>
             </section>
         </div>
+        <!-- /Contents -->
     </article>
 </body>
 </html>
