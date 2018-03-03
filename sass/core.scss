@@ -1,3 +1,5 @@
+@import '_component';
+
 /* Color properties */
 :root
 {
@@ -17,40 +19,6 @@
     --css-primary-900: #212121;
 }
 
-// Defines a set of colors (background, border, text) for a named group in a palette
-@mixin pallete-color-group($palette, $group, $background, $border, $text)
-{
-    // Background
-    @if ($background == white or $background == black)
-    {
-        --css-#{$group}-background: var(--css-#{$background});
-    }
-    @else
-    {
-        --css-#{$group}-background: var(--css-#{$palette}-#{$background});
-    }
-    
-    // Border
-    @if ($border == white or $border == black)
-    {
-        --css-#{$group}-border: var(--css-#{$border});
-    }
-    @else
-    {
-        --css-#{$group}-border: var(--css-#{$palette}-#{$border});
-    }
-
-    // Text
-    @if ($text == white or $text == black)
-    {
-        --css-#{$group}-text: var(--css-#{$text});
-    }
-    @else
-    {
-        --css-#{$group}-text: var(--css-#{$palette}-#{$text});
-    }
-}
-
 // Light theme colors
 body:not(data-css-theme),
 body[data-css-theme="light"]
@@ -61,162 +29,252 @@ body[data-css-theme="light"]
         color: var(--css-primary-800);
     }
     
-    * {
-        &[data-css-accent],
-        & [data-css-accent],
-        [data-css-accent] &
-        {
-            // Normal state
-            @include pallete-color-group(accent, normal, 100, 500, 800);
-            // Selected state
-            @include pallete-color-group(accent, selected, 300, 700, 900);
-            // Pressed state
-            @include pallete-color-group(accent, pressed, 400, 900, 900);
-            // Disabled state
-            @include pallete-color-group(accent, disabled, 50, 300, 700);
-        }
-    
-        &,
-        & [data-css-primary],
-        &[data-css-primary],
-        [data-css-primary] &
-        {
-            // Normal state
-            @include pallete-color-group(primary, normal, 100, 500, 800);
-            // Selected state
-            @include pallete-color-group(primary, selected, 300, 700, 900);
-            // Pressed state
-            @include pallete-color-group(primary, pressed, 400, 900, 900);
-            // Disabled state
-            @include pallete-color-group(primary, disabled, 50, 300, 700);
-
-        }
+    *[data-css-accent],
+    * [data-css-accent],
+    [data-css-accent] *:not([data-css-primary])
+    {
+        // Normal state
+        @include pallete-color-group(accent, normal, 100, 500, 800);
+        // Selected state
+        @include pallete-color-group(accent, selected, 300, 700, 900);
+        // Pressed state
+        @include pallete-color-group(accent, pressed, 400, 900, 900);
+        // Disabled state
+        @include pallete-color-group(accent, disabled, 50, 300, 700);
 
         // Info type
         &[data-css-type="info"]
         {
-            &[data-css-accent],
-            & [data-css-accent],
-            [data-css-accent] &
-            {
-                // Normal state
-                @include pallete-color-group(accent, normal, white, 100, 800);
-            }
-
-            &,
-            & [data-css-primary],
-            &[data-css-primary],
-            {
-                // Normal state
-                @include pallete-color-group(primary, normal, white, 100, 800);            
-            }
+            // Normal state
+            @include pallete-color-group(accent, normal, white, 100, 800);
+            // Selected state
+            @include pallete-color-group(accent, selected, 200, 300, 900);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 300, 700, 900);
         }
         
         // Success type
         &[data-css-type="success"]
         {
-            
-            &[data-css-accent],
-            & [data-css-accent],
-            [data-css-accent] &
-            {
-                // Normal state
-                @include pallete-color-group(accent, normal, 200, 300, 800);
-            }
-
-            &,
-            & [data-css-primary],
-            &[data-css-primary],
-            {
-                // Normal state
-                @include pallete-color-group(primary, normal, 200, 300, 800);            
-            }
+            // Normal state
+            @include pallete-color-group(accent, normal, 200, 300, 800);
+            // Selected state
+            @include pallete-color-group(accent, selected, 500, 500, 900);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 600, 700, 900);
         }
-
+        
         // Warning type
         &[data-css-type="warning"]
         {
-            
-            &[data-css-accent],
-            & [data-css-accent],
-            [data-css-accent] &
-            {
-                // Normal state
-                @include pallete-color-group(accent, normal, 500, 600, black);
-            }
-
-            &,
-            & [data-css-primary],
-            &[data-css-primary],
-            {
-                // Normal state
-                @include pallete-color-group(primary, normal, 500, 600, black);
-            }
+            // Normal state
+            @include pallete-color-group(accent, normal, 500, 600, black);
+            // Selected state
+            @include pallete-color-group(accent, selected, 800, 800, white);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 900, 800, white);
         }
 
         // Error type
         &[data-css-type="error"]
         {
-            
-            &[data-css-accent],
-            & [data-css-accent],
-            [data-css-accent] &
-            {
-                // Normal state
-                @include pallete-color-group(accent, normal, 700, 800, white);
-            }
+            // Normal state
+            @include pallete-color-group(accent, normal, 700, 800, white);
+            // Selected state
+            @include pallete-color-group(accent, selected, 900, 800, white);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 800, 600, white);
+        }
+    }
 
-            &,
-            & [data-css-primary],
-            &[data-css-primary],
-            {
-                // Normal state
-                @include pallete-color-group(primary, normal, 700, 800, white);
-            }
+    *,
+    * [data-css-primary],
+    *[data-css-primary],
+    [data-css-primary] *:not([data-css-accent])
+    {
+        // Normal state
+        @include pallete-color-group(primary, normal, 100, 500, 800);
+        // Selected state
+        @include pallete-color-group(primary, selected, 300, 700, 900);
+        // Pressed state
+        @include pallete-color-group(primary, pressed, 400, 900, 900);
+        // Disabled state
+        @include pallete-color-group(primary, disabled, 50, 300, 700);
+        
+        // Info type
+        &[data-css-type="info"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, white, 100, 800);
+            // Selected state
+            @include pallete-color-group(primary, selected, 200, 300, 900);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 300, 700, 900);
+        }
+        
+        // Success type
+        &[data-css-type="success"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, 200, 300, 800);
+            // Selected state
+            @include pallete-color-group(primary, selected, 500, 500, 900);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 600, 700, 900);
+        }
+
+        // Warning type
+        &[data-css-type="warning"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, 500, 600, black);
+            // Selected state
+            @include pallete-color-group(primary, selected, 800, 800, white);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 900, 800, white);
+        }
+
+        // Error type
+        &[data-css-type="error"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, 700, 800, white);
+            // Selected state
+            @include pallete-color-group(primary, selected, 900, 800, white);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 800, 600, white);
         }
     }
 }
 
 // Components dark theme colors
-// body[data-css-theme="dark"]
-// {
-//     &
-//     {
-//         background: var(--css-primary-900);
-//         color: var(--css-primary-100);
-//     }
+body[data-css-theme="dark"]
+{
+    &
+    {
+        background: var(--css-primary-900);
+        color: var(--css-primary-100);
+    }
     
-//     * {
-//         &[data-css-accent],
-//         & [data-css-accent],
-//         [data-css-accent] &
-//         {
-//             // Normal state
-//             @include pallete-color-group(accent, normal, 800, 500, 100);
-//             // Selected state
-//             @include pallete-color-group(accent, selected, 600, 300, 200);
-//             // Pressed state
-//             @include pallete-color-group(accent, pressed, 500, 200, 200);
-//             // Disabled state
-//             @include pallete-color-group(accent, disabled, 900, 700, 200);
-//         }
-    
-//         &,
-//         & [data-css-primary],
-//         &[data-css-primary],
-//         [data-css-primary] &
-//         {
-//             // Normal state
-//             @include pallete-color-group(primary, normal, 800, 500, 100);
-//             // Selected state
-//             @include pallete-color-group(primary, selected, 600, 300, 200);
-//             // Pressed state
-//             @include pallete-color-group(primary, pressed, 500, 200, 200);
-//             // Disabled state
-//             @include pallete-color-group(primary, disabled, 900, 700, 200);
-//         }
-//     }
-// }
+    *[data-css-accent],
+    * [data-css-accent],
+    [data-css-accent] *:not([data-css-primary])
+    {
+        // Normal state
+        @include pallete-color-group(accent, normal, 800, 500, 100);
+        // Selected state
+        @include pallete-color-group(accent, selected, 600, 300, 200);
+        // Pressed state
+        @include pallete-color-group(accent, pressed, 500, 200, 200);
+        // Disabled state
+        @include pallete-color-group(accent, disabled, 900, 700, 200);
+
+        // Info type
+        &[data-css-type="info"]
+        {
+            // Normal state
+            @include pallete-color-group(accent, normal, black, 800, 100);
+            // Selected state
+            @include pallete-color-group(accent, selected, 800, 500, 50);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 700, 400, 50);
+        }
+        
+        // Success type
+        &[data-css-type="success"]
+        {
+            // Normal state
+            @include pallete-color-group(accent, normal, 700, 500, 50);
+            // Selected state
+            @include pallete-color-group(accent, selected, 400, 300, 900);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 300, 200, 900);
+        }
+
+        // Warning type
+        &[data-css-type="warning"]
+        {
+            // Normal state
+            // @include pallete-color-group(primary, normal, 500, 600, black);
+            @include pallete-color-group(accent, normal, 400, 200, black);
+            // Selected state
+            @include pallete-color-group(accent, selected, 100, 50, 900);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, white, 200, black);
+        }
+
+        // Error type
+        &[data-css-type="error"]
+        {
+            // Normal state
+            @include pallete-color-group(accent, normal, 200, 50, 900);
+            // Selected state
+            @include pallete-color-group(accent, selected, white, 100, black);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, 100, 300, black);
+        }
+    }
+
+    *,
+    * [data-css-primary],
+    *[data-css-primary],
+    [data-css-primary] *:not([data-css-accent])
+    {
+        // Normal state
+        @include pallete-color-group(primary, normal, 800, 500, 100);
+        // Selected state
+        @include pallete-color-group(primary, selected, 600, 300, 200);
+        // Pressed state
+        @include pallete-color-group(primary, pressed, 500, 200, 200);
+        // Disabled state
+        @include pallete-color-group(primary, disabled, 900, 700, 200);
+
+        // Info type
+        &[data-css-type="info"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, black, 800, 100);
+            // Selected state
+            @include pallete-color-group(primary, selected, 800, 500, 50);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 700, 400, 50);
+        }
+        
+        // Success type
+        &[data-css-type="success"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, 700, 500, 50);
+            // Selected state
+            @include pallete-color-group(primary, selected, 400, 300, 900);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 300, 200, 900);
+        }
+
+        // Warning type
+        &[data-css-type="warning"]
+        {
+            // Normal state
+            // @include pallete-color-group(primary, normal, 500, 600, black);
+            @include pallete-color-group(primary, normal, 400, 200, black);
+            // Selected state
+            @include pallete-color-group(primary, selected, 100, 50, 900);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, white, 200, black);
+        }
+
+        // Error type
+        &[data-css-type="error"]
+        {
+            // Normal state
+            @include pallete-color-group(primary, normal, 200, 50, 900);
+            // Selected state
+            @include pallete-color-group(primary, selected, white, 100, black);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, 100, 300, black);
+        }
+    }
+}
 
 
 

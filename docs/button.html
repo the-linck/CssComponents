@@ -28,6 +28,7 @@
         <!-- Table of contents -->
         <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
             <h1 data-css-role="heading">Contents</h1>
+
             <ol>
                 <li>
                     <a href="#plain">Plain Button</a>
@@ -39,7 +40,7 @@
                             <a href="#states">States</a>
                         </li>
                         <li>
-                            <a href="#actions">Actions</a>
+                            <a href="#types">Types</a>
                         </li>
                     </ol>
                 </li>
@@ -253,22 +254,22 @@
                     </section>
                     <!-- /States -->
                     <!-- Actions -->
-                    <section aria-labelledby="actions" data-css-chapter>
-                        <header id="actions">
-                            <h3 data-css-role="heading">Actions</h3>
+                    <section aria-labelledby="types" data-css-chapter>
+                        <header id="types">
+                            <h3 data-css-role="heading">Types</h3>
                         </header>
 
                         <p>
-                            Sometimes you need to highlight actions on your page, for that porpuse we provide the following types:
+                            Sometimes you need to contextual buttons on your page, for that porpuse we provide the following types:
                         </p>
 
                         <!-- Demo -->
                         <div>
-                            <button data-css-role="button" data-css-action="primary">primary</button>
-                            <button data-css-role="button" data-css-action="secondary">secondary</button>
-                            <button data-css-role="button" data-css-action="tertiary">tertiary</button>
                             <button data-css-role="button">common</button>
-                            <button data-css-role="button" data-css-action="special">special</button>
+                            <button data-css-role="button" data-css-type="info">info</button>
+                            <button data-css-role="button" data-css-type="success">success</button>
+                            <button data-css-role="button" data-css-type="warning">warning</button>
+                            <button data-css-role="button" data-css-type="error">error</button>
                         </div>
                         <!-- /Demo -->
 
@@ -482,10 +483,10 @@
                 <!-- Demo -->
                 <div>
                     <a href="#accent" role="button">Common</a>
-                    <a href="#accent" data-css-role="button" data-css-action="primary">primary</a>
-                    <a href="#accent" data-css-role="button" data-css-action="secondary">secondary</a>
-                    <a href="#accent" data-css-role="button" data-css-action="tertiary">tertiary</a>
-                    <a href="#accent" data-css-role="button" data-css-action="special">special</a>
+                    <a href="#accent" data-css-role="button" data-css-type="info">info</a>
+                    <a href="#accent" data-css-role="button" data-css-type="success">success</a>
+                    <a href="#accent" data-css-role="button" data-css-type="warning">warning</a>
+                    <a href="#accent" data-css-role="button" data-css-type="error">error</a>
                     <a aria-disabled="true" href="#accent" data-css-role="button">disabled</a>
                 </div>
                 <!-- /Demo -->
@@ -501,10 +502,10 @@
                     </summary>
                     <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                         <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button"&gt;common&lt;/button&gt;</span>
-                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;primary&quot;&gt;primary&lt;/button&gt;</span>
-                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;secondary&quot;&gt;secondary&lt;/button&gt;</span>
-                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;tertiary&quot;&gt;tertiary&lt;/button&gt;</span>
-                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-action=&quot;special&quot;&gt;special&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-type=&quot;info&quot;&gt;info&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-type=&quot;success&quot;&gt;success&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-type=&quot;warning&quot;&gt;warning&lt;/button&gt;</span>
+                        <span>&lt;a href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button" data-css-type=&quot;error&quot;&gt;error&lt;/button&gt;</span>
                         <span>&lt;a aria-disabled href="#accent" <strong data-css-primary>data-css-accent</strong> data-css-role="button"&gt;special&lt;/button&gt;</span>
                     </code>
                 </details>

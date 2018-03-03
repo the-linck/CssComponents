@@ -1,3 +1,37 @@
+// Defines a set of colors (background, border, text) for a named group in a palette
+@mixin pallete-color-group($palette, $group, $background, $border, $text)
+{
+    // Background
+    @if ($background == white or $background == black)
+    {
+        --css-#{$group}-background: var(--css-#{$background});
+    }
+    @else
+    {
+        --css-#{$group}-background: var(--css-#{$palette}-#{$background});
+    }
+    
+    // Border
+    @if ($border == white or $border == black)
+    {
+        --css-#{$group}-border: var(--css-#{$border});
+    }
+    @else
+    {
+        --css-#{$group}-border: var(--css-#{$palette}-#{$border});
+    }
+
+    // Text
+    @if ($text == white or $text == black)
+    {
+        --css-#{$group}-text: var(--css-#{$text});
+    }
+    @else
+    {
+        --css-#{$group}-text: var(--css-#{$palette}-#{$text});
+    }
+}
+
 // Standart background color
 @mixin component-background-color($state)
 {
