@@ -124,8 +124,10 @@ article
                 @include component-border-color(normal);
 
                 // Chapter heading
-                [role="heading"]::before,
-                [data-css-role="heading"]::before
+                >[role="heading"]::before,
+                >[data-css-role="heading"]::before,
+                >header [role="heading"]::before,
+                >header [data-css-role="heading"]::before
                 {
                     /* Chapter heading */
                     content: counters(article-chapters, ".") " ";

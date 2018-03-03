@@ -1,46 +1,18 @@
-
-%dialog-accent-close
-{
-    color: var(--css-accent-700);
-
-    &:hover,
-    &:focus
-    {
-        color: var(--css-accent-500);
-    }
-
-    &:active
-    {
-        color: var(--css-accent-900);
-    }
-}
-%dialog-accent-header
-{
-    background: var(--css-accent-300);
-    border-bottom: 1px solid var(--css-accent-400);
-
-    [data-css-close]
-    {
-        @extend %dialog-accent-close;
-    }    
-}
+@import '_component';
 
 // Dialogs must have and ID, it's basic for their functionality
 [role="alertdialog"][id],
 [role="dialog"][id]
 {
-    background: var(--css-primary-50);
-    border: 1px solid var(--css-primary-400);
+    border: 1px solid;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 18em;
+    font-size: 1rem;
     position: fixed;
     left: 50%;
-    max-height:  calc(50% - 2em);
-    max-width: calc(50% - 2em);
     min-height: 9em;
     min-width: 16em;
     overflow: visible;
@@ -49,13 +21,12 @@
     top: 100vh;
     transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
     visibility: hidden;
-    width: 32em;
 
+    @include component-colors(normal);
 
     // Background
     &::before
     {
-        background: var(--css-primary-900);
         bottom: -50vh;
         content: ' ';
         display: none;
@@ -64,6 +35,8 @@
         position: fixed;
         right: -50vw;
         top: -50vh;
+
+        @include component-background-color(normal);        
     }
 
 
@@ -77,11 +50,6 @@
         padding: 0.5em;
         position: relative;
         z-index: 10;
-
-        &[data-css-accent]
-        {
-            background-color: var(--css-accent-50);
-        }
     }
 
 
@@ -89,59 +57,26 @@
     > [role="heading"],
     > [data-css-role="heading"]
     {
-        background: var(--css-primary-300);
-        border-bottom: 1px solid var(--css-primary-400);
+        border-bottom: 1px solid;
         border-top-left-radius: 0.5em;
         border-top-right-radius: 0.5em;
         flex-grow: 0;
+        font-size: 1em;
+        line-height: 1em;
         margin: 0;
 
-
-        &[data-css-accent]
-        {
-            @extend %dialog-accent-header;
-        }
-
-        // Avoiding interference int counters
-        &::before
-        {
-            content: none;
-            counter-increment: none;
-        }
+        @include component-colors(selected);
 
         // Close button
         [data-css-close]
         {
+            float: right;
             text-decoration: none;
             transition: color 0.3s;
-
-            // Primary color
-            &,
-            &[data-css-primary]
-            {
-                color: var(--css-primary-700);
-            
-                &:hover,
-                &:focus
-                {
-                    color: var(--css-primary-500);
-                }
-            
-                &:active
-                {
-                    color: var(--css-primary-900);
-                }
-            }
-            
-            // Accent color
-            &[data-css-accent]
-            {
-                @extend %dialog-accent-close;
-            }
         }
 
         // Letting subsequent elements have scroll
-        &+*
+        & + *
         {
             overflow: auto;
         }
@@ -156,11 +91,6 @@
         transition: opacity 0.3s, top 0.3s;
         visibility: visible;
         z-index: 10;
-
-        &::before
-        {
-            display: flex;
-        }
     }
 
 
@@ -171,6 +101,14 @@
         max-height: calc(33% - 2em);
         max-width: calc(33% - 2em);
         width: 16em;
+    }
+    &:not([data-css-size]),
+    &[data-css-size="medium"]
+    {
+        height: 18em;
+        max-height: calc(50% - 2em);
+        max-width: calc(50% - 2em);
+        width: 43em;
     }
     &[data-css-size="big"]
     {
@@ -194,24 +132,33 @@
         width: calc(100% - 2em);
     }
 
-
-    // Accent color
-    &[data-css-accent]
+    // Custom primary colors
+    &:not([data-css-accent]),
+    &[data-css-primary],
+    [data-css-primary] &
     {
-        background-color: var(--css-accent-50);
-        border-color: var(--css-accent-400);
-
-        // Modal background
         &::before
         {
-            background-color: var(--css-accent-900);
+            @include pallete-background-group(primary, normal, 900);
         }
-
-        // Heading
-        > [role="heading"],
-        > [data-css-role="heading"]
+    }
+    
+    // Custom accent color
+    &[data-css-accent],
+    [data-css-accent] &
+    {
+        &::before
         {
-            @extend %dialog-accent-header;
+            @include pallete-background-group(accent, normal, 900);
         }
+    }
+}
+
+[role="alertdialog"][id],
+[role="dialog"][data-css-modal]
+{
+    &:target::before
+    {
+        display: flex;
     }
 }
