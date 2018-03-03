@@ -1,11 +1,14 @@
+@import '_component';
+
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
 {
     /* Component basic rules */
-    background: var(--css-primary-900);
-    border: 1px solid var(--css-primary-700);
+    border: 1px solid;
     border-radius: 0.5em;
     display: block;
     margin: 1em 0 0 0;
+
+    @include component-colors(normal);
 
 
     // Programming Language
@@ -13,6 +16,8 @@
     {
         font-weight: bold;
         transition: color 0.3s;
+
+        @include component-text-color(normal);        
     }
 
 
@@ -39,21 +44,38 @@
         // Line counter activation
         &[data-css-group="lines"][role=group]
         {
-            // All lines number
-            >*::before
+            [data-css-primary],
+            [data-css-accent]
             {
-                color: var(--css-primary-600);
-                content: counters(code-lines, ".", decimal-leading-zero);
-                counter-increment: code-lines;
-                display: table-cell;
-                height: 100%;
-                padding-right: 1em;
+                @include component-text-color(normal);        
             }
-            // First line number
-            >:first-child::before
+
+            // All lines            
+            >*
             {
-                padding-top:  0.5em;
+                &,
+                &::before
+                {
+                    @include component-text-color(normal);
+                }
+
+                // Line number
+                &::before
+                {
+                    content: counters(code-lines, ".", decimal-leading-zero);
+                    counter-increment: code-lines;
+                    display: table-cell;
+                    height: 100%;
+                    padding-right: 1em;
+                }
+                
+                // First line number
+                &:first-child::before
+                {
+                    padding-top:  0.5em;
+                }
             }
+
 
             // Last line
             >:last-child
@@ -98,33 +120,43 @@
             text-indent: attr(data-css-tabs em, 0);
         }
     }
-    
 
-    // Primary color
-    &,
+    // Custom primary colors
+    &:not([data-css-accent]),
     &[data-css-primary],
+    & :not([data-css-accent]),
     & [data-css-primary]
     {
-        color: var(--css-primary-100);
-    }
-
-
-    // Accent color
-    &[data-css-accent]
-    {
-        /* Support for accent color */
-        background-color: var(--css-accent-900);
-        border-color: var(--css-accent-700);
+        @include pallete-color-group(primary, normal, 900, 700, 100);
 
         > [itemprop="text"][data-css-group="lines"][role=group] >*::before
         {
-            color: var(--css-accent-600);
+            @include pallete-text-group(primary, normal, 500);
         }
     }
-    &[data-css-accent],
-    & [data-css-accent]
+    > [itemprop="text"][data-css-group="lines"][role=group] [data-css-primary],
+    [itemprop="programmingLanguage"][data-css-primary]
     {
-        color: var(--css-accent-100);
+        @include pallete-text-group(primary, normal, 100);
+    }
+
+    // Custom accent colors
+    &[data-css-accent],
+    [data-css-accent] &,
+    &[data-css-accent] :not([data-css-primary]),
+    [data-css-accent] & :not([data-css-primary])
+    {
+        @include pallete-color-group(accent, normal, 900, 700, 100);
+
+        > [itemprop="text"][data-css-group="lines"][role=group] >*::before
+        {
+            @include pallete-text-group(accent, normal, 500);
+        }
+    }
+    > [itemprop="text"][data-css-group="lines"][role=group] [data-css-accent],
+    [itemprop="programmingLanguage"][data-css-accent]
+    {
+        @include pallete-text-group(accent, normal, 100);
     }
 }
 
@@ -135,32 +167,27 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
     // Summary element
     > summary:first-child
     {
-        background: var(--css-primary-900);
         border-radius: 0.5em;
         transition: background 0.3s;
-    }
 
-    // Primary color when opened
-    &[open] > summary:first-child,
-    &[open] > summary:first-child[data-css-primary],
-    &[open] > summary:first-child [data-css-primary]
-    {
-        color: var(--css-primary-50);
+        @include component-background-color(normal);
     }
-    // Accent color when opened
-    &[open][data-css-accent] > summary:first-child,
-    &[open] > summary:first-child[data-css-accent],
-    &[open] > summary:first-child [data-css-accent]
-    {
-        color: var(--css-accent-50);
-    }
-    
 
     // Hover/selected state summary
     > summary:first-child:hover,
     &[open] > summary:first-child
+    {   
+        @include component-background-color(selected);
+        @include component-text-color(selected);
+    }
+    
+    &[open] > summary:first-child
     {
-        background: var(--css-primary-700);
+        border-bottom: 1px solid;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        @include component-border-color(selected);
     }
 
     // Removing summary outline
@@ -171,31 +198,30 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
         outline: none;
     }
 
-    // Opened summary custom borders
-    &[open] > summary:first-child
+    // Custom primary colors
+    &:not([data-css-accent]),
+    &[data-css-primary],
+    [data-css-primary] &
     {
-        border-bottom: 1px solid var(--css-primary-700);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    // Accent color
-    &[data-css-accent]
-    {
-        > summary:first-child:hover,
-        &[open] > summary:first-child
-        {
-            background: var(--css-accent-700);
-        }
-
         > summary:first-child
         {
-            background: var(--css-accent-900);
+            @include pallete-background-group(primary, normal, 900);
+            @include pallete-background-group(primary, selected, 700);            
+            @include pallete-text-group(primary, selected, 50);
+            @include pallete-border-group(primary, selected, 700);
         }
+    }
 
-        &[open]
+    // Custom accent colors
+    &[data-css-accent],
+    [data-css-accent] &
+    {
+        > summary:first-child
         {
-            border-bottom-color: var(--css-accent-700);
+            @include pallete-background-group(accent, normal, 900);
+            @include pallete-background-group(accent, selected, 700);            
+            @include pallete-text-group(accent, selected, 50);
+            @include pallete-border-group(accent, selected, 700);
         }
     }
 }
