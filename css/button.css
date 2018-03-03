@@ -18,6 +18,7 @@ input[type="reset"],
   border-radius: 0.25em;
   box-sizing: border-box;
   display: inline-block;
+  margin: .5em;
   outline: none;
   text-transform: uppercase;
   text-align: center;

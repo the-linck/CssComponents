@@ -1,17 +1,6 @@
-// Defines a set of colors (background, border, text) for a named group in a palette
-@mixin pallete-color-group($palette, $group, $background, $border, $text)
+// Defines border color for a named group in a palette
+@mixin pallete-border-group($palette, $group, $border)
 {
-    // Background
-    @if ($background == white or $background == black)
-    {
-        --css-#{$group}-background: var(--css-#{$background});
-    }
-    @else
-    {
-        --css-#{$group}-background: var(--css-#{$palette}-#{$background});
-    }
-    
-    // Border
     @if ($border == white or $border == black)
     {
         --css-#{$group}-border: var(--css-#{$border});
@@ -20,8 +9,24 @@
     {
         --css-#{$group}-border: var(--css-#{$palette}-#{$border});
     }
+}
 
-    // Text
+// Defines background color for a named group in a palette
+@mixin pallete-background-group($palette, $group, $background)
+{
+    @if ($background == white or $background == black)
+    {
+        --css-#{$group}-background: var(--css-#{$background});
+    }
+    @else
+    {
+        --css-#{$group}-background: var(--css-#{$palette}-#{$background});
+    }
+}
+
+// Defines text color for a named group in a palette
+@mixin pallete-text-group($palette, $group, $text)
+{
     @if ($text == white or $text == black)
     {
         --css-#{$group}-text: var(--css-#{$text});
@@ -30,6 +35,19 @@
     {
         --css-#{$group}-text: var(--css-#{$palette}-#{$text});
     }
+}
+
+// Defines a set of colors (background, border, text) for a named group in a palette
+@mixin pallete-color-group($palette, $group, $background, $border, $text)
+{
+    // Background
+    @include pallete-background-group($palette, $group, $background);
+    
+    // Border
+    @include pallete-border-group($palette, $group, $border);
+
+    // Text
+    @include pallete-text-group($palette, $group, $text);
 }
 
 // Standart background color

@@ -1,3 +1,5 @@
+@import '_component';
+
 // Selectors base
 [role="article"],
 [data-css-role="article"],
@@ -32,6 +34,8 @@ article
         margin: 0 .5em;
         padding: 5em .5em .5em .5em;
 
+        
+        @include component-text-color(normal);
 
         // Article table of contents
         > [itemtype="http://schema.org/SiteNavigationElement"]
@@ -40,6 +44,8 @@ article
             display: block;
             border-left: .5rem solid;
             margin-top: 3.75em;
+
+            @include component-border-text-colors(normal);        
 
             // Table heading
             [data-css-role="heading"]
@@ -115,6 +121,8 @@ article
             {
                 padding-top: 5em;
 
+                @include component-border-color(normal);
+
                 // Chapter heading
                 [role="heading"]::before,
                 [data-css-role="heading"]::before
@@ -130,16 +138,6 @@ article
                     /* Article chapters bottom border */
                     border-bottom: 1px solid;
                     padding-bottom: 4em;
-
-                    &[data-css-accent]
-                    {
-                        @extend %article-accent-chapter;
-                    }
-
-                    &[data-css-primary]
-                    {
-                        @extend %article-primary-chapter;
-                    }
                 }
             }
 
@@ -150,7 +148,7 @@ article
                 counter-reset: article-chapters;    
 
                 // Chapter in group
-                >*
+                >[data-css-chapter]
                 {
                     // First chapter in group
                     &:first-child,
@@ -158,130 +156,60 @@ article
                     {
                         /* All chapters in group except the last */
                         border-bottom: none;
-                        margin-bottom: 1em;   
-                    }
+                        margin-bottom: 1em;
 
-                    &[data-css-accent]
-                    {
-                        @extend %article-accent-chapter-ingroup;            
-                    }
-
-                    &[data-css-primary]
-                    {
-                        @extend %article-primary-chapter;
+                        @include component-border-color(normal);
                     }
                 }
             }
         }
-
-
-        // Accent color 
+    
+        // Custom accent colors
         &[data-css-accent]
         {
-            @extend %article-accent-colors;
+            @include pallete-color-group(accent, normal, 50, 50, 900);            
         }
-
-        // Primary color
-        &,
+        &[data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+        > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent]
+        {
+            @include pallete-border-group(accent, normal, 500);
+            @include pallete-text-group(accent, normal, 700);
+        }
+        &[data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+        > [itemprop="articleBody"] [data-css-chapter][data-css-accent]
+        {
+            @include pallete-border-group(accent, normal, 300);
+        }
+        &[data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent]
+        {
+            @include pallete-border-group(accent, normal, 200);
+        }
+    
+        // Custom primary colors
+        &:not([data-css-accent]),
         &[data-css-primary]
         {
-            @extend %article-primary-colors;
+            @include pallete-color-group(primary, normal, 50, 50, 900);            
         }
-    }
-}
-
-
-
-// Accent colors
-%article-accent-chapter
-{
-    &:not(:last-child)
-    {
-        border-bottom-color: var(--css-accent-300);
-    }
-}
-%article-accent-chapter-ingroup
-{
-    &:first-child,
-    &:not(:last-child)
-    {
-        border-bottom-color: var(--css-accent-200)
-    }
-}
-%article-accent-colors
-{
-    color: var(--css-accent-900);
-
-    > [itemtype="http://schema.org/SiteNavigationElement"]
-    {
-        border-left-color: var(--css-accent-500);
-
-        [data-css-role="heading"]
+        &:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+        &[data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+        > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary]
         {
-            color: var(--css-accent-500);
+            @include pallete-border-group(primary, normal, 500);
+            @include pallete-text-group(primary, normal, 700);
         }
-    }
-
-    [itemprop="articleBody"]
-    {
-        [data-css-chapter]
+        &:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+        &[data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+        > [itemprop="articleBody"] [data-css-chapter][data-css-primary]
         {
-            &:not(:last-child)
-            {
-                border-bottom-color: var(--css-accent-300);
-            }
+            @include pallete-border-group(primary, normal, 300);
         }
-
-        [role="group"][data-css-group="chapters"] > [data-css-chapter]
+        &:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+        &[data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary]
         {
-            @extend %article-accent-chapter-ingroup;
-        }
-    }
-}
-
-
-
-// Primary colors
-%article-primary-chapter
-{
-    &:not(:last-child)
-    {
-        border-bottom-color: var(--css-primary-300);
-    }
-}
-%article-primary-chapter-ingroup
-{
-    &:first-child,
-    &:not(:last-child)
-    {
-        border-bottom-color: var(--css-primary-200)
-    }
-}
-%article-primary-colors
-{
-    color: var(--css-primary-900);
-
-    > [itemtype="http://schema.org/SiteNavigationElement"]
-    {
-        /* Default border */
-        border-left-color: var(--css-primary-500);
-
-        [data-css-role="heading"]
-        {
-            color: var(--css-primary-700);
-        }
-    }
-
-    [itemprop="articleBody"]
-    {
-        [data-css-chapter]
-        {
-            @extend %article-primary-chapter;
-        }
-
-        [role="group"][data-css-group="chapters"] > [data-css-chapter]
-        {
-            @extend %article-primary-chapter-ingroup;
+            @include pallete-border-group(primary, normal, 200);
         }
     }
 }
