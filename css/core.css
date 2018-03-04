@@ -502,6 +502,7 @@ h5 {
 }
 
 [data-css-position="sticky"] {
+  position: -webkit-sticky;
   position: sticky;
 }
 

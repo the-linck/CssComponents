@@ -13,14 +13,22 @@
   border-radius: 0.5em;
   display: block;
   left: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   opacity: 0;
   padding: 0.5em;
   position: absolute;
   top: 0;
   text-transform: none;
+  -webkit-transition: opacity 0.5s, top 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, top 0.5s, -webkit-transform 0.5s;
   transition: opacity 0.5s, transform 0.5s, top 0.5s;
-  transform: translateY(0%) translateX(-50%);
+  transition: opacity 0.5s, transform 0.5s, top 0.5s, -webkit-transform 0.5s;
+  -webkit-transform: translateY(0%) translateX(-50%);
+          transform: translateY(0%) translateX(-50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   z-index: 1;
   background-color: var(--css-normal-background);
@@ -41,7 +49,8 @@
   height: 1em;
   left: 50%;
   position: absolute;
-  transform: rotate(45deg) translateX(-50%);
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
   width: 1em;
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
@@ -83,7 +92,8 @@
   left: 0;
   top: 50%;
   bottom: initial;
-  transform: translateY(-50%) translateX(0);
+  -webkit-transform: translateY(-50%) translateX(0);
+          transform: translateY(-50%) translateX(0);
 }
 
 [data-css-group="tooltip"] > [role="tooltip"][data-css-side="bottom"],
@@ -93,7 +103,8 @@
   /* Bottom side tooltip */
   bottom: 0;
   top: 0;
-  transform: translateY(0%) translateX(-50%);
+  -webkit-transform: translateY(0%) translateX(-50%);
+          transform: translateY(0%) translateX(-50%);
 }
 
 [data-css-group="tooltip"] > [role="tooltip"][data-css-side="left"],
@@ -105,7 +116,8 @@
   right: 0;
   top: 50%;
   bottom: initial;
-  transform: translateY(-50%) translateX(0);
+  -webkit-transform: translateY(-50%) translateX(0);
+          transform: translateY(-50%) translateX(0);
 }
 
 [data-css-group="tooltip"]:hover > [role="tooltip"],
@@ -116,7 +128,8 @@
 [data-css-group="tooltip"]:focus > [role="tooltip"],
 [data-css-group="tooltip"]:focus > [data-css-role="tooltip"] {
   opacity: 1;
-  transform: translateY(-100%) translateX(-50%) translateZ(10em);
+  -webkit-transform: translateY(-100%) translateX(-50%) translateZ(10em);
+          transform: translateY(-100%) translateX(-50%) translateZ(10em);
   top: -0.75em;
 }
 
@@ -148,7 +161,8 @@
   left: initial;
   right: -0.75em;
   top: 50%;
-  transform: translateY(-50%) translateX(100%) translateZ(10em);
+  -webkit-transform: translateY(-50%) translateX(100%) translateZ(10em);
+          transform: translateY(-50%) translateX(100%) translateZ(10em);
 }
 
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="right"]::before,
@@ -164,7 +178,8 @@
   top: calc(50%  - 2px);
   left: -0.25em;
   left: calc(-0.25em + 2px);
-  transform: rotate(45deg) translateX(-50%);
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
   z-index: -10;
 }
 
@@ -189,7 +204,8 @@
 [data-css-group="tooltip"]:focus > [data-css-role="tooltip"][data-css-side="bottom"] {
   bottom: -1em;
   top: 0;
-  transform: translateY(100%) translateX(-50%) translateZ(10em);
+  -webkit-transform: translateY(100%) translateX(-50%) translateZ(10em);
+          transform: translateY(100%) translateX(-50%) translateZ(10em);
 }
 
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::before,
@@ -203,7 +219,8 @@
   border-right: none;
   top: -0.25em;
   top: calc(-0.25em + 2px);
-  transform: rotate(45deg) translateX(-50%);
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
 }
 
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="bottom"]::after,
@@ -228,7 +245,8 @@
   left: -0.75em;
   right: initial;
   top: 50%;
-  transform: translateY(-50%) translateX(-100%);
+  -webkit-transform: translateY(-50%) translateX(-100%);
+          transform: translateY(-50%) translateX(-100%);
 }
 
 [data-css-group="tooltip"]:hover > [role="tooltip"][data-css-side="left"]::before,
@@ -243,7 +261,8 @@
   top: 50%;
   right: -1em;
   right: calc(-1em + 1px);
-  transform: rotate(45deg) translateX(-50%);
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
   left: initial;
 }
 

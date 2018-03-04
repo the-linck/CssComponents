@@ -17,15 +17,23 @@ input[type="week"] {
 }
 
 [data-css-group="textbox"] {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-direction: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   vertical-align: bottom;
 }
 
 [data-css-group="textbox"] > label {
   color: var(--css-primary-700);
   font-size: .75rem;
-  order: 0;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  -webkit-transition: color .3s;
   transition: color .3s;
 }
 
@@ -44,7 +52,8 @@ input[type="url"],
 input[type="week"],
 textarea {
   border: 0.1rem solid;
-  box-shadow: 0 0 transparent;
+  -webkit-box-shadow: 0 0 transparent;
+          box-shadow: 0 0 transparent;
   cursor: text;
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
@@ -52,11 +61,46 @@ textarea {
   min-width: 10em;
   outline: none;
   padding: .75rem .25em .5rem .25em;
+  -webkit-transition: border-color .3s, color .3s, background .3s, -webkit-box-shadow .3s;
+  transition: border-color .3s, color .3s, background .3s, -webkit-box-shadow .3s;
   transition: border-color .3s, box-shadow .3s, color .3s, background .3s;
+  transition: border-color .3s, box-shadow .3s, color .3s, background .3s, -webkit-box-shadow .3s;
   vertical-align: bottom;
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
   color: var(--css-normal-text);
+}
+
+[role="textbox"]::-webkit-input-placeholder, [role="textbox"]::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder,
+input[type="datetime-local"]::-webkit-input-placeholder,
+input[type="datetime-local"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="month"]::-webkit-input-placeholder,
+input[type="month"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="search"]::-webkit-input-placeholder,
+input[type="search"]::-webkit-input-placeholder,
+input[type="tel"]::-webkit-input-placeholder,
+input[type="tel"]::-webkit-input-placeholder,
+input[type="time"]::-webkit-input-placeholder,
+input[type="time"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+input[type="url"]::-webkit-input-placeholder,
+input[type="url"]::-webkit-input-placeholder,
+input[type="week"]::-webkit-input-placeholder,
+input[type="week"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: var(--css-primary-600);
+  -webkit-transition: color .25s;
+  transition: color .25s;
 }
 
 [role="textbox"]::placeholder, [role="textbox"]::-webkit-input-placeholder,
@@ -87,6 +131,7 @@ input[type="week"]::-webkit-input-placeholder,
 textarea::placeholder,
 textarea::-webkit-input-placeholder {
   color: var(--css-primary-600);
+  -webkit-transition: color .25s;
   transition: color .25s;
 }
 
@@ -105,7 +150,9 @@ input[type="url"], [data-css-group="textbox"] >
 input[type="week"], [data-css-group="textbox"] >
 textarea {
   display: block;
-  order: 0;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
   margin: 0;
   padding-top: .5rem;
 }
@@ -194,7 +241,172 @@ textarea:focus {
   background-color: var(--css-primary-50);
   color: var(--css-black);
   border-color: var(--css-primary-400);
-  box-shadow: 0 0.1rem var(--css-primary-400);
+  -webkit-box-shadow: 0 0.1rem var(--css-primary-400);
+          box-shadow: 0 0.1rem var(--css-primary-400);
+}
+
+[role="textbox"]:hover::-webkit-input-placeholder, [role="textbox"]:hover::-webkit-input-placeholder, [role="textbox"]:focus::-webkit-input-placeholder, [role="textbox"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] > [role="textbox"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] > [role="textbox"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] > [role="textbox"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] > [role="textbox"]:focus::-webkit-input-placeholder,
+input[type="date"]:hover::-webkit-input-placeholder,
+input[type="date"]:hover::-webkit-input-placeholder,
+input[type="date"]:focus::-webkit-input-placeholder,
+input[type="date"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="date"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="date"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="date"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="date"]:focus::-webkit-input-placeholder,
+input[type="datetime-local"]:hover::-webkit-input-placeholder,
+input[type="datetime-local"]:hover::-webkit-input-placeholder,
+input[type="datetime-local"]:focus::-webkit-input-placeholder,
+input[type="datetime-local"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="datetime-local"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="datetime-local"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="datetime-local"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="datetime-local"]:focus::-webkit-input-placeholder,
+input[type="email"]:hover::-webkit-input-placeholder,
+input[type="email"]:hover::-webkit-input-placeholder,
+input[type="email"]:focus::-webkit-input-placeholder,
+input[type="email"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="email"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="email"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="email"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="email"]:focus::-webkit-input-placeholder,
+input[type="month"]:hover::-webkit-input-placeholder,
+input[type="month"]:hover::-webkit-input-placeholder,
+input[type="month"]:focus::-webkit-input-placeholder,
+input[type="month"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="month"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="month"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="month"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="month"]:focus::-webkit-input-placeholder,
+input[type="number"]:hover::-webkit-input-placeholder,
+input[type="number"]:hover::-webkit-input-placeholder,
+input[type="number"]:focus::-webkit-input-placeholder,
+input[type="number"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="number"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="number"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="number"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="number"]:focus::-webkit-input-placeholder,
+input[type="password"]:hover::-webkit-input-placeholder,
+input[type="password"]:hover::-webkit-input-placeholder,
+input[type="password"]:focus::-webkit-input-placeholder,
+input[type="password"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="password"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="password"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="password"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="password"]:focus::-webkit-input-placeholder,
+input[type="search"]:hover::-webkit-input-placeholder,
+input[type="search"]:hover::-webkit-input-placeholder,
+input[type="search"]:focus::-webkit-input-placeholder,
+input[type="search"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="search"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="search"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="search"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="search"]:focus::-webkit-input-placeholder,
+input[type="tel"]:hover::-webkit-input-placeholder,
+input[type="tel"]:hover::-webkit-input-placeholder,
+input[type="tel"]:focus::-webkit-input-placeholder,
+input[type="tel"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="tel"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="tel"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="tel"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="tel"]:focus::-webkit-input-placeholder,
+input[type="time"]:hover::-webkit-input-placeholder,
+input[type="time"]:hover::-webkit-input-placeholder,
+input[type="time"]:focus::-webkit-input-placeholder,
+input[type="time"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="time"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="time"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="time"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="time"]:focus::-webkit-input-placeholder,
+input[type="text"]:hover::-webkit-input-placeholder,
+input[type="text"]:hover::-webkit-input-placeholder,
+input[type="text"]:focus::-webkit-input-placeholder,
+input[type="text"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="text"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="text"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="text"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="text"]:focus::-webkit-input-placeholder,
+input[type="url"]:hover::-webkit-input-placeholder,
+input[type="url"]:hover::-webkit-input-placeholder,
+input[type="url"]:focus::-webkit-input-placeholder,
+input[type="url"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="url"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="url"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="url"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="url"]:focus::-webkit-input-placeholder,
+input[type="week"]:hover::-webkit-input-placeholder,
+input[type="week"]:hover::-webkit-input-placeholder,
+input[type="week"]:focus::-webkit-input-placeholder,
+input[type="week"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="week"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="week"]:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="week"]:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+input[type="week"]:focus::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder,
+textarea:hover::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+textarea:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+textarea:hover::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+textarea:focus::-webkit-input-placeholder,
+[data-css-group="textbox"] >
+textarea:focus::-webkit-input-placeholder {
+  color: var(--css-primary-600);
 }
 
 [role="textbox"]:hover::placeholder, [role="textbox"]:hover::-webkit-input-placeholder, [role="textbox"]:focus::placeholder, [role="textbox"]:focus::-webkit-input-placeholder,

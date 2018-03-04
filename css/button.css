@@ -2,6 +2,8 @@
 [data-css-role="group"][data-css-group="button"] {
   border: 0.125em solid;
   border-radius: 0.5em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   white-space: nowrap;
   border-color: var(--css-normal-border);
@@ -16,13 +18,15 @@ input[type="reset"],
   /* Basic component rules */
   border: 1px solid;
   border-radius: 0.25em;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   margin: .5em;
   outline: none;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: 0.25s color, 0.25s background, 0.25s border-color;
   transition: 0.25s color, 0.25s background, 0.25s border-color;
 }
 

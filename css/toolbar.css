@@ -1,5 +1,7 @@
 [role="toolbar"] {
   background: var(--css-primary-600);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 1rem;
   padding: 0 1rem;
@@ -8,7 +10,8 @@
 
 [role="toolbar"]::after {
   bottom: 0;
-  box-shadow: 0 2px 5px var(--css-black);
+  -webkit-box-shadow: 0 2px 5px var(--css-black);
+          box-shadow: 0 2px 5px var(--css-black);
   content: ' ';
   display: block;
   height: 1px;
@@ -44,6 +47,7 @@
 
 [role="toolbar"] [data-css-role="heading"] a,
 [role="toolbar"] [data-css-role="heading"] [role="link"] {
+  -webkit-transition: color .3s;
   transition: color .3s;
 }
 

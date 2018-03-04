@@ -6,6 +6,7 @@ a:not([role]) {
   font-size: 1.125em;
   font-weight: bold;
   text-decoration: underline;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 

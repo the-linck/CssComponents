@@ -11,6 +11,7 @@
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] [itemprop="programmingLanguage"] {
   font-weight: bold;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
   color: var(--css-normal-text);
 }
@@ -23,7 +24,8 @@
 }
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   counter-reset: code-lines;
   display: table;
   font-family: monospace;
@@ -53,8 +55,11 @@
 }
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] > :last-child {
-  align-items: stretch;
-  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 [itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > [itemprop="text"][data-css-group="lines"][role=group] > :last-child::before {
@@ -125,6 +130,7 @@
 
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child {
   border-radius: 0.5em;
+  -webkit-transition: background 0.3s;
   transition: background 0.3s;
   background-color: var(--css-normal-background);
 }

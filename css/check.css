@@ -12,6 +12,7 @@
   opacity: 0;
   position: absolute;
   top: -1em;
+  -webkit-transition: opacity .3s;
   transition: opacity .3s;
   width: 3em;
   z-index: -10;
@@ -85,6 +86,7 @@
 [role="switch"]::before,
 [data-css-role="switch"]::before {
   height: 1.25em;
+  -webkit-transition: background-color .3s, color .3s;
   transition: background-color .3s, color .3s;
   width: 1.25em;
 }
@@ -262,6 +264,7 @@
   line-height: 1em;
   opacity: 0;
   text-align: center;
+  -webkit-transition: .3s opacity, .3s line-height, .3s color;
   transition: .3s opacity, .3s line-height, .3s color;
 }
 
@@ -459,6 +462,7 @@
 [role="switch"] > [data-css-toggle]::before,
 [data-css-role="switch"] > [data-css-toggle]::before {
   left: -0.8em;
+  -webkit-transition: opacity .3s, left .3s;
   transition: opacity .3s, left .3s;
 }
 
@@ -468,6 +472,7 @@
   height: 1.5em;
   margin-top: -0.25em;
   opacity: 1;
+  -webkit-transition: left .3s;
   transition: left .3s;
   width: 1.5em;
 }
