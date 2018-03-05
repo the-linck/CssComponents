@@ -1,3 +1,5 @@
+@import '_component';
+
 // Group rules
 [data-css-group="tooltip"],
 [data-css-group="tooltip"]
@@ -25,6 +27,8 @@
         transform: translateY(0%) translateX(-50%);
         width: fit-content;
         z-index: 1;
+
+        @include component-colors(normal);
         
 
         // Arrow
@@ -41,6 +45,8 @@
             position: absolute;
             transform: rotate(45deg) translateX(-50%);
             width: 1em;
+
+            @include component-colors(normal);
         }
 
 
@@ -100,41 +106,6 @@
             bottom: initial;
             transform: translateY(-50%) translateX(0);
         }
-
-
-        // Primary color
-        &,
-        &[data-css-primary]
-        {
-            background: var(--css-primary-50);
-            border-color: var(--css-primary-300);
-            color: var(--css-primary-900);
-            
-            // Arrow
-            &::before
-            {
-                /* Primary Arrow */
-                background-color: var(--css-primary-50);
-	            border-color: var(--css-primary-300);
-            }
-        }
-
-
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-50);
-            border-color: var(--css-accent-300);
-            color: var(--css-accent-900);
-
-            // Arrow
-            &::before
-            {
-                /* Accent Arrow */
-                background-color: var(--css-accent-50);
-	            border-color: var(--css-accent-300);
-            }
-        }
     }
 
     // Group selected state rules
@@ -177,6 +148,7 @@
                     left: -0.25em;
                     left: calc(-0.25em + 2px);
                     transform: rotate(45deg) translateX(-50%);
+                    z-index: -10;
                 }
                 
                 // Transparent hoverable area

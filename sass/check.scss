@@ -1,3 +1,21 @@
+@import '_component';
+
+// Focus circle
+%check-focus-pseudo
+{
+    content: '';
+    border: 1px solid transparent;
+    border-radius: 100%;
+    height: 3em;
+    left: -1em;
+    opacity: 0;
+    position: absolute;
+    top: -1em;
+    transition: opacity .3s;
+    width: 3em;
+    z-index: -10;
+}
+
 // Absolutely positioned pseudo-elements
 %check-absolute-pseudo
 {
@@ -5,7 +23,6 @@
     position: absolute;
     top: 0;
 }
-
 // Pseudo element for interactive element
 %check-interactive-pseudo
 {
@@ -13,52 +30,6 @@
     content: '';
     display: inline-block;
 }
-
-// Accent colors
-%check-base-button-accent
-{
-    background-color: var(--css-accent-500);
-    border-color: var(--css-accent-900);
-}
-%check-selected-button-accent
-{
-    background-color: var(--css-accent-400);
-    border-color: var(--css-accent-700);
-}
-%check-pressed-button-accent
-{
-    background-color: var(--css-accent-600);
-    border-color: var(--css-accent-800);
-}
-%check-disabled-button-accent
-{
-    background-color: var(--css-accent-50);
-    border-color: var(--css-accent-500);
-}
-
-
-// Primary colors
-%check-base-button-primary
-{
-    background-color: var(--css-primary-500);
-    border-color: var(--css-primary-900);
-}
-%check-selected-button-primary
-{
-    background-color: var(--css-primary-400);
-    border-color: var(--css-primary-700);
-}
-%check-pressed-button-primary
-{
-    background-color: var(--css-primary-600);
-    border-color: var(--css-primary-800);
-}
-%check-disabled-button-primary
-{
-    background-color: var(--css-primary-50);
-    border-color: var(--css-primary-500);
-}
-
 
 // Rules shared by all module's components
 [role="checkbox"],
@@ -71,6 +42,7 @@
     background: none;
     border: none;
     display: inline-block;
+    font-size: 1rem;
     margin: .5em 0;
     outline:  none;
     padding: 0;
@@ -83,21 +55,55 @@
         display: none;
     }
 
+    // Background button
+    &::before
+    {
+        height: 1.25em;
+        transition: background-color .3s, color .3s;
+        width: 1.25em;
+
+        @extend %check-absolute-pseudo;
+        @extend %check-interactive-pseudo;
+    }
+
+    // Component states in button
+    &:hover:not([data-css-state])::before,
+    &:focus:not([data-css-state])::before,
+    &[data-css-state="selected"]::before
+    {
+        @include component-background-border-colors(selected);
+    }
+    &:active:not([data-css-state])::before,
+    &[data-css-state="pressed"]::before
+    {
+        @include component-background-border-colors(pressed);
+    }
+    &:not([data-css-state])::before, //After hover and active to override specificity
+    &[data-css-state="normal"]::before
+    {
+        @include component-background-border-colors(normal);
+    }
+    &:disabled::before,
+    &[aria-disabled]::before,
+    &[data-css-state="disabled"]::before
+    {
+        @include component-background-border-colors(disabled);
+    }
+
+
     // Component active part container
-    > [data-css-mark]
+    > [data-css-toggle]
     {
         display: inline-block;
-        font-size: 1em;
+        min-height: 1.5em;
+        padding-left: 2em;
         position: relative;
         vertical-align: middle;
 
-        // Background
+        // Focus circle
         &::before
         {
-            height: 1em;
-            width: 1em;
-
-            @extend %check-interactive-pseudo;
+            @extend %check-focus-pseudo;
         }
 
         // Tick (checkbox)/Bullet (radio)/ Toggle (switch)
@@ -111,10 +117,35 @@
         }
     }
 
+    
+    // States in focus circle
+    &:focus > [data-css-toggle]::before,
+    &:active > [data-css-toggle]::before
+    {
+        background-color: var(--css-selected-background);
+        opacity: 1;
+    }
+
     // Sizes
+    &[data-css-size="small"]
+    {
+        font-size: .75em;
+    }
     &[data-css-size="full"]
     {
         display: block;
+    }
+    &[data-css-size="big"]
+    {
+        font-size: 1.75em;
+    }
+    &[data-css-size="huge"]
+    {
+        font-size: 2.5em;
+    }
+    &[data-css-size="full"]
+    {
+        font-size: 4em;
     }
 }
 
@@ -124,240 +155,65 @@
 [role="radio"],
 [data-css-role="radio"]
 {
-    overflow: hidden;
-
-    > [data-css-mark]
-    {
-        // Background
-        &::before
-        {
-            text-align: center;
-            vertical-align: middle;
-        }
-        // Tick (checkbox)/Bullet (radio)
-        &::after
-        {
-            content: '\2714';
-            opacity: 0;
-            text-align: center;
-            transition: 200ms opacity, 200ms line-height;
-        }
-    }
-
-    // Unchecked
-    &[aria-checked="false"] > [data-css-mark]::after,
-    > [data-css-mark]::after
-    {
-        line-height: 4em;
-    }
-
-    // Checked
-    &[aria-checked="true"] > [data-css-mark]::after,
-    > input:checked + [data-css-mark]::after
-    {
-        line-height: 1em;
-        opacity: 1;
-    }
-
-    // Accent color
-    &[data-css-accent]
-    {
-        // Component states in button
-        &:hover:not([data-css-state]) > [data-css-mark]::before,
-        &:focus:not([data-css-state]) > [data-css-mark]::before,
-        &[data-css-state="selected"] > [data-css-mark]::before
-        {
-            @extend %check-selected-button-accent;
-        }
-        &:active:not([data-css-state]) > [data-css-mark]::before,
-        &[data-css-state="pressed"] > [data-css-mark]::before
-        {
-            @extend %check-pressed-button-accent;
-        }
-        &:not([data-css-state]) > [data-css-mark]::before, //After hover and active to override specificity
-        &[data-css-state="normal"] > [data-css-mark]::before
-        {
-            @extend %check-base-button-accent;
-        }
-        &:disabled > [data-css-mark]::before,
-        &[aria-disabled] > [data-css-mark]::before,
-        &[data-css-state="disabled"] > [data-css-mark]::before
-        {
-            @extend %check-disabled-button-accent;
-        }
-
-        
-        // Component states in tick/bullet/toggle
-        &:hover:not([data-css-state]) > [data-css-mark]::after,
-        &:focus:not([data-css-state]) > [data-css-mark]::after,
-        &[data-css-state="selected"] > [data-css-mark]::after
-        {
-            color: var(--css-accent-700);
-        }
-        &:active:not([data-css-state]) > [data-css-mark]::after,
-        &[data-css-state="pressed"] > [data-css-mark]::after
-        {
-            color: var(--css-accent-900);
-        }
-        &:not([data-css-state]) > [data-css-mark]::after, //After hover and active to override specificity
-        &[data-css-state="normal"] > [data-css-mark]::after
-        {
-            color: var(--css-accent-900);
-        }
-        &:disabled > [data-css-mark]::after,
-        &[aria-disabled] > [data-css-mark]::after,
-        &[data-css-state="disabled"] > [data-css-mark]::after
-        {
-            color: var(--css-accent-400);
-        }
-    }
-
-    // Component states in button
-    &:hover:not([data-css-state]) > [data-css-mark]::before,
-    &:focus:not([data-css-state]) > [data-css-mark]::before,
-    &[data-css-state="selected"] > [data-css-mark]::before
-    {
-        @extend %check-selected-button-primary;
-    }
-    &:active:not([data-css-state]) > [data-css-mark]::before,
-    &[data-css-state="pressed"] > [data-css-mark]::before
-    {
-        @extend %check-pressed-button-primary;
-    }
-    &:not([data-css-state]) > [data-css-mark]::before, //After hover and active to override specificity
-    &[data-css-state="normal"] > [data-css-mark]::before
-    {
-        @extend %check-base-button-primary;
-    }
-    &:disabled > [data-css-mark]::before,
-    &[aria-disabled] > [data-css-mark]::before,
-    &[data-css-state="disabled"] > [data-css-mark]::before
-    {
-        @extend %check-disabled-button-primary;
-    }
-    
-    // Component states in tick/bullet/toggle
-    &:hover:not([data-css-state]) > [data-css-mark],
-    &:focus:not([data-css-state]) > [data-css-mark],
-    &[data-css-state="selected"] > [data-css-mark]
-    {
-        &::after,
-        &[data-css-primary]::after
-        {
-            color: var(--css-primary-700);
-        }
-
-        &[data-css-accent]
-        {
-            &::after,
-            &[data-css-primary]::after
-            {
-                color: var(--css-accent-700);
-            }
-        }
-    }
-    &:active:not([data-css-state]) > [data-css-mark],
-    &[data-css-state="pressed"] > [data-css-mark]
-    {
-        &::after,
-        &[data-css-primary]::after
-        {
-            color: var(--css-primary-900);
-        }
-
-        &[data-css-accent]
-        {
-            &::after,
-            &[data-css-primary]::after
-            {
-                color: var(--css-accent-900);
-            }
-        }
-    }
-    &:not([data-css-state]) > [data-css-mark], //After hover and active to override specificity
-    &[data-css-state="normal"] > [data-css-mark]
-    {
-        &::after,
-        &[data-css-primary]::after
-        {
-            color: var(--css-primary-900);
-        }
-        
-        &[data-css-accent]
-        {
-            &::after,
-            &[data-css-primary]::after
-            {
-                color: var(--css-accent-900);
-            }
-        }
-    }
-    &:disabled > [data-css-mark],
-    &[aria-disabled] > [data-css-mark],
-    &[data-css-state="disabled"] > [data-css-mark]
-    {
-        &::after,
-        &[data-css-primary]::after
-        {
-            color: var(--css-primary-400);
-        }
-        
-        &[data-css-accent]
-        {
-            &::after,
-            &[data-css-primary]::after
-            {
-                color: var(--css-accent-400);
-            }
-        }
-    }
-
-
-    // Sizes
-    &[data-css-size="small"] > [data-css-mark]
-    {
-        &::before,
-        &::after
-        {
-            font-size: .75em;
-        }
-        // Tick/bullet/toggle
-        &::after
-        {
-            top: .25em;
-        }
-    }
-    &:not([data-css-size]) > [data-css-mark],
-    &[data-css-size="medium"] > [data-css-mark]
+    > [data-css-toggle]
     {
         &::before,
         &::after
         {
             font-size: 1.25em;
         }
-    }
-    &[data-css-size="big"] > [data-css-mark]
-    {
-        &::before,
+
+        // Tick (checkbox)/Bullet (radio)
         &::after
         {
-            font-size: 4em;
+            content: '\2714';
+            line-height: 1em;
+            opacity: 0;
+            text-align: center;
+            transition: .3s opacity, .3s line-height, .3s color;
         }
     }
-    &[data-css-size="huge"] > [data-css-mark]
+
+    // Checked
+    &[aria-checked="true"] > [data-css-toggle]::after,
+    > input:checked + [data-css-toggle]::after
     {
-        &::before,
+        opacity: 1;
+    }
+
+    // Component states in tick/bullet/toggle
+    &:hover:not([data-css-state]) > [data-css-toggle],
+    &:focus:not([data-css-state]) > [data-css-toggle],
+    &[data-css-state="selected"] > [data-css-toggle]
+    {
         &::after
         {
-            font-size: 6em;
+            @include component-text-color(selected);
         }
     }
-    &[data-css-size="full"] > [data-css-mark]
+    &:active:not([data-css-state]) > [data-css-toggle],
+    &[data-css-state="pressed"] > [data-css-toggle]
     {
-        &::before,
         &::after
         {
-            font-size: 7em;
+            @include component-text-color(pressed);
+        }
+    }
+    &:not([data-css-state]) > [data-css-toggle], //After hover and active to override specificity
+    &[data-css-state="normal"] > [data-css-toggle]
+    {
+        &::after
+        {
+            @include component-text-color(normal);
+        }
+    }
+    &:disabled > [data-css-toggle],
+    &[aria-disabled] > [data-css-toggle],
+    &[data-css-state="disabled"] > [data-css-toggle]
+    {
+        &::after
+        {
+            @include component-text-color(disabled);
         }
     }
 }
@@ -366,7 +222,7 @@
 [role="checkbox"],
 [data-css-role="checkbox"]
 {
-    &[aria-checked="mixed"] > [data-css-mark]::after
+    &[aria-checked="mixed"] > [data-css-toggle]::after
     {
         content: '\2716';
         line-height: 1em;
@@ -378,31 +234,23 @@
 [role="radio"],
 [data-css-role="radio"]
 {
-    > [data-css-mark]
+    // Background button
+    &::before
     {
-        // Background button
-        &::before
-        {
-            border-radius: 50%;
-            overflow: hidden;
-        }
-        // Bullet (radio)
-        &::after
-        {
-            content: '\2b24';
-        }
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    // Bullet (radio)
+    > [data-css-toggle]::after
+    {
+        content: '\2b24';
     }
 
     // Size specific corrections
-    &:not([data-css-size]) > [data-css-mark]::after
+    &[data-css-size="small"] > [data-css-toggle]::after
     {
-        top: 0.05em;
-    }
-    &[data-css-size="small"] > [data-css-mark]::after
-    {
-        font-size: .5em;
-        left: 0.25em;
-        top: 0.575em;
+        top: -0.05em;
     }
 }
 
@@ -412,16 +260,13 @@
 {
     padding-top: .25em;
     
-    // Disabled background bar
+    // Background bar
     &::before
     {
         border-radius: 1em;
         height: 1em;
         margin-top: .25em;
         width: 3em;
-
-        @extend %check-absolute-pseudo;
-        @extend %check-interactive-pseudo;
     }
 
     // States
@@ -429,130 +274,54 @@
     &:focus:not([data-css-state]),
     &[data-css-state="selected"]
     {
-        // Accent color
-        &[data-css-accent]::before
+        &::before,
+        > [data-css-toggle]::after
         {
-            @extend %check-selected-button-accent;
+            @include component-background-border-colors(selected);
         }
 
-        &[data-css-accent] > [data-css-mark],
-        > [data-css-mark][data-css-accent]
+        > input:checked + [data-css-toggle],
+        &[aria-checked="true"] > [data-css-toggle]
         {
-            &::before
-            {
-                @extend %check-base-button-accent;
-            }
             &::after
             {
-                background-color: var(--css-accent-100);
-                border-color: var(--css-accent-400);   
-            }
-        }
-
-        // Primary color
-        &::before
-        {
-            @extend %check-selected-button-primary;
-        }
-
-        > [data-css-mark],
-        > [data-css-mark][data-css-primary]
-        {
-            &::before
-            {
-                @extend %check-base-button-primary;
-            }
-            &::after
-            {
-                background-color: var(--css-primary-100);
-                border-color: var(--css-primary-400);   
+                @include component-background-border-colors(pressed);
             }
         }
     }
     &:active:not([data-css-state]),
     &[data-css-state="pressed"]
     {
-        // Accent color
-        &[data-css-accent]::before
+        &::before,
+        > [data-css-toggle]::after
         {
-            @extend %check-pressed-button-accent;
-        }
-        
-        &[data-css-accent] > [data-css-mark],
-        > [data-css-mark][data-css-accent]
-        {
-            &::before
-            {
-                @extend %check-pressed-button-accent;
-            }
-            &::after
-            {
-                background-color: var(--css-accent-700);
-                border-color: var(--css-accent-900);   
-            }
+            @include component-background-border-colors(pressed);
         }
 
-        // Primary color
-        &::before
+        > input:checked + [data-css-toggle],
+        &[aria-checked="true"] > [data-css-toggle]
         {
-            @extend %check-pressed-button-primary;
-        }
-
-        > [data-css-mark],
-        > [data-css-mark][data-css-primary]
-        {
-            &::before
-            {
-                @extend %check-pressed-button-primary;
-            }
-    
             &::after
             {
-                background-color: var(--css-primary-700);
-                border-color: var(--css-primary-900);   
+                @include component-background-border-colors(normal);
             }
         }
     }
     &:not([data-css-state]), // Overiding specificity
     &[data-css-state="normal"]
     {
-        // Accent color
-        &[data-css-accent]::before
+        &::before,
+        > [data-css-toggle]::after
         {
-            @extend %check-base-button-accent;
-        }
-        
-        &[data-css-accent] > [data-css-mark],
-        > [data-css-mark][data-css-accent]
-        {
-            &::before
-            {
-                @extend %check-selected-button-accent;
-            }
-            &::after
-            {
-                background-color: var(--css-accent-200);
-                border-color: var(--css-accent-500);
-            }
+            @include component-background-border-colors(normal);
         }
 
-        // Primary color
-        &::before
+        > input:checked + [data-css-toggle],
+        &[aria-checked="true"] > [data-css-toggle]
         {
-            @extend %check-base-button-primary;
-        }
-
-        > [data-css-mark],
-        > [data-css-mark][data-css-primary]
-        {
-            &::before
-            {
-                @extend %check-selected-button-primary;
-            }
             &::after
             {
-                background-color: var(--css-primary-200);
-                border-color: var(--css-primary-500);   
+                @include component-background-border-colors(selected);
             }
         }
     }
@@ -560,143 +329,51 @@
     &[aria-disabled],
     &[data-css-state="disabled"]
     {
-        // Accent color
-        &[data-css-accent]::before
+        &::before,
+        > [data-css-toggle]::after
         {
-            @extend %check-disabled-button-accent;
-        }
-
-        &[data-css-accent] > [data-css-mark],
-        > [data-css-mark][data-css-accent]
-        {
-            &::before,
-            &::after
-            {
-                @extend %check-disabled-button-accent;
-            }
-        }
-
-        // Primary color
-        &::before
-        {
-            @extend %check-disabled-button-primary;
-        }
-
-        > [data-css-mark],
-        > [data-css-mark][data-css-primary]
-        {
-            &::before,
-            &::after
-            {
-                @extend %check-disabled-button-primary;
-            }
+            @include component-background-border-colors(disabled);
         }
     }
 
     // Inner container, selection bar and toggle
-    > [data-css-mark]
+    > [data-css-toggle]
     {
         padding-left: 4.5em;
         min-height: 1.75em;
 
-        // Selected bar
+        // Focus circle
         &::before
         {
-            border-radius: 1em;
-            opacity: 0;
-            transition: width 0.3s, opacity 0.2s 0.05s;
-            width: 0em;
-
-            @extend %check-absolute-pseudo;
+            left: -0.8em;
+            transition: opacity .3s, left .3s;
         }
+
         // Toggle
         &::after
         {
             border-radius: 1em;
-            line-height: 1em;
-            height: 1em;
-            left: 0;
+            height: 1.5em;
+            margin-top: -0.25em;
             opacity: 1;
-            transition: left 0.3s;
-            width: 1em;
+            transition: left .3s;
+            width: 1.5em;
     
             @extend %check-interactive-pseudo;
         }
     }
 
     // Functionality
-    > input:checked + [data-css-mark],
-    &[aria-checked="true"] > [data-css-mark]
+    > input:checked + [data-css-toggle],
+    &[aria-checked="true"] > [data-css-toggle]
     {
         &::before
         {
-            opacity: 1;
-            width: 3em;
+            left: .8em;           
         }
         &::after
         {
-            left: 2em;
-        }
-    }
-
-    // Sizes
-    &[data-css-size="small"]
-    {
-        > [data-css-mark]
-        {
-            padding-left: 3em;
-        }
-
-        &::before,
-        > [data-css-mark]::before,
-        > [data-css-mark]::after
-        {
-            font-size: .75em;
-        }
-    }
-    &[data-css-size="big"]
-    {
-        > [data-css-mark]
-        {
-            padding-left: 7em;
-            line-height: 2.25em;
-            min-height: 2.5em;
-        }
-        &::before,
-        > [data-css-mark]::before,
-        > [data-css-mark]::after
-        {
-            font-size: 2em;
-        }
-    }
-    &[data-css-size="huge"]
-    {
-        > [data-css-mark]
-        {
-            padding-left: 13em;
-            line-height: 4.25em;
-            min-height: 4.5em;
-        }
-        &::before,
-        > [data-css-mark]::before,
-        > [data-css-mark]::after
-        {
-            font-size: 4em;
-        }
-    }
-    &[data-css-size="full"]
-    {
-        > [data-css-mark]
-        {
-            padding-left: 16em;
-            line-height: 5.25em;
-            min-height: 5.5em;
-        }
-        &::before,
-        > [data-css-mark]::before,
-        > [data-css-mark]::after
-        {
-            font-size: 5em;
+            left: 1.5em;
         }
     }
 }

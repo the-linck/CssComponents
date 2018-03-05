@@ -16,6 +16,530 @@
   --css-primary-900: #212121;
 }
 
+body:not(data-css-theme),
+body[data-css-theme="light"] {
+  background: var(--css-primary-50);
+  color: var(--css-primary-800);
+}
+
+body:not(data-css-theme) [data-css-accent],
+body:not(data-css-theme) * [data-css-accent],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]),
+body[data-css-theme="light"] [data-css-accent],
+body[data-css-theme="light"] * [data-css-accent],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) {
+  --css-normal-background: var(--css-accent-100);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-900);
+  --css-selected-background: var(--css-accent-300);
+  --css-selected-border: var(--css-accent-700);
+  --css-selected-text: var(--css-accent-900);
+  --css-pressed-background: var(--css-accent-400);
+  --css-pressed-border: var(--css-accent-900);
+  --css-pressed-text: var(--css-accent-900);
+  --css-disabled-background: var(--css-accent-50);
+  --css-disabled-border: var(--css-accent-300);
+  --css-disabled-text: var(--css-accent-700);
+}
+
+body:not(data-css-theme) [data-css-accent][data-css-type="info"],
+body:not(data-css-theme) * [data-css-accent][data-css-type="info"],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="info"],
+body[data-css-theme="light"] [data-css-accent][data-css-type="info"],
+body[data-css-theme="light"] * [data-css-accent][data-css-type="info"],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="info"] {
+  --css-normal-background: var(--css-white);
+  --css-normal-border: var(--css-accent-100);
+  --css-normal-text: var(--css-accent-800);
+  --css-selected-background: var(--css-accent-200);
+  --css-selected-border: var(--css-accent-300);
+  --css-selected-text: var(--css-accent-900);
+  --css-pressed-background: var(--css-accent-300);
+  --css-pressed-border: var(--css-accent-700);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+body:not(data-css-theme) [data-css-accent][data-css-type="success"],
+body:not(data-css-theme) * [data-css-accent][data-css-type="success"],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="success"],
+body[data-css-theme="light"] [data-css-accent][data-css-type="success"],
+body[data-css-theme="light"] * [data-css-accent][data-css-type="success"],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="success"] {
+  --css-normal-background: var(--css-accent-200);
+  --css-normal-border: var(--css-accent-300);
+  --css-normal-text: var(--css-black);
+  --css-selected-background: var(--css-accent-500);
+  --css-selected-border: var(--css-accent-500);
+  --css-selected-text: var(--css-accent-900);
+  --css-pressed-background: var(--css-accent-600);
+  --css-pressed-border: var(--css-accent-700);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+body:not(data-css-theme) [data-css-accent][data-css-type="warning"],
+body:not(data-css-theme) * [data-css-accent][data-css-type="warning"],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="warning"],
+body[data-css-theme="light"] [data-css-accent][data-css-type="warning"],
+body[data-css-theme="light"] * [data-css-accent][data-css-type="warning"],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="warning"] {
+  --css-normal-background: var(--css-accent-500);
+  --css-normal-border: var(--css-accent-600);
+  --css-normal-text: var(--css-black);
+  --css-selected-background: var(--css-accent-800);
+  --css-selected-border: var(--css-accent-800);
+  --css-selected-text: var(--css-white);
+  --css-pressed-background: var(--css-accent-900);
+  --css-pressed-border: var(--css-accent-800);
+  --css-pressed-text: var(--css-white);
+}
+
+body:not(data-css-theme) [data-css-accent][data-css-type="error"],
+body:not(data-css-theme) * [data-css-accent][data-css-type="error"],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="error"],
+body[data-css-theme="light"] [data-css-accent][data-css-type="error"],
+body[data-css-theme="light"] * [data-css-accent][data-css-type="error"],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="error"] {
+  --css-normal-background: var(--css-accent-700);
+  --css-normal-border: var(--css-accent-800);
+  --css-normal-text: var(--css-white);
+  --css-selected-background: var(--css-accent-900);
+  --css-selected-border: var(--css-accent-800);
+  --css-selected-text: var(--css-white);
+  --css-pressed-background: var(--css-accent-800);
+  --css-pressed-border: var(--css-accent-600);
+  --css-pressed-text: var(--css-white);
+}
+
+body:not(data-css-theme) [data-css-accent] h1, body:not(data-css-theme) [data-css-accent] h2,
+body:not(data-css-theme) [data-css-accent] [data-css-role="heading"],
+body:not(data-css-theme) [data-css-accent] [role="heading"],
+body:not(data-css-theme) * [data-css-accent] h1,
+body:not(data-css-theme) * [data-css-accent] h2,
+body:not(data-css-theme) * [data-css-accent] [data-css-role="heading"],
+body:not(data-css-theme) * [data-css-accent] [role="heading"],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h1,
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h2,
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) [data-css-role="heading"],
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) [role="heading"],
+body[data-css-theme="light"] [data-css-accent] h1,
+body[data-css-theme="light"] [data-css-accent] h2,
+body[data-css-theme="light"] [data-css-accent] [data-css-role="heading"],
+body[data-css-theme="light"] [data-css-accent] [role="heading"],
+body[data-css-theme="light"] * [data-css-accent] h1,
+body[data-css-theme="light"] * [data-css-accent] h2,
+body[data-css-theme="light"] * [data-css-accent] [data-css-role="heading"],
+body[data-css-theme="light"] * [data-css-accent] [role="heading"],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h1,
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h2,
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) [data-css-role="heading"],
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) [role="heading"] {
+  --css-normal-text: var(--css-accent-700);
+}
+
+body:not(data-css-theme) [data-css-accent] h3, body:not(data-css-theme) [data-css-accent] h4, body:not(data-css-theme) [data-css-accent] h5, body:not(data-css-theme) [data-css-accent] h6,
+body:not(data-css-theme) * [data-css-accent] h3,
+body:not(data-css-theme) * [data-css-accent] h4,
+body:not(data-css-theme) * [data-css-accent] h5,
+body:not(data-css-theme) * [data-css-accent] h6,
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h3,
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h4,
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h5,
+body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h6,
+body[data-css-theme="light"] [data-css-accent] h3,
+body[data-css-theme="light"] [data-css-accent] h4,
+body[data-css-theme="light"] [data-css-accent] h5,
+body[data-css-theme="light"] [data-css-accent] h6,
+body[data-css-theme="light"] * [data-css-accent] h3,
+body[data-css-theme="light"] * [data-css-accent] h4,
+body[data-css-theme="light"] * [data-css-accent] h5,
+body[data-css-theme="light"] * [data-css-accent] h6,
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h3,
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h4,
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h5,
+body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h6 {
+  --css-normal-text: var(--css-accent-800);
+}
+
+body:not(data-css-theme) :not([data-css-accent]),
+body:not(data-css-theme) * [data-css-primary],
+body:not(data-css-theme) *[data-css-primary],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]),
+body[data-css-theme="light"] :not([data-css-accent]),
+body[data-css-theme="light"] * [data-css-primary],
+body[data-css-theme="light"] *[data-css-primary],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) {
+  --css-normal-background: var(--css-primary-100);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-900);
+  --css-selected-background: var(--css-primary-300);
+  --css-selected-border: var(--css-primary-700);
+  --css-selected-text: var(--css-primary-900);
+  --css-pressed-background: var(--css-primary-400);
+  --css-pressed-border: var(--css-primary-900);
+  --css-pressed-text: var(--css-primary-900);
+  --css-disabled-background: var(--css-primary-50);
+  --css-disabled-border: var(--css-primary-300);
+  --css-disabled-text: var(--css-primary-700);
+}
+
+body:not(data-css-theme) :not([data-css-accent])[data-css-type="info"],
+body:not(data-css-theme) * [data-css-primary][data-css-type="info"],
+body:not(data-css-theme) *[data-css-primary][data-css-type="info"],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="info"],
+body[data-css-theme="light"] :not([data-css-accent])[data-css-type="info"],
+body[data-css-theme="light"] * [data-css-primary][data-css-type="info"],
+body[data-css-theme="light"] *[data-css-primary][data-css-type="info"],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="info"] {
+  --css-normal-background: var(--css-white);
+  --css-normal-border: var(--css-primary-100);
+  --css-normal-text: var(--css-primary-800);
+  --css-selected-background: var(--css-primary-200);
+  --css-selected-border: var(--css-primary-300);
+  --css-selected-text: var(--css-primary-900);
+  --css-pressed-background: var(--css-primary-300);
+  --css-pressed-border: var(--css-primary-700);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+body:not(data-css-theme) :not([data-css-accent])[data-css-type="success"],
+body:not(data-css-theme) * [data-css-primary][data-css-type="success"],
+body:not(data-css-theme) *[data-css-primary][data-css-type="success"],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="success"],
+body[data-css-theme="light"] :not([data-css-accent])[data-css-type="success"],
+body[data-css-theme="light"] * [data-css-primary][data-css-type="success"],
+body[data-css-theme="light"] *[data-css-primary][data-css-type="success"],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="success"] {
+  --css-normal-background: var(--css-primary-200);
+  --css-normal-border: var(--css-primary-300);
+  --css-normal-text: var(--css-black);
+  --css-selected-background: var(--css-primary-500);
+  --css-selected-border: var(--css-primary-500);
+  --css-selected-text: var(--css-primary-900);
+  --css-pressed-background: var(--css-primary-600);
+  --css-pressed-border: var(--css-primary-700);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+body:not(data-css-theme) :not([data-css-accent])[data-css-type="warning"],
+body:not(data-css-theme) * [data-css-primary][data-css-type="warning"],
+body:not(data-css-theme) *[data-css-primary][data-css-type="warning"],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="warning"],
+body[data-css-theme="light"] :not([data-css-accent])[data-css-type="warning"],
+body[data-css-theme="light"] * [data-css-primary][data-css-type="warning"],
+body[data-css-theme="light"] *[data-css-primary][data-css-type="warning"],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="warning"] {
+  --css-normal-background: var(--css-primary-500);
+  --css-normal-border: var(--css-primary-600);
+  --css-normal-text: var(--css-black);
+  --css-selected-background: var(--css-primary-800);
+  --css-selected-border: var(--css-primary-800);
+  --css-selected-text: var(--css-white);
+  --css-pressed-background: var(--css-primary-900);
+  --css-pressed-border: var(--css-primary-800);
+  --css-pressed-text: var(--css-white);
+}
+
+body:not(data-css-theme) :not([data-css-accent])[data-css-type="error"],
+body:not(data-css-theme) * [data-css-primary][data-css-type="error"],
+body:not(data-css-theme) *[data-css-primary][data-css-type="error"],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="error"],
+body[data-css-theme="light"] :not([data-css-accent])[data-css-type="error"],
+body[data-css-theme="light"] * [data-css-primary][data-css-type="error"],
+body[data-css-theme="light"] *[data-css-primary][data-css-type="error"],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="error"] {
+  --css-normal-background: var(--css-primary-700);
+  --css-normal-border: var(--css-primary-800);
+  --css-normal-text: var(--css-white);
+  --css-selected-background: var(--css-primary-900);
+  --css-selected-border: var(--css-primary-800);
+  --css-selected-text: var(--css-white);
+  --css-pressed-background: var(--css-primary-800);
+  --css-pressed-border: var(--css-primary-600);
+  --css-pressed-text: var(--css-white);
+}
+
+body:not(data-css-theme) :not([data-css-accent]) h1, body:not(data-css-theme) :not([data-css-accent]) h2,
+body:not(data-css-theme) :not([data-css-accent]) [data-css-role="heading"],
+body:not(data-css-theme) :not([data-css-accent]) [role="heading"],
+body:not(data-css-theme) * [data-css-primary] h1,
+body:not(data-css-theme) * [data-css-primary] h2,
+body:not(data-css-theme) * [data-css-primary] [data-css-role="heading"],
+body:not(data-css-theme) * [data-css-primary] [role="heading"],
+body:not(data-css-theme) *[data-css-primary] h1,
+body:not(data-css-theme) *[data-css-primary] h2,
+body:not(data-css-theme) *[data-css-primary] [data-css-role="heading"],
+body:not(data-css-theme) *[data-css-primary] [role="heading"],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h1,
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h2,
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) [data-css-role="heading"],
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) [role="heading"],
+body[data-css-theme="light"] :not([data-css-accent]) h1,
+body[data-css-theme="light"] :not([data-css-accent]) h2,
+body[data-css-theme="light"] :not([data-css-accent]) [data-css-role="heading"],
+body[data-css-theme="light"] :not([data-css-accent]) [role="heading"],
+body[data-css-theme="light"] * [data-css-primary] h1,
+body[data-css-theme="light"] * [data-css-primary] h2,
+body[data-css-theme="light"] * [data-css-primary] [data-css-role="heading"],
+body[data-css-theme="light"] * [data-css-primary] [role="heading"],
+body[data-css-theme="light"] *[data-css-primary] h1,
+body[data-css-theme="light"] *[data-css-primary] h2,
+body[data-css-theme="light"] *[data-css-primary] [data-css-role="heading"],
+body[data-css-theme="light"] *[data-css-primary] [role="heading"],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h1,
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h2,
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) [data-css-role="heading"],
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) [role="heading"] {
+  --css-normal-text: var(--css-primary-700);
+}
+
+body:not(data-css-theme) :not([data-css-accent]) h3, body:not(data-css-theme) :not([data-css-accent]) h4, body:not(data-css-theme) :not([data-css-accent]) h5, body:not(data-css-theme) :not([data-css-accent]) h6,
+body:not(data-css-theme) * [data-css-primary] h3,
+body:not(data-css-theme) * [data-css-primary] h4,
+body:not(data-css-theme) * [data-css-primary] h5,
+body:not(data-css-theme) * [data-css-primary] h6,
+body:not(data-css-theme) *[data-css-primary] h3,
+body:not(data-css-theme) *[data-css-primary] h4,
+body:not(data-css-theme) *[data-css-primary] h5,
+body:not(data-css-theme) *[data-css-primary] h6,
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h3,
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h4,
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h5,
+body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h6,
+body[data-css-theme="light"] :not([data-css-accent]) h3,
+body[data-css-theme="light"] :not([data-css-accent]) h4,
+body[data-css-theme="light"] :not([data-css-accent]) h5,
+body[data-css-theme="light"] :not([data-css-accent]) h6,
+body[data-css-theme="light"] * [data-css-primary] h3,
+body[data-css-theme="light"] * [data-css-primary] h4,
+body[data-css-theme="light"] * [data-css-primary] h5,
+body[data-css-theme="light"] * [data-css-primary] h6,
+body[data-css-theme="light"] *[data-css-primary] h3,
+body[data-css-theme="light"] *[data-css-primary] h4,
+body[data-css-theme="light"] *[data-css-primary] h5,
+body[data-css-theme="light"] *[data-css-primary] h6,
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h3,
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h4,
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h5,
+body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h6 {
+  --css-normal-text: var(--css-primary-800);
+}
+
+body[data-css-theme="dark"] {
+  background: var(--css-primary-900);
+  color: var(--css-primary-100);
+}
+
+body[data-css-theme="dark"] *[data-css-accent],
+body[data-css-theme="dark"] * [data-css-accent],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) {
+  --css-normal-background: var(--css-accent-800);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-100);
+  --css-selected-background: var(--css-accent-600);
+  --css-selected-border: var(--css-accent-300);
+  --css-selected-text: var(--css-accent-200);
+  --css-pressed-background: var(--css-accent-500);
+  --css-pressed-border: var(--css-accent-200);
+  --css-pressed-text: var(--css-accent-200);
+  --css-disabled-background: var(--css-accent-900);
+  --css-disabled-border: var(--css-accent-700);
+  --css-disabled-text: var(--css-accent-200);
+}
+
+body[data-css-theme="dark"] *[data-css-accent][data-css-type="info"],
+body[data-css-theme="dark"] * [data-css-accent][data-css-type="info"],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="info"] {
+  --css-normal-background: var(--css-black);
+  --css-normal-border: var(--css-accent-800);
+  --css-normal-text: var(--css-accent-100);
+  --css-selected-background: var(--css-accent-800);
+  --css-selected-border: var(--css-accent-500);
+  --css-selected-text: var(--css-accent-50);
+  --css-pressed-background: var(--css-accent-700);
+  --css-pressed-border: var(--css-accent-400);
+  --css-pressed-text: var(--css-accent-50);
+}
+
+body[data-css-theme="dark"] *[data-css-accent][data-css-type="success"],
+body[data-css-theme="dark"] * [data-css-accent][data-css-type="success"],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="success"] {
+  --css-normal-background: var(--css-accent-700);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-100);
+  --css-selected-background: var(--css-accent-400);
+  --css-selected-border: var(--css-accent-300);
+  --css-selected-text: var(--css-accent-900);
+  --css-pressed-background: var(--css-accent-300);
+  --css-pressed-border: var(--css-accent-200);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+body[data-css-theme="dark"] *[data-css-accent][data-css-type="warning"],
+body[data-css-theme="dark"] * [data-css-accent][data-css-type="warning"],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="warning"] {
+  --css-normal-background: var(--css-accent-400);
+  --css-normal-border: var(--css-accent-200);
+  --css-normal-text: var(--css-black);
+  --css-selected-background: var(--css-accent-100);
+  --css-selected-border: var(--css-accent-50);
+  --css-selected-text: var(--css-accent-900);
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-accent-200);
+  --css-pressed-text: var(--css-black);
+}
+
+body[data-css-theme="dark"] *[data-css-accent][data-css-type="error"],
+body[data-css-theme="dark"] * [data-css-accent][data-css-type="error"],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="error"] {
+  --css-normal-background: var(--css-accent-200);
+  --css-normal-border: var(--css-accent-50);
+  --css-normal-text: var(--css-accent-900);
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-accent-100);
+  --css-selected-text: var(--css-black);
+  --css-pressed-background: var(--css-accent-100);
+  --css-pressed-border: var(--css-accent-300);
+  --css-pressed-text: var(--css-black);
+}
+
+body[data-css-theme="dark"] *[data-css-accent] h1, body[data-css-theme="dark"] *[data-css-accent] h2,
+body[data-css-theme="dark"] *[data-css-accent] [data-css-role="heading"],
+body[data-css-theme="dark"] *[data-css-accent] [role="heading"],
+body[data-css-theme="dark"] * [data-css-accent] h1,
+body[data-css-theme="dark"] * [data-css-accent] h2,
+body[data-css-theme="dark"] * [data-css-accent] [data-css-role="heading"],
+body[data-css-theme="dark"] * [data-css-accent] [role="heading"],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h1,
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h2,
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) [data-css-role="heading"],
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) [role="heading"] {
+  --css-normal-text: var(--css-accent-300);
+}
+
+body[data-css-theme="dark"] *[data-css-accent] h3, body[data-css-theme="dark"] *[data-css-accent] h4, body[data-css-theme="dark"] *[data-css-accent] h5, body[data-css-theme="dark"] *[data-css-accent] h6,
+body[data-css-theme="dark"] * [data-css-accent] h3,
+body[data-css-theme="dark"] * [data-css-accent] h4,
+body[data-css-theme="dark"] * [data-css-accent] h5,
+body[data-css-theme="dark"] * [data-css-accent] h6,
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h3,
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h4,
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h5,
+body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h6 {
+  --css-normal-text: var(--css-accent-200);
+}
+
+body[data-css-theme="dark"] *,
+body[data-css-theme="dark"] * [data-css-primary],
+body[data-css-theme="dark"] *[data-css-primary],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) {
+  --css-normal-background: var(--css-primary-800);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-100);
+  --css-selected-background: var(--css-primary-600);
+  --css-selected-border: var(--css-primary-300);
+  --css-selected-text: var(--css-primary-200);
+  --css-pressed-background: var(--css-primary-500);
+  --css-pressed-border: var(--css-primary-200);
+  --css-pressed-text: var(--css-primary-200);
+  --css-disabled-background: var(--css-primary-900);
+  --css-disabled-border: var(--css-primary-700);
+  --css-disabled-text: var(--css-primary-200);
+}
+
+body[data-css-theme="dark"] *[data-css-type="info"],
+body[data-css-theme="dark"] * [data-css-primary][data-css-type="info"],
+body[data-css-theme="dark"] *[data-css-primary][data-css-type="info"],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="info"] {
+  --css-normal-background: var(--css-black);
+  --css-normal-border: var(--css-primary-800);
+  --css-normal-text: var(--css-primary-100);
+  --css-selected-background: var(--css-primary-800);
+  --css-selected-border: var(--css-primary-500);
+  --css-selected-text: var(--css-primary-50);
+  --css-pressed-background: var(--css-primary-700);
+  --css-pressed-border: var(--css-primary-400);
+  --css-pressed-text: var(--css-primary-50);
+}
+
+body[data-css-theme="dark"] *[data-css-type="success"],
+body[data-css-theme="dark"] * [data-css-primary][data-css-type="success"],
+body[data-css-theme="dark"] *[data-css-primary][data-css-type="success"],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="success"] {
+  --css-normal-background: var(--css-primary-700);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-100);
+  --css-selected-background: var(--css-primary-400);
+  --css-selected-border: var(--css-primary-300);
+  --css-selected-text: var(--css-primary-900);
+  --css-pressed-background: var(--css-primary-300);
+  --css-pressed-border: var(--css-primary-200);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+body[data-css-theme="dark"] *[data-css-type="warning"],
+body[data-css-theme="dark"] * [data-css-primary][data-css-type="warning"],
+body[data-css-theme="dark"] *[data-css-primary][data-css-type="warning"],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="warning"] {
+  --css-normal-background: var(--css-primary-400);
+  --css-normal-border: var(--css-primary-200);
+  --css-normal-text: var(--css-black);
+  --css-selected-background: var(--css-primary-100);
+  --css-selected-border: var(--css-primary-50);
+  --css-selected-text: var(--css-primary-900);
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-primary-200);
+  --css-pressed-text: var(--css-black);
+}
+
+body[data-css-theme="dark"] *[data-css-type="error"],
+body[data-css-theme="dark"] * [data-css-primary][data-css-type="error"],
+body[data-css-theme="dark"] *[data-css-primary][data-css-type="error"],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="error"] {
+  --css-normal-background: var(--css-primary-200);
+  --css-normal-border: var(--css-primary-50);
+  --css-normal-text: var(--css-primary-900);
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-primary-100);
+  --css-selected-text: var(--css-black);
+  --css-pressed-background: var(--css-primary-100);
+  --css-pressed-border: var(--css-primary-300);
+  --css-pressed-text: var(--css-black);
+}
+
+body[data-css-theme="dark"] * h1, body[data-css-theme="dark"] * h2,
+body[data-css-theme="dark"] * [data-css-role="heading"],
+body[data-css-theme="dark"] * [role="heading"],
+body[data-css-theme="dark"] * [data-css-primary] h1,
+body[data-css-theme="dark"] * [data-css-primary] h2,
+body[data-css-theme="dark"] * [data-css-primary] [data-css-role="heading"],
+body[data-css-theme="dark"] * [data-css-primary] [role="heading"],
+body[data-css-theme="dark"] *[data-css-primary] h1,
+body[data-css-theme="dark"] *[data-css-primary] h2,
+body[data-css-theme="dark"] *[data-css-primary] [data-css-role="heading"],
+body[data-css-theme="dark"] *[data-css-primary] [role="heading"],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h1,
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h2,
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) [data-css-role="heading"],
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) [role="heading"] {
+  --css-normal-text: var(--css-primary-300);
+}
+
+body[data-css-theme="dark"] * h3, body[data-css-theme="dark"] * h4, body[data-css-theme="dark"] * h5, body[data-css-theme="dark"] * h6,
+body[data-css-theme="dark"] * [data-css-primary] h3,
+body[data-css-theme="dark"] * [data-css-primary] h4,
+body[data-css-theme="dark"] * [data-css-primary] h5,
+body[data-css-theme="dark"] * [data-css-primary] h6,
+body[data-css-theme="dark"] *[data-css-primary] h3,
+body[data-css-theme="dark"] *[data-css-primary] h4,
+body[data-css-theme="dark"] *[data-css-primary] h5,
+body[data-css-theme="dark"] *[data-css-primary] h6,
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h3,
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h4,
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h5,
+body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h6 {
+  --css-normal-text: var(--css-primary-200);
+}
+
 /* Basic styles */
 html,
 body {
@@ -28,8 +552,6 @@ body {
 }
 
 body {
-  background: var(--css-primary-50);
-  color: var(--css-primary-800);
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -39,17 +561,8 @@ body {
   position: relative;
 }
 
-/* Colors */
-[data-css-primary] {
-  color: var(--css-primary-900);
-}
-
-[data-css-accent] {
-  color: var(--css-accent-900);
-}
-
 /* Hidden items */
-[aria-hidden="true"] {
+[hidden] {
   display: none;
 }
 
@@ -57,9 +570,33 @@ body {
 h1, h2, h3, h4, h5, h6,
 [data-css-role="heading"]
 [role="heading"] {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: bold;
+  color: var(--css-normal-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 1.875rem;
   text-decoration: none;
+}
+
+h1 {
+  font-size: 2.617rem;
+}
+
+h2 {
+  font-size: 2.292rem;
+}
+
+h3 {
+  font-size: 1.969em;
+}
+
+h4 {
+  font-size: 1.646em;
+}
+
+h5 {
+  font-size: 1.323em;
 }
 
 /* Floats and clears */
@@ -101,6 +638,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 [data-css-position="sticky"] {
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -127,5 +665,46 @@ h1, h2, h3, h4, h5, h6,
 
 [data-css-underline] {
   text-decoration: underline;
+}
+
+i[data-css-icon] {
+  font-style: normal;
+}
+
+[data-css-icon]::before {
+  color: inherit;
+  display: inline-block;
+  line-height: 1em;
+  min-height: 1em;
+  min-width: 1em;
+  text-align: center;
+}
+
+[data-css-icon]:not([data-css-icon=""])::before {
+  content: attr(data-css-icon);
+}
+
+[data-css-icon=""][data-css-type="info"]::before {
+  content: '\2139';
+  border: 1px solid;
+  border-radius: 50%;
+  position: relative;
+}
+
+[data-css-icon=""][data-css-type="success"]::before {
+  content: '\2714';
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+[data-css-icon=""][data-css-type="warning"]::before {
+  content: '\26a0';
+}
+
+[data-css-icon=""][data-css-type="error"]::before {
+  content: '\FF01';
+  margin-left: -0.5em;
+  position: relative;
+  left: .5em;
 }
 /*# sourceMappingURL=core.css.map */

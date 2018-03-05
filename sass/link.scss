@@ -1,9 +1,9 @@
+@import '_component';
+
 [role="link"],
-[data-css-role="link"],
-a:not([role]):not([data-css-role])
+a:not([role])
 {
     /* Basic Component rules */
-    color: var(--css-primary-800);
     cursor: pointer;
     display: inline;
     font-size: 1.125em;
@@ -11,44 +11,51 @@ a:not([role]):not([data-css-role])
     text-decoration: underline;
     transition: color 0.3s;
 
-    &:visited
+    &,
+    &[data-css-state="normal"]
     {
-        color: var(--css-primary-900);    
+        @include component-text-color(normal);
+    }
+
+    &:visited,
+    &[data-css-state="visited"]
+    {
+        @include component-text-color(visited);
     }
 
     &:focus,
-    &:hover
+    &:hover,
+    &[data-css-state="selected"]
     {
-        color: var(--css-primary-500);
+        @include component-text-color(selected);
     }
 
-    &:active
+    &:active,
+    &[data-css-state="pressed"]
     {
-        color: var(--css-primary-400);
+        @include component-text-color(pressed);
     }
 
 
-    // Accent color
+    
+    // Custom primary color
+    &:not([data-css-accent]),
+    &[data-css-primary],
+    [data-css-primary] &
+    {
+        @include pallete-text-group(primary, normal, 700);
+        @include pallete-text-group(primary, visited, 900);
+        @include pallete-text-group(primary, selected, 500);
+        @include pallete-text-group(primary, pressed, 600);
+    }
+    
+    // Custom accent color
     &[data-css-accent],
     [data-css-accent] &
     {
-        /* Accent color */
-        color: var(--css-accent-800);
-        
-        &:visited
-        {
-            color: var(--css-accent-900);    
-        }
-
-        &:focus,
-        &:hover
-        {
-            color: var(--css-accent-500);
-        }
-
-        &:active
-        {
-            color: var(--css-accent-400);
-        }
+        @include pallete-text-group(accent, normal, 700);
+        @include pallete-text-group(accent, visited, 900);
+        @include pallete-text-group(accent, selected, 500);
+        @include pallete-text-group(accent, pressed, 600);
     }
 }

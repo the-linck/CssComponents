@@ -1,3 +1,5 @@
+@import '_component';
+
 // Selectors base
 [role="article"],
 [data-css-role="article"],
@@ -27,29 +29,31 @@ article
     &[itemtype="http://schema.org/APIReference"] 
     {
         /* Article itself */
-        background: var(--css-white);
-        border: 1px solid var(--css-primary-400);
-        color: var(--css-primary-900);
         display: block;
-        margin: 0.5em;
-        padding: 0.5em;
+        font-size: 1rem;
+        margin: 0 .5em;
+        padding: 5em .5em .5em .5em;
 
+        
+        @include component-text-color(normal);
 
         // Article table of contents
-        >[itemtype="http://schema.org/SiteNavigationElement"]
+        > [itemtype="http://schema.org/SiteNavigationElement"]
         {
             /* Article table of contents */
             display: block;
-            background: var(--css-primary-50);
-            border: 1px solid var(--css-primary-200);
-            color: var(--css-primary-900);
+            border-left: .5rem solid;
+            margin-top: 3.75em;
+
+            @include component-border-text-colors(normal);        
 
             // Table heading
             [data-css-role="heading"]
             {
-                font-size: 1.25em;
+                font-size: .85rem;
+                font-weight: normal;
                 margin: 0.5em 0;
-                padding-left: 1em;
+                padding-left: 1.25rem;
             }
 
             // Content lists
@@ -67,35 +71,29 @@ article
                     display: block;
                     list-style-type: none;
                     margin: 0;
-                    padding: 0 1em;
-                    padding-right: 0;
+                    padding: 0;
 
                     // Item link
-                    >a
+                    > a
                     {
                         display: block;
                         font-weight: normal;
-                        margin: -0.5em -1em;
-                        padding: 0.5em 1em;
+                        font-size: 1.2rem;
+                        margin: 1em 0 0 1em;
+                        max-width: 100%;
+                        padding: 0;
+                        text-decoration: none;
 
                         &::before
                         {
-                            content: counters(article-index, ".") ". ";
+                            content: counters(article-index, ".") " ";
                             counter-increment: article-index;
                         }
                     }
 
-                    // Subitem
-                    li
-                    {
-                        &:last-child>a
-                        {
-                            padding-bottom: 0.5em;
-                        }
-                        // Subitem link
-                        a {
-                            padding: 0.25em 1em;    
-                        }
+                    // Subitem link
+                    li > a {
+                        padding: 0.5em 1em 0 1em;    
                     }
                 }
             }
@@ -104,24 +102,11 @@ article
             {
                 counter-reset: none;
 
-                >li>a::before
+                > li > a::before
                 {
-                    content: "\2022";
+                    content: none;
                     counter-increment: none;
                 }
-            }
-            // Direct child padding correction
-            >ol,
-            >ul
-            {
-                padding-bottom: 1em;
-            }
-
-            &[data-css-accent]
-            {
-                background-color: var(--css-accent-50);
-                border-color: var(--css-accent-200);
-                color: var(--css-primary-900);
             }
         }
 
@@ -134,12 +119,18 @@ article
             // Article chapters
             [data-css-chapter]
             {
+                padding-top: 5em;
+
+                @include component-border-color(normal);
+
                 // Chapter heading
-                [role="heading"]::before,
-                [data-css-role="heading"]::before
+                >[role="heading"]::before,
+                >[data-css-role="heading"]::before,
+                >header [role="heading"]::before,
+                >header [data-css-role="heading"]::before
                 {
                     /* Chapter heading */
-                    content: counters(article-chapters, ".") ". ";
+                    content: counters(article-chapters, ".") " ";
                     counter-increment: article-chapters;
                 }
 
@@ -147,14 +138,8 @@ article
                 &:not(:last-child)
                 {
                     /* Article chapters bottom border */
-                    border-bottom: 2px solid var(--css-primary-300);
-                    margin-bottom: 4em;
-                    padding-bottom: 1em;
-    
-                    &[data-css-accent]
-                    {
-                        border-bottom-color: var(--css-accent-300);
-                    }
+                    border-bottom: 1px solid;
+                    padding-bottom: 4em;
                 }
             }
 
@@ -168,30 +153,65 @@ article
                 >[data-css-chapter]
                 {
                     // First chapter in group
-                    &:first-child
-                    {
-                        /* First chapter in group */
-                        border-top: 1px solid var(--css-primary-200);
-                        margin-top: 1em;
-                    }
-
-                    // All chapters in group except the last
+                    &:first-child,
                     &:not(:last-child)
                     {
                         /* All chapters in group except the last */
-                        border-bottom: 1px solid var(--css-primary-200);
-                        margin-bottom: 1em;   
+                        border-bottom: none;
+                        margin-bottom: 1em;
+
+                        @include component-border-color(normal);
                     }
                 }
             }
         }
-
-
-        // Accent color 
+    
+        // Custom accent colors
         &[data-css-accent]
         {
-            border-color: var(--css-accent-300);
-            color: var(--css-accent-900);
+            @include pallete-color-group(accent, normal, 50, 50, 900);            
+        }
+        &[data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+        > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent]
+        {
+            @include pallete-border-group(accent, normal, 500);
+            @include pallete-text-group(accent, normal, 700);
+        }
+        &[data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+        > [itemprop="articleBody"] [data-css-chapter][data-css-accent]
+        {
+            @include pallete-border-group(accent, normal, 300);
+        }
+        &[data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent]
+        {
+            @include pallete-border-group(accent, normal, 200);
+        }
+    
+        // Custom primary colors
+        &:not([data-css-accent]),
+        &[data-css-primary]
+        {
+            @include pallete-color-group(primary, normal, 50, 50, 900);            
+        }
+        &:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+        &[data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+        > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary]
+        {
+            @include pallete-border-group(primary, normal, 500);
+            @include pallete-text-group(primary, normal, 700);
+        }
+        &:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+        &[data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+        > [itemprop="articleBody"] [data-css-chapter][data-css-primary]
+        {
+            @include pallete-border-group(primary, normal, 300);
+        }
+        &:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+        &[data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary]
+        {
+            @include pallete-border-group(primary, normal, 200);
         }
     }
 }

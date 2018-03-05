@@ -1,42 +1,36 @@
+@import '_component';
+
 // Basic group rules
 [role="group"][data-css-group="button"],
 [data-css-role="group"][data-css-group="button"]
 {
-    border: 0.125em solid var(--css-primary-400);
+    border: 0.125em solid;
     border-radius: 0.5em;
     display: inline-flex;
     white-space: nowrap;
+
+    @include component-border-color(normal);
 }
 
 // Basic component rules
-button[data-css-role],
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
 [role="button"],
 [data-css-role="button"]
 {
     /* Basic component rules */
-    background: var(--css-primary-200);
-    border-color: var(--css-primary-200);
     border: 1px solid;
     border-radius: 0.25em;
     box-sizing: border-box;
-    color: var(--css-primary-800);
     display: inline-block;
-    font-size: 1.5em;
-    margin: 0.125em;
+    margin: .5em;
     outline: none;
-    padding: 0.5em;
     text-transform: uppercase;
     text-align: center;
     text-decoration:  none;
     transition: 0.25s color, 0.25s background, 0.25s border-color;
-
-    // Accent color
-    &[data-css-accent]
-    {
-        background: var(--css-accent-200);
-        border-color: var(--css-accent-200);
-        color: var(--css-black);
-    }
 
     // Sizes
     &[data-css-size="small"]
@@ -45,6 +39,13 @@ button[data-css-role],
         border-radius: 0.5em;
         font-size: 1em;
         padding: 0.25em;
+    }
+    &:not([data-css-size]),
+    &[data-css-size="medium"]
+    {
+        font-size: 1.5em;
+        margin: 0.125em;
+        padding: 0.5em;
     }
     &[data-css-size="big"]
     {
@@ -72,254 +73,49 @@ button[data-css-role],
         width: 100%;
     }
 
+
     // States
+    &:not([data-css-state]),
+    &[data-css-state="normal"]
+    {
+        /* Normal button */
+        @include component-colors(normal);
+    }
     &:hover,
     &:focus,
-    &[aria-current]:not([aria-current="false"])
+    &[aria-current]:not([aria-current="false"]),
+    &[data-css-state="selected"]
     {
         /* Selected button */
-        background: var(--css-primary-100);
-        border-color: var(--css-primary-700);
-        color: var(--css-primary-900);
         outline: none;
-        
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-100);
-            border-color: var(--css-accent-700);
-            color: var(--css-accent-900);
-        }
+
+        @include component-colors(selected);
     }
     &:active,
-    &[aria-pressed="true"]
+    &[aria-pressed="true"],
+    &[data-css-state="pressed"]
     {
         /* Pressed button */
-        background: var(--css-primary-400);
-        border-color: var(--css-primary-900);
-        color: var(--css-black);
         outline: none;
         
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-400);
-            border-color: var(--css-accent-900);
-            color: var(--css-black);
-        }
+        @include component-colors(pressed);
     }
-
-    // Actions
-    &[data-css-action="primary"]
-    {
-        /* Primary action */
-        background: var(--css-primary-900);
-        border-color: var(--css-primary-900);
-        color: var(--css-primary-100);
-
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-900);
-            border-color: var(--css-accent-900);
-            color: var(--css-accent-100);
-        }
-
-        // Selected
-        &:hover,
-        &:focus,
-        &[aria-current]:not([aria-current="false"])
-        {
-            background: var(--css-primary-700);
-            border-color: var(--css-primary-900);
-            color: var(--css-primary-50);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-700);
-                border-color: var(--css-accent-900);
-                color: var(--css-accent-50);
-            }
-        }
-
-        // Pressed
-        &:active,
-        [aria-pressed="true"]
-        {
-            background: var(--css-primary-900);
-            border-color: var(--css-primary-900);
-            color: var(--css-white);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-900);
-                border-color: var(--css-accent-900);
-            }
-        }
-    }
-    &[data-css-action="secondary"]
-    {
-        /* Secondary action */
-        background: var(--css-primary-800);
-        border-color: var(--css-primary-800);
-        color: var(--css-white);
-
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-800);
-            border-color: var(--css-accent-800);
-        }
-
-        // Selected
-        &:hover,
-        &:focus,
-        &[aria-current]:not([aria-current="false"])
-        {
-            background: var(--css-primary-600);
-            border-color: var(--css-primary-800);
-            color: var(--css-white);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-600);
-                border-color: var(--css-accent-800);
-            }
-        }
-
-        // Pressed
-        &:active,
-        [aria-pressed="true"]
-        {
-            background: var(--css-primary-900);
-            border-color: var(--css-primary-900);
-            color: var(--css-primary-50);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-900);
-                border-color: var(--css-accent-900);
-                color: var(--css-accent-50);
-            }
-        }
-    }
-    &[data-css-action="tertiary"]
-    {
-        /* Tertiary action */
-        background: var(--css-primary-400);
-        border-color: var(--css-primary-400);
-        color: var(--css-black);
-
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-400);
-            border-color: var(--css-accent-400);
-        }
-
-        // Selected
-        &:hover,
-        &:focus,
-        &[aria-current]:not([aria-current="false"])
-        {
-            background: var(--css-primary-300);
-            border-color: var(--css-primary-600);
-            color: var(--css-black);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-300);
-                border-color: var(--css-accent-600);
-            }
-        }
-
-        // Pressed
-        &:active,
-        [aria-pressed="true"]
-        {
-            background: var(--css-primary-500);
-            border-color: var(--css-primary-800);
-            color: var(--css-black);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-500);
-                border-color: var(--css-accent-800);
-            }
-        }
-    }
-    &[data-css-action="special"]
-    {
-        /* Special action */
-        background: var(--css-primary-50);
-        border-color: var(--css-primary-100);
-        color: var(--css-primary-900);
-
-        // Accent color
-        &[data-css-accent]
-        {
-            background: var(--css-accent-50);
-            border-color: var(--css-accent-100);
-            color: var(--css-accent-900);
-        }
-
-        // Selected
-        &:hover,
-        &:focus,
-        &[aria-current]:not([aria-current="false"])
-        {
-            background: var(--css-white);
-            border-color: var(--css-primary-100);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-white);
-                border-color: var(--css-accent-100);
-            }
-        }
-
-        // Pressed
-        &:active,
-        [aria-pressed="true"]
-        {
-            background: var(--css-primary-200);
-            border-color: var(--css-primary-300);
-
-            // Accent color
-            &[data-css-accent]
-            {
-                background: var(--css-accent-200);
-                border-color: var(--css-accent-300);
-            }
-        }
-    }
-
-    // Keeping disabled state after everything else to override specifity
     &:disabled,
-    &[aria-disabled]
+    &[aria-disabled],
+    &[data-css-state="disabled"]
     {
         /* Disabled button */
-        background: var(--css-primary-50);
-        border-color: transparent;
-        color: var(--css-primary-500);
         outline: none;
+
+        @include component-colors(disabled);        
     }
 
     // Grouped
     [role="group"][data-css-group="button"] > &,
     [data-css-role="group"][data-css-group="button"] > &
     {
-        border-left-color: var(--css-primary-400);
         border-bottom: none;
         border-radius: 0;
-        border-right: none;
         border-top: none;
         margin: 0;
 
@@ -331,6 +127,7 @@ button[data-css-role],
         }
         &:last-child
         {
+            border-right: none;
             border-bottom-right-radius:  0.25em;
             border-top-right-radius:  0.25em;
         }

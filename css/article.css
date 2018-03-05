@@ -8,12 +8,11 @@ article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Postin
 article[itemtype="http://schema.org/Report"],
 article[itemtype="http://schema.org/APIReference"] {
   /* Article itself */
-  background: var(--css-white);
-  border: 1px solid var(--css-primary-400);
-  color: var(--css-primary-900);
   display: block;
-  margin: 0.5em;
-  padding: 0.5em;
+  font-size: 1rem;
+  margin: 0 .5em;
+  padding: 5em .5em .5em .5em;
+  color: var(--css-normal-text);
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"], [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"], [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"],
@@ -27,9 +26,10 @@ article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/Site
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] {
   /* Article table of contents */
   display: block;
-  background: var(--css-primary-50);
-  border: 1px solid var(--css-primary-200);
-  color: var(--css-primary-900);
+  border-left: .5rem solid;
+  margin-top: 3.75em;
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"], [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"], [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"],
@@ -41,9 +41,10 @@ article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http:/
 article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"],
 article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"],
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] [data-css-role="heading"] {
-  font-size: 1.25em;
+  font-size: .85rem;
+  font-weight: normal;
   margin: 0.5em 0;
-  padding-left: 1em;
+  padding-left: 1.25rem;
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol,
@@ -97,8 +98,7 @@ article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.or
   display: block;
   list-style-type: none;
   margin: 0;
-  padding: 0 1em;
-  padding-right: 0;
+  padding: 0;
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li > a,
@@ -124,8 +124,11 @@ article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.or
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li > a {
   display: block;
   font-weight: normal;
-  margin: -0.5em -1em;
-  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  margin: 1em 0 0 1em;
+  max-width: 100%;
+  padding: 0;
+  text-decoration: none;
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li > a::before,
@@ -149,56 +152,32 @@ article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/Site
 article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li > a::before,
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li > a::before,
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li > a::before {
-  content: counters(article-index, ".") ". ";
+  content: counters(article-index, ".") " ";
   counter-increment: article-index;
 }
 
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a, [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a, [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a,
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li:last-child > a,
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li:last-child > a {
-  padding-bottom: 0.5em;
-}
-
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a, [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a, [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a,
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li a,
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li a {
-  padding: 0.25em 1em;
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a, [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a, [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a,
+article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ol li li > a,
+article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul li li > a {
+  padding: 0.5em 1em 0 1em;
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] ul, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul, [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul, [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul,
@@ -222,46 +201,8 @@ article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http:/
 article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] ul > li > a::before,
 article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] ul > li > a::before,
 article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] ul > li > a::before {
-  content: "\2022";
+  content: none;
   counter-increment: none;
-}
-
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul, [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul, [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul,
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] > ol,
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"] > ul {
-  padding-bottom: 1em;
-}
-
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent], [role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent], [role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
-article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent] {
-  background-color: var(--css-accent-50);
-  border-color: var(--css-accent-200);
-  color: var(--css-primary-900);
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"], [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"], [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"],
@@ -277,29 +218,66 @@ article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] {
   counter-reset: article-chapters;
 }
 
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before, [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before, [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before,
-article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] [role="heading"]::before,
-article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] [data-css-role="heading"]::before {
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter], [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter], [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter],
+article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter],
+article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter],
+article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] {
+  padding-top: 5em;
+  border-color: var(--css-normal-border);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before, [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before, [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before,
+article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > [role="heading"]::before,
+article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > [data-css-role="heading"]::before,
+article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > header [role="heading"]::before,
+article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter] > header [data-css-role="heading"]::before {
   /* Chapter heading */
-  content: counters(article-chapters, ".") ". ";
+  content: counters(article-chapters, ".") " ";
   counter-increment: article-chapters;
 }
 
@@ -313,21 +291,8 @@ article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Postin
 article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child),
 article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child) {
   /* Article chapters bottom border */
-  border-bottom: 2px solid var(--css-primary-300);
-  margin-bottom: 4em;
-  padding-bottom: 1em;
-}
-
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent], [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent], [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent],
-article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [data-css-chapter]:not(:last-child)[data-css-accent] {
-  border-bottom-color: var(--css-accent-300);
+  border-bottom: 1px solid;
+  padding-bottom: 4em;
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"], [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"], [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"],
@@ -343,32 +308,27 @@ article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [rol
   counter-reset: article-chapters;
 }
 
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child), [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child), [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child), [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child, [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
 [data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
-article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child {
-  /* First chapter in group */
-  border-top: 1px solid var(--css-primary-200);
-  margin-top: 1em;
-}
-
-[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child), [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child), [role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child), [role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
 [data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 [data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+[data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 [data-css-role="article"][itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 [data-css-role="article"][itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 article[itemtype^="http://schema.org/"][itemtype$="Article"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 article[itemtype="http://schema.org/Report"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child),
+article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:first-child,
 article[itemtype="http://schema.org/APIReference"] [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not(:last-child) {
   /* All chapters in group except the last */
-  border-bottom: 1px solid var(--css-primary-200);
+  border-bottom: none;
   margin-bottom: 1em;
+  border-color: var(--css-normal-border);
 }
 
 [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent], [role="article"][itemtype="http://schema.org/Report"][data-css-accent], [role="article"][itemtype="http://schema.org/APIReference"][data-css-accent],
@@ -380,7 +340,212 @@ article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent],
 article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent],
 article[itemtype="http://schema.org/Report"][data-css-accent],
 article[itemtype="http://schema.org/APIReference"][data-css-accent] {
-  border-color: var(--css-accent-300);
-  color: var(--css-accent-900);
+  --css-normal-background: var(--css-accent-50);
+  --css-normal-border: var(--css-accent-50);
+  --css-normal-text: var(--css-accent-900);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent], [role="article"][itemtype="http://schema.org/Report"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent], [role="article"][itemtype="http://schema.org/APIReference"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+article[itemtype="http://schema.org/Report"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent],
+article[itemtype="http://schema.org/APIReference"][data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
+article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent] {
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-700);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent], [role="article"][itemtype="http://schema.org/Report"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent], [role="article"][itemtype="http://schema.org/APIReference"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+article[itemtype="http://schema.org/Report"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+article[itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent],
+article[itemtype="http://schema.org/APIReference"][data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
+article[itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [data-css-chapter][data-css-accent] {
+  --css-normal-border: var(--css-accent-300);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent], [role="article"][itemtype="http://schema.org/Report"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent], [role="article"][itemtype="http://schema.org/APIReference"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+article[itemtype="http://schema.org/Report"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+article[itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent],
+article[itemtype="http://schema.org/APIReference"][data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
+article[itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent] {
+  --css-normal-border: var(--css-accent-200);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]), [role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]), [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary], [role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]), [role="article"][itemtype="http://schema.org/Report"][data-css-primary], [role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]), [role="article"][itemtype="http://schema.org/APIReference"][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]),
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]),
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]),
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]),
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-primary],
+article[itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]),
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]),
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary],
+article[itemtype="http://schema.org/Report"]:not([data-css-accent]),
+article[itemtype="http://schema.org/Report"][data-css-primary],
+article[itemtype="http://schema.org/APIReference"]:not([data-css-accent]),
+article[itemtype="http://schema.org/APIReference"][data-css-primary] {
+  --css-normal-background: var(--css-primary-50);
+  --css-normal-border: var(--css-primary-50);
+  --css-normal-text: var(--css-primary-900);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary], [role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype="http://schema.org/Report"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary], [role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype="http://schema.org/APIReference"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+article[itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+article[itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype="http://schema.org/Report"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype="http://schema.org/Report"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary],
+article[itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype="http://schema.org/APIReference"][data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
+article[itemtype="http://schema.org/APIReference"] > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary] {
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-700);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary], [role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype="http://schema.org/Report"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary], [role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype="http://schema.org/APIReference"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+article[itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+article[itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype="http://schema.org/Report"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary],
+article[itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype="http://schema.org/APIReference"][data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
+article[itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [data-css-chapter][data-css-primary] {
+  --css-normal-border: var(--css-primary-300);
+}
+
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary], [role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary], [role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype="http://schema.org/Report"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary], [role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype="http://schema.org/APIReference"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/Report"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+[data-css-role="article"][itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+article[itemtype^="http://schema.org/"][itemtype$="Article"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype^="http://schema.org/"][itemtype$="Article"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype^="http://schema.org/"][itemtype$="Article"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype^="http://schema.org/"]:not([itemtype*="Job"])[itemtype$="Posting"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+article[itemtype="http://schema.org/Report"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype="http://schema.org/Report"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype="http://schema.org/Report"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary],
+article[itemtype="http://schema.org/APIReference"]:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype="http://schema.org/APIReference"][data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
+article[itemtype="http://schema.org/APIReference"] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary] {
+  --css-normal-border: var(--css-primary-200);
 }
 /*# sourceMappingURL=article.css.map */

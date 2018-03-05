@@ -1,0 +1,77 @@
+// Basic component rules
+[role="toolbar"],
+[data-css-group="toolbar"] > [role="toolbar"]
+{
+    background: var(--css-primary-600);
+    display: flex;
+    font-size: 1rem;
+    padding: 0 1rem;
+    position: relative;
+    
+    &::after
+    {
+        bottom: 0;
+        box-shadow: 0 2px 5px var(--css-black);
+        content: ' ';
+        display: block;
+        height: 1px;
+        left: 0;
+        opacity: .5;
+        position: absolute;
+        right: 0;
+    }
+
+    // Removing direct children margins
+    >*
+    {
+        margin: 0;
+    }
+
+    [data-css-role="heading"]
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1.4375rem 0;
+
+        // Making text ligther
+        &,
+        > :not(strong)
+        {
+            font-weight: normal;
+        }
+
+        // Heading and it's children
+        &,
+        a,
+        [role="link"],
+        *
+        {
+            color: var(--css-white);
+            font-size: 1.125rem;
+            line-height: 1.125rem;
+            text-decoration: none;
+        }
+
+        a,
+        [role="link"]
+        {
+            transition: color .3s;
+
+            &,
+            &:visited
+            {
+                color: var(--css-white);
+            }
+
+            &:hover,
+            &:focus
+            {
+                color: var(--css-primary-100);
+            }
+
+            &:active
+            {
+                color: var(--css-primary-200);
+            }
+        }
+    }
+}

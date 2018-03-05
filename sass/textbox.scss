@@ -1,3 +1,393 @@
-[data-css-role="textbox"] {
+@import '_component';
+
+
+
+// Textbox in wrapper (to label and other functionalities)
+[data-css-group="textbox"]
+{
+    display: flex;
+    flex-flow: row wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75rem;
+    margin: .5em;
+    max-width: 100%;
+    max-width: calc(100% - 1em);
+    text-align: left;
+    vertical-align: bottom;
+
+    // Icon
+    >[data-css-icon][data-css-side]
+    {
+        font-size: 2em;
+        flex-basis: 1em;
+        display: inline-block;
+        line-height: 1em;
+        max-height: 1em;
+        max-width: 1em;
+        min-height: 1em;
+        min-width: 1em;
+        text-align: center;
+    }
+    // Left side icon
+    >[data-css-icon][data-css-side="left"]
+    {
+        order: 1;
+        margin-right: 0.667em;
+        padding-top: .334em;
+
+        ~ label,
+        ~ [data-css-type]
+        {
+            padding-left: 3.334em;
+        }
+    }
+
+    // Right side icon
+    >[data-css-icon][data-css-side="right"]
+    {
+        margin-left: -1em;
+        order: 3;
+        padding-bottom: .334em;
+    }
+
+    // Non resting label
+    > label
+    {
+        color: var(--css-normal-border);
+        line-height: 1em;
+        flex-basis: 100%;
+        flex-shrink: 1;
+        order: 0; // Always in first positon
+        padding-left: .25em;
+        padding-top: 1.3334em;
+        position: relative;
+        top: 0;
+        transition: color .3s, top .3s, font-size .3s, padding-top .3s;
+    }
+
+    // Messages/counter display
+    >[data-css-type="counter"],
+    >[data-css-type="info"],
+    >[data-css-type="error"]
+    {
+        flex-basis: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding-top: .667em;
+        line-height: 1em;
+    }
+
+    // Word/Char counter
+    >[data-css-type="counter"]
+    {
+        flex-basis: 25%;
+        min-width: min-content;
+        order: 10;
+        padding-right: .25em;
+        text-align: right;
+
+        ~ [data-css-type]
+        {
+            flex-basis: 75%;
+        }
+    }
+
+    // Error message (immediatily bellow textbox)
+    >[data-css-type="error"]
+    {
+        color: var(--css-selected-background);
+        order: 4; // Position 3 is reserved to the icon on right
+        position: relative;
+        transition: top .3s;
+        top: -2.467em;
+        z-index: -1;
+
+        &:not([data-css-icon])::before
+        {
+            content: 'Error: ';
+        }
+    }
+    // Help text
+    >[data-css-type="info"]
+    {
+        color: var(--css-normal-border);
+        order: 5;
+    }
+
+    // Custom accent colors
+    &:not([data-css-primary]),
+    &[data-css-accent],
+    [data-css-accent] &:not([data-css-primary])
+    {
+        &,
+        & > *
+        {
+            // Normal state
+            @include pallete-background-group(accent, normal, 50);
+            // Selected state
+            @include pallete-color-group(accent, selected, white, 900, 800);
+            // Pressed state
+            @include pallete-color-group(accent, pressed, white, 300, 800);
+        }
+
+        >[data-css-type="info"]
+        {
+            @include pallete-border-group(accent, normal, 500);
+        }
+    }
+
+    // Custom primary colors
+    &:not([data-css-accent]),
+    &[data-css-primary],
+    [data-css-primary] &:not([data-css-accent])
+    {
+        &,
+        & > *
+        {
+            // Normal state
+            @include pallete-background-group(primary, normal, 50);
+            // Selected state
+            @include pallete-color-group(primary, selected, white, 900, 800);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, white, 300, 800);
+        }
+
+        >[data-css-type="info"]
+        {
+            @include pallete-border-group(primary, normal, 500);
+        }
+    }
+}
+
+
+
+// Styling all text components
+[role="textbox"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="url"],
+input[type="week"],
+textarea
+{
+    border: 0.0833em solid;
+    box-shadow: 0 0 transparent;
+    caret-color: var(--css-normal-border);
+    cursor: text;
     display: block;
+    flex-grow: 1;
+    font-family: inherit;
+    font-size: 1rem;
+    margin: 0;
+    min-width: 10em;
+    outline: none;
+    order: 2; // Position 1 is reserved to the icon on left
+    padding: .5rem .25em .5rem .25em;
+    transition: border-color .3s, box-shadow .3s, color .3s, background .3s;
+
+    // Normal
+    &,
+    &:not([data-css-state]),
+    &[data-css-state="normal"]
+    {
+        @include component-colors(normal);
+    }
+    // Selected
+    &:hover,
+    [data-css-state="selected"]    
+    {
+        @include component-colors(selected);
+        box-shadow: 0 0.166em var(--css-selected-border);
+    }
+    // Pressed/focus
+    &:active,
+    &:focus,
+    [data-css-state="pressed"]
+    {
+        @include component-colors(pressed);
+        box-shadow: 0 0.166em var(--css-pressed-border);
+    }
+
+    [data-css-icon][data-css-side="right"] ~ &
+    {
+        padding-right: 2.25em;
+    }
+}
+
+
+
+// Only single line textbox
+[role="textbox"]:not([aria-multiline="true"]),
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="url"],
+input[type="week"]
+{
+    &,
+    &:not([data-css-state]),
+    &[data-css-state="normal"]
+    {
+        border-left-color: var(--css-normal-background);
+        border-top-color: var(--css-normal-background);
+        border-right-color: var(--css-normal-background);
+    }
+}
+
+
+
+// Only multiline textbox
+[role="textbox"][aria-multiline="true"],
+textarea
+{
+    margin: 0;
+    max-width: 100%;
+    padding: .75rem;
+}
+
+
+
+// Only non native single line textbox
+[role="textbox"]:not([aria-multiline="true"])
+{
+    height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+// Native single line elements
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="url"],
+input[type="week"]
+{
+    &:invalid:not(:focus) ~ [data-css-type="error"]
+    {
+        top: 0;
+    }
+
+    &[data-css-optional] ~ label::after
+    {
+        @extend %textbox-optional-label;
+    }
+
+    &[required] ~ label::after,
+    [data-css-required] & ~ label::after
+    {
+        @extend %textbox-required-label;
+    }
+
+    &[disabled]
+    {
+        @extend %textbox-disabled-border;
+    }
+}
+textarea[disabled],
+[role="textbox"][aria-disabled]
+{
+    @extend %textbox-disabled-border;    
+}
+
+
+
+
+// Non empty textbox elements
+[role="textbox"],
+textarea
+{
+    // Adding support for placeholder
+    &[aria-placeholder]:empty::before
+    {
+        content: attr(aria-placeholder);
+    }
+
+    // Resting label
+    &:not([aria-placeholder]):not(:focus):empty ~ label
+    {
+        font-size: 1rem;
+        line-height: 0;
+        padding-top: 0;
+        top: 1.275em;
+    }
+
+    &[aria-invalid]:not(:focus) ~ [data-css-type="error"],
+    &[aria-required]:empty:not(:focus) ~ [data-css-type="error"]
+    {
+        top: 0;
+    }
+
+    
+    &[data-css-optional] ~ label::after
+    {
+        @extend %textbox-optional-label;
+    }
+
+    &[aria-required] ~ label::after,
+    [data-css-required] & ~ label::after
+    {
+        @extend %textbox-required-label;
+    }
+}
+
+
+
+// Placeholder
+input[type="date"]::placeholder,
+input[type="datetime-local"]::placeholder,
+input[type="email"]::placeholder,
+input[type="month"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="time"]::placeholder,
+input[type="text"]::placeholder,
+input[type="url"]::placeholder,
+input[type="week"]::placeholder,
+[role="textbox"][aria-placeholder]:empty::before,
+textarea[aria-placeholder]:empty::before
+{
+    color: var(--css-normal-border);
+}
+
+
+
+%textbox-disabled-border
+{
+    border-bottom: 1px dotted;
+}
+
+%textbox-optional-label
+{
+    content: ' (optional)';
+}
+
+%textbox-required-label
+{
+    content: ' *';
 }

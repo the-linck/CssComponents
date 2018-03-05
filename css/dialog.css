@@ -1,90 +1,37 @@
-[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close],
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close],
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close],
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close], [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close],
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close],
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close],
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close], [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent],
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent],
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent],
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent] {
-  color: var(--css-accent-700);
-}
-
-[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:hover,
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:hover,
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:hover,
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:hover, [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:hover,
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:hover,
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:hover,
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:hover, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:hover,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:hover,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:hover,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:hover, [role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:focus,
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:focus,
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:focus,
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:focus, [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:focus,
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:focus,
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:focus,
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:focus, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:focus,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:focus,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:focus,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:focus {
-  color: var(--css-accent-500);
-}
-
-[role="alertdialog"][id] > [role="heading"][data-css-accent] [data-css-close]:active,
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:active,
-[role="dialog"][id] > [role="heading"][data-css-accent] [data-css-close]:active,
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent] [data-css-close]:active, [role="alertdialog"][id][data-css-accent] > [role="heading"] [data-css-close]:active,
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:active,
-[role="dialog"][id][data-css-accent] > [role="heading"] [data-css-close]:active,
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] [data-css-close]:active, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-accent]:active,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:active,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-accent]:active,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-accent]:active {
-  color: var(--css-accent-900);
-}
-
-[role="alertdialog"][id] > [role="heading"][data-css-accent],
-[role="alertdialog"][id] > [data-css-role="heading"][data-css-accent],
-[role="dialog"][id] > [role="heading"][data-css-accent],
-[role="dialog"][id] > [data-css-role="heading"][data-css-accent], [role="alertdialog"][id][data-css-accent] > [role="heading"],
-[role="alertdialog"][id][data-css-accent] > [data-css-role="heading"],
-[role="dialog"][id][data-css-accent] > [role="heading"],
-[role="dialog"][id][data-css-accent] > [data-css-role="heading"] {
-  background: var(--css-accent-300);
-  border-bottom: 1px solid var(--css-accent-400);
-}
-
 [role="alertdialog"][id],
 [role="dialog"][id] {
-  background: var(--css-primary-50);
-  border: 1px solid var(--css-primary-400);
+  border: 1px solid;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  height: 18em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1rem;
   position: fixed;
   left: 50%;
-  max-height: calc(50% - 2em);
-  max-width: calc(50% - 2em);
   min-height: 9em;
   min-width: 16em;
   overflow: visible;
   opacity: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 100vh;
+  -webkit-transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
   transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
   visibility: hidden;
-  width: 32em;
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
 }
 
 [role="alertdialog"][id]::before,
 [role="dialog"][id]::before {
-  background: var(--css-primary-900);
   bottom: -50vh;
   content: ' ';
   display: none;
@@ -93,86 +40,50 @@
   position: fixed;
   right: -50vw;
   top: -50vh;
+  background-color: var(--css-normal-background);
 }
 
 [role="alertdialog"][id] > *,
 [role="dialog"][id] > * {
   background: var(--css-primary-50);
-  box-sizing: border-box;
-  flex-grow: 1;
-  flex-shrink: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   padding: 0.5em;
   position: relative;
   z-index: 10;
-}
-
-[role="alertdialog"][id] > *[data-css-accent],
-[role="dialog"][id] > *[data-css-accent] {
-  background-color: var(--css-accent-50);
 }
 
 [role="alertdialog"][id] > [role="heading"],
 [role="alertdialog"][id] > [data-css-role="heading"],
 [role="dialog"][id] > [role="heading"],
 [role="dialog"][id] > [data-css-role="heading"] {
-  background: var(--css-primary-300);
-  border-bottom: 1px solid var(--css-primary-400);
+  border-bottom: 1px solid;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
-  flex-grow: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  font-size: 1em;
+  line-height: 1em;
   margin: 0;
-}
-
-[role="alertdialog"][id] > [role="heading"]::before,
-[role="alertdialog"][id] > [data-css-role="heading"]::before,
-[role="dialog"][id] > [role="heading"]::before,
-[role="dialog"][id] > [data-css-role="heading"]::before {
-  content: none;
-  counter-increment: none;
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
 }
 
 [role="alertdialog"][id] > [role="heading"] [data-css-close],
 [role="alertdialog"][id] > [data-css-role="heading"] [data-css-close],
 [role="dialog"][id] > [role="heading"] [data-css-close],
 [role="dialog"][id] > [data-css-role="heading"] [data-css-close] {
+  float: right;
   text-decoration: none;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
-}
-
-[role="alertdialog"][id] > [role="heading"] [data-css-close], [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary],
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close],
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary],
-[role="dialog"][id] > [role="heading"] [data-css-close],
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary],
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close],
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary] {
-  color: var(--css-primary-700);
-}
-
-[role="alertdialog"][id] > [role="heading"] [data-css-close]:hover, [role="alertdialog"][id] > [role="heading"] [data-css-close]:focus, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary]:hover, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary]:focus,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close]:hover,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close]:focus,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:hover,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:focus,
-[role="dialog"][id] > [role="heading"] [data-css-close]:hover,
-[role="dialog"][id] > [role="heading"] [data-css-close]:focus,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary]:hover,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary]:focus,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:hover,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:focus,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:hover,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:focus {
-  color: var(--css-primary-500);
-}
-
-[role="alertdialog"][id] > [role="heading"] [data-css-close]:active, [role="alertdialog"][id] > [role="heading"] [data-css-close][data-css-primary]:active,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close]:active,
-[role="alertdialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:active,
-[role="dialog"][id] > [role="heading"] [data-css-close]:active,
-[role="dialog"][id] > [role="heading"] [data-css-close][data-css-primary]:active,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close]:active,
-[role="dialog"][id] > [data-css-role="heading"] [data-css-close][data-css-primary]:active {
-  color: var(--css-primary-900);
 }
 
 [role="alertdialog"][id] > [role="heading"] + *,
@@ -186,14 +97,10 @@
 [role="dialog"][id]:target {
   opacity: 1;
   top: 50%;
+  -webkit-transition: opacity 0.3s, top 0.3s;
   transition: opacity 0.3s, top 0.3s;
   visibility: visible;
   z-index: 10;
-}
-
-[role="alertdialog"][id]:target::before,
-[role="dialog"][id]:target::before {
-  display: flex;
 }
 
 [role="alertdialog"][id][data-css-size="small"],
@@ -202,6 +109,15 @@
   max-height: calc(33% - 2em);
   max-width: calc(33% - 2em);
   width: 16em;
+}
+
+[role="alertdialog"][id]:not([data-css-size]), [role="alertdialog"][id][data-css-size="medium"],
+[role="dialog"][id]:not([data-css-size]),
+[role="dialog"][id][data-css-size="medium"] {
+  height: 18em;
+  max-height: calc(50% - 2em);
+  max-width: calc(50% - 2em);
+  width: 43em;
 }
 
 [role="alertdialog"][id][data-css-size="big"],
@@ -228,14 +144,27 @@
   width: calc(100% - 2em);
 }
 
-[role="alertdialog"][id][data-css-accent],
-[role="dialog"][id][data-css-accent] {
-  background-color: var(--css-accent-50);
-  border-color: var(--css-accent-400);
+[role="alertdialog"][id]:not([data-css-accent])::before, [role="alertdialog"][id][data-css-primary]::before,
+[data-css-primary] [role="alertdialog"][id]::before,
+[role="dialog"][id]:not([data-css-accent])::before,
+[role="dialog"][id][data-css-primary]::before,
+[data-css-primary]
+[role="dialog"][id]::before {
+  --css-normal-background: var(--css-primary-900);
 }
 
 [role="alertdialog"][id][data-css-accent]::before,
-[role="dialog"][id][data-css-accent]::before {
-  background-color: var(--css-accent-900);
+[data-css-accent] [role="alertdialog"][id]::before,
+[role="dialog"][id][data-css-accent]::before,
+[data-css-accent]
+[role="dialog"][id]::before {
+  --css-normal-background: var(--css-accent-900);
+}
+
+[role="alertdialog"][id]:target::before,
+[role="dialog"][data-css-modal]:target::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=dialog.css.map */

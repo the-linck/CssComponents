@@ -1,169 +1,62 @@
 [role="alert"],
 [data-css-role="alert"] {
   /* Basic component rules */
-  background-color: var(--css-primary-100);
-  border: 0.1em solid var(--css-primary-200);
+  border: 0.1em solid;
   border-radius: 0.333em;
-  color: var(--css-primary-800);
   display: block;
   font-size: 1.125em;
   font-weight: bold;
   margin: 1em 0;
   padding: 0.75em;
   text-align: center;
-}
-
-[role="alert"][data-css-accent],
-[data-css-role="alert"][data-css-accent] {
-  /* Accent color */
-  background-color: var(--css-accent-100);
-  border-color: var(--css-accent-200);
-  color: var(--css-accent-900);
-}
-
-[role="alert"][data-css-type="info"],
-[data-css-role="alert"][data-css-type="info"] {
-  /* Information alert */
-  background-color: var(--css-primary-50);
-  border-color: var(--css-primary-100);
-  color: var(--css-primary-800);
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
 }
 
 [role="alert"][data-css-type="info"][data-css-icon]::before,
 [data-css-role="alert"][data-css-type="info"][data-css-icon]::before {
-  /* Information alert icon */
-  content: '\2139';
-  color: var(--css-primary-300);
+  border-width: 2px;
   font-size: 1.25em;
-  line-height: 1em;
-  vertical-align: initial;
-  display: inline-block;
-  border: 2px solid;
-  border-radius: 50%;
-  width: 1em;
-}
-
-[role="alert"][data-css-type="info"][data-css-accent],
-[data-css-role="alert"][data-css-type="info"][data-css-accent] {
-  /* Information alert in accent color */
-  background-color: var(--css-accent-50);
-  border-color: var(--css-accent-100);
-  color: var(--css-accent-800);
-}
-
-[role="alert"][data-css-type="info"][data-css-accent][data-css-icon]::before,
-[data-css-role="alert"][data-css-type="info"][data-css-accent][data-css-icon]::before {
-  /* Information alert in accent color icon */
-  color: var(--css-accent-300);
-}
-
-[role="alert"][data-css-type="success"],
-[data-css-role="alert"][data-css-type="success"] {
-  /* Success alert */
-  background-color: var(--css-primary-200);
-  border-color: var(--css-primary-300);
-  color: var(--css-primary-800);
 }
 
 [role="alert"][data-css-type="success"][data-css-icon]::before,
 [data-css-role="alert"][data-css-type="success"][data-css-icon]::before {
   /* Success alert icon */
-  content: '\2714';
-  color: var(--css-primary-400);
   font-size: 1.5em;
-  line-height: 1em;
   vertical-align: baseline;
-  display: inline-block;
-  border: 1px solid;
-  border-radius: 50%;
-  position: relative;
   top: .1em;
-  width: 1em;
-}
-
-[role="alert"][data-css-type="success"][data-css-accent],
-[data-css-role="alert"][data-css-type="success"][data-css-accent] {
-  /* Success alert in accent color */
-  background-color: var(--css-accent-100);
-  border-color: var(--css-accent-200);
-  color: var(--css-accent-900);
-}
-
-[role="alert"][data-css-type="success"][data-css-accent][data-css-icon]::before,
-[data-css-role="alert"][data-css-type="success"][data-css-accent][data-css-icon]::before {
-  /* Success alert in accent color icon */
-  color: var(--css-accent-400);
 }
 
 [role="alert"][data-css-type="warning"],
 [data-css-role="alert"][data-css-type="warning"] {
-  /* Warning alert */
-  background-color: var(--css-primary-500);
   border-width: 0.25em;
-  border-color: var(--css-primary-600);
-  color: var(--css-black);
 }
 
 [role="alert"][data-css-type="warning"][data-css-icon]::before,
 [data-css-role="alert"][data-css-type="warning"][data-css-icon]::before {
   /* Warning alert icon */
-  content: '\26a0';
-  color: var(--css-primary-700);
   font-size: 2.5em;
   line-height: 0.5em;
+  min-height: auto;
   vertical-align: sub;
-}
-
-[role="alert"][data-css-type="warning"][data-css-accent],
-[data-css-role="alert"][data-css-type="warning"][data-css-accent] {
-  /* Warning alert in accent color */
-  background-color: var(--css-accent-500);
-  border-color: var(--css-accent-600);
-  color: var(--css-black);
-}
-
-[role="alert"][data-css-type="warning"][data-css-accent][data-css-icon]::before,
-[data-css-role="alert"][data-css-type="warning"][data-css-accent][data-css-icon]::before {
-  /* Warning alert in accent color icon */
-  color: var(--css-accent-700);
 }
 
 [role="alert"][data-css-type="error"],
 [data-css-role="alert"][data-css-type="error"] {
   /* Error alert */
-  background-color: var(--css-primary-700);
-  border-color: var(--css-primary-800);
   border-width: 0.333em;
   font-size: 1.5em;
-  color: var(--css-white);
   text-transform: UPPERCASE;
 }
 
 [role="alert"][data-css-type="error"][data-css-icon]::before,
 [data-css-role="alert"][data-css-type="error"][data-css-icon]::before {
   /* Error alert icon */
-  content: '\FF01';
-  color: var(--css-primary-900);
-  display: inline-block;
   font-size: 3em;
   font-weight: 900;
   line-height: 0.25em;
-  position: relative;
-  left: 0.5em;
+  min-height: auto;
   vertical-align: middle;
-}
-
-[role="alert"][data-css-type="error"][data-css-accent],
-[data-css-role="alert"][data-css-type="error"][data-css-accent] {
-  /* Error alert in accent color */
-  background-color: var(--css-accent-700);
-  border-color: var(--css-accent-800);
-  color: var(--css-white);
-}
-
-[role="alert"][data-css-type="error"][data-css-accent][data-css-icon]::before,
-[data-css-role="alert"][data-css-type="error"][data-css-accent][data-css-icon]::before {
-  /* Error alert in accent color icon */
-  color: var(--css-accent-900);
 }
 /*# sourceMappingURL=alert.css.map */
