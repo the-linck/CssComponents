@@ -11,18 +11,20 @@
     <!-- Importing accent color pallete -->
     <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
-<body>
-    <header role="toolbar">
-        <div data-css-role="heading">
-            <a href="index.html">Demos</a>
-            &rarr;
-            <strong>Link Component</strong>
+<body aria-labelledby="link_demos">
+    <header data-css-group="toolbar">
+        <div role="toolbar">
+            <h3 data-css-role="heading">
+                <a href="index.html">Demos</a>
+                &rarr;
+                <strong id="link_demos">Link Component</strong>
+            </h3>
         </div>
     </header>
 
-    <article aria-label="Link Component" itemscope itemtype="http://schema.org/APIReference">
+    <article aria-labelledby="page_header" itemscope itemtype="http://schema.org/APIReference">
         <header>
-            <h1>The Link Component</h1>
+            <h1 id="page_header">The Link Component</h1>
         </header>
 
         <!-- Table of contents -->

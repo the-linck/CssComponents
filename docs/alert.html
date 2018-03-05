@@ -12,18 +12,20 @@
     <!-- Importing accent color pallete -->
     <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
-<body>
-    <header role="toolbar">
-        <div data-css-role="heading">
-            <a href="index.html">Demos</a>
-            &rarr;
-            <strong id="alert_demos">Alert Component</strong>
+<body aria-labelledby="alert_demos">
+    <header data-css-group="toolbar">
+        <div role="toolbar">
+            <h3 data-css-role="heading">
+                <a href="index.html">Demos</a>
+                &rarr;
+                <strong id="alert_demos">Alert Component</strong>
+            </h3>
         </div>
     </header>
 
-    <article aria-label="Button Component" itemscope itemtype="http://schema.org/APIReference">
+    <article aria-labelledby="page_header" itemscope itemtype="http://schema.org/APIReference">
         <header>
-            <h2>The Alert Component</h2>
+            <h1 id="page_header">The Alert Component</h1>
         </header>
 
         <!-- Table of contents -->        
@@ -96,14 +98,14 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" itemprop="text">
-                        <span data-css-line>
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <span>
                             &lt;div <strong>role=&quot;alert&quot;</strong> title=&quot;A simple alert&quot;&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &emsp;This is an alert, dude.
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;/div&gt;
                         </span>
                     </code>
@@ -167,41 +169,41 @@
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                <span data-css-line>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                <span>
                                     &lt;div <strong>data-css-type=&quot;info&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;Just to let you know.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;div <strong>data-css-type=&quot;success&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;It's all right.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;div <strong>data-css-type=&quot;warning&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;But that may be dangerous.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;div <strong>data-css-type=&quot;error&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;OH MY! WHAT happened here?
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
                             </code>
@@ -246,41 +248,41 @@
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
-                            <code class="language-html" itemprop="text">
-                                <span data-css-line>
+                            <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                                <span>
                                     &lt;div data-css-type=&quot;info&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;Just to let you know.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;div data-css-type=&quot;success&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;It's all right.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;div data-css-type=&quot;warning&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;But that may be dangerous.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;div data-css-type=&quot;error&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &emsp;OH MY! SH1T happened here.
                                 </span>
-                                <span data-css-line>
+                                <span>
                                     &lt;/div&gt;
                                 </span>
                             </code>
@@ -332,50 +334,50 @@
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
-                    <code class="language-html" itemprop="text">
-                        <span data-css-line>
+                    <code class="language-html" data-css-group="lines" itemprop="text" role="group">
+                        <span>
                             &lt;div data-css-accent role=&quot;alert&quot;&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &emsp;Common
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;/div&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;div <strong>data-css-accent</strong> data-css-type=&quot;info&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &emsp;Info
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;/div&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;div <strong>data-css-accent</strong> data-css-type=&quot;success&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &emsp;Success
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;/div&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;div <strong>data-css-accent</strong> data-css-type=&quot;warning&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &emsp;Warning
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;/div&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;div <strong>data-css-accent</strong> data-css-type=&quot;error&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
-                        <span data-css-line>
+                        <span>
                             &emsp;Error
                         </span>
-                        <span data-css-line>
+                        <span>
                             &lt;/div&gt;
                         </span>
                     </code>

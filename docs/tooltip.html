@@ -12,18 +12,20 @@
     <!-- Importing accent color pallete -->
     <link href="../css/palette/accent/pink.css" rel="stylesheet"/>
 </head>
-<body>
-    <header role="toolbar">
-        <div data-css-role="heading">
-            <a href="index.html">Demos</a>
-            &rarr;
-            <strong>Tooltip Component</strong>
+<body aria-labelledby="tooltip_demos">
+    <header data-css-group="toolbar">
+        <div role="toolbar">
+            <div data-css-role="heading">
+                <a href="index.html">Demos</a>
+                &rarr;
+                <strong id="tooltip_demos">Tooltip Component</strong>
+            </div>
         </div>
     </header>
 
-    <article aria-label="Tooltip Component" itemscope itemtype="http://schema.org/APIReference">
+    <article aria-labelledby="page_header" itemscope itemtype="http://schema.org/APIReference">
         <header>
-            <h1>The Tooltip Component</h1>
+            <h1 id="page_header">The Tooltip Component</h1>
         </header>
 
         <!-- Table of contents -->
