@@ -16,33 +16,18 @@
 
     @include component-colors(normal);
 
-    // Icon 
-    &[data-css-type][data-css-icon]::before
-    {
-        line-height: 1em;
-        display: inline-block;        
-        width: 1em;
-    }
-
     // Types
     &[data-css-type="info"][data-css-icon]::before
     {
-        /* Information alert icon */
-        content: '\2139';
+        border-width: 2px;
         font-size: 1.25em;
-        border: 2px solid;
-        border-radius: 50%;
-        position: relative;
     }
 
     &[data-css-type="success"][data-css-icon]::before
     {
         /* Success alert icon */
-        content: '\2714';
         font-size: 1.5em;
         vertical-align: baseline;
-        border: 1px solid;
-        border-radius: 50%;
         top: .1em;
     }
 
@@ -54,9 +39,9 @@
         &[data-css-icon]::before
         {
             /* Warning alert icon */
-            content: '\26a0';
             font-size: 2.5em;
             line-height: 0.5em;
+            min-height: auto;
             vertical-align: sub;
         }
     }
@@ -72,11 +57,10 @@
         &[data-css-icon]::before
         {
             /* Error alert icon */
-            content: '\FF01';
             font-size: 3em;
             font-weight: 900;
             line-height: 0.25em;
-            left: 0.5em;
+            min-height: auto;
             vertical-align: middle;
         }
     }

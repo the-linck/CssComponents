@@ -1,27 +1,142 @@
 @import '_component';
 
-%text-margin-adjust
-{
-    margin: 0 .5em;
-    max-width: 100%;
-    max-width: calc(100% - 1em);
-}
+
 
 // Textbox in wrapper (to label and other functionalities)
 [data-css-group="textbox"]
 {
     display: inline-flex;
-    flex-direction: column-reverse;
+    flex-flow: row wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75rem;
+    margin: 0 .5em;
+    max-width: 100%;
+    max-width: calc(100% - 1em);
+    text-align: left;
     vertical-align: bottom;
-    @extend %text-margin-adjust;
 
-    > label {
-        color: var(--css-primary-700);
-        font-size: .75rem;
-        order: 0;
-        transition: color .3s;
+    // Icon
+    >[data-css-icon][data-css-side]
+    {
+        font-size: 2em;
+        flex-basis: 1em;
+        display: inline-block;
+        line-height: 1em;
+        max-height: 1em;
+        max-width: 1em;
+        min-height: 1em;
+        min-width: 1em;
+        text-align: center;
+    }
+    // Left side icon
+    >[data-css-icon][data-css-side="left"]
+    {
+        order: 1;
+        margin-right: 0.667em;
+        padding-top: .334em;
+
+        ~ label
+        {
+            padding-left: 3em;
+        }
+    }
+
+    // Right side icon
+    >[data-css-icon][data-css-side="right"]
+    {
+        margin-left: -1em;
+        order: 3;
+        padding-bottom: .334em;
+    }
+
+    // Non resting label
+    > label
+    {
+        color: var(--css-normal-border);
+        line-height: 1em;
+        flex-basis: 100%;
+        flex-shrink: 1;
+        order: 0; // Always in first positon
+        padding-left: .25em;
+        padding-top: 1.3334em;
+        position: relative;
+        top: 0;
+        transition: color .3s, top .3s, font-size .3s, padding-top .3s;
+    }
+
+    // Messages/counter display
+    >[data-css-type="counter"],
+    >[data-css-type="info"],
+    >[data-css-type="error"]
+    {
+        flex-basis: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding-top: .667em;
+        line-height: 1em;
+    }
+
+    // Word/Char counter
+    >[data-css-type="counter"]
+    {
+        flex-basis: 25%;
+        min-width: min-content;
+        order: 10;
+        padding-right: .25em;
+        text-align: right;
+
+        ~ [data-css-type]
+        {
+            flex-basis: 75%;
+        }
+    }
+
+    // Error message (immediatily bellow textbox)
+    >[data-css-type="error"]
+    {
+        color: var(--css-selected-background);
+        order: 4; // Position 3 is reserved to the icon on right
+        position: relative;
+        transition: top .3s;
+        top: -2.467em;
+        z-index: -1;
+
+        &:not([data-css-icon])::before
+        {
+            content: 'Error: ';
+        }
+    }
+    // Help text
+    >[data-css-type="info"]
+    {
+        color: var(--css-normal-border);
+        order: 5;
+    }
+
+    // Custom primary colors
+    &:not([data-css-accent]),
+    &[data-css-primary],
+    [data-css-primary] &:not([data-css-accent])
+    {
+        &,
+        & > *
+        {
+            // Normal state
+            @include pallete-background-group(primary, normal, 50);
+            // Selected state
+            @include pallete-color-group(primary, selected, white, 900, 800);
+            // Pressed state
+            @include pallete-color-group(primary, pressed, white, 300, 800);
+        }
+
+        >[data-css-type="info"]
+        {
+            @include pallete-border-group(primary, normal, 500);
+        }
     }
 }
+
+
 
 // Styling all text components
 [role="textbox"],
@@ -39,63 +154,54 @@ input[type="url"],
 input[type="week"],
 textarea
 {
-    border: 0.1rem solid;
+    border: 0.0833em solid;
     box-shadow: 0 0 transparent;
+    caret-color: var(--css-normal-border);
     cursor: text;
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: .75rem;
+    display: block;
+    flex-grow: 1;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
     min-width: 10em;
     outline: none;
-    padding: .75rem .25em .5rem .25em;
+    order: 2; // Position 1 is reserved to the icon on left
+    padding: .5rem .25em .5rem .25em;
     transition: border-color .3s, box-shadow .3s, color .3s, background .3s;
-    vertical-align: bottom;
 
-    @include component-colors(normal);
-
-    &::placeholder,
-    &::-webkit-input-placeholder
-    {
-        color: var(--css-primary-600);
-        transition: color .25s;
-    }
-
-    // With wrapper
-    [data-css-group="textbox"] > &
-    {
-        display: block;
-        order: 0;
-        margin: 0;
-        padding-top: .5rem;
-    }
-
-    // States
+    // Normal
     &,
-    [data-css-group="textbox"] > &
+    &:not([data-css-state]),
+    &[data-css-state="normal"]
     {
-        &:hover,
-        &:focus
-        {
-            background-color: var(--css-primary-50);
-            color: var(--css-black);
-            border-color: var(--css-primary-400);
-            box-shadow: 0 0.1rem var(--css-primary-400);
+        @include component-colors(normal);
+    }
+    // Selected
+    &:hover,
+    [data-css-state="selected"]    
+    {
+        @include component-colors(selected);
+        box-shadow: 0 0.166em var(--css-selected-border);
+    }
+    // Pressed/focus
+    &:active,
+    &:focus,
+    [data-css-state="pressed"]
+    {
+        @include component-colors(pressed);
+        box-shadow: 0 0.166em var(--css-pressed-border);
+    }
 
-            &::placeholder,
-            &::-webkit-input-placeholder
-            {
-                color: var(--css-primary-600);
-            }
-
-            + label {
-                color: var(--css-primary-500);
-            }
-        }
+    [data-css-icon][data-css-side="right"] ~ &
+    {
+        padding-right: 2.25em;
     }
 }
 
-// Only textbox components
-[role="textbox"],
+
+
+// Only single line textbox
+[role="textbox"]:not([aria-multiline="true"]),
 input[type="date"],
 input[type="datetime-local"],
 input[type="email"],
@@ -109,13 +215,19 @@ input[type="text"],
 input[type="url"],
 input[type="week"]
 {
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    @extend %text-margin-adjust;
+    &,
+    &:not([data-css-state]),
+    &[data-css-state="normal"]
+    {
+        border-left-color: var(--css-normal-background);
+        border-top-color: var(--css-normal-background);
+        border-right-color: var(--css-normal-background);
+    }
 }
 
-// Only textarea components
+
+
+// Only multiline textbox
 [role="textbox"][aria-multiline="true"],
 textarea
 {
@@ -125,11 +237,134 @@ textarea
 }
 
 
-// Only non native text component
+
+// Only non native single line textbox
 [role="textbox"]:not([aria-multiline="true"])
 {
     height: 1em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+
+
+// Native single line elements
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="text"],
+input[type="url"],
+input[type="week"]
+{
+    &:invalid:not(:focus) ~ [data-css-type="error"]
+    {
+        top: 0;
+    }
+
+    &[data-css-optional] ~ label::after
+    {
+        @extend %textbox-optional-label;
+    }
+
+    &[required] ~ label::after,
+    [data-css-required] & ~ label::after
+    {
+        @extend %textbox-required-label;
+    }
+
+    &[disabled]
+    {
+        @extend %textbox-disabled-border;
+    }
+}
+textarea[disabled],
+[role="textbox"][aria-disabled]
+{
+    @extend %textbox-disabled-border;    
+}
+
+
+
+
+// Non empty textbox elements
+[role="textbox"],
+textarea
+{
+    // Adding support for placeholder
+    &[aria-placeholder]:empty::before
+    {
+        content: attr(aria-placeholder);
+    }
+
+    // Resting label
+    &:not([aria-placeholder]):not(:focus):empty ~ label
+    {
+        // color: var(--css-normal-text);
+        line-height: 0;
+        padding-top: 0;
+        top: 1.275em;
+    }
+
+    &[aria-invalid]:not(:focus) ~ [data-css-type="error"],
+    &[aria-required]:empty:not(:focus) ~ [data-css-type="error"]
+    {
+        top: 0;
+    }
+
+    
+    &[data-css-optional] ~ label::after
+    {
+        @extend %textbox-optional-label;
+    }
+
+    &[aria-required] ~ label::after,
+    [data-css-required] & ~ label::after
+    {
+        @extend %textbox-required-label;
+    }
+}
+
+
+
+// Placeholder
+input[type="date"]::placeholder,
+input[type="datetime-local"]::placeholder,
+input[type="email"]::placeholder,
+input[type="month"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="time"]::placeholder,
+input[type="text"]::placeholder,
+input[type="url"]::placeholder,
+input[type="week"]::placeholder,
+[role="textbox"][aria-placeholder]:empty::before,
+textarea[aria-placeholder]:empty::before
+{
+    color: var(--css-normal-border);
+}
+
+
+
+%textbox-disabled-border
+{
+    border-bottom: 1px dotted;
+}
+
+%textbox-optional-label
+{
+    content: ' (optional)';
+}
+
+%textbox-required-label
+{
+    content: ' *';
 }

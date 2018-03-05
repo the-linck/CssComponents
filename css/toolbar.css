@@ -1,4 +1,5 @@
-[role="toolbar"] {
+[role="toolbar"],
+[data-css-group="toolbar"] > [role="toolbar"] {
   background: var(--css-primary-600);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,7 +9,8 @@
   position: relative;
 }
 
-[role="toolbar"]::after {
+[role="toolbar"]::after,
+[data-css-group="toolbar"] > [role="toolbar"]::after {
   bottom: 0;
   -webkit-box-shadow: 0 2px 5px var(--css-black);
           box-shadow: 0 2px 5px var(--css-black);
@@ -21,24 +23,32 @@
   right: 0;
 }
 
-[role="toolbar"] > * {
+[role="toolbar"] > *,
+[data-css-group="toolbar"] > [role="toolbar"] > * {
   margin: 0;
 }
 
-[role="toolbar"] [data-css-role="heading"] {
+[role="toolbar"] [data-css-role="heading"],
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] {
   font-family: Arial, Helvetica, sans-serif;
   padding: 1.4375rem 0;
 }
 
 [role="toolbar"] [data-css-role="heading"],
-[role="toolbar"] [data-css-role="heading"] > :not(strong) {
+[role="toolbar"] [data-css-role="heading"] > :not(strong),
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"],
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] > :not(strong) {
   font-weight: normal;
 }
 
 [role="toolbar"] [data-css-role="heading"],
 [role="toolbar"] [data-css-role="heading"] a,
 [role="toolbar"] [data-css-role="heading"] [role="link"],
-[role="toolbar"] [data-css-role="heading"] * {
+[role="toolbar"] [data-css-role="heading"] *,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"],
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"],
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] * {
   color: var(--css-white);
   font-size: 1.125rem;
   line-height: 1.125rem;
@@ -46,25 +56,37 @@
 }
 
 [role="toolbar"] [data-css-role="heading"] a,
-[role="toolbar"] [data-css-role="heading"] [role="link"] {
+[role="toolbar"] [data-css-role="heading"] [role="link"],
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"] {
   -webkit-transition: color .3s;
   transition: color .3s;
 }
 
 [role="toolbar"] [data-css-role="heading"] a, [role="toolbar"] [data-css-role="heading"] a:visited,
 [role="toolbar"] [data-css-role="heading"] [role="link"],
-[role="toolbar"] [data-css-role="heading"] [role="link"]:visited {
+[role="toolbar"] [data-css-role="heading"] [role="link"]:visited,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a:visited,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"],
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"]:visited {
   color: var(--css-white);
 }
 
 [role="toolbar"] [data-css-role="heading"] a:hover, [role="toolbar"] [data-css-role="heading"] a:focus,
 [role="toolbar"] [data-css-role="heading"] [role="link"]:hover,
-[role="toolbar"] [data-css-role="heading"] [role="link"]:focus {
+[role="toolbar"] [data-css-role="heading"] [role="link"]:focus,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a:hover,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a:focus,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"]:hover,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"]:focus {
   color: var(--css-primary-100);
 }
 
 [role="toolbar"] [data-css-role="heading"] a:active,
-[role="toolbar"] [data-css-role="heading"] [role="link"]:active {
+[role="toolbar"] [data-css-role="heading"] [role="link"]:active,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] a:active,
+[data-css-group="toolbar"] > [role="toolbar"] [data-css-role="heading"] [role="link"]:active {
   color: var(--css-primary-200);
 }
 /*# sourceMappingURL=toolbar.css.map */

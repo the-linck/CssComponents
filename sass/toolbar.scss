@@ -1,5 +1,6 @@
 // Basic component rules
-[role="toolbar"]
+[role="toolbar"],
+[data-css-group="toolbar"] > [role="toolbar"]
 {
     background: var(--css-primary-600);
     display: flex;

@@ -110,11 +110,11 @@ body[data-css-theme="light"] [data-css-accent] *:not([data-css-primary])[data-cs
   --css-pressed-text: var(--css-white);
 }
 
-body:not(data-css-theme) *,
+body:not(data-css-theme) *:not([data-css-accent]),
 body:not(data-css-theme) * [data-css-primary],
 body:not(data-css-theme) *[data-css-primary],
 body:not(data-css-theme) [data-css-primary] *:not([data-css-accent]),
-body[data-css-theme="light"] *,
+body[data-css-theme="light"] *:not([data-css-accent]),
 body[data-css-theme="light"] * [data-css-primary],
 body[data-css-theme="light"] *[data-css-primary],
 body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent]) {
@@ -132,11 +132,11 @@ body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent]) {
   --css-disabled-text: var(--css-primary-700);
 }
 
-body:not(data-css-theme) *[data-css-type="info"],
+body:not(data-css-theme) *:not([data-css-accent])[data-css-type="info"],
 body:not(data-css-theme) * [data-css-primary][data-css-type="info"],
 body:not(data-css-theme) *[data-css-primary][data-css-type="info"],
 body:not(data-css-theme) [data-css-primary] *:not([data-css-accent])[data-css-type="info"],
-body[data-css-theme="light"] *[data-css-type="info"],
+body[data-css-theme="light"] *:not([data-css-accent])[data-css-type="info"],
 body[data-css-theme="light"] * [data-css-primary][data-css-type="info"],
 body[data-css-theme="light"] *[data-css-primary][data-css-type="info"],
 body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-css-type="info"] {
@@ -151,11 +151,11 @@ body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-cs
   --css-pressed-text: var(--css-primary-900);
 }
 
-body:not(data-css-theme) *[data-css-type="success"],
+body:not(data-css-theme) *:not([data-css-accent])[data-css-type="success"],
 body:not(data-css-theme) * [data-css-primary][data-css-type="success"],
 body:not(data-css-theme) *[data-css-primary][data-css-type="success"],
 body:not(data-css-theme) [data-css-primary] *:not([data-css-accent])[data-css-type="success"],
-body[data-css-theme="light"] *[data-css-type="success"],
+body[data-css-theme="light"] *:not([data-css-accent])[data-css-type="success"],
 body[data-css-theme="light"] * [data-css-primary][data-css-type="success"],
 body[data-css-theme="light"] *[data-css-primary][data-css-type="success"],
 body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-css-type="success"] {
@@ -170,11 +170,11 @@ body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-cs
   --css-pressed-text: var(--css-primary-900);
 }
 
-body:not(data-css-theme) *[data-css-type="warning"],
+body:not(data-css-theme) *:not([data-css-accent])[data-css-type="warning"],
 body:not(data-css-theme) * [data-css-primary][data-css-type="warning"],
 body:not(data-css-theme) *[data-css-primary][data-css-type="warning"],
 body:not(data-css-theme) [data-css-primary] *:not([data-css-accent])[data-css-type="warning"],
-body[data-css-theme="light"] *[data-css-type="warning"],
+body[data-css-theme="light"] *:not([data-css-accent])[data-css-type="warning"],
 body[data-css-theme="light"] * [data-css-primary][data-css-type="warning"],
 body[data-css-theme="light"] *[data-css-primary][data-css-type="warning"],
 body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-css-type="warning"] {
@@ -189,11 +189,11 @@ body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-cs
   --css-pressed-text: var(--css-white);
 }
 
-body:not(data-css-theme) *[data-css-type="error"],
+body:not(data-css-theme) *:not([data-css-accent])[data-css-type="error"],
 body:not(data-css-theme) * [data-css-primary][data-css-type="error"],
 body:not(data-css-theme) *[data-css-primary][data-css-type="error"],
 body:not(data-css-theme) [data-css-primary] *:not([data-css-accent])[data-css-type="error"],
-body[data-css-theme="light"] *[data-css-type="error"],
+body[data-css-theme="light"] *:not([data-css-accent])[data-css-type="error"],
 body[data-css-theme="light"] * [data-css-primary][data-css-type="error"],
 body[data-css-theme="light"] *[data-css-primary][data-css-type="error"],
 body[data-css-theme="light"] [data-css-primary] *:not([data-css-accent])[data-css-type="error"] {
@@ -395,7 +395,7 @@ body {
 }
 
 /* Hidden items */
-[aria-hidden="true"] {
+[hidden] {
   display: none;
 }
 
@@ -529,5 +529,46 @@ h5 {
 
 [data-css-underline] {
   text-decoration: underline;
+}
+
+i[data-css-icon] {
+  font-style: normal;
+}
+
+[data-css-icon]::before {
+  color: inherit;
+  display: inline-block;
+  line-height: 1em;
+  min-height: 1em;
+  min-width: 1em;
+  text-align: center;
+}
+
+[data-css-icon]:not([data-css-icon=""])::before {
+  content: attr(data-css-icon);
+}
+
+[data-css-icon=""][data-css-type="info"]::before {
+  content: '\2139';
+  border: 1px solid;
+  border-radius: 50%;
+  position: relative;
+}
+
+[data-css-icon=""][data-css-type="success"]::before {
+  content: '\2714';
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+[data-css-icon=""][data-css-type="warning"]::before {
+  content: '\26a0';
+}
+
+[data-css-icon=""][data-css-type="error"]::before {
+  content: '\FF01';
+  margin-left: -0.5em;
+  position: relative;
+  left: .5em;
 }
 /*# sourceMappingURL=core.css.map */

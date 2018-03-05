@@ -87,7 +87,7 @@ body[data-css-theme="light"]
         }
     }
 
-    *,
+    *:not([data-css-accent]),
     * [data-css-primary],
     *[data-css-primary],
     [data-css-primary] *:not([data-css-accent])
@@ -316,7 +316,7 @@ body
 
 
 /* Hidden items */
-[aria-hidden="true"]
+[hidden]
 {
     display: none;
 }
@@ -444,4 +444,58 @@ h5
 [data-css-underline]
 {
     text-decoration: underline;
+}
+
+
+
+// Icons support for elements
+i[data-css-icon]
+{
+    font-style: normal;
+}
+[data-css-icon]::before
+{
+    color: inherit;
+    display: inline-block;
+    line-height: 1em;
+    min-height: 1em;
+    min-width: 1em;
+    text-align: center;
+}
+// Custom icon
+[data-css-icon]:not([data-css-icon=""])::before
+{
+    content: attr(data-css-icon);
+}
+// Default icons for element types
+[data-css-icon=""]
+{
+    // Info type
+    &[data-css-type="info"]::before
+    {
+        content: '\2139';
+        border: 1px solid;
+        border-radius: 50%;
+        position: relative;
+    }
+    // Success type
+    &[data-css-type="success"]::before
+    {
+        content: '\2714';
+        border: 1px solid;
+        border-radius: 50%;
+    }
+    // Warning type
+    &[data-css-type="warning"]::before
+    {
+        content: '\26a0';
+    }
+    // Error type
+    &[data-css-type="error"]::before
+    {
+        content: '\FF01';
+        margin-left: -0.5em;
+        position: relative;
+        left: .5em;
+    }
 }

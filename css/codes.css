@@ -155,7 +155,7 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][open] > summ
 }
 
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]:not([data-css-accent]) > summary:first-child, details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-primary] > summary:first-child,
-[data-css-primary] details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child {
+[data-css-primary] details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]:not([data-css-accent]) > summary:first-child {
   --css-normal-background: var(--css-primary-900);
   --css-selected-background: var(--css-primary-700);
   --css-selected-text: var(--css-primary-50);
@@ -163,7 +163,7 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]:not([data-cs
 }
 
 details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"][data-css-accent] > summary:first-child,
-[data-css-accent] details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"] > summary:first-child {
+[data-css-accent] details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]:not([data-css-primary]) > summary:first-child {
   --css-normal-background: var(--css-accent-900);
   --css-selected-background: var(--css-accent-700);
   --css-selected-text: var(--css-accent-50);

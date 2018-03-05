@@ -201,7 +201,7 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
     // Custom primary colors
     &:not([data-css-accent]),
     &[data-css-primary],
-    [data-css-primary] &
+    [data-css-primary] &:not([data-css-accent])
     {
         > summary:first-child
         {
@@ -214,7 +214,7 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
 
     // Custom accent colors
     &[data-css-accent],
-    [data-css-accent] &
+    [data-css-accent] &:not([data-css-primary])
     {
         > summary:first-child
         {
