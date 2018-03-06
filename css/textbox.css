@@ -16,10 +16,10 @@
 }
 
 [data-css-group="textbox"] > [data-css-icon][data-css-side] {
-  font-size: 2em;
+  display: inline-block;
   -ms-flex-preferred-size: 1em;
       flex-basis: 1em;
-  display: inline-block;
+  font-size: 2em;
   line-height: 1em;
   max-height: 1em;
   max-width: 1em;
@@ -100,7 +100,7 @@
 }
 
 [data-css-group="textbox"] > [data-css-type="error"] {
-  color: var(--css-selected-background);
+  color: var(--css-selected-text);
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
@@ -122,42 +122,172 @@
           order: 5;
 }
 
-[data-css-group="textbox"]:not([data-css-primary]),
-[data-css-group="textbox"]:not([data-css-primary]) > *, [data-css-group="textbox"][data-css-accent],
-[data-css-group="textbox"][data-css-accent] > *,
-[data-css-accent] [data-css-group="textbox"]:not([data-css-primary]),
-[data-css-accent] [data-css-group="textbox"]:not([data-css-primary]) > * {
-  --css-normal-background: var(--css-accent-50);
-  --css-selected-background: var(--css-white);
-  --css-selected-border: var(--css-accent-900);
-  --css-selected-text: var(--css-accent-800);
-  --css-pressed-background: var(--css-white);
-  --css-pressed-border: var(--css-accent-300);
-  --css-pressed-text: var(--css-accent-800);
-}
-
-[data-css-group="textbox"]:not([data-css-primary]) > [data-css-type="info"], [data-css-group="textbox"][data-css-accent] > [data-css-type="info"],
-[data-css-accent] [data-css-group="textbox"]:not([data-css-primary]) > [data-css-type="info"] {
-  --css-normal-border: var(--css-accent-500);
-}
-
-[data-css-group="textbox"]:not([data-css-accent]),
-[data-css-group="textbox"]:not([data-css-accent]) > *, [data-css-group="textbox"][data-css-primary],
-[data-css-group="textbox"][data-css-primary] > *,
-[data-css-primary] [data-css-group="textbox"]:not([data-css-accent]),
-[data-css-primary] [data-css-group="textbox"]:not([data-css-accent]) > * {
+[data-css-theme="light"] [data-css-group="textbox"]:not([data-css-color]),
+[data-css-theme="light"] [data-css-group="textbox"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [data-css-group="textbox"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="textbox"] > *:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-group="textbox"] > *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
   --css-normal-background: var(--css-primary-50);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"]:not([data-css-color]),
+:not([data-css-theme]) [data-css-group="textbox"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [data-css-group="textbox"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="textbox"] > *:not([data-css-color]),
+:not([data-css-theme])
+[data-css-group="textbox"] > *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-50);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [data-css-group="textbox"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="textbox"] > *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-50);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [data-css-group="textbox"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="textbox"] > *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-50);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"]:not([data-css-color]),
+[data-css-theme="light"] [data-css-group="textbox"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [data-css-group="textbox"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="textbox"] > *:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-group="textbox"] > *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
   --css-selected-background: var(--css-white);
   --css-selected-border: var(--css-primary-900);
   --css-selected-text: var(--css-primary-800);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"]:not([data-css-color]),
+:not([data-css-theme]) [data-css-group="textbox"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [data-css-group="textbox"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="textbox"] > *:not([data-css-color]),
+:not([data-css-theme])
+[data-css-group="textbox"] > *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-primary-900);
+  --css-selected-text: var(--css-primary-800);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [data-css-group="textbox"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="textbox"] > *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-accent-900);
+  --css-selected-text: var(--css-accent-800);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [data-css-group="textbox"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="textbox"] > *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-accent-900);
+  --css-selected-text: var(--css-accent-800);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"]:not([data-css-color]),
+[data-css-theme="light"] [data-css-group="textbox"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [data-css-group="textbox"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="textbox"] > *:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-group="textbox"] > *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
   --css-pressed-background: var(--css-white);
   --css-pressed-border: var(--css-primary-300);
   --css-pressed-text: var(--css-primary-800);
 }
 
-[data-css-group="textbox"]:not([data-css-accent]) > [data-css-type="info"], [data-css-group="textbox"][data-css-primary] > [data-css-type="info"],
-[data-css-primary] [data-css-group="textbox"]:not([data-css-accent]) > [data-css-type="info"] {
+:not([data-css-theme]) [data-css-group="textbox"]:not([data-css-color]),
+:not([data-css-theme]) [data-css-group="textbox"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [data-css-group="textbox"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="textbox"] > *:not([data-css-color]),
+:not([data-css-theme])
+[data-css-group="textbox"] > *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-primary-300);
+  --css-pressed-text: var(--css-primary-800);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [data-css-group="textbox"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="textbox"] > *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-accent-300);
+  --css-pressed-text: var(--css-accent-800);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [data-css-group="textbox"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="textbox"] > *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-group="textbox"] > *:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-accent-300);
+  --css-pressed-text: var(--css-accent-800);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"] > [data-css-type="info"]:not([data-css-color]),
+[data-css-theme="light"] [data-css-group="textbox"] > [data-css-type="info"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [data-css-group="textbox"] > [data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
   --css-normal-border: var(--css-primary-500);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"] > [data-css-type="info"]:not([data-css-color]),
+:not([data-css-theme]) [data-css-group="textbox"] > [data-css-type="info"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [data-css-group="textbox"] > [data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-border: var(--css-primary-500);
+}
+
+[data-css-theme="light"] [data-css-group="textbox"] > [data-css-type="info"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [data-css-group="textbox"] > [data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-border: var(--css-accent-500);
+}
+
+:not([data-css-theme]) [data-css-group="textbox"] > [data-css-type="info"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [data-css-group="textbox"] > [data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-border: var(--css-accent-500);
 }
 
 [role="textbox"],
@@ -198,46 +328,671 @@ textarea {
   transition: border-color .3s, box-shadow .3s, color .3s, background .3s, -webkit-box-shadow .3s;
 }
 
-[role="textbox"], [role="textbox"]:not([data-css-state]), [role="textbox"][data-css-state="normal"],
-input[type="date"],
-input[type="date"]:not([data-css-state]),
-input[type="date"][data-css-state="normal"],
-input[type="datetime-local"],
-input[type="datetime-local"]:not([data-css-state]),
-input[type="datetime-local"][data-css-state="normal"],
-input[type="email"],
-input[type="email"]:not([data-css-state]),
-input[type="email"][data-css-state="normal"],
-input[type="month"],
-input[type="month"]:not([data-css-state]),
-input[type="month"][data-css-state="normal"],
-input[type="number"],
-input[type="number"]:not([data-css-state]),
-input[type="number"][data-css-state="normal"],
-input[type="password"],
-input[type="password"]:not([data-css-state]),
-input[type="password"][data-css-state="normal"],
-input[type="search"],
-input[type="search"]:not([data-css-state]),
-input[type="search"][data-css-state="normal"],
-input[type="tel"],
-input[type="tel"]:not([data-css-state]),
-input[type="tel"][data-css-state="normal"],
-input[type="time"],
-input[type="time"]:not([data-css-state]),
-input[type="time"][data-css-state="normal"],
-input[type="text"],
-input[type="text"]:not([data-css-state]),
-input[type="text"][data-css-state="normal"],
-input[type="url"],
-input[type="url"]:not([data-css-state]),
-input[type="url"][data-css-state="normal"],
-input[type="week"],
-input[type="week"]:not([data-css-state]),
-input[type="week"][data-css-state="normal"],
-textarea,
-textarea:not([data-css-state]),
-textarea[data-css-state="normal"] {
+[data-css-theme="light"] [role="textbox"]:not([data-css-color]),
+[data-css-theme="light"] [role="textbox"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="textbox"]:not([data-css-color]), [data-css-theme="light"] [role="textbox"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"] [role="textbox"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="textbox"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"] [role="textbox"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"] [role="textbox"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="textbox"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="date"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="email"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="month"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="number"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="password"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="search"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="tel"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="time"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="text"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="url"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="week"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+textarea:not([data-css-color]),
+[data-css-theme="light"]
+textarea[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea:not([data-css-color]), [data-css-theme="light"]
+textarea:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+textarea:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+textarea[data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+textarea[data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea[data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [role="textbox"]:not([data-css-color]),
+:not([data-css-theme]) [role="textbox"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="textbox"]:not([data-css-color]), :not([data-css-theme]) [role="textbox"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme]) [role="textbox"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="textbox"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme]) [role="textbox"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme]) [role="textbox"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="textbox"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="date"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="date"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="email"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="email"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="month"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="month"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="number"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="number"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="password"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="password"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="search"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="search"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="tel"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="time"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="time"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="text"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="text"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="url"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="url"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="week"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="week"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+textarea:not([data-css-color]),
+:not([data-css-theme])
+textarea[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea:not([data-css-color]), :not([data-css-theme])
+textarea:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+textarea:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+textarea[data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+textarea[data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea[data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+[data-css-theme="light"] [role="textbox"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="textbox"]:not([data-css-color]), [data-css-theme="light"] [role="textbox"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="textbox"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"] [role="textbox"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="textbox"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="date"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="email"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="month"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="number"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="password"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="search"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="tel"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="time"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="text"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="url"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="week"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+textarea[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea:not([data-css-color]), [data-css-theme="light"]
+textarea:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+textarea[data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea[data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [role="textbox"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="textbox"]:not([data-css-color]), :not([data-css-theme]) [role="textbox"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="textbox"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme]) [role="textbox"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="textbox"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="date"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="email"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="month"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="number"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="password"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="search"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="tel"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="time"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="text"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="url"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="week"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+textarea[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea:not([data-css-color]), :not([data-css-theme])
+textarea:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+textarea[data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea[data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
   color: var(--css-normal-text);
@@ -271,11 +1026,474 @@ input[type="week"]:hover,
 input[type="week"] [data-css-state="selected"],
 textarea:hover,
 textarea [data-css-state="selected"] {
+  -webkit-box-shadow: 0 0.166em var(--css-selected-border);
+          box-shadow: 0 0.166em var(--css-selected-border);
+}
+
+[data-css-theme="light"] [role="textbox"]:hover:not([data-css-color]),
+[data-css-theme="light"] [role="textbox"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="textbox"]:hover:not([data-css-color]), [data-css-theme="light"]
+[role="textbox"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="textbox"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="textbox"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="date"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="email"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="month"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="number"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="password"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="search"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="time"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="text"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="url"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="week"] [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"] [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+textarea:hover:not([data-css-color]),
+[data-css-theme="light"]
+textarea:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea:hover:not([data-css-color]), [data-css-theme="light"]
+textarea [data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+textarea [data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea [data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected primary colors */
   background-color: var(--css-selected-background);
   border-color: var(--css-selected-border);
   color: var(--css-selected-text);
-  -webkit-box-shadow: 0 0.166em var(--css-selected-border);
-          box-shadow: 0 0.166em var(--css-selected-border);
+}
+
+:not([data-css-theme]) [role="textbox"]:hover:not([data-css-color]),
+:not([data-css-theme]) [role="textbox"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="textbox"]:hover:not([data-css-color]), :not([data-css-theme])
+[role="textbox"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+[role="textbox"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="textbox"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="date"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="email"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="month"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="number"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="password"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="search"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="tel"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="time"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="text"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="url"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="week"] [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"] [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+textarea:hover:not([data-css-color]),
+:not([data-css-theme])
+textarea:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea:hover:not([data-css-color]), :not([data-css-theme])
+textarea [data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+textarea [data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea [data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected primary colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+[data-css-theme="light"] [role="textbox"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="textbox"]:hover:not([data-css-color]), [data-css-theme="light"]
+[role="textbox"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="textbox"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="date"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="email"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="month"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="number"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="password"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="search"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="time"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="text"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="url"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="week"] [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"] [data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+textarea:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea:hover:not([data-css-color]), [data-css-theme="light"]
+textarea [data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea [data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected accent colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+:not([data-css-theme]) [role="textbox"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="textbox"]:hover:not([data-css-color]), :not([data-css-theme])
+[role="textbox"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="textbox"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="date"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="email"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="month"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="number"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="password"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="search"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="tel"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="time"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="text"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="url"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="week"] [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"] [data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+textarea:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea:hover:not([data-css-color]), :not([data-css-theme])
+textarea [data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea [data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected accent colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
 }
 
 [role="textbox"]:active, [role="textbox"]:focus,
@@ -319,11 +1537,688 @@ input[type="week"] [data-css-state="pressed"],
 textarea:active,
 textarea:focus,
 textarea [data-css-state="pressed"] {
+  -webkit-box-shadow: 0 0.166em var(--css-pressed-border);
+          box-shadow: 0 0.166em var(--css-pressed-border);
+}
+
+[data-css-theme="light"] [role="textbox"]:active:not([data-css-color]),
+[data-css-theme="light"] [role="textbox"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="textbox"]:active:not([data-css-color]), [data-css-theme="light"] [role="textbox"]:focus:not([data-css-color]),
+[data-css-theme="light"] [role="textbox"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="textbox"]:focus:not([data-css-color]), [data-css-theme="light"]
+[role="textbox"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="textbox"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="textbox"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="date"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="date"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="date"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="datetime-local"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="datetime-local"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="email"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="email"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="email"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="month"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="month"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="month"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="number"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="number"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="number"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="password"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="password"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="password"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="search"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="search"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="search"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="tel"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="tel"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="time"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="time"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="time"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="text"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="text"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="text"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="url"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="url"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="url"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="week"] [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="week"] [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="week"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+textarea:active:not([data-css-color]),
+[data-css-theme="light"]
+textarea:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea:active:not([data-css-color]), [data-css-theme="light"]
+textarea:focus:not([data-css-color]),
+[data-css-theme="light"]
+textarea:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea:focus:not([data-css-color]), [data-css-theme="light"]
+textarea [data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+textarea [data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+textarea [data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed primary colors */
   background-color: var(--css-pressed-background);
   border-color: var(--css-pressed-border);
   color: var(--css-pressed-text);
-  -webkit-box-shadow: 0 0.166em var(--css-pressed-border);
-          box-shadow: 0 0.166em var(--css-pressed-border);
+}
+
+:not([data-css-theme]) [role="textbox"]:active:not([data-css-color]),
+:not([data-css-theme]) [role="textbox"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="textbox"]:active:not([data-css-color]), :not([data-css-theme]) [role="textbox"]:focus:not([data-css-color]),
+:not([data-css-theme]) [role="textbox"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="textbox"]:focus:not([data-css-color]), :not([data-css-theme])
+[role="textbox"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+[role="textbox"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="textbox"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="date"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="date"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="date"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="datetime-local"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="datetime-local"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="email"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="email"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="email"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="month"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="month"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="month"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="number"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="number"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="number"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="password"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="password"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="password"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="search"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="search"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="search"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="tel"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="tel"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="tel"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="time"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="time"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="time"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="text"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="text"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="text"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="url"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="url"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="url"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="week"] [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="week"] [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="week"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+textarea:active:not([data-css-color]),
+:not([data-css-theme])
+textarea:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea:active:not([data-css-color]), :not([data-css-theme])
+textarea:focus:not([data-css-color]),
+:not([data-css-theme])
+textarea:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea:focus:not([data-css-color]), :not([data-css-theme])
+textarea [data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+textarea [data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+textarea [data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed primary colors */
+  background-color: var(--css-pressed-background);
+  border-color: var(--css-pressed-border);
+  color: var(--css-pressed-text);
+}
+
+[data-css-theme="light"] [role="textbox"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="textbox"]:active:not([data-css-color]), [data-css-theme="light"] [role="textbox"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="textbox"]:focus:not([data-css-color]), [data-css-theme="light"]
+[role="textbox"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="textbox"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="date"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="date"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="date"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="datetime-local"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="datetime-local"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="email"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="email"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="email"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="month"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="month"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="month"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="number"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="number"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="number"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="password"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="password"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="password"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="search"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="search"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="search"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="tel"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="tel"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="time"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="time"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="time"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="text"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="text"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="text"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="url"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="url"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="url"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="week"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="week"] [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="week"] [data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+textarea:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea:active:not([data-css-color]), [data-css-theme="light"]
+textarea:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea:focus:not([data-css-color]), [data-css-theme="light"]
+textarea [data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+textarea [data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed accent colors */
+  background-color: var(--css-pressed-background);
+  border-color: var(--css-pressed-border);
+  color: var(--css-pressed-text);
+}
+
+:not([data-css-theme]) [role="textbox"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="textbox"]:active:not([data-css-color]), :not([data-css-theme]) [role="textbox"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="textbox"]:focus:not([data-css-color]), :not([data-css-theme])
+[role="textbox"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="textbox"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="date"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="date"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="date"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="datetime-local"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="datetime-local"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="email"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="email"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="email"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="month"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="month"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="month"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="number"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="number"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="number"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="password"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="password"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="password"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="search"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="search"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="search"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="tel"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="tel"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="tel"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="time"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="time"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="time"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="text"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="text"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="text"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="url"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="url"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="url"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="week"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="week"] [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="week"] [data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+textarea:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea:active:not([data-css-color]), :not([data-css-theme])
+textarea:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea:focus:not([data-css-color]), :not([data-css-theme])
+textarea [data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+textarea [data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed accent colors */
+  background-color: var(--css-pressed-background);
+  border-color: var(--css-pressed-border);
+  color: var(--css-pressed-text);
 }
 
 [data-css-icon][data-css-side="right"] ~ [role="textbox"], [data-css-icon][data-css-side="right"] ~

@@ -31,6 +31,85 @@
   width: -moz-fit-content;
   width: fit-content;
   z-index: 1;
+}
+
+[data-css-theme="light"] [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]),
+[data-css-theme="light"] [data-css-group="tooltip"] > [role="tooltip"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-group="tooltip"] > [role="tooltip"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]),
+:not([data-css-theme]) [data-css-group="tooltip"] > [role="tooltip"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-group="tooltip"] > [role="tooltip"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+[data-css-theme="light"] [data-css-group="tooltip"] > [role="tooltip"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="tooltip"] > [role="tooltip"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [data-css-group="tooltip"] > [role="tooltip"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="tooltip"] > [role="tooltip"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-group="tooltip"] > [role="tooltip"]:not([data-css-color]), :not([data-css-theme])
+[data-css-group="tooltip"] > [data-css-role="tooltip"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-group="tooltip"] > [data-css-role="tooltip"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
   color: var(--css-normal-text);
@@ -41,7 +120,9 @@
 [data-css-group="tooltip"] > [role="tooltip"]::before,
 [data-css-group="tooltip"] > [data-css-role="tooltip"]::before {
   /* Arrow */
+  background-color: inherit;
   border: 1px solid;
+  border-color: inherit;
   bottom: -1em;
   bottom: calc(-1em + 2px);
   content: "";
@@ -52,9 +133,6 @@
   -webkit-transform: rotate(45deg) translateX(-50%);
           transform: rotate(45deg) translateX(-50%);
   width: 1em;
-  background-color: var(--css-normal-background);
-  border-color: var(--css-normal-border);
-  color: var(--css-normal-text);
 }
 
 [data-css-group="tooltip"] > [role="tooltip"]:not([data-css-side])::before, [data-css-group="tooltip"] > [role="tooltip"][data-css-side="top"]::before,

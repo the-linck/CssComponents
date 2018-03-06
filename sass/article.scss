@@ -29,23 +29,22 @@ article
     &[itemtype="http://schema.org/APIReference"] 
     {
         /* Article itself */
+        color: var(--css-normal-text);
         display: block;
         font-size: 1rem;
         margin: 0 .5em;
         padding: 5em .5em .5em .5em;
 
-        
-        @include component-text-color(normal);
+
 
         // Article table of contents
         > [itemtype="http://schema.org/SiteNavigationElement"]
         {
             /* Article table of contents */
+            color: var(--css-normal-text);
             display: block;
-            border-left: .5rem solid;
+            border-left: .5rem solid var(--css-normal-border);
             margin-top: 3.75em;
-
-            @include component-border-text-colors(normal);        
 
             // Table heading
             [data-css-role="heading"]
@@ -110,6 +109,8 @@ article
             }
         }
 
+
+
         // Article Body
         [itemprop="articleBody"]
         {
@@ -120,8 +121,6 @@ article
             [data-css-chapter]
             {
                 padding-top: 5em;
-
-                @include component-border-color(normal);
 
                 // Chapter heading
                 >[role="heading"]::before,
@@ -138,7 +137,7 @@ article
                 &:not(:last-child)
                 {
                     /* Article chapters bottom border */
-                    border-bottom: 1px solid;
+                    border-bottom: 1px solid var(--css-normal-border);
                     padding-bottom: 4em;
                 }
             }
@@ -152,6 +151,8 @@ article
                 // Chapter in group
                 >[data-css-chapter]
                 {
+                    border-color: var(--css-normal-border);
+
                     // First chapter in group
                     &:first-child,
                     &:not(:last-child)
@@ -159,59 +160,74 @@ article
                         /* All chapters in group except the last */
                         border-bottom: none;
                         margin-bottom: 1em;
-
-                        @include component-border-color(normal);
                     }
                 }
             }
         }
     
-        // Custom accent colors
-        &[data-css-accent]
+
+
+        // Color overrides
+        @include css-set-cascade-colors(
+            $theme: light, $group: normal,
+            $colors: (
+                background: 50,
+                border: 50,
+                text: 900
+            )
+        );
+
+        > [itemtype="http://schema.org/SiteNavigationElement"]
         {
-            @include pallete-color-group(accent, normal, 50, 50, 900);            
+            @include css-set-cascade-colors(
+                $theme: 'light',
+                $group: 'normal',
+                $colors: (
+                    'background': 500,
+                    'border': 600,
+                    'text': 800
+                )
+            );
+
+            li
+            {
+                @include css-set-cascade-colors(
+                    $theme: 'light',
+                    $group: 'normal',
+                    $pseudo: ' [role="link"]',
+                    $colors: (
+                        'text': 600
+                    )
+                );
+                @include css-set-cascade-colors(
+                    $theme: 'light',
+                    $group: 'normal',
+                    $pseudo: ' a:not([role])',
+                    $colors: (
+                        'text': 600
+                    )
+                );
+            }
         }
-        &[data-css-accent] > [itemtype="http://schema.org/SiteNavigationElement"]:not([data-css-primary]),
-        > [itemtype="http://schema.org/SiteNavigationElement"][data-css-accent]
+        > [itemprop="articleBody"] [data-css-chapter]
         {
-            @include pallete-border-group(accent, normal, 500);
-            @include pallete-text-group(accent, normal, 700);
+            @include css-set-cascade-colors(
+                $theme: 'light',
+                $group: 'normal',
+                $colors: (
+                    'border': 300
+                )
+            );
         }
-        &[data-css-accent] > [itemprop="articleBody"] [data-css-chapter]:not([data-css-primary]),
-        > [itemprop="articleBody"] [data-css-chapter][data-css-accent]
+        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]
         {
-            @include pallete-border-group(accent, normal, 300);
-        }
-        &[data-css-accent] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter]:not([data-css-primary]),
-        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-accent]
-        {
-            @include pallete-border-group(accent, normal, 200);
-        }
-    
-        // Custom primary colors
-        &:not([data-css-accent]),
-        &[data-css-primary]
-        {
-            @include pallete-color-group(primary, normal, 50, 50, 900);            
-        }
-        &:not([data-css-accent]) > [itemtype="http://schema.org/SiteNavigationElement"],
-        &[data-css-primary] > [itemtype="http://schema.org/SiteNavigationElement"],
-        > [itemtype="http://schema.org/SiteNavigationElement"][data-css-primary]
-        {
-            @include pallete-border-group(primary, normal, 500);
-            @include pallete-text-group(primary, normal, 700);
-        }
-        &:not([data-css-accent]) > [itemprop="articleBody"] [data-css-chapter],
-        &[data-css-primary] > [itemprop="articleBody"] [data-css-chapter],
-        > [itemprop="articleBody"] [data-css-chapter][data-css-primary]
-        {
-            @include pallete-border-group(primary, normal, 300);
-        }
-        &:not([data-css-accent]) > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
-        &[data-css-primary] > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter],
-        > [itemprop="articleBody"] [role="group"][data-css-group="chapters"] > [data-css-chapter][data-css-primary]
-        {
-            @include pallete-border-group(primary, normal, 200);
+            @include css-set-cascade-colors(
+                $theme: 'light',
+                $group: 'normal',
+                $colors: (
+                    'border': 200
+                )
+            );
         }
     }
 }

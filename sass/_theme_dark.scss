@@ -1,0 +1,201 @@
+// Dark CSS Components Theme
+
+
+
+* // Any element
+{
+    // Normal state
+    @include css-set-cascade-colors(
+        $theme: dark, $group: normal,
+        $colors: (
+            background: 800,
+            border: 500,
+            text: 100
+        )
+    );
+    // Selected state
+    @include css-set-cascade-colors(
+        $theme: dark, $group: selected,
+        $colors: (
+            background: 600,
+            border: 400,
+            text: 200
+        )
+    );
+    // Pressed state
+    @include css-set-cascade-colors(
+        $theme: dark, $group: pressed,
+        $colors: (
+            background: 500,
+            border: 200,
+            text: 200
+        )
+    );
+    // Disabled state
+    @include css-set-cascade-colors(
+        $theme: dark, $group: disabled,
+        $colors: (
+            background: 900,
+            border: 700,
+            text: 200
+        )
+    );
+    // Info type overrides
+    &[data-css-type="info"]
+    {
+        // Normal state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: normal,
+            $colors: (
+                background: black,
+                border: 800,
+                text: 100
+            )
+        );
+        // Selected state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: selected,
+            $colors: (
+                background: 800,
+                border: 500,
+                text: 50
+            )
+        );
+        // Pressed state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: pressed,
+            $colors: (
+                background: 700,
+                border: 400,
+                text: 500
+            )
+        );
+    }
+    // Success type overrides
+    &[data-css-type="success"]
+    {
+        // Normal state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: normal,
+            $colors: (
+                background: 600,
+                border: 500,
+                text: 100
+            )
+        );
+        // Selected state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: selected,
+            $colors: (
+                background: 400,
+                border: 300,
+                text: 900
+            )
+        );
+        // Pressed state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: pressed,
+            $colors: (
+                background: 300,
+                border: 200,
+                text: 900
+            )
+        );
+    }
+    // Warning type overrides
+    &[data-css-type="warning"]
+    {
+        // Normal state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: normal,
+            $colors: (
+                background: 500,
+                border: 400,
+                text: black
+            )
+        );
+        // Selected state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: selected,
+            $colors: (
+                background: 100,
+                border: 50,
+                text: 900
+            )
+        );
+        // Pressed state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: pressed,
+            $colors: (
+                background: white,
+                border: 200,
+                text: black
+            )
+        );
+    }
+    // Error type overrides
+    &[data-css-type="error"]
+    {
+        // Normal state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: normal,
+            $colors: (
+                background: 200,
+                border: 50,
+                text: 900
+            )
+        );
+        // Selected state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: selected,
+            $colors: (
+                background: white,
+                border: 100,
+                text: black
+            )
+        );
+        // Pressed state
+        @include css-set-cascade-colors(
+            $theme: dark, $group: pressed,
+            $colors: (
+                background: 100,
+                border: 300,
+                text: black
+            )
+        );
+    }
+}
+
+
+
+// Body (and those who inherit it)
+body[data-css-theme="dark"]
+{
+    background: var(--css-primary-900);
+    color: var(--css-primary-100);
+}
+
+
+
+// Big Headings
+h1, h2,
+[data-css-role="heading"],
+[role="heading"]
+{
+    @include css-set-cascade-colors(
+        $theme: dark, $group: normal,
+        $colors: (
+            text: 300
+        )
+    );
+}
+// Small headings
+h3, h4, h5, h6
+{
+    @include css-set-cascade-colors(
+        $theme: dark, $group: normal,
+        $colors: (
+            text: 200
+        )
+    );
+}

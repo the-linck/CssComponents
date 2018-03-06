@@ -9,6 +9,53 @@
   margin: 1em 0;
   padding: 0.75em;
   text-align: center;
+}
+
+[data-css-theme="light"] [role="alert"]:not([data-css-color]),
+[data-css-theme="light"] [role="alert"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="alert"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="alert"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="alert"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="alert"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [role="alert"]:not([data-css-color]),
+:not([data-css-theme]) [role="alert"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="alert"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="alert"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="alert"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="alert"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+[data-css-theme="light"] [role="alert"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="alert"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="alert"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="alert"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [role="alert"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="alert"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="alert"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="alert"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
   color: var(--css-normal-text);

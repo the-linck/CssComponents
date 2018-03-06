@@ -16,312 +16,934 @@
   --css-primary-900: #212121;
 }
 
+[data-css-theme="light"] *:not([data-css-color]),
+[data-css-theme="light"] *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-100);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *:not([data-css-color]),
+:not([data-css-theme]) *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-100);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-100);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-100);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *:not([data-css-color]),
+[data-css-theme="light"] *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-300);
+  --css-selected-border: var(--css-primary-700);
+  --css-selected-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *:not([data-css-color]),
+:not([data-css-theme]) *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-300);
+  --css-selected-border: var(--css-primary-700);
+  --css-selected-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-300);
+  --css-selected-border: var(--css-accent-700);
+  --css-selected-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-300);
+  --css-selected-border: var(--css-accent-700);
+  --css-selected-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *:not([data-css-color]),
+[data-css-theme="light"] *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-400);
+  --css-pressed-border: var(--css-primary-900);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *:not([data-css-color]),
+:not([data-css-theme]) *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-400);
+  --css-pressed-border: var(--css-primary-900);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-400);
+  --css-pressed-border: var(--css-accent-900);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-400);
+  --css-pressed-border: var(--css-accent-900);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *:not([data-css-color]),
+[data-css-theme="light"] *[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme disabled primary colors */
+  --css-disabled-background: var(--css-primary-50);
+  --css-disabled-border: var(--css-primary-300);
+  --css-disabled-text: var(--css-primary-700);
+}
+
+:not([data-css-theme]) *:not([data-css-color]),
+:not([data-css-theme]) *[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting light theme disabled primary colors */
+  --css-disabled-background: var(--css-primary-50);
+  --css-disabled-border: var(--css-primary-300);
+  --css-disabled-text: var(--css-primary-700);
+}
+
+[data-css-theme="light"] *[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme disabled accent colors */
+  --css-disabled-background: var(--css-accent-50);
+  --css-disabled-border: var(--css-accent-300);
+  --css-disabled-text: var(--css-accent-700);
+}
+
+:not([data-css-theme]) *[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting light theme disabled accent colors */
+  --css-disabled-background: var(--css-accent-50);
+  --css-disabled-border: var(--css-accent-300);
+  --css-disabled-text: var(--css-accent-700);
+}
+
+[data-css-theme="light"] *[data-css-type="info"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="info"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-white);
+  --css-normal-border: var(--css-primary-100);
+  --css-normal-text: var(--css-primary-800);
+}
+
+:not([data-css-theme]) *[data-css-type="info"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="info"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-white);
+  --css-normal-border: var(--css-primary-100);
+  --css-normal-text: var(--css-primary-800);
+}
+
+[data-css-theme="light"] *[data-css-type="info"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-white);
+  --css-normal-border: var(--css-accent-100);
+  --css-normal-text: var(--css-accent-800);
+}
+
+:not([data-css-theme]) *[data-css-type="info"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-white);
+  --css-normal-border: var(--css-accent-100);
+  --css-normal-text: var(--css-accent-800);
+}
+
+[data-css-theme="light"] *[data-css-type="info"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="info"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-200);
+  --css-selected-border: var(--css-primary-300);
+  --css-selected-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *[data-css-type="info"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="info"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-200);
+  --css-selected-border: var(--css-primary-300);
+  --css-selected-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-type="info"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-200);
+  --css-selected-border: var(--css-accent-300);
+  --css-selected-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-type="info"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-200);
+  --css-selected-border: var(--css-accent-300);
+  --css-selected-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *[data-css-type="info"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="info"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-300);
+  --css-pressed-border: var(--css-primary-700);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *[data-css-type="info"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="info"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-300);
+  --css-pressed-border: var(--css-primary-700);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-type="info"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-300);
+  --css-pressed-border: var(--css-accent-700);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-type="info"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-300);
+  --css-pressed-border: var(--css-accent-700);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *[data-css-type="success"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="success"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-200);
+  --css-normal-border: var(--css-primary-300);
+  --css-normal-text: var(--css-black);
+}
+
+:not([data-css-theme]) *[data-css-type="success"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="success"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-200);
+  --css-normal-border: var(--css-primary-300);
+  --css-normal-text: var(--css-black);
+}
+
+[data-css-theme="light"] *[data-css-type="success"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-200);
+  --css-normal-border: var(--css-accent-300);
+  --css-normal-text: var(--css-black);
+}
+
+:not([data-css-theme]) *[data-css-type="success"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-200);
+  --css-normal-border: var(--css-accent-300);
+  --css-normal-text: var(--css-black);
+}
+
+[data-css-theme="light"] *[data-css-type="success"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="success"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-500);
+  --css-selected-border: var(--css-primary-500);
+  --css-selected-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *[data-css-type="success"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="success"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-500);
+  --css-selected-border: var(--css-primary-500);
+  --css-selected-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-type="success"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-500);
+  --css-selected-border: var(--css-accent-500);
+  --css-selected-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-type="success"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-500);
+  --css-selected-border: var(--css-accent-500);
+  --css-selected-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *[data-css-type="success"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="success"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-600);
+  --css-pressed-border: var(--css-primary-700);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) *[data-css-type="success"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="success"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-600);
+  --css-pressed-border: var(--css-primary-700);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] *[data-css-type="success"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-600);
+  --css-pressed-border: var(--css-accent-700);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) *[data-css-type="success"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-600);
+  --css-pressed-border: var(--css-accent-700);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] *[data-css-type="warning"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="warning"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-500);
+  --css-normal-border: var(--css-primary-600);
+  --css-normal-text: var(--css-black);
+}
+
+:not([data-css-theme]) *[data-css-type="warning"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="warning"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-500);
+  --css-normal-border: var(--css-primary-600);
+  --css-normal-text: var(--css-black);
+}
+
+[data-css-theme="light"] *[data-css-type="warning"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-500);
+  --css-normal-border: var(--css-accent-600);
+  --css-normal-text: var(--css-black);
+}
+
+:not([data-css-theme]) *[data-css-type="warning"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-500);
+  --css-normal-border: var(--css-accent-600);
+  --css-normal-text: var(--css-black);
+}
+
+[data-css-theme="light"] *[data-css-type="warning"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="warning"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-800);
+  --css-selected-border: var(--css-primary-800);
+  --css-selected-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="warning"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="warning"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-800);
+  --css-selected-border: var(--css-primary-800);
+  --css-selected-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="warning"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-800);
+  --css-selected-border: var(--css-accent-800);
+  --css-selected-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="warning"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-800);
+  --css-selected-border: var(--css-accent-800);
+  --css-selected-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="warning"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="warning"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-900);
+  --css-pressed-border: var(--css-primary-800);
+  --css-pressed-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="warning"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="warning"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-900);
+  --css-pressed-border: var(--css-primary-800);
+  --css-pressed-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="warning"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-900);
+  --css-pressed-border: var(--css-accent-800);
+  --css-pressed-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="warning"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-900);
+  --css-pressed-border: var(--css-accent-800);
+  --css-pressed-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="error"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="error"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-700);
+  --css-normal-border: var(--css-primary-800);
+  --css-normal-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="error"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="error"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-700);
+  --css-normal-border: var(--css-primary-800);
+  --css-normal-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="error"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-700);
+  --css-normal-border: var(--css-accent-800);
+  --css-normal-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="error"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-700);
+  --css-normal-border: var(--css-accent-800);
+  --css-normal-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="error"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="error"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-900);
+  --css-selected-border: var(--css-primary-800);
+  --css-selected-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="error"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="error"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-background: var(--css-primary-900);
+  --css-selected-border: var(--css-primary-800);
+  --css-selected-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="error"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-900);
+  --css-selected-border: var(--css-accent-800);
+  --css-selected-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="error"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-background: var(--css-accent-900);
+  --css-selected-border: var(--css-accent-800);
+  --css-selected-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="error"]:not([data-css-color]),
+[data-css-theme="light"] *[data-css-type="error"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-800);
+  --css-pressed-border: var(--css-primary-600);
+  --css-pressed-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="error"]:not([data-css-color]),
+:not([data-css-theme]) *[data-css-type="error"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-800);
+  --css-pressed-border: var(--css-primary-600);
+  --css-pressed-text: var(--css-white);
+}
+
+[data-css-theme="light"] *[data-css-type="error"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-800);
+  --css-pressed-border: var(--css-accent-600);
+  --css-pressed-text: var(--css-white);
+}
+
+:not([data-css-theme]) *[data-css-type="error"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-800);
+  --css-pressed-border: var(--css-accent-600);
+  --css-pressed-text: var(--css-white);
+}
+
 body:not(data-css-theme),
 body[data-css-theme="light"] {
   background: var(--css-primary-50);
   color: var(--css-primary-800);
 }
 
-body:not(data-css-theme) [data-css-accent],
-body:not(data-css-theme) * [data-css-accent],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]),
-body[data-css-theme="light"] [data-css-accent],
-body[data-css-theme="light"] * [data-css-accent],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) {
-  --css-normal-background: var(--css-accent-100);
-  --css-normal-border: var(--css-accent-500);
-  --css-normal-text: var(--css-accent-900);
-  --css-selected-background: var(--css-accent-300);
-  --css-selected-border: var(--css-accent-700);
-  --css-selected-text: var(--css-accent-900);
-  --css-pressed-background: var(--css-accent-400);
-  --css-pressed-border: var(--css-accent-900);
-  --css-pressed-text: var(--css-accent-900);
-  --css-disabled-background: var(--css-accent-50);
-  --css-disabled-border: var(--css-accent-300);
-  --css-disabled-text: var(--css-accent-700);
-}
-
-body:not(data-css-theme) [data-css-accent][data-css-type="info"],
-body:not(data-css-theme) * [data-css-accent][data-css-type="info"],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="info"],
-body[data-css-theme="light"] [data-css-accent][data-css-type="info"],
-body[data-css-theme="light"] * [data-css-accent][data-css-type="info"],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="info"] {
-  --css-normal-background: var(--css-white);
-  --css-normal-border: var(--css-accent-100);
-  --css-normal-text: var(--css-accent-800);
-  --css-selected-background: var(--css-accent-200);
-  --css-selected-border: var(--css-accent-300);
-  --css-selected-text: var(--css-accent-900);
-  --css-pressed-background: var(--css-accent-300);
-  --css-pressed-border: var(--css-accent-700);
-  --css-pressed-text: var(--css-accent-900);
-}
-
-body:not(data-css-theme) [data-css-accent][data-css-type="success"],
-body:not(data-css-theme) * [data-css-accent][data-css-type="success"],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="success"],
-body[data-css-theme="light"] [data-css-accent][data-css-type="success"],
-body[data-css-theme="light"] * [data-css-accent][data-css-type="success"],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="success"] {
-  --css-normal-background: var(--css-accent-200);
-  --css-normal-border: var(--css-accent-300);
-  --css-normal-text: var(--css-black);
-  --css-selected-background: var(--css-accent-500);
-  --css-selected-border: var(--css-accent-500);
-  --css-selected-text: var(--css-accent-900);
-  --css-pressed-background: var(--css-accent-600);
-  --css-pressed-border: var(--css-accent-700);
-  --css-pressed-text: var(--css-accent-900);
-}
-
-body:not(data-css-theme) [data-css-accent][data-css-type="warning"],
-body:not(data-css-theme) * [data-css-accent][data-css-type="warning"],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="warning"],
-body[data-css-theme="light"] [data-css-accent][data-css-type="warning"],
-body[data-css-theme="light"] * [data-css-accent][data-css-type="warning"],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="warning"] {
-  --css-normal-background: var(--css-accent-500);
-  --css-normal-border: var(--css-accent-600);
-  --css-normal-text: var(--css-black);
-  --css-selected-background: var(--css-accent-800);
-  --css-selected-border: var(--css-accent-800);
-  --css-selected-text: var(--css-white);
-  --css-pressed-background: var(--css-accent-900);
-  --css-pressed-border: var(--css-accent-800);
-  --css-pressed-text: var(--css-white);
-}
-
-body:not(data-css-theme) [data-css-accent][data-css-type="error"],
-body:not(data-css-theme) * [data-css-accent][data-css-type="error"],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary])[data-css-type="error"],
-body[data-css-theme="light"] [data-css-accent][data-css-type="error"],
-body[data-css-theme="light"] * [data-css-accent][data-css-type="error"],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary])[data-css-type="error"] {
-  --css-normal-background: var(--css-accent-700);
-  --css-normal-border: var(--css-accent-800);
-  --css-normal-text: var(--css-white);
-  --css-selected-background: var(--css-accent-900);
-  --css-selected-border: var(--css-accent-800);
-  --css-selected-text: var(--css-white);
-  --css-pressed-background: var(--css-accent-800);
-  --css-pressed-border: var(--css-accent-600);
-  --css-pressed-text: var(--css-white);
-}
-
-body:not(data-css-theme) [data-css-accent] h1, body:not(data-css-theme) [data-css-accent] h2,
-body:not(data-css-theme) [data-css-accent] [data-css-role="heading"],
-body:not(data-css-theme) [data-css-accent] [role="heading"],
-body:not(data-css-theme) * [data-css-accent] h1,
-body:not(data-css-theme) * [data-css-accent] h2,
-body:not(data-css-theme) * [data-css-accent] [data-css-role="heading"],
-body:not(data-css-theme) * [data-css-accent] [role="heading"],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h1,
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h2,
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) [data-css-role="heading"],
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) [role="heading"],
-body[data-css-theme="light"] [data-css-accent] h1,
-body[data-css-theme="light"] [data-css-accent] h2,
-body[data-css-theme="light"] [data-css-accent] [data-css-role="heading"],
-body[data-css-theme="light"] [data-css-accent] [role="heading"],
-body[data-css-theme="light"] * [data-css-accent] h1,
-body[data-css-theme="light"] * [data-css-accent] h2,
-body[data-css-theme="light"] * [data-css-accent] [data-css-role="heading"],
-body[data-css-theme="light"] * [data-css-accent] [role="heading"],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h1,
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h2,
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) [data-css-role="heading"],
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) [role="heading"] {
-  --css-normal-text: var(--css-accent-700);
-}
-
-body:not(data-css-theme) [data-css-accent] h3, body:not(data-css-theme) [data-css-accent] h4, body:not(data-css-theme) [data-css-accent] h5, body:not(data-css-theme) [data-css-accent] h6,
-body:not(data-css-theme) * [data-css-accent] h3,
-body:not(data-css-theme) * [data-css-accent] h4,
-body:not(data-css-theme) * [data-css-accent] h5,
-body:not(data-css-theme) * [data-css-accent] h6,
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h3,
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h4,
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h5,
-body:not(data-css-theme) [data-css-accent] :not([data-css-primary]) h6,
-body[data-css-theme="light"] [data-css-accent] h3,
-body[data-css-theme="light"] [data-css-accent] h4,
-body[data-css-theme="light"] [data-css-accent] h5,
-body[data-css-theme="light"] [data-css-accent] h6,
-body[data-css-theme="light"] * [data-css-accent] h3,
-body[data-css-theme="light"] * [data-css-accent] h4,
-body[data-css-theme="light"] * [data-css-accent] h5,
-body[data-css-theme="light"] * [data-css-accent] h6,
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h3,
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h4,
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h5,
-body[data-css-theme="light"] [data-css-accent] :not([data-css-primary]) h6 {
-  --css-normal-text: var(--css-accent-800);
-}
-
-body:not(data-css-theme) :not([data-css-accent]),
-body:not(data-css-theme) * [data-css-primary],
-body:not(data-css-theme) *[data-css-primary],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]),
-body[data-css-theme="light"] :not([data-css-accent]),
-body[data-css-theme="light"] * [data-css-primary],
-body[data-css-theme="light"] *[data-css-primary],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) {
-  --css-normal-background: var(--css-primary-100);
-  --css-normal-border: var(--css-primary-500);
-  --css-normal-text: var(--css-primary-900);
-  --css-selected-background: var(--css-primary-300);
-  --css-selected-border: var(--css-primary-700);
-  --css-selected-text: var(--css-primary-900);
-  --css-pressed-background: var(--css-primary-400);
-  --css-pressed-border: var(--css-primary-900);
-  --css-pressed-text: var(--css-primary-900);
-  --css-disabled-background: var(--css-primary-50);
-  --css-disabled-border: var(--css-primary-300);
-  --css-disabled-text: var(--css-primary-700);
-}
-
-body:not(data-css-theme) :not([data-css-accent])[data-css-type="info"],
-body:not(data-css-theme) * [data-css-primary][data-css-type="info"],
-body:not(data-css-theme) *[data-css-primary][data-css-type="info"],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="info"],
-body[data-css-theme="light"] :not([data-css-accent])[data-css-type="info"],
-body[data-css-theme="light"] * [data-css-primary][data-css-type="info"],
-body[data-css-theme="light"] *[data-css-primary][data-css-type="info"],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="info"] {
-  --css-normal-background: var(--css-white);
-  --css-normal-border: var(--css-primary-100);
-  --css-normal-text: var(--css-primary-800);
-  --css-selected-background: var(--css-primary-200);
-  --css-selected-border: var(--css-primary-300);
-  --css-selected-text: var(--css-primary-900);
-  --css-pressed-background: var(--css-primary-300);
-  --css-pressed-border: var(--css-primary-700);
-  --css-pressed-text: var(--css-primary-900);
-}
-
-body:not(data-css-theme) :not([data-css-accent])[data-css-type="success"],
-body:not(data-css-theme) * [data-css-primary][data-css-type="success"],
-body:not(data-css-theme) *[data-css-primary][data-css-type="success"],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="success"],
-body[data-css-theme="light"] :not([data-css-accent])[data-css-type="success"],
-body[data-css-theme="light"] * [data-css-primary][data-css-type="success"],
-body[data-css-theme="light"] *[data-css-primary][data-css-type="success"],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="success"] {
-  --css-normal-background: var(--css-primary-200);
-  --css-normal-border: var(--css-primary-300);
-  --css-normal-text: var(--css-black);
-  --css-selected-background: var(--css-primary-500);
-  --css-selected-border: var(--css-primary-500);
-  --css-selected-text: var(--css-primary-900);
-  --css-pressed-background: var(--css-primary-600);
-  --css-pressed-border: var(--css-primary-700);
-  --css-pressed-text: var(--css-primary-900);
-}
-
-body:not(data-css-theme) :not([data-css-accent])[data-css-type="warning"],
-body:not(data-css-theme) * [data-css-primary][data-css-type="warning"],
-body:not(data-css-theme) *[data-css-primary][data-css-type="warning"],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="warning"],
-body[data-css-theme="light"] :not([data-css-accent])[data-css-type="warning"],
-body[data-css-theme="light"] * [data-css-primary][data-css-type="warning"],
-body[data-css-theme="light"] *[data-css-primary][data-css-type="warning"],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="warning"] {
-  --css-normal-background: var(--css-primary-500);
-  --css-normal-border: var(--css-primary-600);
-  --css-normal-text: var(--css-black);
-  --css-selected-background: var(--css-primary-800);
-  --css-selected-border: var(--css-primary-800);
-  --css-selected-text: var(--css-white);
-  --css-pressed-background: var(--css-primary-900);
-  --css-pressed-border: var(--css-primary-800);
-  --css-pressed-text: var(--css-white);
-}
-
-body:not(data-css-theme) :not([data-css-accent])[data-css-type="error"],
-body:not(data-css-theme) * [data-css-primary][data-css-type="error"],
-body:not(data-css-theme) *[data-css-primary][data-css-type="error"],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent])[data-css-type="error"],
-body[data-css-theme="light"] :not([data-css-accent])[data-css-type="error"],
-body[data-css-theme="light"] * [data-css-primary][data-css-type="error"],
-body[data-css-theme="light"] *[data-css-primary][data-css-type="error"],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent])[data-css-type="error"] {
-  --css-normal-background: var(--css-primary-700);
-  --css-normal-border: var(--css-primary-800);
-  --css-normal-text: var(--css-white);
-  --css-selected-background: var(--css-primary-900);
-  --css-selected-border: var(--css-primary-800);
-  --css-selected-text: var(--css-white);
-  --css-pressed-background: var(--css-primary-800);
-  --css-pressed-border: var(--css-primary-600);
-  --css-pressed-text: var(--css-white);
-}
-
-body:not(data-css-theme) :not([data-css-accent]) h1, body:not(data-css-theme) :not([data-css-accent]) h2,
-body:not(data-css-theme) :not([data-css-accent]) [data-css-role="heading"],
-body:not(data-css-theme) :not([data-css-accent]) [role="heading"],
-body:not(data-css-theme) * [data-css-primary] h1,
-body:not(data-css-theme) * [data-css-primary] h2,
-body:not(data-css-theme) * [data-css-primary] [data-css-role="heading"],
-body:not(data-css-theme) * [data-css-primary] [role="heading"],
-body:not(data-css-theme) *[data-css-primary] h1,
-body:not(data-css-theme) *[data-css-primary] h2,
-body:not(data-css-theme) *[data-css-primary] [data-css-role="heading"],
-body:not(data-css-theme) *[data-css-primary] [role="heading"],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h1,
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h2,
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) [data-css-role="heading"],
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) [role="heading"],
-body[data-css-theme="light"] :not([data-css-accent]) h1,
-body[data-css-theme="light"] :not([data-css-accent]) h2,
-body[data-css-theme="light"] :not([data-css-accent]) [data-css-role="heading"],
-body[data-css-theme="light"] :not([data-css-accent]) [role="heading"],
-body[data-css-theme="light"] * [data-css-primary] h1,
-body[data-css-theme="light"] * [data-css-primary] h2,
-body[data-css-theme="light"] * [data-css-primary] [data-css-role="heading"],
-body[data-css-theme="light"] * [data-css-primary] [role="heading"],
-body[data-css-theme="light"] *[data-css-primary] h1,
-body[data-css-theme="light"] *[data-css-primary] h2,
-body[data-css-theme="light"] *[data-css-primary] [data-css-role="heading"],
-body[data-css-theme="light"] *[data-css-primary] [role="heading"],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h1,
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h2,
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) [data-css-role="heading"],
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) [role="heading"] {
+[data-css-theme="light"] h1:not([data-css-color]),
+[data-css-theme="light"] h1[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] h1:not([data-css-color]), [data-css-theme="light"] h2:not([data-css-color]),
+[data-css-theme="light"] h2[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] h2:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="heading"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="heading"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="heading"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="heading"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="heading"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
   --css-normal-text: var(--css-primary-700);
 }
 
-body:not(data-css-theme) :not([data-css-accent]) h3, body:not(data-css-theme) :not([data-css-accent]) h4, body:not(data-css-theme) :not([data-css-accent]) h5, body:not(data-css-theme) :not([data-css-accent]) h6,
-body:not(data-css-theme) * [data-css-primary] h3,
-body:not(data-css-theme) * [data-css-primary] h4,
-body:not(data-css-theme) * [data-css-primary] h5,
-body:not(data-css-theme) * [data-css-primary] h6,
-body:not(data-css-theme) *[data-css-primary] h3,
-body:not(data-css-theme) *[data-css-primary] h4,
-body:not(data-css-theme) *[data-css-primary] h5,
-body:not(data-css-theme) *[data-css-primary] h6,
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h3,
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h4,
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h5,
-body:not(data-css-theme) [data-css-primary] :not([data-css-accent]) h6,
-body[data-css-theme="light"] :not([data-css-accent]) h3,
-body[data-css-theme="light"] :not([data-css-accent]) h4,
-body[data-css-theme="light"] :not([data-css-accent]) h5,
-body[data-css-theme="light"] :not([data-css-accent]) h6,
-body[data-css-theme="light"] * [data-css-primary] h3,
-body[data-css-theme="light"] * [data-css-primary] h4,
-body[data-css-theme="light"] * [data-css-primary] h5,
-body[data-css-theme="light"] * [data-css-primary] h6,
-body[data-css-theme="light"] *[data-css-primary] h3,
-body[data-css-theme="light"] *[data-css-primary] h4,
-body[data-css-theme="light"] *[data-css-primary] h5,
-body[data-css-theme="light"] *[data-css-primary] h6,
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h3,
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h4,
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h5,
-body[data-css-theme="light"] [data-css-primary] :not([data-css-accent]) h6 {
+:not([data-css-theme]) h1:not([data-css-color]),
+:not([data-css-theme]) h1[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] h1:not([data-css-color]), :not([data-css-theme]) h2:not([data-css-color]),
+:not([data-css-theme]) h2[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] h2:not([data-css-color]), :not([data-css-theme])
+[data-css-role="heading"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="heading"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="heading"]:not([data-css-color]),
+:not([data-css-theme])
+[role="heading"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="heading"]:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-text: var(--css-primary-700);
+}
+
+[data-css-theme="light"] h1[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] h1:not([data-css-color]), [data-css-theme="light"] h2[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] h2:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="heading"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="heading"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="heading"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-text: var(--css-accent-700);
+}
+
+:not([data-css-theme]) h1[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] h1:not([data-css-color]), :not([data-css-theme]) h2[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] h2:not([data-css-color]), :not([data-css-theme])
+[data-css-role="heading"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="heading"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="heading"]:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-text: var(--css-accent-700);
+}
+
+[data-css-theme="light"] h3:not([data-css-color]),
+[data-css-theme="light"] h3[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] h3:not([data-css-color]), [data-css-theme="light"] h4:not([data-css-color]),
+[data-css-theme="light"] h4[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] h4:not([data-css-color]), [data-css-theme="light"] h5:not([data-css-color]),
+[data-css-theme="light"] h5[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] h5:not([data-css-color]), [data-css-theme="light"] h6:not([data-css-color]),
+[data-css-theme="light"] h6[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] h6:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
   --css-normal-text: var(--css-primary-800);
+}
+
+:not([data-css-theme]) h3:not([data-css-color]),
+:not([data-css-theme]) h3[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] h3:not([data-css-color]), :not([data-css-theme]) h4:not([data-css-color]),
+:not([data-css-theme]) h4[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] h4:not([data-css-color]), :not([data-css-theme]) h5:not([data-css-color]),
+:not([data-css-theme]) h5[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] h5:not([data-css-color]), :not([data-css-theme]) h6:not([data-css-color]),
+:not([data-css-theme]) h6[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] h6:not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-text: var(--css-primary-800);
+}
+
+[data-css-theme="light"] h3[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] h3:not([data-css-color]), [data-css-theme="light"] h4[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] h4:not([data-css-color]), [data-css-theme="light"] h5[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] h5:not([data-css-color]), [data-css-theme="light"] h6[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] h6:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-text: var(--css-accent-800);
+}
+
+:not([data-css-theme]) h3[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] h3:not([data-css-color]), :not([data-css-theme]) h4[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] h4:not([data-css-color]), :not([data-css-theme]) h5[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] h5:not([data-css-color]), :not([data-css-theme]) h6[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] h6:not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-text: var(--css-accent-800);
+}
+
+[data-css-theme="dark"] *:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
+  --css-normal-background: var(--css-primary-800);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-100);
+}
+
+[data-css-theme="dark"] *[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-background: var(--css-accent-800);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-100);
+}
+
+[data-css-theme="dark"] *:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting dark theme selected primary colors */
+  --css-selected-background: var(--css-primary-600);
+  --css-selected-border: var(--css-primary-400);
+  --css-selected-text: var(--css-primary-200);
+}
+
+[data-css-theme="dark"] *[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting dark theme selected accent colors */
+  --css-selected-background: var(--css-accent-600);
+  --css-selected-border: var(--css-accent-400);
+  --css-selected-text: var(--css-accent-200);
+}
+
+[data-css-theme="dark"] *:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting dark theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-500);
+  --css-pressed-border: var(--css-primary-200);
+  --css-pressed-text: var(--css-primary-200);
+}
+
+[data-css-theme="dark"] *[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting dark theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-500);
+  --css-pressed-border: var(--css-accent-200);
+  --css-pressed-text: var(--css-accent-200);
+}
+
+[data-css-theme="dark"] *:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *:not([data-css-color]) {
+  /* Setting dark theme disabled primary colors */
+  --css-disabled-background: var(--css-primary-900);
+  --css-disabled-border: var(--css-primary-700);
+  --css-disabled-text: var(--css-primary-200);
+}
+
+[data-css-theme="dark"] *[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *:not([data-css-color]) {
+  /* Setting dark theme disabled accent colors */
+  --css-disabled-background: var(--css-accent-900);
+  --css-disabled-border: var(--css-accent-700);
+  --css-disabled-text: var(--css-accent-200);
+}
+
+[data-css-theme="dark"] *[data-css-type="info"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="info"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
+  --css-normal-background: var(--css-black);
+  --css-normal-border: var(--css-primary-800);
+  --css-normal-text: var(--css-primary-100);
+}
+
+[data-css-theme="dark"] *[data-css-type="info"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-background: var(--css-black);
+  --css-normal-border: var(--css-accent-800);
+  --css-normal-text: var(--css-accent-100);
+}
+
+[data-css-theme="dark"] *[data-css-type="info"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="info"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting dark theme selected primary colors */
+  --css-selected-background: var(--css-primary-800);
+  --css-selected-border: var(--css-primary-500);
+  --css-selected-text: var(--css-primary-50);
+}
+
+[data-css-theme="dark"] *[data-css-type="info"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting dark theme selected accent colors */
+  --css-selected-background: var(--css-accent-800);
+  --css-selected-border: var(--css-accent-500);
+  --css-selected-text: var(--css-accent-50);
+}
+
+[data-css-theme="dark"] *[data-css-type="info"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="info"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting dark theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-700);
+  --css-pressed-border: var(--css-primary-400);
+  --css-pressed-text: var(--css-primary-500);
+}
+
+[data-css-theme="dark"] *[data-css-type="info"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="info"]:not([data-css-color]) {
+  /* Setting dark theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-700);
+  --css-pressed-border: var(--css-accent-400);
+  --css-pressed-text: var(--css-accent-500);
+}
+
+[data-css-theme="dark"] *[data-css-type="success"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="success"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
+  --css-normal-background: var(--css-primary-600);
+  --css-normal-border: var(--css-primary-500);
+  --css-normal-text: var(--css-primary-100);
+}
+
+[data-css-theme="dark"] *[data-css-type="success"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-background: var(--css-accent-600);
+  --css-normal-border: var(--css-accent-500);
+  --css-normal-text: var(--css-accent-100);
+}
+
+[data-css-theme="dark"] *[data-css-type="success"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="success"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting dark theme selected primary colors */
+  --css-selected-background: var(--css-primary-400);
+  --css-selected-border: var(--css-primary-300);
+  --css-selected-text: var(--css-primary-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="success"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting dark theme selected accent colors */
+  --css-selected-background: var(--css-accent-400);
+  --css-selected-border: var(--css-accent-300);
+  --css-selected-text: var(--css-accent-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="success"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="success"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting dark theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-300);
+  --css-pressed-border: var(--css-primary-200);
+  --css-pressed-text: var(--css-primary-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="success"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="success"]:not([data-css-color]) {
+  /* Setting dark theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-300);
+  --css-pressed-border: var(--css-accent-200);
+  --css-pressed-text: var(--css-accent-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="warning"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="warning"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
+  --css-normal-background: var(--css-primary-500);
+  --css-normal-border: var(--css-primary-400);
+  --css-normal-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="warning"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-background: var(--css-accent-500);
+  --css-normal-border: var(--css-accent-400);
+  --css-normal-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="warning"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="warning"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting dark theme selected primary colors */
+  --css-selected-background: var(--css-primary-100);
+  --css-selected-border: var(--css-primary-50);
+  --css-selected-text: var(--css-primary-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="warning"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting dark theme selected accent colors */
+  --css-selected-background: var(--css-accent-100);
+  --css-selected-border: var(--css-accent-50);
+  --css-selected-text: var(--css-accent-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="warning"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="warning"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting dark theme pressed primary colors */
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-primary-200);
+  --css-pressed-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="warning"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="warning"]:not([data-css-color]) {
+  /* Setting dark theme pressed accent colors */
+  --css-pressed-background: var(--css-white);
+  --css-pressed-border: var(--css-accent-200);
+  --css-pressed-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="error"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="error"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
+  --css-normal-background: var(--css-primary-200);
+  --css-normal-border: var(--css-primary-50);
+  --css-normal-text: var(--css-primary-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="error"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-background: var(--css-accent-200);
+  --css-normal-border: var(--css-accent-50);
+  --css-normal-text: var(--css-accent-900);
+}
+
+[data-css-theme="dark"] *[data-css-type="error"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="error"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting dark theme selected primary colors */
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-primary-100);
+  --css-selected-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="error"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting dark theme selected accent colors */
+  --css-selected-background: var(--css-white);
+  --css-selected-border: var(--css-accent-100);
+  --css-selected-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="error"]:not([data-css-color]),
+[data-css-theme="dark"] *[data-css-type="error"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting dark theme pressed primary colors */
+  --css-pressed-background: var(--css-primary-100);
+  --css-pressed-border: var(--css-primary-300);
+  --css-pressed-text: var(--css-black);
+}
+
+[data-css-theme="dark"] *[data-css-type="error"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] *[data-css-type="error"]:not([data-css-color]) {
+  /* Setting dark theme pressed accent colors */
+  --css-pressed-background: var(--css-accent-100);
+  --css-pressed-border: var(--css-accent-300);
+  --css-pressed-text: var(--css-black);
 }
 
 body[data-css-theme="dark"] {
@@ -329,215 +951,58 @@ body[data-css-theme="dark"] {
   color: var(--css-primary-100);
 }
 
-body[data-css-theme="dark"] *[data-css-accent],
-body[data-css-theme="dark"] * [data-css-accent],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) {
-  --css-normal-background: var(--css-accent-800);
-  --css-normal-border: var(--css-accent-500);
-  --css-normal-text: var(--css-accent-100);
-  --css-selected-background: var(--css-accent-600);
-  --css-selected-border: var(--css-accent-300);
-  --css-selected-text: var(--css-accent-200);
-  --css-pressed-background: var(--css-accent-500);
-  --css-pressed-border: var(--css-accent-200);
-  --css-pressed-text: var(--css-accent-200);
-  --css-disabled-background: var(--css-accent-900);
-  --css-disabled-border: var(--css-accent-700);
-  --css-disabled-text: var(--css-accent-200);
-}
-
-body[data-css-theme="dark"] *[data-css-accent][data-css-type="info"],
-body[data-css-theme="dark"] * [data-css-accent][data-css-type="info"],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="info"] {
-  --css-normal-background: var(--css-black);
-  --css-normal-border: var(--css-accent-800);
-  --css-normal-text: var(--css-accent-100);
-  --css-selected-background: var(--css-accent-800);
-  --css-selected-border: var(--css-accent-500);
-  --css-selected-text: var(--css-accent-50);
-  --css-pressed-background: var(--css-accent-700);
-  --css-pressed-border: var(--css-accent-400);
-  --css-pressed-text: var(--css-accent-50);
-}
-
-body[data-css-theme="dark"] *[data-css-accent][data-css-type="success"],
-body[data-css-theme="dark"] * [data-css-accent][data-css-type="success"],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="success"] {
-  --css-normal-background: var(--css-accent-700);
-  --css-normal-border: var(--css-accent-500);
-  --css-normal-text: var(--css-accent-100);
-  --css-selected-background: var(--css-accent-400);
-  --css-selected-border: var(--css-accent-300);
-  --css-selected-text: var(--css-accent-900);
-  --css-pressed-background: var(--css-accent-300);
-  --css-pressed-border: var(--css-accent-200);
-  --css-pressed-text: var(--css-accent-900);
-}
-
-body[data-css-theme="dark"] *[data-css-accent][data-css-type="warning"],
-body[data-css-theme="dark"] * [data-css-accent][data-css-type="warning"],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="warning"] {
-  --css-normal-background: var(--css-accent-400);
-  --css-normal-border: var(--css-accent-200);
-  --css-normal-text: var(--css-black);
-  --css-selected-background: var(--css-accent-100);
-  --css-selected-border: var(--css-accent-50);
-  --css-selected-text: var(--css-accent-900);
-  --css-pressed-background: var(--css-white);
-  --css-pressed-border: var(--css-accent-200);
-  --css-pressed-text: var(--css-black);
-}
-
-body[data-css-theme="dark"] *[data-css-accent][data-css-type="error"],
-body[data-css-theme="dark"] * [data-css-accent][data-css-type="error"],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary])[data-css-type="error"] {
-  --css-normal-background: var(--css-accent-200);
-  --css-normal-border: var(--css-accent-50);
-  --css-normal-text: var(--css-accent-900);
-  --css-selected-background: var(--css-white);
-  --css-selected-border: var(--css-accent-100);
-  --css-selected-text: var(--css-black);
-  --css-pressed-background: var(--css-accent-100);
-  --css-pressed-border: var(--css-accent-300);
-  --css-pressed-text: var(--css-black);
-}
-
-body[data-css-theme="dark"] *[data-css-accent] h1, body[data-css-theme="dark"] *[data-css-accent] h2,
-body[data-css-theme="dark"] *[data-css-accent] [data-css-role="heading"],
-body[data-css-theme="dark"] *[data-css-accent] [role="heading"],
-body[data-css-theme="dark"] * [data-css-accent] h1,
-body[data-css-theme="dark"] * [data-css-accent] h2,
-body[data-css-theme="dark"] * [data-css-accent] [data-css-role="heading"],
-body[data-css-theme="dark"] * [data-css-accent] [role="heading"],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h1,
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h2,
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) [data-css-role="heading"],
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) [role="heading"] {
-  --css-normal-text: var(--css-accent-300);
-}
-
-body[data-css-theme="dark"] *[data-css-accent] h3, body[data-css-theme="dark"] *[data-css-accent] h4, body[data-css-theme="dark"] *[data-css-accent] h5, body[data-css-theme="dark"] *[data-css-accent] h6,
-body[data-css-theme="dark"] * [data-css-accent] h3,
-body[data-css-theme="dark"] * [data-css-accent] h4,
-body[data-css-theme="dark"] * [data-css-accent] h5,
-body[data-css-theme="dark"] * [data-css-accent] h6,
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h3,
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h4,
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h5,
-body[data-css-theme="dark"] [data-css-accent] *:not([data-css-primary]) h6 {
-  --css-normal-text: var(--css-accent-200);
-}
-
-body[data-css-theme="dark"] *,
-body[data-css-theme="dark"] * [data-css-primary],
-body[data-css-theme="dark"] *[data-css-primary],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) {
-  --css-normal-background: var(--css-primary-800);
-  --css-normal-border: var(--css-primary-500);
-  --css-normal-text: var(--css-primary-100);
-  --css-selected-background: var(--css-primary-600);
-  --css-selected-border: var(--css-primary-300);
-  --css-selected-text: var(--css-primary-200);
-  --css-pressed-background: var(--css-primary-500);
-  --css-pressed-border: var(--css-primary-200);
-  --css-pressed-text: var(--css-primary-200);
-  --css-disabled-background: var(--css-primary-900);
-  --css-disabled-border: var(--css-primary-700);
-  --css-disabled-text: var(--css-primary-200);
-}
-
-body[data-css-theme="dark"] *[data-css-type="info"],
-body[data-css-theme="dark"] * [data-css-primary][data-css-type="info"],
-body[data-css-theme="dark"] *[data-css-primary][data-css-type="info"],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="info"] {
-  --css-normal-background: var(--css-black);
-  --css-normal-border: var(--css-primary-800);
-  --css-normal-text: var(--css-primary-100);
-  --css-selected-background: var(--css-primary-800);
-  --css-selected-border: var(--css-primary-500);
-  --css-selected-text: var(--css-primary-50);
-  --css-pressed-background: var(--css-primary-700);
-  --css-pressed-border: var(--css-primary-400);
-  --css-pressed-text: var(--css-primary-50);
-}
-
-body[data-css-theme="dark"] *[data-css-type="success"],
-body[data-css-theme="dark"] * [data-css-primary][data-css-type="success"],
-body[data-css-theme="dark"] *[data-css-primary][data-css-type="success"],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="success"] {
-  --css-normal-background: var(--css-primary-700);
-  --css-normal-border: var(--css-primary-500);
-  --css-normal-text: var(--css-primary-100);
-  --css-selected-background: var(--css-primary-400);
-  --css-selected-border: var(--css-primary-300);
-  --css-selected-text: var(--css-primary-900);
-  --css-pressed-background: var(--css-primary-300);
-  --css-pressed-border: var(--css-primary-200);
-  --css-pressed-text: var(--css-primary-900);
-}
-
-body[data-css-theme="dark"] *[data-css-type="warning"],
-body[data-css-theme="dark"] * [data-css-primary][data-css-type="warning"],
-body[data-css-theme="dark"] *[data-css-primary][data-css-type="warning"],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="warning"] {
-  --css-normal-background: var(--css-primary-400);
-  --css-normal-border: var(--css-primary-200);
-  --css-normal-text: var(--css-black);
-  --css-selected-background: var(--css-primary-100);
-  --css-selected-border: var(--css-primary-50);
-  --css-selected-text: var(--css-primary-900);
-  --css-pressed-background: var(--css-white);
-  --css-pressed-border: var(--css-primary-200);
-  --css-pressed-text: var(--css-black);
-}
-
-body[data-css-theme="dark"] *[data-css-type="error"],
-body[data-css-theme="dark"] * [data-css-primary][data-css-type="error"],
-body[data-css-theme="dark"] *[data-css-primary][data-css-type="error"],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent])[data-css-type="error"] {
-  --css-normal-background: var(--css-primary-200);
-  --css-normal-border: var(--css-primary-50);
-  --css-normal-text: var(--css-primary-900);
-  --css-selected-background: var(--css-white);
-  --css-selected-border: var(--css-primary-100);
-  --css-selected-text: var(--css-black);
-  --css-pressed-background: var(--css-primary-100);
-  --css-pressed-border: var(--css-primary-300);
-  --css-pressed-text: var(--css-black);
-}
-
-body[data-css-theme="dark"] * h1, body[data-css-theme="dark"] * h2,
-body[data-css-theme="dark"] * [data-css-role="heading"],
-body[data-css-theme="dark"] * [role="heading"],
-body[data-css-theme="dark"] * [data-css-primary] h1,
-body[data-css-theme="dark"] * [data-css-primary] h2,
-body[data-css-theme="dark"] * [data-css-primary] [data-css-role="heading"],
-body[data-css-theme="dark"] * [data-css-primary] [role="heading"],
-body[data-css-theme="dark"] *[data-css-primary] h1,
-body[data-css-theme="dark"] *[data-css-primary] h2,
-body[data-css-theme="dark"] *[data-css-primary] [data-css-role="heading"],
-body[data-css-theme="dark"] *[data-css-primary] [role="heading"],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h1,
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h2,
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) [data-css-role="heading"],
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) [role="heading"] {
+[data-css-theme="dark"] h1:not([data-css-color]),
+[data-css-theme="dark"] h1[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] h1:not([data-css-color]), [data-css-theme="dark"] h2:not([data-css-color]),
+[data-css-theme="dark"] h2[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] h2:not([data-css-color]), [data-css-theme="dark"]
+[data-css-role="heading"]:not([data-css-color]),
+[data-css-theme="dark"]
+[data-css-role="heading"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"]
+[data-css-role="heading"]:not([data-css-color]), [data-css-theme="dark"]
+[role="heading"]:not([data-css-color]),
+[data-css-theme="dark"]
+[role="heading"][data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"]
+[role="heading"]:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
   --css-normal-text: var(--css-primary-300);
 }
 
-body[data-css-theme="dark"] * h3, body[data-css-theme="dark"] * h4, body[data-css-theme="dark"] * h5, body[data-css-theme="dark"] * h6,
-body[data-css-theme="dark"] * [data-css-primary] h3,
-body[data-css-theme="dark"] * [data-css-primary] h4,
-body[data-css-theme="dark"] * [data-css-primary] h5,
-body[data-css-theme="dark"] * [data-css-primary] h6,
-body[data-css-theme="dark"] *[data-css-primary] h3,
-body[data-css-theme="dark"] *[data-css-primary] h4,
-body[data-css-theme="dark"] *[data-css-primary] h5,
-body[data-css-theme="dark"] *[data-css-primary] h6,
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h3,
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h4,
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h5,
-body[data-css-theme="dark"] [data-css-primary] *:not([data-css-accent]) h6 {
+[data-css-theme="dark"] h1[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] h1:not([data-css-color]), [data-css-theme="dark"] h2[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] h2:not([data-css-color]), [data-css-theme="dark"]
+[data-css-role="heading"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"]
+[data-css-role="heading"]:not([data-css-color]), [data-css-theme="dark"]
+[role="heading"][data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"]
+[role="heading"]:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-text: var(--css-accent-300);
+}
+
+[data-css-theme="dark"] h3:not([data-css-color]),
+[data-css-theme="dark"] h3[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] h3:not([data-css-color]), [data-css-theme="dark"] h4:not([data-css-color]),
+[data-css-theme="dark"] h4[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] h4:not([data-css-color]), [data-css-theme="dark"] h5:not([data-css-color]),
+[data-css-theme="dark"] h5[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] h5:not([data-css-color]), [data-css-theme="dark"] h6:not([data-css-color]),
+[data-css-theme="dark"] h6[data-css-color="primary"],
+[data-css-theme="dark"] [data-css-color="primary"] h6:not([data-css-color]) {
+  /* Setting dark theme normal primary colors */
   --css-normal-text: var(--css-primary-200);
+}
+
+[data-css-theme="dark"] h3[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] h3:not([data-css-color]), [data-css-theme="dark"] h4[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] h4:not([data-css-color]), [data-css-theme="dark"] h5[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] h5:not([data-css-color]), [data-css-theme="dark"] h6[data-css-color="accent"],
+[data-css-theme="dark"] [data-css-color="accent"] h6:not([data-css-color]) {
+  /* Setting dark theme normal accent colors */
+  --css-normal-text: var(--css-accent-200);
 }
 
 /* Basic styles */
@@ -559,6 +1024,10 @@ body {
 [role],
 [data-css-role] {
   position: relative;
+}
+
+[data-css-color] {
+  color: var(--css-normal-text);
 }
 
 /* Hidden items */
@@ -668,6 +1137,7 @@ h5 {
 }
 
 i[data-css-icon] {
+  color: inherit;
   font-style: normal;
 }
 

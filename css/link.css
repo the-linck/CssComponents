@@ -1,5 +1,5 @@
 [role="link"],
-a:not([role]) {
+a:not([role]):not([data-css-role]) {
   /* Basic Component rules */
   cursor: pointer;
   display: inline;
@@ -10,51 +10,196 @@ a:not([role]) {
   transition: color 0.3s;
 }
 
-[role="link"], [role="link"][data-css-state="normal"],
-a:not([role]),
-a:not([role])[data-css-state="normal"] {
+[role="link"]:link, [role="link"][data-css-state="normal"],
+a:not([role]):not([data-css-role]):link,
+a:not([role]):not([data-css-role])[data-css-state="normal"] {
   color: var(--css-normal-text);
 }
 
 [role="link"]:visited, [role="link"][data-css-state="visited"],
-a:not([role]):visited,
-a:not([role])[data-css-state="visited"] {
+a:not([role]):not([data-css-role]):visited,
+a:not([role]):not([data-css-role])[data-css-state="visited"] {
   color: var(--css-visited-text);
 }
 
 [role="link"]:focus, [role="link"]:hover, [role="link"][data-css-state="selected"],
-a:not([role]):focus,
-a:not([role]):hover,
-a:not([role])[data-css-state="selected"] {
+a:not([role]):not([data-css-role]):focus,
+a:not([role]):not([data-css-role]):hover,
+a:not([role]):not([data-css-role])[data-css-state="selected"] {
   color: var(--css-selected-text);
 }
 
 [role="link"]:active, [role="link"][data-css-state="pressed"],
-a:not([role]):active,
-a:not([role])[data-css-state="pressed"] {
+a:not([role]):not([data-css-role]):active,
+a:not([role]):not([data-css-role])[data-css-state="pressed"] {
   color: var(--css-pressed-text);
 }
 
-[role="link"]:not([data-css-accent]), [role="link"][data-css-primary],
-[data-css-primary] [role="link"],
-a:not([role]):not([data-css-accent]),
-a:not([role])[data-css-primary],
-[data-css-primary]
-a:not([role]) {
+[data-css-theme="light"] [role="link"]:not([data-css-color]),
+[data-css-theme="light"] [role="link"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role]):not([data-css-color]),
+[data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme normal primary colors */
   --css-normal-text: var(--css-primary-700);
+}
+
+:not([data-css-theme]) [role="link"]:not([data-css-color]),
+:not([data-css-theme]) [role="link"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role]):not([data-css-color]),
+:not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme normal primary colors */
+  --css-normal-text: var(--css-primary-700);
+}
+
+[data-css-theme="light"] [role="link"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-text: var(--css-accent-700);
+}
+
+:not([data-css-theme]) [role="link"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme normal accent colors */
+  --css-normal-text: var(--css-accent-700);
+}
+
+[data-css-theme="light"] [role="link"]:not([data-css-color]),
+[data-css-theme="light"] [role="link"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role]):not([data-css-color]),
+[data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme visited primary colors */
   --css-visited-text: var(--css-primary-900);
+}
+
+:not([data-css-theme]) [role="link"]:not([data-css-color]),
+:not([data-css-theme]) [role="link"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role]):not([data-css-color]),
+:not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme visited primary colors */
+  --css-visited-text: var(--css-primary-900);
+}
+
+[data-css-theme="light"] [role="link"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme visited accent colors */
+  --css-visited-text: var(--css-accent-900);
+}
+
+:not([data-css-theme]) [role="link"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme visited accent colors */
+  --css-visited-text: var(--css-accent-900);
+}
+
+[data-css-theme="light"] [role="link"]:not([data-css-color]),
+[data-css-theme="light"] [role="link"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role]):not([data-css-color]),
+[data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme selected primary colors */
   --css-selected-text: var(--css-primary-500);
+}
+
+:not([data-css-theme]) [role="link"]:not([data-css-color]),
+:not([data-css-theme]) [role="link"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role]):not([data-css-color]),
+:not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme selected primary colors */
+  --css-selected-text: var(--css-primary-500);
+}
+
+[data-css-theme="light"] [role="link"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-text: var(--css-accent-500);
+}
+
+:not([data-css-theme]) [role="link"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme selected accent colors */
+  --css-selected-text: var(--css-accent-500);
+}
+
+[data-css-theme="light"] [role="link"]:not([data-css-color]),
+[data-css-theme="light"] [role="link"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role]):not([data-css-color]),
+[data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
   --css-pressed-text: var(--css-primary-600);
 }
 
-[role="link"][data-css-accent],
-[data-css-accent] [role="link"],
-a:not([role])[data-css-accent],
-[data-css-accent]
-a:not([role]) {
-  --css-normal-text: var(--css-accent-700);
-  --css-visited-text: var(--css-accent-900);
-  --css-selected-text: var(--css-accent-500);
+:not([data-css-theme]) [role="link"]:not([data-css-color]),
+:not([data-css-theme]) [role="link"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role]):not([data-css-color]),
+:not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme pressed primary colors */
+  --css-pressed-text: var(--css-primary-600);
+}
+
+[data-css-theme="light"] [role="link"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="link"]:not([data-css-color]), [data-css-theme="light"]
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
+  --css-pressed-text: var(--css-accent-600);
+}
+
+:not([data-css-theme]) [role="link"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="link"]:not([data-css-color]), :not([data-css-theme])
+a:not([role]):not([data-css-role])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+a:not([role]):not([data-css-role]):not([data-css-color]) {
+  /* Setting light theme pressed accent colors */
   --css-pressed-text: var(--css-accent-600);
 }
 /*# sourceMappingURL=link.css.map */
