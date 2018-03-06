@@ -1,12 +1,11 @@
 [role="group"][data-css-group="button"],
 [data-css-role="group"][data-css-group="button"] {
-  border: 0.125em solid;
+  border: 0.125em solid var(--css-normal-border);
   border-radius: 0.5em;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   white-space: nowrap;
-  border-color: var(--css-normal-border);
 }
 
 button,
@@ -110,6 +109,203 @@ input[type="reset"][data-css-state="normal"],
 [data-css-role="button"]:not([data-css-state]),
 [data-css-role="button"][data-css-state="normal"] {
   /* Normal button */
+}
+
+[data-css-theme="light"] button:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"] button:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button:not([data-css-state]):not([data-css-color]), [data-css-theme="light"] button[data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"] button[data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+[role="button"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:not([data-css-state]):not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"]:not([data-css-state])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="normal"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][data-css-state="normal"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) button:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme]) button:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button:not([data-css-state]):not([data-css-color]), :not([data-css-theme]) button[data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme]) button[data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="button"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+[role="button"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+[role="button"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:not([data-css-state]):not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"]:not([data-css-state])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="normal"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][data-css-state="normal"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+[data-css-theme="light"] button:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button:not([data-css-state]):not([data-css-color]), [data-css-theme="light"] button[data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][data-css-state="normal"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:not([data-css-state])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"]:not([data-css-state]):not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="normal"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) button:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button:not([data-css-state]):not([data-css-color]), :not([data-css-theme]) button[data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][data-css-state="normal"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:not([data-css-state])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"]:not([data-css-state]):not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="normal"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][data-css-state="normal"]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
   color: var(--css-normal-text);
@@ -138,6 +334,375 @@ input[type="reset"][data-css-state="selected"],
 [data-css-role="button"][data-css-state="selected"] {
   /* Selected button */
   outline: none;
+}
+
+[data-css-theme="light"] button:hover:not([data-css-color]),
+[data-css-theme="light"] button:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button:hover:not([data-css-color]), [data-css-theme="light"] button:focus:not([data-css-color]),
+[data-css-theme="light"] button:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button:focus:not([data-css-color]), [data-css-theme="light"] button[aria-current]:not([aria-current="false"]):not([data-css-color]),
+[data-css-theme="light"] button[aria-current]:not([aria-current="false"])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"] button[data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"] button[data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"]:hover:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"]:focus:not([data-css-color]), [data-css-theme="light"]
+[role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:hover:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"]:hover[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"]:hover:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:focus:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"]:focus[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"]:focus:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="selected"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][data-css-state="selected"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected primary colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+:not([data-css-theme]) button:hover:not([data-css-color]),
+:not([data-css-theme]) button:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button:hover:not([data-css-color]), :not([data-css-theme]) button:focus:not([data-css-color]),
+:not([data-css-theme]) button:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button:focus:not([data-css-color]), :not([data-css-theme]) button[aria-current]:not([aria-current="false"]):not([data-css-color]),
+:not([data-css-theme]) button[aria-current]:not([aria-current="false"])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme]) button[data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme]) button[data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="button"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:hover:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:focus:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:hover:not([data-css-color]),
+:not([data-css-theme])
+[role="button"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"]:hover:not([data-css-color]), :not([data-css-theme])
+[role="button"]:focus:not([data-css-color]),
+:not([data-css-theme])
+[role="button"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"]:focus:not([data-css-color]), :not([data-css-theme])
+[role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+:not([data-css-theme])
+[role="button"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+[role="button"][data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:hover:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"]:hover[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"]:hover:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:focus:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"]:focus[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"]:focus:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][aria-current]:not([aria-current="false"])[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="selected"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][data-css-state="selected"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected primary colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+[data-css-theme="light"] button:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button:hover:not([data-css-color]), [data-css-theme="light"] button:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button:focus:not([data-css-color]), [data-css-theme="light"] button[aria-current]:not([aria-current="false"])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"] button[data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"]:hover:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"]:focus:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"]:hover:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"]:focus:not([data-css-color]), [data-css-theme="light"]
+[role="button"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][data-css-state="selected"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:hover[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"]:hover:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:focus[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"]:focus:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="selected"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected accent colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+:not([data-css-theme]) button:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button:hover:not([data-css-color]), :not([data-css-theme]) button:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button:focus:not([data-css-color]), :not([data-css-theme]) button[aria-current]:not([aria-current="false"])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme]) button[data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="button"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"]:hover:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"]:focus:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"]:hover:not([data-css-color]), :not([data-css-theme])
+[role="button"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"]:focus:not([data-css-color]), :not([data-css-theme])
+[role="button"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][data-css-state="selected"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:hover[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"]:hover:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:focus[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"]:focus:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][aria-current]:not([aria-current="false"])[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][aria-current]:not([aria-current="false"]):not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="selected"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][data-css-state="selected"]:not([data-css-color]) {
+  /* Getting light theme selected accent colors */
   background-color: var(--css-selected-background);
   border-color: var(--css-selected-border);
   color: var(--css-selected-text);
@@ -161,6 +726,289 @@ input[type="reset"][data-css-state="pressed"],
 [data-css-role="button"][data-css-state="pressed"] {
   /* Pressed button */
   outline: none;
+}
+
+[data-css-theme="light"] button:active:not([data-css-color]),
+[data-css-theme="light"] button:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button:active:not([data-css-color]), [data-css-theme="light"] button[aria-pressed="true"]:not([data-css-color]),
+[data-css-theme="light"] button[aria-pressed="true"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"] button[data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"] button[data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][aria-pressed="true"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][aria-pressed="true"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][aria-pressed="true"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][aria-pressed="true"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:active:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][aria-pressed="true"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][aria-pressed="true"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:active:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"]:active:not([data-css-color]), [data-css-theme="light"]
+[role="button"][aria-pressed="true"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][aria-pressed="true"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:active:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"]:active[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"]:active:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][aria-pressed="true"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][aria-pressed="true"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="pressed"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][data-css-state="pressed"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed primary colors */
+  background-color: var(--css-pressed-background);
+  border-color: var(--css-pressed-border);
+  color: var(--css-pressed-text);
+}
+
+:not([data-css-theme]) button:active:not([data-css-color]),
+:not([data-css-theme]) button:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button:active:not([data-css-color]), :not([data-css-theme]) button[aria-pressed="true"]:not([data-css-color]),
+:not([data-css-theme]) button[aria-pressed="true"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[aria-pressed="true"]:not([data-css-color]), :not([data-css-theme]) button[data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme]) button[data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="button"][aria-pressed="true"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][aria-pressed="true"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][aria-pressed="true"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][aria-pressed="true"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:active:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][aria-pressed="true"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][aria-pressed="true"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:active:not([data-css-color]),
+:not([data-css-theme])
+[role="button"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"]:active:not([data-css-color]), :not([data-css-theme])
+[role="button"][aria-pressed="true"]:not([data-css-color]),
+:not([data-css-theme])
+[role="button"][aria-pressed="true"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+[role="button"][data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:active:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"]:active[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"]:active:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][aria-pressed="true"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][aria-pressed="true"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="pressed"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][data-css-state="pressed"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed primary colors */
+  background-color: var(--css-pressed-background);
+  border-color: var(--css-pressed-border);
+  color: var(--css-pressed-text);
+}
+
+[data-css-theme="light"] button:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button:active:not([data-css-color]), [data-css-theme="light"] button[aria-pressed="true"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"] button[data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][aria-pressed="true"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][aria-pressed="true"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"]:active:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][aria-pressed="true"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"]:active:not([data-css-color]), [data-css-theme="light"]
+[role="button"][aria-pressed="true"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][data-css-state="pressed"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:active[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"]:active:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][aria-pressed="true"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][aria-pressed="true"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="pressed"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed accent colors */
+  background-color: var(--css-pressed-background);
+  border-color: var(--css-pressed-border);
+  color: var(--css-pressed-text);
+}
+
+:not([data-css-theme]) button:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button:active:not([data-css-color]), :not([data-css-theme]) button[aria-pressed="true"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[aria-pressed="true"]:not([data-css-color]), :not([data-css-theme]) button[data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="button"][aria-pressed="true"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][aria-pressed="true"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"]:active:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][aria-pressed="true"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"]:active:not([data-css-color]), :not([data-css-theme])
+[role="button"][aria-pressed="true"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][data-css-state="pressed"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:active[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"]:active:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][aria-pressed="true"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][aria-pressed="true"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="pressed"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][data-css-state="pressed"]:not([data-css-color]) {
+  /* Getting light theme pressed accent colors */
   background-color: var(--css-pressed-background);
   border-color: var(--css-pressed-border);
   color: var(--css-pressed-text);
@@ -184,6 +1032,289 @@ input[type="reset"][data-css-state="disabled"],
 [data-css-role="button"][data-css-state="disabled"] {
   /* Disabled button */
   outline: none;
+}
+
+[data-css-theme="light"] button:disabled:not([data-css-color]),
+[data-css-theme="light"] button:disabled[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button:disabled:not([data-css-color]), [data-css-theme="light"] button[aria-disabled]:not([data-css-color]),
+[data-css-theme="light"] button[aria-disabled][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[aria-disabled]:not([data-css-color]), [data-css-theme="light"] button[data-css-state="disabled"]:not([data-css-color]),
+[data-css-theme="light"] button[data-css-state="disabled"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] button[data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:disabled:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"]:disabled[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"]:disabled:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][aria-disabled]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][aria-disabled][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="disabled"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="button"][data-css-state="disabled"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="button"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:disabled:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"]:disabled[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"]:disabled:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][aria-disabled]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][aria-disabled][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="disabled"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="submit"][data-css-state="disabled"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="submit"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:disabled:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"]:disabled[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"]:disabled:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][aria-disabled]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][aria-disabled][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="disabled"]:not([data-css-color]),
+[data-css-theme="light"]
+input[type="reset"][data-css-state="disabled"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+input[type="reset"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:disabled:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"]:disabled[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"]:disabled:not([data-css-color]), [data-css-theme="light"]
+[role="button"][aria-disabled]:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][aria-disabled][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="disabled"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="button"][data-css-state="disabled"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="button"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:disabled:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"]:disabled[data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"]:disabled:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][aria-disabled]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][aria-disabled][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="disabled"]:not([data-css-color]),
+[data-css-theme="light"]
+[data-css-role="button"][data-css-state="disabled"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[data-css-role="button"][data-css-state="disabled"]:not([data-css-color]) {
+  /* Getting light theme disabled primary colors */
+  background-color: var(--css-disabled-background);
+  border-color: var(--css-disabled-border);
+  color: var(--css-disabled-text);
+}
+
+:not([data-css-theme]) button:disabled:not([data-css-color]),
+:not([data-css-theme]) button:disabled[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button:disabled:not([data-css-color]), :not([data-css-theme]) button[aria-disabled]:not([data-css-color]),
+:not([data-css-theme]) button[aria-disabled][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[aria-disabled]:not([data-css-color]), :not([data-css-theme]) button[data-css-state="disabled"]:not([data-css-color]),
+:not([data-css-theme]) button[data-css-state="disabled"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] button[data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:disabled:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"]:disabled[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"]:disabled:not([data-css-color]), :not([data-css-theme])
+input[type="button"][aria-disabled]:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][aria-disabled][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="disabled"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="button"][data-css-state="disabled"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="button"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:disabled:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"]:disabled[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"]:disabled:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][aria-disabled]:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][aria-disabled][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="disabled"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="submit"][data-css-state="disabled"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="submit"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:disabled:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"]:disabled[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"]:disabled:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][aria-disabled]:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][aria-disabled][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="disabled"]:not([data-css-color]),
+:not([data-css-theme])
+input[type="reset"][data-css-state="disabled"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+input[type="reset"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:disabled:not([data-css-color]),
+:not([data-css-theme])
+[role="button"]:disabled[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"]:disabled:not([data-css-color]), :not([data-css-theme])
+[role="button"][aria-disabled]:not([data-css-color]),
+:not([data-css-theme])
+[role="button"][aria-disabled][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="disabled"]:not([data-css-color]),
+:not([data-css-theme])
+[role="button"][data-css-state="disabled"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="button"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:disabled:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"]:disabled[data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"]:disabled:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][aria-disabled]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][aria-disabled][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="disabled"]:not([data-css-color]),
+:not([data-css-theme])
+[data-css-role="button"][data-css-state="disabled"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[data-css-role="button"][data-css-state="disabled"]:not([data-css-color]) {
+  /* Getting light theme disabled primary colors */
+  background-color: var(--css-disabled-background);
+  border-color: var(--css-disabled-border);
+  color: var(--css-disabled-text);
+}
+
+[data-css-theme="light"] button:disabled[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button:disabled:not([data-css-color]), [data-css-theme="light"] button[aria-disabled][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[aria-disabled]:not([data-css-color]), [data-css-theme="light"] button[data-css-state="disabled"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] button[data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"]:disabled[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"]:disabled:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][aria-disabled][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+input[type="button"][data-css-state="disabled"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="button"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"]:disabled[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"]:disabled:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][aria-disabled][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+input[type="submit"][data-css-state="disabled"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="submit"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"]:disabled[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"]:disabled:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][aria-disabled][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+input[type="reset"][data-css-state="disabled"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+input[type="reset"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+[role="button"]:disabled[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"]:disabled:not([data-css-color]), [data-css-theme="light"]
+[role="button"][aria-disabled][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+[role="button"][data-css-state="disabled"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="button"][data-css-state="disabled"]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"]:disabled[data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"]:disabled:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][aria-disabled][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][aria-disabled]:not([data-css-color]), [data-css-theme="light"]
+[data-css-role="button"][data-css-state="disabled"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[data-css-role="button"][data-css-state="disabled"]:not([data-css-color]) {
+  /* Getting light theme disabled accent colors */
+  background-color: var(--css-disabled-background);
+  border-color: var(--css-disabled-border);
+  color: var(--css-disabled-text);
+}
+
+:not([data-css-theme]) button:disabled[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button:disabled:not([data-css-color]), :not([data-css-theme]) button[aria-disabled][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[aria-disabled]:not([data-css-color]), :not([data-css-theme]) button[data-css-state="disabled"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] button[data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+input[type="button"]:disabled[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"]:disabled:not([data-css-color]), :not([data-css-theme])
+input[type="button"][aria-disabled][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+input[type="button"][data-css-state="disabled"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="button"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"]:disabled[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"]:disabled:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][aria-disabled][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+input[type="submit"][data-css-state="disabled"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="submit"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"]:disabled[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"]:disabled:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][aria-disabled][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+input[type="reset"][data-css-state="disabled"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+input[type="reset"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+[role="button"]:disabled[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"]:disabled:not([data-css-color]), :not([data-css-theme])
+[role="button"][aria-disabled][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+[role="button"][data-css-state="disabled"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="button"][data-css-state="disabled"]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"]:disabled[data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"]:disabled:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][aria-disabled][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][aria-disabled]:not([data-css-color]), :not([data-css-theme])
+[data-css-role="button"][data-css-state="disabled"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[data-css-role="button"][data-css-state="disabled"]:not([data-css-color]) {
+  /* Getting light theme disabled accent colors */
   background-color: var(--css-disabled-background);
   border-color: var(--css-disabled-border);
   color: var(--css-disabled-text);

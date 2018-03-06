@@ -18,9 +18,9 @@
     // Icon
     >[data-css-icon][data-css-side]
     {
-        font-size: 2em;
-        flex-basis: 1em;
         display: inline-block;
+        flex-basis: 1em;
+        font-size: 2em;
         line-height: 1em;
         max-height: 1em;
         max-width: 1em;
@@ -95,7 +95,7 @@
     // Error message (immediatily bellow textbox)
     >[data-css-type="error"]
     {
-        color: var(--css-selected-background);
+        color: var(--css-selected-text);
         order: 4; // Position 3 is reserved to the icon on right
         position: relative;
         transition: top .3s;
@@ -114,48 +114,49 @@
         order: 5;
     }
 
-    // Custom accent colors
-    &:not([data-css-primary]),
-    &[data-css-accent],
-    [data-css-accent] &:not([data-css-primary])
+    // Color overrides
+    &,
+    & > *
     {
-        &,
-        & > *
-        {
-            // Normal state
-            @include pallete-background-group(accent, normal, 50);
-            // Selected state
-            @include pallete-color-group(accent, selected, white, 900, 800);
-            // Pressed state
-            @include pallete-color-group(accent, pressed, white, 300, 800);
-        }
-
-        >[data-css-type="info"]
-        {
-            @include pallete-border-group(accent, normal, 500);
-        }
+        // Normal state
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'normal',
+            $colors: (
+                'background': 50
+            )
+        );
+        // Selected state
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'selected',
+            $colors: (
+                'background': white,
+                'border': 900,
+                'text': 800
+            )
+        );
+        // Pressed state
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'pressed',
+            $colors: (
+                'background': white,
+                'border': 300,
+                'text': 800
+            )
+        );
     }
 
-    // Custom primary colors
-    &:not([data-css-accent]),
-    &[data-css-primary],
-    [data-css-primary] &:not([data-css-accent])
+    >[data-css-type="info"]
     {
-        &,
-        & > *
-        {
-            // Normal state
-            @include pallete-background-group(primary, normal, 50);
-            // Selected state
-            @include pallete-color-group(primary, selected, white, 900, 800);
-            // Pressed state
-            @include pallete-color-group(primary, pressed, white, 300, 800);
-        }
-
-        >[data-css-type="info"]
-        {
-            @include pallete-border-group(primary, normal, 500);
-        }
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'normal',
+            $colors: (
+                'border': 500
+            )
+        );
     }
 }
 
@@ -197,13 +198,13 @@ textarea
     &:not([data-css-state]),
     &[data-css-state="normal"]
     {
-        @include component-colors(normal);
+        @include css-get-cascade-colors($theme: light, $group: normal);
     }
     // Selected
     &:hover,
     [data-css-state="selected"]    
     {
-        @include component-colors(selected);
+        @include css-get-cascade-colors($theme: light, $group: selected);
         box-shadow: 0 0.166em var(--css-selected-border);
     }
     // Pressed/focus
@@ -211,7 +212,7 @@ textarea
     &:focus,
     [data-css-state="pressed"]
     {
-        @include component-colors(pressed);
+        @include css-get-cascade-colors($theme: light, $group: pressed);
         box-shadow: 0 0.166em var(--css-pressed-border);
     }
 

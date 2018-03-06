@@ -71,23 +71,27 @@
     &:focus:not([data-css-state])::before,
     &[data-css-state="selected"]::before
     {
-        @include component-background-border-colors(selected);
+        background-color: var(--css-selected-background);
+        border-color: var(--css-selected-border);
     }
     &:active:not([data-css-state])::before,
     &[data-css-state="pressed"]::before
     {
-        @include component-background-border-colors(pressed);
+        background-color: var(--css-pressed-background);
+        border-color: var(--css-pressed-border);
     }
     &:not([data-css-state])::before, //After hover and active to override specificity
     &[data-css-state="normal"]::before
     {
-        @include component-background-border-colors(normal);
+        background-color: var(--css-normal-background);
+        border-color: var(--css-normal-border);
     }
     &:disabled::before,
     &[aria-disabled]::before,
     &[data-css-state="disabled"]::before
     {
-        @include component-background-border-colors(disabled);
+        background-color: var(--css-disabled-background);
+        border-color: var(--css-disabled-border);
     }
 
 
@@ -188,7 +192,7 @@
     {
         &::after
         {
-            @include component-text-color(selected);
+            color: var(--css-selected-text);
         }
     }
     &:active:not([data-css-state]) > [data-css-toggle],
@@ -196,7 +200,7 @@
     {
         &::after
         {
-            @include component-text-color(pressed);
+            color: var(--css-pressed-text);
         }
     }
     &:not([data-css-state]) > [data-css-toggle], //After hover and active to override specificity
@@ -204,7 +208,7 @@
     {
         &::after
         {
-            @include component-text-color(normal);
+            color: var(--css-normal-text);
         }
     }
     &:disabled > [data-css-toggle],
@@ -213,7 +217,7 @@
     {
         &::after
         {
-            @include component-text-color(disabled);
+            color: var(--css-disabled-text);
         }
     }
 }
@@ -277,7 +281,8 @@
         &::before,
         > [data-css-toggle]::after
         {
-            @include component-background-border-colors(selected);
+            background-color: var(--css-selected-background);
+            border-color: var(--css-selected-border);
         }
 
         > input:checked + [data-css-toggle],
@@ -285,7 +290,8 @@
         {
             &::after
             {
-                @include component-background-border-colors(pressed);
+                background-color: var(--css-pressed-background);
+                border-color: var(--css-pressed-border);
             }
         }
     }
@@ -295,7 +301,8 @@
         &::before,
         > [data-css-toggle]::after
         {
-            @include component-background-border-colors(pressed);
+            background-color: var(--css-pressed-background);
+            border-color: var(--css-pressed-border);
         }
 
         > input:checked + [data-css-toggle],
@@ -303,7 +310,8 @@
         {
             &::after
             {
-                @include component-background-border-colors(normal);
+                background-color: var(--css-normal-background);
+                border-color: var(--css-normal-border);
             }
         }
     }
@@ -313,7 +321,8 @@
         &::before,
         > [data-css-toggle]::after
         {
-            @include component-background-border-colors(normal);
+            background-color: var(--css-normal-background);
+            border-color: var(--css-normal-border);
         }
 
         > input:checked + [data-css-toggle],
@@ -321,7 +330,8 @@
         {
             &::after
             {
-                @include component-background-border-colors(selected);
+                background-color: var(--css-selected-background);
+                border-color: var(--css-selected-border);
             }
         }
     }
@@ -332,7 +342,8 @@
         &::before,
         > [data-css-toggle]::after
         {
-            @include component-background-border-colors(disabled);
+            background-color: var(--css-disabled-background);
+            border-color: var(--css-disabled-border);
         }
     }
 

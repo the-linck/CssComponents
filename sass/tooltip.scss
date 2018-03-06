@@ -27,15 +27,17 @@
         transform: translateY(0%) translateX(-50%);
         width: fit-content;
         z-index: 1;
-
-        @include component-colors(normal);
+        
+        @include css-get-cascade-colors($theme: light, $group: normal);
         
 
         // Arrow
         &::before
         {
             /* Arrow */
+            background-color: inherit;
             border: 1px solid;
+            border-color: inherit;
             bottom: -1em;
             bottom: calc(-1em + 2px);
             content: "";
@@ -45,8 +47,6 @@
             position: absolute;
             transform: rotate(45deg) translateX(-50%);
             width: 1em;
-
-            @include component-colors(normal);
         }
 
 

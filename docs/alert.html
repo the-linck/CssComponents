@@ -55,7 +55,7 @@
                     </ol>
                     <!-- /Subchapters -->
                 </li>
-                <li data-css-accent>
+                <li data-css-color="accent">
                     <a itemprop="url" href="#accent">
                         <span itemprop="name">Accent Colors</span>
                     </a>
@@ -94,13 +94,13 @@
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
-                            <span itemprop="programmingLanguage">HTML</span>
+                            <span data-css-color="accent" itemprop="programmingLanguage">HTML</span>
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
                     <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                         <span>
-                            &lt;div <strong>role=&quot;alert&quot;</strong> title=&quot;A simple alert&quot;&gt;
+                            &lt;div <strong data-css-color="accent">role=&quot;alert&quot;</strong> title=&quot;A simple alert&quot;&gt;
                         </span>
                         <span>
                             &emsp;This is an alert, dude.
@@ -165,13 +165,13 @@
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-color="accent" itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
                             <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                                 <span>
-                                    &lt;div <strong>data-css-type=&quot;info&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                    &lt;div <strong data-css-color="accent">data-css-type=&quot;info&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;Just to let you know.
@@ -180,7 +180,7 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div <strong>data-css-type=&quot;success&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                    &lt;div <strong data-css-color="accent">data-css-type=&quot;success&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;It's all right.
@@ -189,7 +189,7 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div <strong>data-css-type=&quot;warning&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                    &lt;div <strong data-css-color="accent">data-css-type=&quot;warning&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;But that may be dangerous.
@@ -198,7 +198,7 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div <strong>data-css-type=&quot;error&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
+                                    &lt;div <strong data-css-color="accent">data-css-type=&quot;error&quot;</strong> role=&quot;alert&quot; title=&quot;A simple alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;OH MY! WHAT happened here?
@@ -244,13 +244,13 @@
                             <summary>
                                 <span itemprop="description">Example:</span>
                                 <span data-css-float="right">
-                                    <span itemprop="programmingLanguage">HTML</span>
+                                    <span data-css-color="accent" itemprop="programmingLanguage">HTML</span>
                                     <span itemprop="codeSampleType">inline code</span>
                                 </span>
                             </summary>
                             <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                                 <span>
-                                    &lt;div data-css-type=&quot;info&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                    &lt;div data-css-type=&quot;info&quot; <strong data-css-color="accent">data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;Just to let you know.
@@ -259,7 +259,7 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div data-css-type=&quot;success&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                    &lt;div data-css-type=&quot;success&quot; <strong data-css-color="accent">data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;It's all right.
@@ -268,7 +268,7 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div data-css-type=&quot;warning&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                    &lt;div data-css-type=&quot;warning&quot; <strong data-css-color="accent">data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;But that may be dangerous.
@@ -277,7 +277,7 @@
                                     &lt;/div&gt;
                                 </span>
                                 <span>
-                                    &lt;div data-css-type=&quot;error&quot; <strong>data-css-icon</strong> role=&quot;alert&quot;&gt;
+                                    &lt;div data-css-type=&quot;error&quot; <strong data-css-color="accent">data-css-icon</strong> role=&quot;alert&quot;&gt;
                                 </span>
                                 <span>
                                     &emsp;OH MY! SH1T happened here.
@@ -296,30 +296,31 @@
             <!-- /Plain alert -->
 
             <!-- Accent colors -->
-            <section data-css-accent aria-labelledby="accent" data-css-chapter>
+            <section data-css-color="accent" aria-labelledby="accent" data-css-chapter>
                 <header id="accent">
                     <h3 data-css-role="heading">Accent Colors</h3>
                 </header>
 
                 <p>
-                    The <strong>data-css-accent</strong> attribute allows to use your chosen accent color for all alert types:
+                    The <strong>data-css-color="accent"</strong> attribute allows to use your chosen accent color for
+                    all alert types:
                 </p>
                 
                 <!-- Demo -->
                 <div>
-                    <div data-css-accent role="alert">
+                    <div data-css-color="accent" role="alert">
                         Common
                     </div>
-                    <div data-css-accent data-css-type="info" data-css-icon role="alert">
+                    <div data-css-color="accent" data-css-type="info" data-css-icon role="alert">
                         Info
                     </div>
-                    <div data-css-accent data-css-type="success" data-css-icon role="alert">
+                    <div data-css-color="accent" data-css-type="success" data-css-icon role="alert">
                         Success
                     </div>
-                    <div data-css-accent data-css-type="warning" data-css-icon role="alert">
+                    <div data-css-color="accent" data-css-type="warning" data-css-icon role="alert">
                         Warning
                     </div>
-                    <div data-css-accent data-css-type="error" data-css-icon role="alert">
+                    <div data-css-color="accent" data-css-type="error" data-css-icon role="alert">
                         Error
                     </div>
                 </div>
@@ -330,13 +331,13 @@
                     <summary>
                         <span itemprop="description">Example:</span>
                         <span data-css-float="right">
-                            <span itemprop="programmingLanguage">HTML</span>
+                            <span data-css-color="primary" itemprop="programmingLanguage">HTML</span>
                             <span itemprop="codeSampleType">inline code</span>
                         </span>
                     </summary>
                     <code class="language-html" data-css-group="lines" itemprop="text" role="group">
                         <span>
-                            &lt;div data-css-accent role=&quot;alert&quot;&gt;
+                            &lt;div <strong data-css-color="primary">data-css-color="accent"</strong> role=&quot;alert&quot;&gt;
                         </span>
                         <span>
                             &emsp;Common
@@ -345,7 +346,7 @@
                             &lt;/div&gt;
                         </span>
                         <span>
-                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;info&quot; data-css-icon role=&quot;alert&quot;&gt;
+                            &lt;div <strong data-css-color="primary">data-css-color="accent"</strong> data-css-type=&quot;info&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
                         <span>
                             &emsp;Info
@@ -354,7 +355,7 @@
                             &lt;/div&gt;
                         </span>
                         <span>
-                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;success&quot; data-css-icon role=&quot;alert&quot;&gt;
+                            &lt;div <strong data-css-color="primary">data-css-color="accent"</strong> data-css-type=&quot;success&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
                         <span>
                             &emsp;Success
@@ -363,7 +364,7 @@
                             &lt;/div&gt;
                         </span>
                         <span>
-                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;warning&quot; data-css-icon role=&quot;alert&quot;&gt;
+                            &lt;div <strong data-css-color="primary">data-css-color="accent"</strong> data-css-type=&quot;warning&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
                         <span>
                             &emsp;Warning
@@ -372,7 +373,7 @@
                             &lt;/div&gt;
                         </span>
                         <span>
-                            &lt;div <strong>data-css-accent</strong> data-css-type=&quot;error&quot; data-css-icon role=&quot;alert&quot;&gt;
+                            &lt;div <strong data-css-color="primary">data-css-color="accent"</strong> data-css-type=&quot;error&quot; data-css-icon role=&quot;alert&quot;&gt;
                         </span>
                         <span>
                             &emsp;Error

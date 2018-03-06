@@ -1,7 +1,7 @@
 @import '_component';
 
 [role="link"],
-a:not([role])
+a:not([role]):not([data-css-role])
 {
     /* Basic Component rules */
     cursor: pointer;
@@ -11,51 +11,60 @@ a:not([role])
     text-decoration: underline;
     transition: color 0.3s;
 
-    &,
+    &:link,
     &[data-css-state="normal"]
     {
-        @include component-text-color(normal);
+        color: var(--css-normal-text);
     }
 
     &:visited,
     &[data-css-state="visited"]
     {
-        @include component-text-color(visited);
+        color: var(--css-visited-text);
     }
 
     &:focus,
     &:hover,
     &[data-css-state="selected"]
     {
-        @include component-text-color(selected);
+        color: var(--css-selected-text);
     }
 
     &:active,
     &[data-css-state="pressed"]
     {
-        @include component-text-color(pressed);
+        color: var(--css-pressed-text);
     }
 
 
     
-    // Custom primary color
-    &:not([data-css-accent]),
-    &[data-css-primary],
-    [data-css-primary] &
-    {
-        @include pallete-text-group(primary, normal, 700);
-        @include pallete-text-group(primary, visited, 900);
-        @include pallete-text-group(primary, selected, 500);
-        @include pallete-text-group(primary, pressed, 600);
-    }
-    
-    // Custom accent color
-    &[data-css-accent],
-    [data-css-accent] &
-    {
-        @include pallete-text-group(accent, normal, 700);
-        @include pallete-text-group(accent, visited, 900);
-        @include pallete-text-group(accent, selected, 500);
-        @include pallete-text-group(accent, pressed, 600);
-    }
+    // Color overrides
+    @include css-set-cascade-colors(
+        $theme: 'light',
+        $group: 'normal',
+        $colors: (
+            'text': 700
+        )
+    );
+    @include css-set-cascade-colors(
+        $theme: 'light',
+        $group: 'visited',
+        $colors: (
+            'text': 900
+        )
+    );
+    @include css-set-cascade-colors(
+        $theme: 'light',
+        $group: 'selected',
+        $colors: (
+            'text': 500
+        )
+    );
+    @include css-set-cascade-colors(
+        $theme: 'light',
+        $group: 'pressed',
+        $colors: (
+            'text': 600
+        )
+    );
 }

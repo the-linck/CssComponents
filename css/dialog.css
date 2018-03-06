@@ -25,6 +25,53 @@
   -webkit-transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
   transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
   visibility: hidden;
+}
+
+[data-css-theme="light"] [role="alertdialog"][id]:not([data-css-color]),
+[data-css-theme="light"] [role="alertdialog"][id][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="alertdialog"][id]:not([data-css-color]), [data-css-theme="light"]
+[role="dialog"][id]:not([data-css-color]),
+[data-css-theme="light"]
+[role="dialog"][id][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="dialog"][id]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [role="alertdialog"][id]:not([data-css-color]),
+:not([data-css-theme]) [role="alertdialog"][id][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="alertdialog"][id]:not([data-css-color]), :not([data-css-theme])
+[role="dialog"][id]:not([data-css-color]),
+:not([data-css-theme])
+[role="dialog"][id][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="dialog"][id]:not([data-css-color]) {
+  /* Getting light theme normal primary colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+[data-css-theme="light"] [role="alertdialog"][id][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="alertdialog"][id]:not([data-css-color]), [data-css-theme="light"]
+[role="dialog"][id][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="dialog"][id]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
+  background-color: var(--css-normal-background);
+  border-color: var(--css-normal-border);
+  color: var(--css-normal-text);
+}
+
+:not([data-css-theme]) [role="alertdialog"][id][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="alertdialog"][id]:not([data-css-color]), :not([data-css-theme])
+[role="dialog"][id][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="dialog"][id]:not([data-css-color]) {
+  /* Getting light theme normal accent colors */
   background-color: var(--css-normal-background);
   border-color: var(--css-normal-border);
   color: var(--css-normal-text);
@@ -32,6 +79,7 @@
 
 [role="alertdialog"][id]::before,
 [role="dialog"][id]::before {
+  background-color: var(--css-normal-background);
   bottom: -50vh;
   content: ' ';
   display: none;
@@ -40,7 +88,6 @@
   position: fixed;
   right: -50vw;
   top: -50vh;
-  background-color: var(--css-normal-background);
 }
 
 [role="alertdialog"][id] > *,
@@ -71,6 +118,85 @@
   font-size: 1em;
   line-height: 1em;
   margin: 0;
+}
+
+[data-css-theme="light"] [role="alertdialog"][id] > [role="heading"]:not([data-css-color]),
+[data-css-theme="light"] [role="alertdialog"][id] > [role="heading"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"] [role="alertdialog"][id] > [role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="alertdialog"][id] > [data-css-role="heading"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="alertdialog"][id] > [data-css-role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="dialog"][id] > [role="heading"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="dialog"][id] > [role="heading"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="dialog"][id] > [role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="dialog"][id] > [data-css-role="heading"]:not([data-css-color]),
+[data-css-theme="light"]
+[role="dialog"][id] > [data-css-role="heading"][data-css-color="primary"],
+[data-css-theme="light"] [data-css-color="primary"]
+[role="dialog"][id] > [data-css-role="heading"]:not([data-css-color]) {
+  /* Getting light theme selected primary colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+:not([data-css-theme]) [role="alertdialog"][id] > [role="heading"]:not([data-css-color]),
+:not([data-css-theme]) [role="alertdialog"][id] > [role="heading"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"] [role="alertdialog"][id] > [role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="alertdialog"][id] > [data-css-role="heading"]:not([data-css-color]),
+:not([data-css-theme])
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="alertdialog"][id] > [data-css-role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="dialog"][id] > [role="heading"]:not([data-css-color]),
+:not([data-css-theme])
+[role="dialog"][id] > [role="heading"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="dialog"][id] > [role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="dialog"][id] > [data-css-role="heading"]:not([data-css-color]),
+:not([data-css-theme])
+[role="dialog"][id] > [data-css-role="heading"][data-css-color="primary"],
+:not([data-css-theme]) [data-css-color="primary"]
+[role="dialog"][id] > [data-css-role="heading"]:not([data-css-color]) {
+  /* Getting light theme selected primary colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+[data-css-theme="light"] [role="alertdialog"][id] > [role="heading"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"] [role="alertdialog"][id] > [role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="alertdialog"][id] > [data-css-role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="dialog"][id] > [role="heading"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="dialog"][id] > [role="heading"]:not([data-css-color]), [data-css-theme="light"]
+[role="dialog"][id] > [data-css-role="heading"][data-css-color="accent"],
+[data-css-theme="light"] [data-css-color="accent"]
+[role="dialog"][id] > [data-css-role="heading"]:not([data-css-color]) {
+  /* Getting light theme selected accent colors */
+  background-color: var(--css-selected-background);
+  border-color: var(--css-selected-border);
+  color: var(--css-selected-text);
+}
+
+:not([data-css-theme]) [role="alertdialog"][id] > [role="heading"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"] [role="alertdialog"][id] > [role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="alertdialog"][id] > [data-css-role="heading"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="alertdialog"][id] > [data-css-role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="dialog"][id] > [role="heading"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="dialog"][id] > [role="heading"]:not([data-css-color]), :not([data-css-theme])
+[role="dialog"][id] > [data-css-role="heading"][data-css-color="accent"],
+:not([data-css-theme]) [data-css-color="accent"]
+[role="dialog"][id] > [data-css-role="heading"]:not([data-css-color]) {
+  /* Getting light theme selected accent colors */
   background-color: var(--css-selected-background);
   border-color: var(--css-selected-border);
   color: var(--css-selected-text);
@@ -144,20 +270,45 @@
   width: calc(100% - 2em);
 }
 
-[role="alertdialog"][id]:not([data-css-accent])::before, [role="alertdialog"][id][data-css-primary]::before,
-[data-css-primary] [role="alertdialog"][id]::before,
-[role="dialog"][id]:not([data-css-accent])::before,
-[role="dialog"][id][data-css-primary]::before,
-[data-css-primary]
-[role="dialog"][id]::before {
+[data-css-theme="light"] [role="alertdialog"][id]:not([data-css-color])::before,
+[data-css-theme="light"] [role="alertdialog"][id][data-css-color="primary"]::before,
+[data-css-theme="light"] [data-css-color="primary"] [role="alertdialog"][id]:not([data-css-color])::before, [data-css-theme="light"]
+[role="dialog"][id]:not([data-css-color])::before,
+[data-css-theme="light"]
+[role="dialog"][id][data-css-color="primary"]::before,
+[data-css-theme="light"] [data-css-color="primary"]
+[role="dialog"][id]:not([data-css-color])::before {
+  /* Setting light theme normal primary colors */
   --css-normal-background: var(--css-primary-900);
 }
 
-[role="alertdialog"][id][data-css-accent]::before,
-[data-css-accent] [role="alertdialog"][id]::before,
-[role="dialog"][id][data-css-accent]::before,
-[data-css-accent]
-[role="dialog"][id]::before {
+:not([data-css-theme]) [role="alertdialog"][id]:not([data-css-color])::before,
+:not([data-css-theme]) [role="alertdialog"][id][data-css-color="primary"]::before,
+:not([data-css-theme]) [data-css-color="primary"] [role="alertdialog"][id]:not([data-css-color])::before, :not([data-css-theme])
+[role="dialog"][id]:not([data-css-color])::before,
+:not([data-css-theme])
+[role="dialog"][id][data-css-color="primary"]::before,
+:not([data-css-theme]) [data-css-color="primary"]
+[role="dialog"][id]:not([data-css-color])::before {
+  /* Setting light theme normal primary colors */
+  --css-normal-background: var(--css-primary-900);
+}
+
+[data-css-theme="light"] [role="alertdialog"][id][data-css-color="accent"]::before,
+[data-css-theme="light"] [data-css-color="accent"] [role="alertdialog"][id]:not([data-css-color])::before, [data-css-theme="light"]
+[role="dialog"][id][data-css-color="accent"]::before,
+[data-css-theme="light"] [data-css-color="accent"]
+[role="dialog"][id]:not([data-css-color])::before {
+  /* Setting light theme normal accent colors */
+  --css-normal-background: var(--css-accent-900);
+}
+
+:not([data-css-theme]) [role="alertdialog"][id][data-css-color="accent"]::before,
+:not([data-css-theme]) [data-css-color="accent"] [role="alertdialog"][id]:not([data-css-color])::before, :not([data-css-theme])
+[role="dialog"][id][data-css-color="accent"]::before,
+:not([data-css-theme]) [data-css-color="accent"]
+[role="dialog"][id]:not([data-css-color])::before {
+  /* Setting light theme normal accent colors */
   --css-normal-background: var(--css-accent-900);
 }
 

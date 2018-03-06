@@ -22,11 +22,12 @@
     transition: opacity 0.3s, top 0.3s, visibility 0.1s 0.3s;
     visibility: hidden;
 
-    @include component-colors(normal);
+    @include css-get-cascade-colors($theme: light, $group: normal);
 
     // Background
     &::before
     {
+        background-color: var(--css-normal-background);
         bottom: -50vh;
         content: ' ';
         display: none;
@@ -35,8 +36,6 @@
         position: fixed;
         right: -50vw;
         top: -50vh;
-
-        @include component-background-color(normal);        
     }
 
 
@@ -64,8 +63,8 @@
         font-size: 1em;
         line-height: 1em;
         margin: 0;
-
-        @include component-colors(selected);
+        
+        @include css-get-cascade-colors($theme: light, $group: selected);
 
         // Close button
         [data-css-close]
@@ -132,26 +131,17 @@
         width: calc(100% - 2em);
     }
 
-    // Custom primary colors
-    &:not([data-css-accent]),
-    &[data-css-primary],
-    [data-css-primary] &
-    {
-        &::before
-        {
-            @include pallete-background-group(primary, normal, 900);
-        }
-    }
-    
-    // Custom accent color
-    &[data-css-accent],
-    [data-css-accent] &
-    {
-        &::before
-        {
-            @include pallete-background-group(accent, normal, 900);
-        }
-    }
+
+
+    // Color overrides
+    @include css-set-cascade-colors(
+        $theme: 'light',
+        $group: 'normal',
+        $pseudo: '::before',
+        $colors: (
+            'background': 900
+        )
+    );
 }
 
 [role="alertdialog"][id],

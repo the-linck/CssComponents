@@ -8,24 +8,25 @@
     display: block;
     margin: 1em 0 0 0;
 
-    @include component-colors(normal);
+    @include css-get-cascade-colors($theme: light, $group: normal);
 
 
     // Programming Language
     [itemprop="programmingLanguage"]
     {
+        color: var(--css-normal-text);
         font-weight: bold;
         transition: color 0.3s;
-
-        @include component-text-color(normal);        
     }
 
 
+    
     // Children
     >*,
     >[itemprop="text"]
     {
-        /* All direct children must de block elements */        
+        /* All direct children must de block elements */
+        color: inherit;
         display: block;
         padding: 0.5em;
     }
@@ -44,24 +45,19 @@
         // Line counter activation
         &[data-css-group="lines"][role=group]
         {
-            [data-css-primary],
-            [data-css-accent]
+            [data-css-color],
+            [data-css-color]
             {
-                @include component-text-color(normal);        
+                color: var(--css-normal-text);
             }
 
             // All lines            
             >*
             {
-                &,
-                &::before
-                {
-                    @include component-text-color(normal);
-                }
-
                 // Line number
                 &::before
                 {
+                    color: var(--css-normal-text);
                     content: counters(code-lines, ".", decimal-leading-zero);
                     counter-increment: code-lines;
                     display: table-cell;
@@ -121,42 +117,41 @@
         }
     }
 
-    // Custom primary colors
-    &:not([data-css-accent]),
-    &[data-css-primary],
-    & :not([data-css-accent]),
-    & [data-css-primary]
-    {
-        @include pallete-color-group(primary, normal, 900, 700, 100);
 
-        > [itemprop="text"][data-css-group="lines"][role=group] >*::before
-        {
-            @include pallete-text-group(primary, normal, 500);
-        }
-    }
-    > [itemprop="text"][data-css-group="lines"][role=group] [data-css-primary],
-    [itemprop="programmingLanguage"][data-css-primary]
+
+
+    // Color overrides
+    @include css-set-cascade-colors(
+        $theme: light,
+        $group: normal,
+        $colors: (
+            'background': 900,
+            'border': 700,
+            'text': 100
+        )
+    );
+
+    > [itemprop="text"][data-css-group="lines"][role=group] *[data-css-color],
+    [itemprop="programmingLanguage"]
     {
-        @include pallete-text-group(primary, normal, 100);
+        @include css-set-cascade-colors(
+            $theme: light, $group: normal,
+            $colors: (
+                text: 100
+            )
+        );
     }
 
-    // Custom accent colors
-    &[data-css-accent],
-    [data-css-accent] &,
-    &[data-css-accent] :not([data-css-primary]),
-    [data-css-accent] & :not([data-css-primary])
+    > [itemprop="text"][data-css-group="lines"][role=group] >*
     {
-        @include pallete-color-group(accent, normal, 900, 700, 100);
-
-        > [itemprop="text"][data-css-group="lines"][role=group] >*::before
-        {
-            @include pallete-text-group(accent, normal, 500);
-        }
-    }
-    > [itemprop="text"][data-css-group="lines"][role=group] [data-css-accent],
-    [itemprop="programmingLanguage"][data-css-accent]
-    {
-        @include pallete-text-group(accent, normal, 100);
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'normal',
+            $pseudo: '::before',
+            $colors: (
+                'text': 500
+            )
+        );
     }
 }
 
@@ -167,27 +162,24 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
     // Summary element
     > summary:first-child
     {
+        background-color: var(--css-normal-background);
         border-radius: 0.5em;
-        transition: background 0.3s;
-
-        @include component-background-color(normal);
+        transition: background 0.3s;        
     }
 
     // Hover/selected state summary
     > summary:first-child:hover,
     &[open] > summary:first-child
-    {   
-        @include component-background-color(selected);
-        @include component-text-color(selected);
+    {
+        background-color: var(--css-selected-background);
+        color: var(--css-selected-text);
     }
     
     &[open] > summary:first-child
     {
-        border-bottom: 1px solid;
+        border-bottom: 1px solid var(--css-selected-border);
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-
-        @include component-border-color(selected);
     }
 
     // Removing summary outline
@@ -198,30 +190,27 @@ details[itemscope][itemtype="http://schema.org/SoftwareSourceCode"]
         outline: none;
     }
 
-    // Custom primary colors
-    &:not([data-css-accent]),
-    &[data-css-primary],
-    [data-css-primary] &:not([data-css-accent])
-    {
-        > summary:first-child
-        {
-            @include pallete-background-group(primary, normal, 900);
-            @include pallete-background-group(primary, selected, 700);            
-            @include pallete-text-group(primary, selected, 50);
-            @include pallete-border-group(primary, selected, 700);
-        }
-    }
 
-    // Custom accent colors
-    &[data-css-accent],
-    [data-css-accent] &:not([data-css-primary])
+
+    // Color overrides
+    > summary:first-child
     {
-        > summary:first-child
-        {
-            @include pallete-background-group(accent, normal, 900);
-            @include pallete-background-group(accent, selected, 700);            
-            @include pallete-text-group(accent, selected, 50);
-            @include pallete-border-group(accent, selected, 700);
-        }
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'normal',
+            $colors: (
+                'background': 900
+            )
+        );
+        
+        @include css-set-cascade-colors(
+            $theme: 'light',
+            $group: 'selected',
+            $colors: (
+                'border': 700,
+                'background': 700,
+                'text': 50
+            )
+        );
     }
 }
